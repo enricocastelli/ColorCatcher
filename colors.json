@@ -1,11 +1,11 @@
 {
 	"colors": [{
-			"id": "12F",
-			"desc": "Nice Color"
+			"hex": "fa7268",
+			"desc": "Pantone color of the year 2019"
 		},
 		{
-			"id": "2E4",
-			"desc": "Terrible Color"
+			"hex": "ed1c16",
+			"desc": "Coca Cola official color"
 		}
 	]
 }
