@@ -1,10 +1,10 @@
 {
 	"colors": [{
-			"id": 1,
+			"id": "1",
 			"desc": "Nice Color"
 		},
 		{
-			"id": 2,
+			"id": "2",
 			"desc": "Terrible Color"
 		}
 	]
