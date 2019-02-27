@@ -1,13 +1,11 @@
 {
-	"colorCatcher": {
-		"colors": [{
-				"id": "1",
-				"desc": "Nice Color"
-			},
-			{
-				"id": "2",
-				"desc": "Terrible Color"
-			}
-		]
-	}
+	"colors": [{
+			"id": 1,
+			"desc": "Nice Color"
+		},
+		{
+			"id": 2,
+			"desc": "Terrible Color"
+		}
+	]
 }
