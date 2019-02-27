@@ -1,11 +1,28 @@
 {
-	"colors": [{
+	"colors": [
+		{
 			"hex": "fa7268",
 			"desc": "Pantone color of the year 2019"
 		},
 		{
 			"hex": "ed1c16",
 			"desc": "Coca Cola official color"
+		},
+		{
+			"hex": "3b5998",
+			"desc": "Facebook official color"
+		},
+		{
+			"hex": "FFD90F",
+			"desc": "Simpson skin color"
+		},
+		{
+			"hex": "1db954",
+			"desc": "Spotify official color"
+		},
+		{
+			"hex": "2B41A7",
+			"desc": "VanGogh's starry night blue"
 		}
 	]
 }
