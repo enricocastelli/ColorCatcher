@@ -5,12 +5,12 @@
 			"desc": "Pantone color of the year 2019"
 		},
 		{
-			"hex": "ed1c16",
-			"desc": "Coca Cola official color"
-		},
-		{
 			"hex": "3b5998",
 			"desc": "Facebook official color"
+		},
+		{
+			"hex": "ed1c16",
+			"desc": "Coca Cola official color"
 		},
 		{
 			"hex": "FFD90F",
@@ -23,6 +23,18 @@
 		{
 			"hex": "2B41A7",
 			"desc": "VanGogh's starry night blue"
+		},
+		{
+			"hex": "DA1884",
+			"desc": "Barbie's pink"
+		},
+		{
+			"hex": "81D8D0",
+			"desc": "Tiffany's blue"
+		},
+		{
+			"hex": "1034a6",
+			"desc": "Egyptian blue"
 		}
 	]
 }
