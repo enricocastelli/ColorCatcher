@@ -2,7 +2,7 @@
 	"colors": [
 		{
 			"hex": "fa7268",
-			"name": "",
+			"name": "Coral red",
 			"desc": "Pantone color of the year 2019"
 		},
 		{
@@ -22,7 +22,7 @@
 		},
 		{
 			"hex": "8F4B28",
-			"name": "",
+			"name": "Mummy's brown",
 			"desc": "Mummy's brown"
 		},
 		{
@@ -47,7 +47,7 @@
 		},
 		{
 			"hex": "1034a6",
-			"name": "",
+			"name": "Egyptian blue",
 			"desc": "Egyptian blue"
 		}
 	]
