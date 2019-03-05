@@ -46,7 +46,27 @@ extension UIColor {
     var redValue: CGFloat{ return CIColor(color: self).red }
     var greenValue: CGFloat{ return CIColor(color: self).green }
     var blueValue: CGFloat{ return CIColor(color: self).blue }
+    
+    
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.scanLocation = 0
         
+        var rgbValue: UInt64 = 0
+        
+        scanner.scanHexInt64(&rgbValue)
+        
+        let r = (rgbValue & 0xff0000) >> 16
+        let g = (rgbValue & 0xff00) >> 8
+        let b = rgbValue & 0xff
+        
+        self.init(
+            red: CGFloat(r) / 0xff,
+            green: CGFloat(g) / 0xff,
+            blue: CGFloat(b) / 0xff, alpha: 1
+        )
+    }
+
     static func generateRandom() -> UIColor {
         let hue : CGFloat = CGFloat(arc4random() % 256) / 100 // use 256 to get full range from 0.0 to 1.0
         let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.3 // from 0.5 to 1.0 to stay away from white
@@ -64,7 +84,6 @@ extension UIColor {
         }
         return nil
     }
-    
 }
 
 extension CGFloat {
@@ -95,4 +114,8 @@ struct ColorHue {
 
 func Logger(_ error: String) {
     print("🎨⚠️ - \(error)")
+}
+
+func prettyPrint(data: Data?) {
+    print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
 }

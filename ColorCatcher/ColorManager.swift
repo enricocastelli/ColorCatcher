@@ -13,11 +13,18 @@ protocol ColorRecognitionDelegate: class {
     func didUpdateProximity(_ proximity: Float)
 }
 
-class ColorManager: NSObject {
+class ColorManager: NSObject, StoreProvider {
     
     static var goalColor = UIColor.generateRandom()
     static var userColor = UIColor.white
     static var tolerance: CGFloat = 0.07
+    
+    static var colors = [ColorModel]() {
+        didSet {
+            updateColorWithLevel()
+        }
+    }
+    static var currentColor: ColorModel?
     
     weak static var delegate: ColorRecognitionDelegate?
     
@@ -28,7 +35,6 @@ class ColorManager: NSObject {
         if abs(userColor.redValue - goalColor.redValue) < tolerance &&
             abs(userColor.greenValue - goalColor.greenValue) < tolerance &&
             abs(userColor.blueValue - goalColor.blueValue) < tolerance {
-            updateColor()
             CaptureManager.shared.stopSession()
             delegate?.didRecognisedColor()
             CaptureManager.shared.startSession()
@@ -36,7 +42,14 @@ class ColorManager: NSObject {
     }
     
     static func updateColor() {
-         goalColor = UIColor.generateRandom()
+        goalColor = UIColor.generateRandom()
+    }
+    
+    static func updateColorWithLevel() {
+        let level = ColorManager().retrieveLevel()
+        guard level < colors.count else { return }
+        currentColor = colors[level]
+        goalColor = UIColor(hex: currentColor!.hex)
     }
     
     static func getColorProximity() -> Float {
@@ -46,6 +59,16 @@ class ColorManager: NSObject {
         var tot = (1 - (tolerance*3)) - (red + green + blue)
         if tot < 0 { tot = 0 }
         return Float(tot)
+    }
+    
+    static func fetchColors(success: @escaping () -> (), failure: @escaping () -> ()) {
+        Service.shared.get(success: { (object) in
+            colors = object.colors
+            success()
+        }) { (error) in
+            failure()
+        }
+        
     }
     
     // check color based on hue

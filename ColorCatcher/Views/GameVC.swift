@@ -45,6 +45,7 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     func startGame() {
+        ColorManager.updateColor()
         updateColorView()
         CaptureManager.shared.startSession()
     }
@@ -62,6 +63,7 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     func colorRecognized() {
+        ColorManager.updateColor()
         updatePoints()
         updateColorView()
     }
@@ -95,6 +97,7 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
+        CaptureManager.shared.stopSession()
         self.navigationController?.popViewController(animated: true)
     }
     

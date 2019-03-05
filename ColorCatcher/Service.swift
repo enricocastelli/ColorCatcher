@@ -17,13 +17,28 @@ class Service: NSObject, URLSessionDelegate {
         }
     }
     
-    func get(success: @escaping (Data) -> (), failure: @escaping (Error) -> ()) {
-        guard let url = URL(string: "https://github.com/enricocastelli/hermit/blob/master/README.md") else { return }
+    func get(success: @escaping (ColorObjectModel) -> (), failure: @escaping (Error) -> ()) {
+        guard let url = URL(string: "https://raw.githubusercontent.com/enricocastelli/ColorCatcher/master/colors.json") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("text/markdown", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            print(data)
+            DispatchQueue.main.async {
+//                guard let data = data else {
+//                    Logger("nil data")
+//                    failure(NSError(domain: "nil data", code: 500, userInfo: nil))
+//                    return
+//                }
+                do {
+//                    success(try JSONDecoder().decode(ColorObjectModel.self, from: data))
+                    let jsonMock = Bundle.main.path(forResource: "Mock", ofType: "json")
+                    let dataMock = try Data(contentsOf: URL(fileURLWithPath: jsonMock!))
+                    success(try JSONDecoder().decode(ColorObjectModel.self, from: dataMock))
+                } catch {
+                    Logger(error.localizedDescription)
+                    failure(error as NSError)
+                }
+            }
         })
         task.resume()
         

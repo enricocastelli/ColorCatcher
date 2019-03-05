@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WelcomeVC: UIViewController {
+class WelcomeVC: UIViewController, AlertProvider {
     
     
     @IBAction func raceTapped(_ sender: UIButton) {
@@ -18,8 +18,17 @@ class WelcomeVC: UIViewController {
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
+        ColorManager.fetchColors(success: {
+            self.pushToDiscoveryMode()
+        }) {
+            self.showGeneralError()
+        }
+    }
+    
+    func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()
         navigationController?.show(gameVC, sender: nil)
     }
+    
     
 }

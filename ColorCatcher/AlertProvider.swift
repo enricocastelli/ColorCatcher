@@ -11,6 +11,7 @@ import UIKit
 protocol AlertProvider {
     
     func showAlert(title : String, message : String, firstButton : String, secondButton : String?, firstCompletion: @escaping () -> (), secondCompletion: (() -> ())?)
+    func showGeneralError()
     
 }
 
@@ -31,5 +32,9 @@ extension AlertProvider where Self: UIViewController {
             }
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func showGeneralError() {
+            showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
 }
