@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AlertProvider {
+protocol AlertProvider: PopupDelegate {
     
     func showAlert(title : String, message : String, firstButton : String, secondButton : String?, firstCompletion: @escaping () -> (), secondCompletion: (() -> ())?)
     func showGeneralError()
@@ -35,6 +35,16 @@ extension AlertProvider where Self: UIViewController {
     }
     
     func showGeneralError() {
-            showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
+        showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
+    
+    func showPopup(titleString: String, message: String, button: String) {
+        let popup = PopupVC(titleString: titleString, message: message, button: button)
+        popup.view.backgroundColor = UIColor.clear
+        popup.modalPresentationStyle = .overCurrentContext
+        popup.delegate = self
+        self.present(popup, animated: false) {
+        }
+    }
+
 }

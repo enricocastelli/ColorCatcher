@@ -24,16 +24,16 @@ class Service: NSObject, URLSessionDelegate {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
-//                guard let data = data else {
-//                    Logger("nil data")
-//                    failure(NSError(domain: "nil data", code: 500, userInfo: nil))
-//                    return
-//                }
+                guard let data = data else {
+                    Logger("nil data")
+                    failure(NSError(domain: "nil data", code: 500, userInfo: nil))
+                    return
+                }
                 do {
-//                    success(try JSONDecoder().decode(ColorObjectModel.self, from: data))
-                    let jsonMock = Bundle.main.path(forResource: "Mock", ofType: "json")
-                    let dataMock = try Data(contentsOf: URL(fileURLWithPath: jsonMock!))
-                    success(try JSONDecoder().decode(ColorObjectModel.self, from: dataMock))
+                    success(try JSONDecoder().decode(ColorObjectModel.self, from: data))
+//                    let jsonMock = Bundle.main.path(forResource: "Mock", ofType: "json")
+//                    let dataMock = try Data(contentsOf: URL(fileURLWithPath: jsonMock!))
+//                    success(try JSONDecoder().decode(ColorObjectModel.self, from: dataMock))
                 } catch {
                     Logger(error.localizedDescription)
                     failure(error as NSError)

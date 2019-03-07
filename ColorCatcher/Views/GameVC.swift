@@ -44,6 +44,11 @@ class GameVC: UIViewController, AlertProvider {
         })
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        CaptureManager.shared.stopSession()
+    }
+    
     func startGame() {
         ColorManager.updateColor()
         updateColorView()
@@ -92,12 +97,15 @@ class GameVC: UIViewController, AlertProvider {
         CaptureManager.shared.startSession()
     }
     
+    func didDismissPopup() {
+        //TO BE OVERRIDEN
+    }
+    
     @IBAction func helpTapped(_ sender: UIButton) {
         new()
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
-        CaptureManager.shared.stopSession()
         self.navigationController?.popViewController(animated: true)
     }
     

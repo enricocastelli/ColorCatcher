@@ -11,7 +11,6 @@ import MultipeerConnectivity
 
 class MultiplayerVC: UIViewController, AlertProvider {
     
-    
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var multiplayer: MultiplayerManager!
@@ -36,6 +35,9 @@ class MultiplayerVC: UIViewController, AlertProvider {
     @IBAction func backTapped(_ sender: UIButton) {
         multiplayer.stop()
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func didDismissPopup() {
     }
     
 }

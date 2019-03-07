@@ -35,9 +35,7 @@ class ColorManager: NSObject, StoreProvider {
         if abs(userColor.redValue - goalColor.redValue) < tolerance &&
             abs(userColor.greenValue - goalColor.greenValue) < tolerance &&
             abs(userColor.blueValue - goalColor.blueValue) < tolerance {
-            CaptureManager.shared.stopSession()
             delegate?.didRecognisedColor()
-            CaptureManager.shared.startSession()
         }
     }
     

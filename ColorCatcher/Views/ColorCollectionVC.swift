@@ -10,7 +10,8 @@ import UIKit
 
 private let reuseIdentifier = "colorCollectionCell"
 
-class ColorCollectionVC: UIViewController, StoreProvider {
+class ColorCollectionVC: UIViewController, StoreProvider, AlertProvider {
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -44,13 +45,18 @@ extension ColorCollectionVC: UICollectionViewDataSource {
         return cell
     }
     
+    func didDismissPopup() {
+        
+    }
+    
 }
 
 extension ColorCollectionVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard hasColorIndex(indexPath.row) else { return }
-        print(ColorManager.colors[indexPath.row].desc)
+        let color = ColorManager.colors[indexPath.row]
+        showAlert(title: color.name, message: color.desc
+            , firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
-
 }

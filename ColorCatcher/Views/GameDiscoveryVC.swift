@@ -25,10 +25,16 @@ class GameDiscoveryVC: GameVC, StoreProvider {
         colorRecognized()
     }
     
+    override func didDismissPopup() {
+        nextColor()
+    }
+    
+    override func backTapped(_ sender: UIButton) {
+        super.backTapped(sender)
+        reset()
+    }
+    
     override func infoTapped(_ sender: UIButton) {
-        //test
-//        reset()
-        CaptureManager.shared.stopSession()
         let collectionVC = ColorCollectionVC()
         navigationController?.show(collectionVC, sender: nil)
     }
@@ -40,13 +46,10 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     }
     
     override func colorRecognized() {
+        CaptureManager.shared.stopSession()
         storeLevelUp()
         guard let currentColor = ColorManager.currentColor else { return }
-        showAlert(title: "Well done!", message: currentColor.desc, firstButton: "Next!", secondButton: "Stop Here!", firstCompletion: {
-            self.nextColor()
-        }, secondCompletion: {
-            self.navigationController?.popToRootViewController(animated: true)
-        })
+        showPopup(titleString: currentColor.name, message: currentColor.desc, button: "")
     }
 }
 
