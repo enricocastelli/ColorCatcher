@@ -46,5 +46,9 @@ extension AlertProvider where Self: UIViewController {
         self.present(popup, animated: false) {
         }
     }
+    
+    func showTestPopup() {
+        showPopup(titleString: "Short string", message: "Super long string telling a lot of stuff about color description bla bla.\nAlso a lot of infos about where the color is used and how. History of it and who used it and a lot more bla bla bla.", button: "I'm a button")
+    }
 
 }

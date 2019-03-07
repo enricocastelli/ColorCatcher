@@ -69,6 +69,8 @@ class PopupVC: UIViewController {
     func preAnimation() {
         descView.alpha = 0
         coverView.alpha = 0
+        descTop.constant = 100
+        descBottom.constant = -100
     }
     
     func removePopup(done: @escaping () -> ()) {
@@ -90,6 +92,7 @@ class PopupVC: UIViewController {
     }
     
     func showColors() {
+        animateFadeIn()
         addColorLayer(.left)
         let _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { (_) in
             self.addColorLayer(.right)
@@ -97,7 +100,6 @@ class PopupVC: UIViewController {
         let _ = Timer.scheduledTimer(withTimeInterval: 0.14, repeats: false) { (_) in
             self.addColorLayer(.center)
         }
-        animateFadeIn()
     }
     
     func addBlurEffect() {
@@ -109,9 +111,12 @@ class PopupVC: UIViewController {
     }
     
     func animateFadeIn() {
-        UIView.animate(withDuration: 0.7, delay: 0, options: .allowUserInteraction, animations: {
+        descTop.constant = -8
+        descBottom.constant = 0
+        UIView.animate(withDuration: 0.7, delay: 0, options: [.allowUserInteraction, .curveEaseOut], animations: {
             self.coverView.alpha = 1
             self.descView.alpha = 1
+            self.view.layoutIfNeeded()
         }) { (done) in
         }
     }

@@ -14,6 +14,7 @@ class WelcomeVC: UIViewController, AlertProvider {
     @IBAction func raceTapped(_ sender: UIButton) {
         let gameVC = GameTimeVC()
         navigationController?.show(gameVC, sender: nil)
+//        showTestPopup()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
