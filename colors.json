@@ -64,6 +64,21 @@
 			"hex": "66023c",
 			"name": "Tyrian purple",
 			"desc": "It was made of snail shells and was created smashing specific crustaceans out of the city walls, because the smell was unbearable. Cleopatra was obsessed with this colours. Caesar, while visiting her, loved the color that much that decided to make it the official roman royal color. There were laws in Rome that banned people from wearing this purple. In fact, only emperors could wear it."
+		},
+		{
+			"hex": "e3a857",
+			"name": "Indian yellow",
+			"desc": "Created in a remote Indian village where they fed cows nothing but mango leaves, which left them malnourished but made their pee bright shining yellow. People would collect the pee, dry it, press it into cakes, and eventually some of it would arrive in Europe. That’s the story, anyway. As far as I can tell, no one actually knows for sure how it was made, nor have they really tried. If you buy 'Indian Yellow' today, you’re getting an artificial mixture of things that aren’t mango-cow-urine. What a rip off."
+		},
+		{
+			"hex": "50c878",
+			"name": "Emerald",
+			"desc": "Also known as Scheele green, was created in 1775 using copper arsenic. It was widely used at that time to paint bedrooms and house interiors. Legends says that this particular color could be the cause of Napoleon's death. In his last days in St Elena's Island, he was sleeping in a emerald painted bedroom. The island humidity could have slowly released arsenic, poisoning the air."
+		},
+		{
+			"hex": "e32636",
+			"name": "Rose Madder",
+			"desc": "Used in Turkey and in Europe since 1730, this color was used for interior coverings of king Louis XIV's apartments. To create this color, was used ox's blood and sheep's manure, mixed with various different oils."
 		}
 	]
 }
