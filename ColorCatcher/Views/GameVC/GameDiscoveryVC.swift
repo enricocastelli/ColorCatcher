@@ -12,6 +12,7 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ColorManager.shared.tolerance = 0.7
         scoreView.isHidden = true
         updateColorView()
     }
@@ -40,7 +41,7 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     }
     
     func nextColor() {
-        ColorManager.updateColorWithLevel()
+        ColorManager.shared.updateColorWithLevel()
         updateColorView()
         CaptureManager.shared.startSession()
     }
@@ -48,7 +49,7 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     override func colorRecognized() {
         CaptureManager.shared.stopSession()
         storeLevelUp()
-        guard let currentColor = ColorManager.currentColor else { return }
+        guard let currentColor = ColorManager.shared.currentColor else { return }
         showPopup(titleString: currentColor.name, message: currentColor.desc, button: "")
     }
 }

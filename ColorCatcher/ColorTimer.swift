@@ -23,7 +23,7 @@ class ColorTimer {
     func fire() {
         seconds = 60
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            guard self.seconds >= 0 else {
+            guard self.seconds >= 1 else {
                 timer.invalidate()
                 self.delegate?.gameIsOver()
                 self.resetTime()

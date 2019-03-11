@@ -14,11 +14,12 @@ class WelcomeVC: UIViewController, AlertProvider {
     @IBAction func raceTapped(_ sender: UIButton) {
         let gameVC = GameTimeVC()
         navigationController?.show(gameVC, sender: nil)
-//        showTestPopup()
+        //        showTestPopup()
+        //        showTimePopup()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
-        ColorManager.fetchColors(success: {
+        ColorManager.shared.fetchColors(success: {
             self.pushToDiscoveryMode()
         }) {
             self.showGeneralError()

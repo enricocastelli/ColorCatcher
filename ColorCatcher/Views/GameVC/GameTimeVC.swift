@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AudioToolbox
 
 class GameTimeVC: GameVC {
     
@@ -19,6 +18,7 @@ class GameTimeVC: GameVC {
         super.startGame()
         ColorTimer.shared.delegate = self
         ColorTimer.shared.fire()
+        ColorManager.shared.tolerance = 0.8
         secondLabel.text = "\(ColorTimer.shared.seconds)"
     }
     
@@ -28,7 +28,6 @@ class GameTimeVC: GameVC {
     
     override func gameIsOver() {
         super.gameIsOver()
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         showAlert(title: "Time is up!", message: "You catched \(points) colors", firstButton: "Yay", secondButton: nil, firstCompletion: {
             self.navigationController?.popToRootViewController(animated: true)
         }, secondCompletion: nil)
@@ -43,6 +42,7 @@ class GameTimeVC: GameVC {
         ColorTimer.shared.invalidate()
         super.backTapped(sender)
     }
+    
 }
 
 extension GameTimeVC: ColorTimerDelegate {

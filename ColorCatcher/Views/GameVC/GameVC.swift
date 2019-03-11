@@ -8,10 +8,11 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 
 // Superclass of the game happening
-class GameVC: UIViewController, AlertProvider {
+class GameVC: UIViewController, AlertProvider, FlashProvider {
 
     @IBOutlet weak var expectedColorView: RoundView!
     @IBOutlet weak var colorView: RoundView!
@@ -38,7 +39,7 @@ class GameVC: UIViewController, AlertProvider {
         super.viewDidLoad()
         CaptureManager.shared.delegate = self
         setLayers()
-        ColorManager.delegate = self
+        ColorManager.shared.delegate = self
         let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (timer) in
             self.startGame()
         })
@@ -50,7 +51,7 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     func startGame() {
-        ColorManager.updateColor()
+        ColorManager.shared.updateColor()
         updateColorView()
         CaptureManager.shared.startSession()
     }
@@ -68,14 +69,14 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     func colorRecognized() {
-        ColorManager.updateColor()
-        updatePoints()
-        updateColorView()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        showTimePopup()
+        CaptureManager.shared.stopSession()
     }
     
     func updateColorView() {
-        expectedColorView.backgroundColor = ColorManager.goalColor
-        progressView.progressTintColor = ColorManager.goalColor
+        expectedColorView.backgroundColor = ColorManager.shared.goalColor
+        progressView.progressTintColor = ColorManager.shared.goalColor
     }
     
     func updatePoints() {
@@ -83,8 +84,8 @@ class GameVC: UIViewController, AlertProvider {
         pointLabel.text = "\(points)"
     }
     
-    func updateProximityString() {
-        progressView.progress = ColorManager.getColorProximity()
+    func updateProximityString(_ proximity: Float) {
+        progressView.progress = proximity*1.25
     }
     
     func gameIsOver() {
@@ -92,13 +93,15 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     func new() {
-        ColorManager.updateColor()
+        ColorManager.shared.updateColor()
         updateColorView()
         CaptureManager.shared.startSession()
     }
     
     func didDismissPopup() {
         //TO BE OVERRIDEN
+        updatePoints()
+        new()
     }
     
     @IBAction func helpTapped(_ sender: UIButton) {
@@ -110,8 +113,9 @@ class GameVC: UIViewController, AlertProvider {
     }
     
     @IBAction func infoTapped(_ sender: UIButton) {
-        didRecognisedColor()
+        openFlash()
     }
+    
 }
 
 extension GameVC: ColorRecognitionDelegate {
@@ -120,8 +124,8 @@ extension GameVC: ColorRecognitionDelegate {
         colorRecognized()
     }
     
-    func didUpdateProximity(_ proximity: Float) {
-        self.updateProximityString()
+    func didUpdateProximity(_ proximity: Double) {
+        updateProximityString(Float(proximity))
     }
 }
 
@@ -132,9 +136,15 @@ extension GameVC: CaptureManagerDelegate {
             self.imageView.image = image
             if let color = image.averageColor {
                 self.colorView.backgroundColor = color
-                ColorManager.checkColor(color)
+                ColorManager.shared.checkColor(color)
             }
         }
+    }
+    
+    func failedInitializingSession() {
+        showAlert(title: "Ops", message: "Seems like camera is not working.", firstButton: "Ok", secondButton: nil, firstCompletion: {
+            self.navigationController?.popViewController(animated: true)
+        }, secondCompletion: nil)
     }
 }
 

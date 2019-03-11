@@ -17,6 +17,7 @@ class PopupVC: UIViewController {
     var titleString: String
     var message: String
     var button: String
+    var shouldAutoRemove: Bool = false
     weak var delegate: PopupDelegate?
 
     @IBOutlet weak var descView: UIView!
@@ -29,7 +30,6 @@ class PopupVC: UIViewController {
     @IBOutlet weak var descTrailing: NSLayoutConstraint!
     @IBOutlet weak var descBottom: NSLayoutConstraint!
     @IBOutlet weak var descTop: NSLayoutConstraint!
-    
     
     
     init(titleString: String, message: String, button: String) {
@@ -56,9 +56,16 @@ class PopupVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showColors()
+        if shouldAutoRemove {
+            let _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { (_) in
+                self.tappedView()
+            }
+        } else {
+            animateFadeIn()
+        }
     }
     
-    @objc func tappedView(_ sender: UITapGestureRecognizer) {
+    @objc func tappedView() {
         self.removePopup {
             self.delegate?.didDismissPopup()
             self.dismiss(animated: false, completion: {
@@ -78,13 +85,16 @@ class PopupVC: UIViewController {
         opAnim.duration = 0.3
         opAnim.fromValue = 1
         opAnim.toValue = 0
+        opAnim.isRemovedOnCompletion = false
         masterView.layer.add(opAnim, forKey: "opacity")
-        coverView.layer.add(opAnim, forKey: "opacity")
-        descView.layer.add(opAnim, forKey: "opacity")
-        
         masterView.layer.opacity = 0
-        coverView.layer.opacity = 0
-        descView.layer.opacity = 0
+
+        if !shouldAutoRemove {
+            coverView.layer.add(opAnim, forKey: "opacity")
+            descView.layer.add(opAnim, forKey: "opacity")
+            coverView.layer.opacity = 0
+            descView.layer.opacity = 0
+        }
 
         let _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { (_) in
             done()
@@ -92,7 +102,6 @@ class PopupVC: UIViewController {
     }
     
     func showColors() {
-        animateFadeIn()
         addColorLayer(.left)
         let _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { (_) in
             self.addColorLayer(.right)
@@ -163,13 +172,14 @@ class PopupVC: UIViewController {
     
     private func positionForDirection(_ direction: PopupDirection) -> CGPoint {
         let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
         switch direction {
         case .left:
-            return CGPoint(x: width/6, y: 80)
+            return CGPoint(x: width/6, y: shouldAutoRemove ? height/2.5 : height/5)
         case .center:
-            return CGPoint(x: width/3.5, y: 130)
+            return CGPoint(x: width/3.5, y: shouldAutoRemove ? height/2.1 : height/4)
         case .right:
-            return CGPoint(x: width/2, y: 85)
+            return CGPoint(x: width/2, y: shouldAutoRemove ? height/2.6 : height/5.2)
         }
     }
     

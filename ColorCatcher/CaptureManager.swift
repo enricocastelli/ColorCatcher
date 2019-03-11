@@ -11,25 +11,29 @@ import AVFoundation
 
 protocol CaptureManagerDelegate: class {
     func processCapturedImage(image: UIImage)
+    func failedInitializingSession()
 }
 
 class CaptureManager: NSObject {
     
     internal static let shared = CaptureManager()
     weak var delegate: CaptureManagerDelegate?
-    var session: AVCaptureSession?
+    var session: AVCaptureSession
     
     override init() {
-        super.init()
         session = AVCaptureSession()
+
+        super.init()
         
         //setup input
-        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else { return }
+        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+            Logger("No camera Found")
+            return }
         do {
             let input = try AVCaptureDeviceInput(device: device)
-            session?.addInput(input)
+            session.addInput(input)
         } catch {
-            print("error")
+            Logger("Error in input AV")
         }
         
         //setup output
@@ -37,16 +41,21 @@ class CaptureManager: NSObject {
         
         output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable as! String: kCVPixelFormatType_32BGRA]
         output.setSampleBufferDelegate(self, queue: DispatchQueue.main)
-        session?.addOutput(output)
+        session.addOutput(output)
     }
     
     
     func startSession() {
-        session?.startRunning()
+        //test simulator
+//        guard !session.inputs.isEmpty else {
+//            delegate?.failedInitializingSession()
+//            return
+//        }
+        session.startRunning()
     }
     
     func stopSession() {
-        session?.stopRunning()
+        session.stopRunning()
     }
     
     func getImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) ->UIImage? {
