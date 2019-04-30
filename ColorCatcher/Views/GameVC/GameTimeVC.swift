@@ -14,6 +14,11 @@ class GameTimeVC: GameVC {
         super.viewDidLoad()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ColorTimer.shared.invalidate()
+    }
+    
     override func startGame() {
         super.startGame()
         ColorTimer.shared.delegate = self

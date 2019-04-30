@@ -11,14 +11,66 @@ import UIKit
 
 class WelcomeVC: UIViewController, AlertProvider {
     
+    @IBOutlet weak var quickGameButton: UIButton!
+    @IBOutlet weak var discoveryButton: UIButton!
+
+    @IBOutlet weak var firstStack: UIStackView!
+    @IBOutlet weak var secondStack: UIStackView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let touch = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.view.addGestureRecognizer(touch)
+        firstStack.transform = CGAffineTransform(scaleX: 0, y: 0)
+        secondStack.transform = CGAffineTransform(scaleX: 0, y: 0)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewTapped()
+    }
+    
+    @objc func viewTapped() {
+        reset()
+    }
+    
+    func reset() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.firstStack.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.secondStack.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            self.discoveryButton.alpha = 1
+            self.quickGameButton.alpha = 1
+        }) { (done) in
+            self.firstStack.transform = CGAffineTransform(scaleX: 0, y: 0)
+            self.secondStack.transform = CGAffineTransform(scaleX: 0, y: 0)
+        }
+    }
+    
     @IBAction func raceTapped(_ sender: UIButton) {
-        let gameVC = GameTimeVC()
-        navigationController?.show(gameVC, sender: nil)
-        //        showTestPopup()
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            self.firstStack.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.quickGameButton.alpha = 0
+        }) { (done) in }
         //        showTimePopup()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+            self.secondStack.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.discoveryButton.alpha = 0
+        }) { (done) in }
+    }
+    
+    @IBAction func albumTapped(_ sender: Any) {
+        ColorManager.shared.fetchColors(success: {
+            self.pushToCollection()
+        }) {
+            self.showGeneralError()
+        }
+    }
+    
+    @IBAction func netTapped(_ sender: Any) {
         ColorManager.shared.fetchColors(success: {
             self.pushToDiscoveryMode()
         }) {
@@ -26,41 +78,27 @@ class WelcomeVC: UIViewController, AlertProvider {
         }
     }
     
-    func didDismissPopup() {
+    @IBAction func infiniteTapped(_ sender: Any) {
+        let gameVC = GameVC()
+        navigationController?.show(gameVC, sender: nil)
     }
     
+    @IBAction func timeTapped(_ sender: Any) {
+        let gameVC = GameTimeVC()
+        navigationController?.show(gameVC, sender: nil)
+    }
+    
+    
+    func didDismissPopup() {}
+    
+    
+    func pushToCollection() {
+        let collectionVC = ColorCollectionVC()
+        navigationController?.show(collectionVC, sender: nil)
+    }
     
     func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()
         navigationController?.show(gameVC, sender: nil)
-    }
-    
-    func animation() {
-        let center = self.view.center.x
-        let red = UIImageView(frame: CGRect(x: center - 100, y: 90, width: 120, height: 120))
-        let blue = UIImageView(frame: CGRect(x: center - 50, y: 140, width: 150, height: 150))
-        let green = UIImageView(frame: CGRect(x: center - 40, y: 50, width: 160, height: 160))
-        
-        red.image = UIImage(named: "red")
-        green.image = UIImage(named: "green")
-        blue.image = UIImage(named: "blue")
-
-        red.alpha = 0
-        blue.alpha = 0
-        green.alpha = 0
-
-
-        self.view.addSubview(red)
-        self.view.addSubview(green)
-        self.view.addSubview(blue)
-
-        UIView.animate(withDuration: 0.3, animations: {
-            red.alpha = 1
-        }) { (done) in
-            green.alpha = 1
-            UIView.animate(withDuration: 0.2, animations: {
-                blue.alpha = 1
-            })
-        }
     }
 }

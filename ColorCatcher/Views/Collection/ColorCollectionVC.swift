@@ -15,6 +15,7 @@ class ColorCollectionVC: UIViewController, StoreProvider, AlertProvider {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var gradientView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +27,10 @@ class ColorCollectionVC: UIViewController, StoreProvider, AlertProvider {
         return retrieveLevel() > index
     }
     
+    
+    @IBAction func backTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension ColorCollectionVC: UICollectionViewDataSource {
@@ -45,9 +50,19 @@ extension ColorCollectionVC: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                                 willDisplay cell: UICollectionViewCell,
+                                 forItemAt indexPath: IndexPath) {
+        guard let colorCell = cell as? ColorCollectionCell else { return }
+        colorCell.animateShowing()
+    }
+    
+    
     func didDismissPopup() {
         
     }
+    
+    
     
 }
 
@@ -56,7 +71,7 @@ extension ColorCollectionVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard hasColorIndex(indexPath.row) else { return }
         let color = ColorManager.shared.colors[indexPath.row]
-        showAlert(title: color.name, message: color.desc
-            , firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
+        showPopup(titleString: color.name, message: color.desc
+            , button: "Ok")
     }
 }

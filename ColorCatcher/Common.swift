@@ -93,7 +93,11 @@ extension CGFloat {
     }
     
     var string: String {
-        return String(format: "%.1f", (self))
+        return String(format: "%.0f", (self))
+    }
+    
+    var stringPercentage: String {
+        return "\(String(format: "%.0f", (self))) %"
     }
 }
 

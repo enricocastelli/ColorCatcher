@@ -14,18 +14,16 @@ import AudioToolbox
 // Superclass of the game happening
 class GameVC: UIViewController, AlertProvider, FlashProvider {
 
-    @IBOutlet weak var expectedColorView: RoundView!
-    @IBOutlet weak var colorView: RoundView!
+    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var colorViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var progressView: UIProgressView!
     
-    @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var progressView: RoundProgress!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     
     var points = 0
+    var gameStarted = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: String(describing: GameVC.self), bundle: nil)
@@ -38,11 +36,11 @@ class GameVC: UIViewController, AlertProvider, FlashProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         CaptureManager.shared.delegate = self
-        setLayers()
         ColorManager.shared.delegate = self
-        let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (timer) in
-            self.startGame()
-        })
+        progressView.alpha = 0
+        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
+            CaptureManager.shared.startSession()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -53,30 +51,20 @@ class GameVC: UIViewController, AlertProvider, FlashProvider {
     func startGame() {
         ColorManager.shared.updateColor()
         updateColorView()
-        CaptureManager.shared.startSession()
-    }
-    
-    func setLayers() {
-        expectedColorView.layer.borderColor = UIColor.white.cgColor
-        expectedColorView.layer.borderWidth = 1
-        colorView.layer.borderColor = UIColor.black.cgColor
-        colorView.layer.borderWidth = 1
-        progressView.layer.borderWidth = 1
-        progressView.layer.borderColor = UIColor.black.cgColor
-        progressView.layer.cornerRadius = 20
-        progressView.clipsToBounds = true
-        progressView.progress = 0
+        UIView.animate(withDuration: 0.4) {
+            self.progressView.alpha = 1
+        }
     }
     
     func colorRecognized() {
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        vibrate()
         showTimePopup()
         CaptureManager.shared.stopSession()
     }
     
     func updateColorView() {
-        expectedColorView.backgroundColor = ColorManager.shared.goalColor
-        progressView.progressTintColor = ColorManager.shared.goalColor
+        frameView.backgroundColor = ColorManager.shared.goalColor
+        progressView.progressColor = ColorManager.shared.goalColor
     }
     
     func updatePoints() {
@@ -85,7 +73,7 @@ class GameVC: UIViewController, AlertProvider, FlashProvider {
     }
     
     func updateProximityString(_ proximity: Float) {
-        progressView.progress = proximity*1.25
+        progressView.updateProgress(CGFloat(proximity*1.25))
     }
     
     func gameIsOver() {
@@ -102,6 +90,10 @@ class GameVC: UIViewController, AlertProvider, FlashProvider {
         //TO BE OVERRIDEN
         updatePoints()
         new()
+    }
+    
+    func vibrate() {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     @IBAction func helpTapped(_ sender: UIButton) {
@@ -132,6 +124,10 @@ extension GameVC: ColorRecognitionDelegate {
 extension GameVC: CaptureManagerDelegate {
     
     func processCapturedImage(image: UIImage) {
+        if !gameStarted {
+            gameStarted = true
+            startGame()
+        }
         DispatchQueue.main.async {
             self.imageView.image = image
             if let color = image.averageColor {

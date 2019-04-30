@@ -11,7 +11,6 @@ import MultipeerConnectivity
 
 class MultiplayerVC: UIViewController, AlertProvider {
     
-    @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var multiplayer: MultiplayerManager!
     var players : Array<MCPeerID> = []

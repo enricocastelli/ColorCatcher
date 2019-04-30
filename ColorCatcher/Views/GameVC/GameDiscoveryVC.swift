@@ -12,14 +12,15 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ColorManager.shared.tolerance = 0.7
-        scoreView.isHidden = true
+        ColorManager.shared.tolerance = 0.85
         updateColorView()
     }
     
     override func startGame() {
         updateColorView()
-        CaptureManager.shared.startSession()
+        UIView.animate(withDuration: 0.4) {
+            self.progressView.alpha = 1
+        }
     }
     
     override func new() {
@@ -35,11 +36,6 @@ class GameDiscoveryVC: GameVC, StoreProvider {
         reset()
     }
     
-    override func infoTapped(_ sender: UIButton) {
-        let collectionVC = ColorCollectionVC()
-        navigationController?.show(collectionVC, sender: nil)
-    }
-    
     func nextColor() {
         ColorManager.shared.updateColorWithLevel()
         updateColorView()
@@ -47,6 +43,7 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     }
     
     override func colorRecognized() {
+        vibrate()
         CaptureManager.shared.stopSession()
         storeLevelUp()
         guard let currentColor = ColorManager.shared.currentColor else { return }
