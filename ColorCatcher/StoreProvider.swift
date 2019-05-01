@@ -12,6 +12,7 @@ import UIKit
 enum StoreKeys: String {
 
     case Level
+    case FirstLaunch
     
 }
 
@@ -19,6 +20,7 @@ protocol StoreProvider {
     func storeLevelUp()
     func retrieveLevel() -> Int
     func reset()
+    func isFirstLaunch() -> Bool
 }
 
 extension StoreProvider {
@@ -38,6 +40,15 @@ extension StoreProvider {
 
     func reset() {
         UserDefaults.standard.setValue(0, forKey: StoreKeys.Level.rawValue)
+    }
+    
+    func isFirstLaunch() -> Bool {
+        return true
+        if let _ = UserDefaults.standard.value(forKey: StoreKeys.FirstLaunch.rawValue) as? Bool {
+            return false
+        }
+        UserDefaults.standard.setValue(false, forKey: StoreKeys.FirstLaunch.rawValue)
+        return true
     }
     
 }

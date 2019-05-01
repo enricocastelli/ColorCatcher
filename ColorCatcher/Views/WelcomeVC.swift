@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-class WelcomeVC: UIViewController, AlertProvider {
+class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     @IBOutlet weak var quickGameButton: UIButton!
     @IBOutlet weak var discoveryButton: UIButton!
@@ -39,8 +43,14 @@ class WelcomeVC: UIViewController, AlertProvider {
     }
     
     @IBAction func raceTapped(_ sender: UIButton) {
-        let gameVC = GameTimeVC()
-        navigationController?.show(gameVC, sender: nil)
+        guard !isFirstLaunch() else {
+            let helpVC = HelpVC(.race) {
+                self.pushToRaceMode()
+            }
+            self.navigationController?.present(helpVC, animated: true, completion: nil)
+            return
+        }
+        pushToRaceMode()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
@@ -56,11 +66,31 @@ class WelcomeVC: UIViewController, AlertProvider {
         let multiVC = MultiplayerVC()
         navigationController?.show(multiVC, sender: nil)
     }
+
+    @IBAction func collectionTapped(_ sender: UIButton) {
+        ColorManager.shared.fetchColors(success: {
+            self.pushToCollectionMode()
+        }) {
+            self.showGeneralError()
+        }
+    }
+        
+        private func pushToRaceMode() {
+            let gameVC = GameTimeVC()
+            navigationController?.show(gameVC, sender: nil)
+        }
     
-    func didDismissPopup() {}
+    private func pushToCollectionMode() {
+        let collection = ColorCollectionVC()
+        navigationController?.show(collection, sender: nil)
+    }
     
-    func pushToDiscoveryMode() {
+    private func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()
         navigationController?.show(gameVC, sender: nil)
     }
+    
+    func didDismissPopup() {}
+
+    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpVC: UIViewController {
+class HelpVC: ColorController {
 
     
     @IBOutlet weak var image: UIImageView!
@@ -16,11 +16,13 @@ class HelpVC: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     var model: HelpModel
+    var continuation: (()->Void)
+
     
-    init(_ model: HelpModel) {
+    init(_ model: HelpModel, continuation: @escaping() ->()) {
         self.model = model
+        self.continuation = continuation
         super.init(nibName: String(describing: HelpVC.self), bundle: nil)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,16 +31,28 @@ class HelpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         textView.text = model.mainText()
         image.image = model.image()
         continueButton.setTitle(model.buttonText(), for: .normal)
+        setButton(continueButton)
+        image.tintColor = UIColor.lightGray
+    }
+    
+    func setButton(_ button: UIButton) {
+        button.layer.cornerRadius = 20
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowColor = UIColor.lightGray.cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowRadius = 4
     }
     
     @IBAction func continueTapped(_ sender: UIButton) {
+        self.continuation()
+        self.dismiss(animated: true) {}
     }
     
-    @IBAction func backTapped(_ sender: UIButton) {
+    override func backTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -80,13 +94,13 @@ enum HelpModel {
     func buttonText() -> String {
         switch self {
         case .race:
-            return "Go!"
+            return "Ok let's go!"
         case .discovery:
-            return "Go!"
+            return "Ok let's go!"
         case .multi:
-            return "Go!"
+            return "Ok let's go!"
         case .help:
-            return "Go!"
+            return "Ok let's go!"
         }
     }
 }

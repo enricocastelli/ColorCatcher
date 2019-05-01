@@ -65,7 +65,7 @@ extension MultiGameVC: MultiplayerDelegate {
     func opponentDidScorePoint() {
         oppPoints += 1
         DispatchQueue.main.async {
-            self.secondLabel.text = "\(self.oppPoints)"
+            // to do where to show opponent points?
         }
     }
     

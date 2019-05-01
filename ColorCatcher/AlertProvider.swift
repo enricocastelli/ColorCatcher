@@ -38,8 +38,8 @@ extension AlertProvider where Self: UIViewController {
         showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
     
-    func showPopup(titleString: String, message: String, button: String) {
-        let popup = PopupVC(titleString: titleString, message: message, button: button)
+    func showPopup(titleString: String, message: String, button: String, color: UIColor? = nil) {
+        let popup = PopupVC(titleString: titleString, message: message, button: button, color: color)
         popup.view.backgroundColor = UIColor.clear
         popup.modalPresentationStyle = .overCurrentContext
         popup.delegate = self

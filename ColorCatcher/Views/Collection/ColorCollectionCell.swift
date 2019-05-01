@@ -39,6 +39,7 @@ class ColorCollectionCell: UICollectionViewCell {
     func animateShowing() {
         colorView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         colorView.alpha = 0
+        
         let rand = Double(arc4random_uniform(5) + 2)/10
         UIView.animate(withDuration: rand, delay: 0, options: .curveEaseOut, animations: {
             self.colorView.transform = CGAffineTransform(scaleX: 1, y: 1)

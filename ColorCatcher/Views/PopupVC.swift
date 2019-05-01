@@ -17,6 +17,7 @@ class PopupVC: UIViewController {
     var titleString: String
     var message: String
     var button: String
+    var color: UIColor?
     var shouldAutoRemove: Bool = false
     weak var delegate: PopupDelegate?
 
@@ -32,10 +33,11 @@ class PopupVC: UIViewController {
     @IBOutlet weak var descTop: NSLayoutConstraint!
     
     
-    init(titleString: String, message: String, button: String) {
+    init(titleString: String, message: String, button: String, color: UIColor? = nil) {
         self.titleString = titleString
         self.message = message
         self.button = button
+        self.color = color
         super.init(nibName: String(describing: PopupVC.self), bundle: nil)
     }
     
@@ -143,7 +145,7 @@ class PopupVC: UIViewController {
         let rect = CGRect(x: position.x, y: position.y, width: randomSize, height: randomSize)
         let bezier = UIBezierPath(ovalIn: rect)
         
-        let mainColor = randomAnimationColor()
+        let mainColor = color ?? randomAnimationColor()
 
         let shapeLayer = newShapeLayer(mainColor, initialPath: initialBezier, finalPath: bezier)
         masterView.layer.addSublayer(shapeLayer)
@@ -213,7 +215,7 @@ class PopupVC: UIViewController {
         
         let dropLayer = CAShapeLayer()
         dropLayer.path = initialPath.cgPath
-        dropLayer.fillColor = color.withAlphaComponent(randomAlpha).cgColor
+        dropLayer.fillColor = color.variateColor().withAlphaComponent(randomAlpha).cgColor
         
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = duration

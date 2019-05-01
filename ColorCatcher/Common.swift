@@ -84,6 +84,15 @@ extension UIColor {
         }
         return nil
     }
+    
+    // create a similar color to the one passed (random values)
+    func variateColor() -> UIColor {
+        guard let hue = self.getHue() else {
+            return self
+        }
+        let randomHue = 0.005 - CGFloat(arc4random_uniform(10))/1000
+        return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation, brightness: hue.brightness, alpha: 1)
+    }
 }
 
 extension CGFloat {
@@ -98,6 +107,39 @@ extension CGFloat {
     
     var stringPercentage: String {
         return "\(String(format: "%.0f", (self))) %"
+    }
+}
+
+extension UINavigationController {
+    
+    func insertHelpTransition(_ duration: Double) {
+        let transition = CATransition()
+        transition.duration = duration
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromTop
+        self.view.layer.add(transition, forKey: "pushIn")
+    }
+    
+    func removeHelpTransition(_ duration: Double) {
+        let transition = CATransition()
+        transition.duration = duration
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.view.layer.add(transition, forKey: "pushOut")
+    }
+}
+
+extension UILabel {
+    
+    func changeText(_ newText : String) {
+        let anim = CATransition()
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        anim.type = CATransitionType.push
+        anim.duration = 0.4
+        if self.text != newText {
+            self.layer.add(anim, forKey: "change")
+            self.text = newText
+        }
     }
 }
 
@@ -123,3 +165,4 @@ func Logger(_ error: String) {
 func prettyPrint(data: Data?) {
     print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
 }
+

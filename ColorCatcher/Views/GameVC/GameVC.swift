@@ -12,15 +12,13 @@ import AudioToolbox
 
 
 // Superclass of the game happening
-class GameVC: UIViewController, AlertProvider, FlashProvider, UIGestureRecognizerDelegate {
+class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var progressView: RoundProgress!
-    @IBOutlet weak var pointLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
     
     var points = 0
     var gameStarted = false
@@ -84,7 +82,7 @@ class GameVC: UIViewController, AlertProvider, FlashProvider, UIGestureRecognize
     
     func updatePoints() {
         points += 1
-        pointLabel.text = "\(points)"
+        updateCatchesLabel(points)
     }
     
     func updateProximityString(_ proximity: Float) {
@@ -115,9 +113,6 @@ class GameVC: UIViewController, AlertProvider, FlashProvider, UIGestureRecognize
         new()
     }
     
-    @IBAction func backTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func infoTapped(_ sender: UIButton) {
         openFlash()

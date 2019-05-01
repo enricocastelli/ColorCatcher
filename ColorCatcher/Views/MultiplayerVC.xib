@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultiplayerVC" customModule="ColorCatcher" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="DBC-mH-ov8" id="sEM-Xx-rIr"/>
                 <outlet property="tableView" destination="Tg6-ak-U9d" id="mX4-FY-arJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Sdc-2B-5eu"/>
             </connections>
@@ -21,17 +22,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-ak-U9d">
-                    <rect key="frame" x="0.0" y="36" width="375" height="631"/>
+                    <rect key="frame" x="0.0" y="62.5" width="375" height="604.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBC-mH-ov8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DBC-mH-ov8" secondAttribute="height" multiplier="6:1" id="bRI-t2-enl"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="DBC-mH-ov8" secondAttribute="trailing" id="9rx-mR-3Sa"/>
+                <constraint firstItem="DBC-mH-ov8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NxT-jB-uSi"/>
+                <constraint firstItem="DBC-mH-ov8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TGv-eZ-Wvr"/>
                 <constraint firstAttribute="trailing" secondItem="Tg6-ak-U9d" secondAttribute="trailing" id="Vhd-Qq-uCF"/>
-                <constraint firstItem="Tg6-ak-U9d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="lKp-AY-xAX"/>
+                <constraint firstItem="Tg6-ak-U9d" firstAttribute="top" secondItem="DBC-mH-ov8" secondAttribute="bottom" id="jGX-S1-0Zv"/>
                 <constraint firstAttribute="bottom" secondItem="Tg6-ak-U9d" secondAttribute="bottom" id="lq3-PT-PX1"/>
                 <constraint firstItem="Tg6-ak-U9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q1I-xK-ceg"/>
             </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>
         </view>
     </objects>
 </document>

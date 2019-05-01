@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "colorCollectionCell"
 
-class ColorCollectionVC: UIViewController, StoreProvider, AlertProvider {
+class ColorCollectionVC: ColorController, AlertProvider {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,15 +21,27 @@ class ColorCollectionVC: UIViewController, StoreProvider, AlertProvider {
 
         let cellNib = UINib(nibName: String(describing: ColorCollectionCell.self), bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
+        configureBarForCollection()
     }
     
     func hasColorIndex(_ index: Int) -> Bool {
         return retrieveLevel() > index
     }
     
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        velocity.y > 0 ? hideBar() : showBar()
+    }
     
-    @IBAction func backTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    private func hideBar() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+            self.barView?.alpha = 0
+        }, completion: nil)
+    }
+    
+    private func showBar() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+            self.barView?.alpha = 1
+        }, completion: nil)
     }
 }
 
@@ -61,9 +73,6 @@ extension ColorCollectionVC: UICollectionViewDataSource {
     func didDismissPopup() {
         
     }
-    
-    
-    
 }
 
 extension ColorCollectionVC: UICollectionViewDelegate {
@@ -72,6 +81,6 @@ extension ColorCollectionVC: UICollectionViewDelegate {
         guard hasColorIndex(indexPath.row) else { return }
         let color = ColorManager.shared.colors[indexPath.row]
         showPopup(titleString: color.name, message: color.desc
-            , button: "Ok")
+            , button: "Ok", color: UIColor(hex: color.hex))
     }
 }

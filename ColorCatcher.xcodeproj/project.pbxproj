@@ -22,7 +22,8 @@
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
 		1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */; };
-		1CA72EF22278C9FE00BBA004 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA72EF12278C9FE00BBA004 /* NavBar.swift */; };
+		1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA72EF12278C9FE00BBA004 /* ColorController.swift */; };
+		1CA72EF422799A6000BBA004 /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA72EF322799A6000BBA004 /* BarView.xib */; };
 		1CBFB62F2230103600CB46C5 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB62E2230103600CB46C5 /* PopupVC.swift */; };
 		1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBFB6302230607300CB46C5 /* PopupVC.xib */; };
 		1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */; };
@@ -32,7 +33,6 @@
 		1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093A22241AE200F4C812 /* WelcomeVC.swift */; };
 		1CCB093D222428F900F4C812 /* MultiplayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093C222428F900F4C812 /* MultiplayerVC.swift */; };
 		1CCB093F22242BEF00F4C812 /* MultiplayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */; };
-		1CEC1C332239004F00448542 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEC1C322239004F00448542 /* GradientView.swift */; };
 		1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF122269FD700F62935 /* GameTimeVC.swift */; };
 		1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */; };
 		1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF52226A01400F62935 /* MultiGameVC.swift */; };
@@ -64,7 +64,8 @@
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
 		1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerVC.xib; sourceTree = "<group>"; };
-		1CA72EF12278C9FE00BBA004 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		1CA72EF12278C9FE00BBA004 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		1CA72EF322799A6000BBA004 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
 		1CBFB62E2230103600CB46C5 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		1CBFB6302230607300CB46C5 /* PopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupVC.xib; sourceTree = "<group>"; };
 		1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculator.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		1CCB093A22241AE200F4C812 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		1CCB093C222428F900F4C812 /* MultiplayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerVC.swift; sourceTree = "<group>"; };
 		1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerManager.swift; sourceTree = "<group>"; };
-		1CEC1C322239004F00448542 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		1CFE9EF122269FD700F62935 /* GameTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeVC.swift; sourceTree = "<group>"; };
 		1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDiscoveryVC.swift; sourceTree = "<group>"; };
 		1CFE9EF52226A01400F62935 /* MultiGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGameVC.swift; sourceTree = "<group>"; };
@@ -186,10 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				1C67DA322237A454004FC715 /* RoundProgress.swift */,
-				1CA72EF12278C9FE00BBA004 /* NavBar.swift */,
-				1CEC1C322239004F00448542 /* GradientView.swift */,
 				1CBFB62E2230103600CB46C5 /* PopupVC.swift */,
 				1CBFB6302230607300CB46C5 /* PopupVC.xib */,
+				1CA72EF12278C9FE00BBA004 /* ColorController.swift */,
+				1CA72EF322799A6000BBA004 /* BarView.xib */,
 				1CA50F7E22788694009D6424 /* HelpVC */,
 				1CBFB6352231603300CB46C5 /* Collection */,
 				1CBFB6342231602600CB46C5 /* GameVC */,
@@ -267,6 +267,7 @@
 				1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */,
 				1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */,
 				1C151923221FFF9F00226042 /* LaunchScreen.storyboard in Resources */,
+				1CA72EF422799A6000BBA004 /* BarView.xib in Resources */,
 				1CCB09392223E5AF00F4C812 /* testVCViewController.xib in Resources */,
 				1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */,
 				1C151920221FFF9F00226042 /* Assets.xcassets in Resources */,
@@ -299,8 +300,7 @@
 				1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */,
 				1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */,
 				1C15192B2220002D00226042 /* Common.swift in Sources */,
-				1CA72EF22278C9FE00BBA004 /* NavBar.swift in Sources */,
-				1CEC1C332239004F00448542 /* GradientView.swift in Sources */,
+				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
 				1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */,
 				1C15D99B22257EBE0037F8D6 /* ColorManager.swift in Sources */,

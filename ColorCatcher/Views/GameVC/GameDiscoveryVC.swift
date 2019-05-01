@@ -8,12 +8,13 @@
 
 import UIKit
 
-class GameDiscoveryVC: GameVC, StoreProvider {
+class GameDiscoveryVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ColorManager.shared.tolerance = 0.85
         updateColorView()
+        configureBarForDiscovery()
     }
     
     override func startGame() {
@@ -24,9 +25,7 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     }
     
     override func new() {
-        let collection = ColorCollectionVC()
-        navigationController?.show(collection, sender: nil)
-//        colorRecognized()
+        colorRecognized()
     }
     
     override func didDismissPopup() {
@@ -47,8 +46,9 @@ class GameDiscoveryVC: GameVC, StoreProvider {
         vibrate()
         CaptureManager.shared.stopSession()
         storeLevelUp()
+        updateCollectionLabel()
         guard let currentColor = ColorManager.shared.currentColor else { return }
-        showPopup(titleString: currentColor.name, message: currentColor.desc, button: "")
+        showPopup(titleString: currentColor.name, message: currentColor.desc, button: "", color: UIColor(hex: currentColor.hex))
     }
 }
 

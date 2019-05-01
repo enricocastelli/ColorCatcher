@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorCollectionVC" customModule="ColorCatcher" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="0MC-2T-kn1" id="F54-bK-sCC"/>
-                <outlet property="gradientView" destination="VJ8-J5-q6h" id="UUL-Gy-zJo"/>
+                <outlet property="containerView" destination="VJ8-J5-q6h" id="uXE-bu-aIy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xoS-wK-0hP"/>
             </connections>
         </placeholder>
@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0MC-2T-kn1">
-                    <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="36" minimumInteritemSpacing="10" id="n2l-6i-EJh">
                         <size key="itemSize" width="90" height="160"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="16"/>
+                        <inset key="sectionInset" minX="16" minY="64" maxX="16" maxY="16"/>
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="DKe-Kb-Ug6"/>
@@ -36,27 +36,10 @@
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ8-J5-q6h" customClass="GradientView" customModule="ColorCatcher" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGs-OQ-7Ur">
-                            <rect key="frame" x="16" y="24" width="46" height="46"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="sGs-OQ-7Ur" secondAttribute="height" multiplier="1:1" id="oFD-Iv-uXg"/>
-                            </constraints>
-                            <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                            <state key="normal" image="leftBlack"/>
-                            <connections>
-                                <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="5XF-I4-DoG"/>
-                            </connections>
-                        </button>
-                    </subviews>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="sGs-OQ-7Ur" firstAttribute="leading" secondItem="VJ8-J5-q6h" secondAttribute="leading" constant="16" id="ByW-1F-Blq"/>
-                        <constraint firstAttribute="width" secondItem="VJ8-J5-q6h" secondAttribute="height" multiplier="4:1" id="Ho0-rJ-m9V"/>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sGs-OQ-7Ur" secondAttribute="bottom" constant="24" id="XGB-3f-ewP"/>
-                        <constraint firstItem="sGs-OQ-7Ur" firstAttribute="centerY" secondItem="VJ8-J5-q6h" secondAttribute="centerY" id="kkS-Ju-wC8"/>
-                        <constraint firstItem="sGs-OQ-7Ur" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VJ8-J5-q6h" secondAttribute="top" constant="24" id="x5Q-rN-jS5"/>
+                        <constraint firstAttribute="width" secondItem="VJ8-J5-q6h" secondAttribute="height" multiplier="6:1" id="J6q-aE-7Qm"/>
                     </constraints>
                 </view>
             </subviews>
@@ -65,7 +48,7 @@
                 <constraint firstAttribute="trailing" secondItem="VJ8-J5-q6h" secondAttribute="trailing" id="FyF-8z-6Tl"/>
                 <constraint firstItem="VJ8-J5-q6h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Lo7-68-8HK"/>
                 <constraint firstItem="VJ8-J5-q6h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="P4w-b6-FfT"/>
-                <constraint firstItem="0MC-2T-kn1" firstAttribute="top" secondItem="VJ8-J5-q6h" secondAttribute="bottom" id="cQw-k9-4MG"/>
+                <constraint firstItem="0MC-2T-kn1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="anX-GH-fmm"/>
                 <constraint firstAttribute="bottom" secondItem="0MC-2T-kn1" secondAttribute="bottom" id="dqe-WQ-IVp"/>
                 <constraint firstAttribute="trailing" secondItem="0MC-2T-kn1" secondAttribute="trailing" id="hmo-wB-Ihb"/>
                 <constraint firstItem="0MC-2T-kn1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hyq-gE-FLE"/>
@@ -73,7 +56,4 @@
             <point key="canvasLocation" x="138.40000000000001" y="129.98500749625188"/>
         </view>
     </objects>
-    <resources>
-        <image name="leftBlack" width="512" height="512"/>
-    </resources>
 </document>

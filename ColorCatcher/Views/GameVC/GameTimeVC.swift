@@ -12,6 +12,7 @@ class GameTimeVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBarForRace()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -24,11 +25,10 @@ class GameTimeVC: GameVC {
         ColorTimer.shared.delegate = self
         ColorTimer.shared.fire()
         ColorManager.shared.tolerance = 0.8
-        secondLabel.text = "\(ColorTimer.shared.seconds)"
     }
     
     func updateTimerLabel(_ seconds: Int) {
-        secondLabel.text = "\(seconds)"
+        updateTimeLabel(seconds)
     }
     
     override func gameIsOver() {
