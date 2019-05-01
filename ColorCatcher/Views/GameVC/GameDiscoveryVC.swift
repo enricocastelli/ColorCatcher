@@ -24,7 +24,9 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     }
     
     override func new() {
-        colorRecognized()
+        let collection = ColorCollectionVC()
+        navigationController?.show(collection, sender: nil)
+//        colorRecognized()
     }
     
     override func didDismissPopup() {
@@ -33,7 +35,6 @@ class GameDiscoveryVC: GameVC, StoreProvider {
     
     override func backTapped(_ sender: UIButton) {
         super.backTapped(sender)
-        reset()
     }
     
     func nextColor() {

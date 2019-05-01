@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.isIdleTimerDisabled = true
+        let nav = window?.rootViewController as? UINavigationController
+        nav?.navigationItem.setHidesBackButton(true, animated: false)
         return true
     }
 

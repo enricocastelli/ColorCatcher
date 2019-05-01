@@ -13,64 +13,37 @@ class WelcomeVC: UIViewController, AlertProvider {
     
     @IBOutlet weak var quickGameButton: UIButton!
     @IBOutlet weak var discoveryButton: UIButton!
-
-    @IBOutlet weak var firstStack: UIStackView!
-    @IBOutlet weak var secondStack: UIStackView!
-    
+    @IBOutlet var multiButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let touch = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        self.view.addGestureRecognizer(touch)
-        firstStack.transform = CGAffineTransform(scaleX: 0, y: 0)
-        secondStack.transform = CGAffineTransform(scaleX: 0, y: 0)
+        setView()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewTapped()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
-    @objc func viewTapped() {
-        reset()
+    func setView() {
+        setButton(quickGameButton)
+        setButton(discoveryButton)
+        setButton(multiButton)
     }
     
-    func reset() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.firstStack.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            self.secondStack.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            self.discoveryButton.alpha = 1
-            self.quickGameButton.alpha = 1
-        }) { (done) in
-            self.firstStack.transform = CGAffineTransform(scaleX: 0, y: 0)
-            self.secondStack.transform = CGAffineTransform(scaleX: 0, y: 0)
-        }
+    func setButton(_ button: UIView) {
+        button.layer.cornerRadius = 20
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowColor = UIColor.lightGray.cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowRadius = 4
     }
     
     @IBAction func raceTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            self.firstStack.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.quickGameButton.alpha = 0
-        }) { (done) in }
-        //        showTimePopup()
+        let gameVC = GameTimeVC()
+        navigationController?.show(gameVC, sender: nil)
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            self.secondStack.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.discoveryButton.alpha = 0
-        }) { (done) in }
-    }
-    
-    @IBAction func albumTapped(_ sender: Any) {
-        ColorManager.shared.fetchColors(success: {
-            self.pushToCollection()
-        }) {
-            self.showGeneralError()
-        }
-    }
-    
-    @IBAction func netTapped(_ sender: Any) {
         ColorManager.shared.fetchColors(success: {
             self.pushToDiscoveryMode()
         }) {
@@ -78,24 +51,13 @@ class WelcomeVC: UIViewController, AlertProvider {
         }
     }
     
-    @IBAction func infiniteTapped(_ sender: Any) {
-        let gameVC = GameVC()
-        navigationController?.show(gameVC, sender: nil)
-    }
     
-    @IBAction func timeTapped(_ sender: Any) {
-        let gameVC = GameTimeVC()
-        navigationController?.show(gameVC, sender: nil)
+    @IBAction func multiTapped(_ sender: UIButton) {
+        let multiVC = MultiplayerVC()
+        navigationController?.show(multiVC, sender: nil)
     }
-    
     
     func didDismissPopup() {}
-    
-    
-    func pushToCollection() {
-        let collectionVC = ColorCollectionVC()
-        navigationController?.show(collectionVC, sender: nil)
-    }
     
     func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()

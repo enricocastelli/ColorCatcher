@@ -25,11 +25,8 @@ class CaptureManager: NSObject {
 
         super.init()
         
-        //setup input
-        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
-            Logger("No camera Found")
-            return }
         do {
+            let device = try getDevice()
             let input = try AVCaptureDeviceInput(device: device)
             session.addInput(input)
         } catch {
@@ -44,6 +41,32 @@ class CaptureManager: NSObject {
         session.addOutput(output)
     }
     
+    func zoom(_ velocity: CGFloat) {
+        do {
+            let device = try getDevice()
+            let maxZoomFactor = device.activeFormat.videoMaxZoomFactor
+            let pinchVelocityDividerFactor: CGFloat = 5.0
+            try device.lockForConfiguration()
+            defer { device.unlockForConfiguration() }
+            
+            let desiredZoomFactor = device.videoZoomFactor + atan2(velocity, pinchVelocityDividerFactor)
+            device.videoZoomFactor = max(1.0, min(desiredZoomFactor, maxZoomFactor))
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func resetZoom() {
+        do {
+            let device = try getDevice()
+            try device.lockForConfiguration()
+            defer { device.unlockForConfiguration() }
+            device.videoZoomFactor = 1
+        } catch {
+            print(error)
+        }
+    }
+    
     
     func startSession() {
         //test simulator
@@ -55,6 +78,7 @@ class CaptureManager: NSObject {
     }
     
     func stopSession() {
+        resetZoom()
         session.stopRunning()
     }
     
@@ -78,6 +102,12 @@ class CaptureManager: NSObject {
         let image = UIImage(cgImage: cgImage, scale: 1, orientation:.right)
         CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly)
         return image
+    }
+    
+    func getDevice() throws -> AVCaptureDevice {
+        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+            throw NSError(domain: "", code: 0, userInfo: nil)}
+        return device
     }
 }
 

@@ -12,7 +12,7 @@ import AudioToolbox
 
 
 // Superclass of the game happening
-class GameVC: UIViewController, AlertProvider, FlashProvider {
+class GameVC: UIViewController, AlertProvider, FlashProvider, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var frameView: UIView!
@@ -41,11 +41,26 @@ class GameVC: UIViewController, AlertProvider, FlashProvider {
         let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
             CaptureManager.shared.startSession()
         }
+        addTapGesture()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         CaptureManager.shared.stopSession()
+    }
+    
+    func addTapGesture() {
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
+        pinch.delegate = self
+        let pinchView = UIView(frame: imageView.frame)
+        self.view.addSubview(pinchView)
+        pinchView.addGestureRecognizer(pinch)
+    }
+    
+    @objc func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
+        if sender.state == .changed {
+            CaptureManager.shared.zoom(sender.velocity)
+        }
     }
     
     func startGame() {
