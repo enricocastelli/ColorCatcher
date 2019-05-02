@@ -17,8 +17,8 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var progressView: RoundProgress!
+    @IBOutlet weak var skipButton: UIButton!
     
     var points = 0
     var gameStarted = false
@@ -33,12 +33,10 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CaptureManager.shared.startSession()
         CaptureManager.shared.delegate = self
         ColorManager.shared.delegate = self
         progressView.alpha = 0
-        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
-            CaptureManager.shared.startSession()
-        }
         addTapGesture()
     }
     

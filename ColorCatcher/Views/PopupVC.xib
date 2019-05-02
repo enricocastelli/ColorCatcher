@@ -30,7 +30,7 @@
             <subviews>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI1-8a-R5b">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kia-0u-XTN">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
@@ -96,7 +96,7 @@
                 <constraint firstItem="kia-0u-XTN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vth-9H-50d"/>
                 <constraint firstAttribute="bottom" secondItem="oI1-8a-R5b" secondAttribute="bottom" id="zYf-Kc-6ZU"/>
             </constraints>
-            <point key="canvasLocation" x="181.59999999999999" y="152.47376311844079"/>
+            <point key="canvasLocation" x="50" y="152"/>
         </view>
     </objects>
 </document>

@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameVC" customModule="ColorCatcher" customModuleProvider="target">
             <connections>
@@ -16,6 +21,7 @@
                 <outlet property="frameView" destination="v57-pq-l0B" id="8PK-a9-326"/>
                 <outlet property="imageView" destination="eH8-Zu-1QH" id="0WQ-BG-zDI"/>
                 <outlet property="progressView" destination="gTY-Sv-hlz" id="M5V-XC-0Ve"/>
+                <outlet property="skipButton" destination="45s-3i-2Ci" id="5Fq-1l-WQa"/>
                 <outlet property="view" destination="DWk-1i-u5R" id="cfE-nI-0oJ"/>
             </connections>
         </placeholder>
@@ -47,10 +53,10 @@
                     <rect key="frame" x="16" y="623" width="343" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45s-3i-2Ci">
-                            <rect key="frame" x="0.0" y="2.5" width="307" height="31"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <rect key="frame" x="0.0" y="1.5" width="307" height="33"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
                             <state key="normal" title="SKIP COLOR">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="helpTapped:" destination="-1" eventType="touchUpInside" id="QJl-YY-569"/>

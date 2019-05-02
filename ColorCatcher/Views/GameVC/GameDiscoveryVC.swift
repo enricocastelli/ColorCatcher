@@ -53,6 +53,8 @@ class GameDiscoveryVC: GameVC {
     }
     
     override func showFinishColors() {
+        CaptureManager.shared.stopSession()
+        frameView.backgroundColor = UIColor.white
         showAlert(title: "Game is Over!", message: "You finished all colors", firstButton: "Reset", secondButton: "Back", firstCompletion: {
             self.reset()
             self.backTapped(self.backArrow)

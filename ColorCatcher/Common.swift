@@ -91,7 +91,8 @@ extension UIColor {
             return self
         }
         let randomHue = 0.005 - CGFloat(arc4random_uniform(10))/1000
-        return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation, brightness: hue.brightness, alpha: 1)
+        let randomSat = 0.005 - CGFloat(arc4random_uniform(10))/1000
+        return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation + randomSat, brightness: hue.brightness, alpha: 1)
     }
 }
 
@@ -140,6 +141,25 @@ extension UILabel {
             self.layer.add(anim, forKey: "change")
             self.text = newText
         }
+    }
+}
+
+extension UIFont {
+    
+    public class func mediumFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Medium", size: size)!
+    }
+    
+    public class func regularFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Regular", size: size)!
+    }
+    
+    public class func boldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Bold", size: size)!
+    }
+    
+    public class func ultraBoldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Black", size: size)!
     }
 }
 

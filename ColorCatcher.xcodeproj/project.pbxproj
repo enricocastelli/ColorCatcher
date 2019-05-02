@@ -18,6 +18,11 @@
 		1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99D22258FE60037F8D6 /* ColorTimer.swift */; };
 		1C15D9A02225955E0037F8D6 /* AlertProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* AlertProvider.swift */; };
 		1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D9A122269D530037F8D6 /* GameVC.xib */; };
+		1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */; };
+		1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */; };
+		1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C9227B32E3004773D4 /* Brandon_med.otf */; };
+		1C4B92CE227B338E004773D4 /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C7227B32E3004773D4 /* Brandon_reg_it.otf */; };
+		1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C8227B32E3004773D4 /* Brandon_reg.otf */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
@@ -60,6 +65,11 @@
 		1C15D99D22258FE60037F8D6 /* ColorTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTimer.swift; sourceTree = "<group>"; };
 		1C15D99F2225955E0037F8D6 /* AlertProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProvider.swift; sourceTree = "<group>"; };
 		1C15D9A122269D530037F8D6 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
+		1C4B92C7227B32E3004773D4 /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg_it.otf; sourceTree = "<group>"; };
+		1C4B92C8227B32E3004773D4 /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
+		1C4B92C9227B32E3004773D4 /* Brandon_med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med.otf; sourceTree = "<group>"; };
+		1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
@@ -99,6 +109,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0E04EA227B2C24003DA1FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1C0E04F0227B2C39003DA1FB /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1C0E04F0227B2C39003DA1FB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */,
+				1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */,
+				1C4B92C9227B32E3004773D4 /* Brandon_med.otf */,
+				1C4B92C7227B32E3004773D4 /* Brandon_reg_it.otf */,
+				1C4B92C8227B32E3004773D4 /* Brandon_reg.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		1C15190C221FFF9D00226042 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +166,7 @@
 				1C15191C221FFF9D00226042 /* Main.storyboard */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
 				1C151921221FFF9F00226042 /* LaunchScreen.storyboard */,
+				1C0E04EA227B2C24003DA1FB /* Resources */,
 				1C151924221FFF9F00226042 /* Info.plist */,
 			);
 			path = ColorCatcher;
@@ -265,13 +296,18 @@
 			files = (
 				1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */,
 				1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */,
+				1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */,
+				1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */,
 				1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */,
 				1C151923221FFF9F00226042 /* LaunchScreen.storyboard in Resources */,
 				1CA72EF422799A6000BBA004 /* BarView.xib in Resources */,
+				1C4B92CE227B338E004773D4 /* Brandon_reg_it.otf in Resources */,
 				1CCB09392223E5AF00F4C812 /* testVCViewController.xib in Resources */,
 				1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */,
+				1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */,
 				1C151920221FFF9F00226042 /* Assets.xcassets in Resources */,
 				1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */,
+				1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */,
 				1C15191E221FFF9D00226042 /* Main.storyboard in Resources */,
 				1CFE9F3B22296CD600F62935 /* Mock.json in Resources */,
 				1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */,

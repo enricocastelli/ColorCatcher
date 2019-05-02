@@ -1,5 +1,4 @@
 
-
 import UIKit
 
 fileprivate enum PopupDirection {
@@ -78,8 +77,8 @@ class PopupVC: UIViewController {
     func preAnimation() {
         descView.alpha = 0
         coverView.alpha = 0
-        descTop.constant = 100
-        descBottom.constant = -100
+        descTop.constant = 700
+        descBottom.constant = -700
     }
     
     func removePopup(done: @escaping () -> ()) {
@@ -122,14 +121,17 @@ class PopupVC: UIViewController {
     }
     
     func animateFadeIn() {
-        descTop.constant = -8
-        descBottom.constant = 0
+        UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseInOut, animations: {
+            self.descTop.constant = -8
+            self.descBottom.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
         UIView.animate(withDuration: 0.7, delay: 0, options: [.allowUserInteraction, .curveEaseOut], animations: {
             self.coverView.alpha = 1
             self.descView.alpha = 1
-            self.view.layoutIfNeeded()
         }) { (done) in
         }
+        
     }
     
     private func addColorLayer(_ direction: PopupDirection) {
@@ -177,11 +179,11 @@ class PopupVC: UIViewController {
         let height = UIScreen.main.bounds.height
         switch direction {
         case .left:
-            return CGPoint(x: width/6, y: shouldAutoRemove ? height/2.5 : height/5)
+            return CGPoint(x: width/6, y: shouldAutoRemove ? height/2.5 : height/9.8)
         case .center:
-            return CGPoint(x: width/3.5, y: shouldAutoRemove ? height/2.1 : height/4)
+            return CGPoint(x: width/3.5, y: shouldAutoRemove ? height/2.1 : height/8.7)
         case .right:
-            return CGPoint(x: width/2, y: shouldAutoRemove ? height/2.6 : height/5.2)
+            return CGPoint(x: width/2, y: shouldAutoRemove ? height/2.6 : height/10)
         }
     }
     

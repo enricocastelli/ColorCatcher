@@ -32,15 +32,15 @@
                     </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9j-xB-r6R">
-                    <rect key="frame" x="16" y="198.5" width="343" height="326.5"/>
+                    <rect key="frame" x="16" y="198.5" width="343" height="366.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUg-JS-ESF">
-                    <rect key="frame" x="134.5" y="561" width="106" height="90"/>
+                    <rect key="frame" x="134.5" y="581" width="106" height="50"/>
                     <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <inset key="contentEdgeInsets" minX="36" minY="36" maxX="36" maxY="36"/>
+                    <inset key="contentEdgeInsets" minX="36" minY="16" maxX="36" maxY="16"/>
                     <state key="normal" title="Start">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -59,11 +59,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sUg-JS-ESF" secondAttribute="trailing" constant="16" id="78u-Ty-Nhd"/>
-                <constraint firstAttribute="bottom" secondItem="sUg-JS-ESF" secondAttribute="bottom" constant="16" id="BTP-lP-22G"/>
+                <constraint firstAttribute="bottom" secondItem="sUg-JS-ESF" secondAttribute="bottom" constant="36" id="BTP-lP-22G"/>
                 <constraint firstItem="v9j-xB-r6R" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BaJ-ZC-NFg"/>
                 <constraint firstItem="sUg-JS-ESF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CRx-dH-hUP"/>
                 <constraint firstAttribute="trailing" secondItem="GkT-6y-Y51" secondAttribute="trailing" id="O22-te-hB8"/>
-                <constraint firstItem="sUg-JS-ESF" firstAttribute="top" secondItem="v9j-xB-r6R" secondAttribute="bottom" constant="36" id="U0s-KH-1nZ"/>
+                <constraint firstItem="sUg-JS-ESF" firstAttribute="top" secondItem="v9j-xB-r6R" secondAttribute="bottom" constant="16" id="U0s-KH-1nZ"/>
                 <constraint firstItem="GkT-6y-Y51" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uvr-qn-f9c"/>
                 <constraint firstItem="T6e-Tm-ZWr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cbH-zF-EBY"/>
                 <constraint firstItem="GkT-6y-Y51" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ei9-Ek-4W5"/>
