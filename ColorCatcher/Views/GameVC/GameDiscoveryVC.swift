@@ -13,6 +13,7 @@ class GameDiscoveryVC: GameVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         ColorManager.shared.tolerance = 0.85
+        nextColor()
         updateColorView()
         configureBarForDiscovery()
     }
@@ -49,6 +50,15 @@ class GameDiscoveryVC: GameVC {
         updateCollectionLabel()
         guard let currentColor = ColorManager.shared.currentColor else { return }
         showPopup(titleString: currentColor.name, message: currentColor.desc, button: "", color: UIColor(hex: currentColor.hex))
+    }
+    
+    override func showFinishColors() {
+        showAlert(title: "Game is Over!", message: "You finished all colors", firstButton: "Reset", secondButton: "Back", firstCompletion: {
+            self.reset()
+            self.backTapped(self.backArrow)
+        }) {
+            self.backTapped(self.backArrow)
+        }
     }
 }
 

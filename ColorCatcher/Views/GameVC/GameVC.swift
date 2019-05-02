@@ -105,6 +105,9 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
         new()
     }
     
+    //TO BE OVERRIDEN in discovery mode
+    func showFinishColors() {}
+    
     func vibrate() {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
@@ -128,6 +131,11 @@ extension GameVC: ColorRecognitionDelegate {
     
     func didUpdateProximity(_ proximity: Double) {
         updateProximityString(Float(proximity))
+    }
+    
+    
+    func didFinishColors() {
+        showFinishColors()
     }
 }
 

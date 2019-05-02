@@ -13,6 +13,7 @@ import UIKit
 protocol ColorRecognitionDelegate: class {
     func didRecognisedColor()
     func didUpdateProximity(_ proximity: Double)
+    func didFinishColors()
 }
 
 class ColorManager: NSObject, StoreProvider, ColorCalculator {
@@ -22,11 +23,7 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     var userColor = UIColor.white
     var tolerance: Double = 0.8
     
-    var colors = [ColorModel]() {
-        didSet {
-            updateColorWithLevel()
-        }
-    }
+    var colors = [ColorModel]()
     var currentColor: ColorModel?
     
     weak  var delegate: ColorRecognitionDelegate?
@@ -47,7 +44,10 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     
     func updateColorWithLevel() {
         let level = ColorManager().retrieveLevel()
-        guard level < colors.count else { return }
+        guard level < colors.count else {
+            delegate?.didFinishColors()
+            return
+        }
         currentColor = colors[level]
         goalColor = UIColor(hex: currentColor!.hex)
     }
@@ -60,7 +60,6 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
         }) { (error) in
             failure()
         }
-        
     }
 }
 
