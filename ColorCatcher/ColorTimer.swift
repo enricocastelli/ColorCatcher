@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ColorTimerDelegate: class {
-    func gameIsOver()
+    func timerIsExpired()
     func timerUpdate(_ seconds: Int)
 }
 
@@ -25,7 +25,7 @@ class ColorTimer {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             guard self.seconds >= 1 else {
                 timer.invalidate()
-                self.delegate?.gameIsOver()
+                self.delegate?.timerIsExpired()
                 self.resetTime()
                 return
             }
@@ -43,14 +43,12 @@ class ColorTimer {
         delegate?.timerUpdate(seconds)
     }
     
-    func resetTime() {
-        seconds = 60
-    }
-    
     func invalidate() {
         timer.invalidate()
     }
 
-    
+    private func resetTime() {
+        seconds = 60
+    }
     
 }

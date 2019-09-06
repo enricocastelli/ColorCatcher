@@ -12,8 +12,9 @@ private let reuseIdentifier = "colorCollectionCell"
 
 class ColorCollectionVC: ColorController, AlertProvider {
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    var oldY: CGFloat  = 0
+    var barHidden = false
     
     @IBOutlet weak var gradientView: UIView!
     override func viewDidLoad() {
@@ -28,20 +29,34 @@ class ColorCollectionVC: ColorController, AlertProvider {
         return retrieveLevel() > index
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        velocity.y > 0 ? hideBar() : showBar()
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY > oldY {
+            hideBar()
+        } else {
+            showBar()
+        }
+        if offsetY > 0 && offsetY < 553 {
+            oldY = scrollView.contentOffset.y
+        }
     }
     
     private func hideBar() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        guard barHidden == false else { return }
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             self.barView?.alpha = 0
-        }, completion: nil)
+        }, completion: { (done) in
+            self.barHidden = true
+        })
     }
     
     private func showBar() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+        guard barHidden == true else { return }
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             self.barView?.alpha = 1
-        }, completion: nil)
+        }, completion: { (done) in
+            self.barHidden = false
+        })
     }
 }
 

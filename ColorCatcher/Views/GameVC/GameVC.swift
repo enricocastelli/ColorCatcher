@@ -87,10 +87,6 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
         progressView.updateProgress(CGFloat(proximity*1.25))
     }
     
-    func gameIsOver() {
-        CaptureManager.shared.stopSession()
-    }
-    
     func new() {
         ColorManager.shared.updateColor()
         updateColorView()

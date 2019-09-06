@@ -51,7 +51,7 @@ class RoundProgress: UIView {
         self.layer.addSublayer(progressLayer)
     }
     
-    func setLabel() {
+    private func setLabel() {
         proximityLabel.frame = self.bounds
         proximityLabel.textColor = progressColor
         proximityLabel.textAlignment = .center

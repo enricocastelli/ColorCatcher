@@ -25,7 +25,7 @@ extension ColorCalculator {
         let goalC = toXYZ(goalColor)
         let userC = toXYZ(userColor)
         let deltaE = colorProximity(userC, goalC)
-        let prox = (40 - deltaE)/45
+        let prox = (40 - deltaE)/40
         guard prox > 0 else { return 0 }
         return prox
     }

@@ -43,14 +43,17 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
     }
     
     @IBAction func raceTapped(_ sender: UIButton) {
-        guard !isFirstLaunch() else {
-            let helpVC = HelpVC(.race) {
-                self.pushToRaceMode()
-            }
-            self.navigationController?.present(helpVC, animated: true, completion: nil)
-            return
-        }
-        pushToRaceMode()
+        let test = EyeProximityTestVC()
+        self.navigationController?.show(test, sender: nil)
+        return
+//        guard !isFirstLaunch() else {
+//            let helpVC = HelpVC(.race) {
+//                self.pushToRaceMode()
+//            }
+//            self.navigationController?.present(helpVC, animated: true, completion: nil)
+//            return
+//        }
+//        pushToRaceMode()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {

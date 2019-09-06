@@ -31,13 +31,6 @@ class GameTimeVC: GameVC {
         updateTimeLabel(seconds)
     }
     
-    override func gameIsOver() {
-        super.gameIsOver()
-        showAlert(title: "Time is up!", message: "You catched \(points) colors", firstButton: "Yay", secondButton: nil, firstCompletion: {
-            self.navigationController?.popToRootViewController(animated: true)
-        }, secondCompletion: nil)
-    }
-    
     override func helpTapped(_ sender: UIButton) {
         super.helpTapped(sender)
         ColorTimer.shared.applyPenalty()
@@ -51,6 +44,13 @@ class GameTimeVC: GameVC {
 }
 
 extension GameTimeVC: ColorTimerDelegate {
+    
+    func timerIsExpired() {
+        CaptureManager.shared.stopSession()
+        showAlert(title: "Time is up!", message: "You catched \(points) colors", firstButton: "Yay", secondButton: nil, firstCompletion: {
+            self.navigationController?.popToRootViewController(animated: true)
+        }, secondCompletion: nil)
+    }
     
     func timerUpdate(_ seconds: Int) {
         updateTimerLabel(seconds)

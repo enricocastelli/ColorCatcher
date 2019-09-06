@@ -74,7 +74,6 @@ class MultiplayerManager: NSObject {
         self.session.disconnect()
     }
     
-    //MARK:- TABLEVIEW STUFF
     
     func connect(_ peerID: MCPeerID) {
         serviceBrowser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 10)

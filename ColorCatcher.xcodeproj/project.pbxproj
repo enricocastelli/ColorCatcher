@@ -18,6 +18,8 @@
 		1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99D22258FE60037F8D6 /* ColorTimer.swift */; };
 		1C15D9A02225955E0037F8D6 /* AlertProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* AlertProvider.swift */; };
 		1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D9A122269D530037F8D6 /* GameVC.xib */; };
+		1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */; };
+		1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */; };
 		1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */; };
 		1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */; };
 		1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C9227B32E3004773D4 /* Brandon_med.otf */; };
@@ -65,6 +67,8 @@
 		1C15D99D22258FE60037F8D6 /* ColorTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTimer.swift; sourceTree = "<group>"; };
 		1C15D99F2225955E0037F8D6 /* AlertProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProvider.swift; sourceTree = "<group>"; };
 		1C15D9A122269D530037F8D6 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeProximityTestVC.swift; sourceTree = "<group>"; };
+		1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyeProximityTestVC.xib; sourceTree = "<group>"; };
 		1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
 		1C4B92C7227B32E3004773D4 /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg_it.otf; sourceTree = "<group>"; };
 		1C4B92C8227B32E3004773D4 /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				1C151917221FFF9D00226042 /* ColorCatcher */,
 				1C151916221FFF9D00226042 /* Products */,
+				1C0E04EA227B2C24003DA1FB /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +171,6 @@
 				1C15191C221FFF9D00226042 /* Main.storyboard */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
 				1C151921221FFF9F00226042 /* LaunchScreen.storyboard */,
-				1C0E04EA227B2C24003DA1FB /* Resources */,
 				1C151924221FFF9F00226042 /* Info.plist */,
 			);
 			path = ColorCatcher;
@@ -175,6 +179,8 @@
 		1C15D99C22258EDB0037F8D6 /* TestingColors */ = {
 			isa = PBXGroup;
 			children = (
+				1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */,
+				1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */,
 				1CCB09362223E5AF00F4C812 /* testVCViewController.swift */,
 				1CCB09372223E5AF00F4C812 /* testVCViewController.xib */,
 			);
@@ -296,6 +302,7 @@
 			files = (
 				1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */,
 				1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */,
+				1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */,
 				1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */,
 				1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */,
 				1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */,
@@ -321,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */,
 				1CBFB62F2230103600CB46C5 /* PopupVC.swift in Sources */,
 				1C15191B221FFF9D00226042 /* GameVC.swift in Sources */,
 				1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */,
