@@ -6,10 +6,9 @@
 //  Copyright © 2019 Enrico Castelli. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
+class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -26,6 +25,7 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startWelcomeAnimation()
     }
     
     func setView() {
@@ -42,21 +42,35 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
         button.layer.shadowRadius = 4
     }
     
+    func test() {
+        //        let test = EyeProximityTestVC()
+        //        self.navigationController?.show(test, sender: nil)
+        //        return
+    }
+
     @IBAction func raceTapped(_ sender: UIButton) {
-        let test = EyeProximityTestVC()
-        self.navigationController?.show(test, sender: nil)
-        return
-//        guard !isFirstLaunch() else {
-//            let helpVC = HelpVC(.race) {
-//                self.pushToRaceMode()
-//            }
-//            self.navigationController?.present(helpVC, animated: true, completion: nil)
-//            return
-//        }
-//        pushToRaceMode()
+        guard !isFirtRace() else {
+            let helpVC = HelpVC(.race) {
+                self.pushToRaceMode()
+            }
+            self.navigationController?.present(helpVC, animated: true, completion: nil)
+            return
+        }
+        pushToRaceMode()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
+        guard !isFirtRace() else {
+            let helpVC = HelpVC(.discovery) {
+                self.goToDiscovery()
+            }
+            self.navigationController?.present(helpVC, animated: true, completion: nil)
+            return
+        }
+        goToDiscovery()
+    }
+    
+    func goToDiscovery() {
         ColorManager.shared.fetchColors(success: {
             self.pushToDiscoveryMode()
         }) {
@@ -77,11 +91,11 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider {
             self.showGeneralError()
         }
     }
-        
-        private func pushToRaceMode() {
-            let gameVC = GameTimeVC()
-            navigationController?.show(gameVC, sender: nil)
-        }
+    
+    private func pushToRaceMode() {
+        let gameVC = GameTimeVC()
+        navigationController?.show(gameVC, sender: nil)
+    }
     
     private func pushToCollectionMode() {
         let collection = ColorCollectionVC()

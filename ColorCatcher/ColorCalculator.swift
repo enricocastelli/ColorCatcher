@@ -22,15 +22,16 @@ protocol ColorCalculator {
 extension ColorCalculator {
    
     func getColorProximity(_ userColor: UIColor,_ goalColor: UIColor) -> Double {
-        let goalC = toXYZ(goalColor)
-        let userC = toXYZ(userColor)
-        let deltaE = colorProximity(userC, goalC)
-        let prox = (40 - deltaE)/40
+        let goalC = toLAB(goalColor)
+        let userC = toLAB(userColor)
+        let de = deltaE(userC, goalC)
+//        let de = deltaE2000(goalC, userC)
+        let prox = (50 - de)/50
         guard prox > 0 else { return 0 }
         return prox
     }
     
-    private func colorProximity(_ userColor: LABColor,_ goalColor: LABColor) -> Double {
+    private func deltaE(_ userColor: LABColor,_ goalColor: LABColor) -> Double {
         
         let l1 = Double(userColor.l)
         let a1 = Double(userColor.a)
@@ -47,7 +48,43 @@ extension ColorCalculator {
         return deltaE
     }
     
-    private  func toXYZ(_ color: UIColor) -> LABColor {
+    private func deltaE2000(_ userColor: LABColor,_ goalColor: LABColor) -> Double {
+        
+        let l1 = Double(userColor.l)
+        let a1 = Double(userColor.a)
+        let b1 = Double(userColor.b)
+        let l2 = Double(goalColor.l)
+        let a2 = Double(goalColor.a)
+        let b2 = Double(goalColor.b)
+        
+        //WHT-L, WHT-C, WHT-H                //Weighting factors
+        
+        let xC1 = sqrt( ( a1 ^^ 2 ) + ( b1 ^^ 2 ) )
+        let xC2 = sqrt( ( a2 ^^ 2 ) + ( b2 ^^ 2 ) )
+        var xDL = l2 - l1
+        var xDC = xC2 - xC1
+        let xDE = sqrt( ( ( l1 - l2 ) * ( l1 - l2 ) )
+        + ( ( a1 - a2 ) * ( a1 - a2 ) )
+        + ( ( b1 - b2) * ( b1 - b2) ) )
+        
+        var xDH = ( xDE * xDE ) - ( xDL * xDL ) - ( xDC * xDC )
+        if ( xDH > 0 )
+        {
+            xDH = sqrt( xDH )
+        }
+        else
+        {
+            xDH = 0
+        }
+        let xSC = 1 + ( 0.045 * xC1 )
+        let xSH = 1 + ( 0.015 * xC1 )
+        xDL = xDL*1
+        xDC = xDC/xSC
+        xDH = xDH/xSH
+        return sqrt( xDL ^^ 2 + xDC ^^ 2 + xDH ^^ 2 )
+    }
+    
+    private  func toLAB(_ color: UIColor) -> LABColor {
         let R = sRGBCompand(color.redValue)
         let G = sRGBCompand(color.greenValue)
         let B = sRGBCompand(color.blueValue)

@@ -10,21 +10,23 @@ import UIKit
 import AVFoundation
 
 protocol FlashProvider {
-    func openFlash()
+    func openFlash(_ completion: @escaping(Bool) -> ())
 }
 
 extension FlashProvider {
     
-    func openFlash() {
+    func openFlash(_ completion: @escaping(Bool) -> ()) {
         guard let device = getDevice() else { return }
         if device.torchMode == AVCaptureDevice.TorchMode.on {
             device.torchMode = AVCaptureDevice.TorchMode.off
+            completion(false)
             return
         }
         do {
             try device.setTorchModeOn(level: 0.8)
+            completion(true)
         } catch {
-            print(error)
+            Logger(error.localizedDescription)
         }
         device.unlockForConfiguration()
     }

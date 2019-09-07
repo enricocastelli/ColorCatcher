@@ -36,6 +36,8 @@ class HelpVC: ColorController {
         continueButton.setTitle(model.buttonText(), for: .normal)
         setButton(continueButton)
         image.tintColor = UIColor.lightGray
+        // to ask permission for camera
+        CaptureManager.shared.startSession()
     }
     
     func setButton(_ button: UIButton) {
@@ -49,9 +51,11 @@ class HelpVC: ColorController {
     @IBAction func continueTapped(_ sender: UIButton) {
         self.continuation()
         self.dismiss(animated: true) {}
+        CaptureManager.shared.stopSession()
     }
     
     override func backTapped(_ sender: UIButton) {
+        CaptureManager.shared.stopSession()
         self.dismiss(animated: true, completion: nil)
     }
 }

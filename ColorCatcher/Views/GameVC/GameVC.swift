@@ -112,7 +112,10 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     
     
     @IBAction func infoTapped(_ sender: UIButton) {
-        openFlash()
+        openFlash { (on) in
+            sender.isSelected = on
+            sender.tintColor = on ? .blue : .darkGray
+        }
     }
     
 }

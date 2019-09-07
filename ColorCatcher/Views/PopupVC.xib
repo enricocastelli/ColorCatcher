@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupVC" customModule="ColorCatcher" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="lm2-i1-PeX" id="sPp-K8-fgI"/>
                 <outlet property="coverView" destination="oI1-8a-R5b" id="kNs-LA-I49"/>
                 <outlet property="descBottom" destination="r4H-BD-JMO" id="wey-qw-0Se"/>
                 <outlet property="descLeading" destination="Mwz-MN-ynI" id="LF2-Rq-fIA"/>
@@ -42,8 +43,22 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kia-0u-XTN">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-i1-PeX">
+                            <rect key="frame" x="164.5" y="16" width="46" height="54"/>
+                            <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                            <state key="normal" title="𝗫">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closeTapped:" destination="-1" eventType="touchUpInside" id="cND-JM-kgj"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="lm2-i1-PeX" firstAttribute="centerX" secondItem="kia-0u-XTN" secondAttribute="centerX" id="0y7-8Q-qAV"/>
+                        <constraint firstItem="lm2-i1-PeX" firstAttribute="top" secondItem="kia-0u-XTN" secondAttribute="top" constant="16" id="9A4-cY-WqJ"/>
                         <constraint firstAttribute="width" secondItem="kia-0u-XTN" secondAttribute="height" multiplier="125:94" id="Riw-CC-lxN"/>
                     </constraints>
                 </view>

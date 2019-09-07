@@ -25,6 +25,7 @@ class PopupVC: UIViewController {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
     // CONSTRAINTS
     @IBOutlet weak var descLeading: NSLayoutConstraint!
     @IBOutlet weak var descTrailing: NSLayoutConstraint!
@@ -50,6 +51,9 @@ class PopupVC: UIViewController {
         self.view.addGestureRecognizer(tap)
         titleLabel.text = titleString
         textView.text = "\(message)\n"
+        if titleString == "" {
+            closeButton.isHidden = true
+        }
         addBlurEffect()
         preAnimation()
     }
@@ -72,6 +76,10 @@ class PopupVC: UIViewController {
             self.dismiss(animated: false, completion: {
             })
         }
+    }
+    
+    @IBAction func closeTapped(_ sender: UIButton) {
+        tappedView()
     }
     
     func preAnimation() {

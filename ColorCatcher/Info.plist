@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Yes?</string>
+	<string>We need camera access to catch colors!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

@@ -35,6 +35,8 @@
 		1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBFB6302230607300CB46C5 /* PopupVC.xib */; };
 		1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */; };
 		1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB636223193BF00CB46C5 /* FlashProvider.swift */; };
+		1CC490442323EB2400759C72 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC490432323EB2400759C72 /* Animator.swift */; };
+		1CC49046232416DD00759C72 /* WelcomeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC49045232416DD00759C72 /* WelcomeAnimation.swift */; };
 		1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB09362223E5AF00F4C812 /* testVCViewController.swift */; };
 		1CCB09392223E5AF00F4C812 /* testVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCB09372223E5AF00F4C812 /* testVCViewController.xib */; };
 		1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093A22241AE200F4C812 /* WelcomeVC.swift */; };
@@ -84,6 +86,8 @@
 		1CBFB6302230607300CB46C5 /* PopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupVC.xib; sourceTree = "<group>"; };
 		1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculator.swift; sourceTree = "<group>"; };
 		1CBFB636223193BF00CB46C5 /* FlashProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashProvider.swift; sourceTree = "<group>"; };
+		1CC490432323EB2400759C72 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		1CC49045232416DD00759C72 /* WelcomeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAnimation.swift; sourceTree = "<group>"; };
 		1CCB09362223E5AF00F4C812 /* testVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVCViewController.swift; sourceTree = "<group>"; };
 		1CCB09372223E5AF00F4C812 /* testVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testVCViewController.xib; sourceTree = "<group>"; };
 		1CCB093A22241AE200F4C812 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				1C15D99A22257EBE0037F8D6 /* ColorManager.swift */,
 				1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */,
 				1C15D99D22258FE60037F8D6 /* ColorTimer.swift */,
+				1CC490432323EB2400759C72 /* Animator.swift */,
 				1CFE9F3A22296CD600F62935 /* Mock.json */,
 				1CFE9F2F2229347D00F62935 /* Views */,
 				1C15191C221FFF9D00226042 /* Main.storyboard */,
@@ -226,6 +231,7 @@
 				1CBFB62E2230103600CB46C5 /* PopupVC.swift */,
 				1CBFB6302230607300CB46C5 /* PopupVC.xib */,
 				1CA72EF12278C9FE00BBA004 /* ColorController.swift */,
+				1CC49045232416DD00759C72 /* WelcomeAnimation.swift */,
 				1CA72EF322799A6000BBA004 /* BarView.xib */,
 				1CA50F7E22788694009D6424 /* HelpVC */,
 				1CBFB6352231603300CB46C5 /* Collection */,
@@ -337,12 +343,14 @@
 				1CFE9EF82226BAF200F62935 /* Service.swift in Sources */,
 				1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */,
 				1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */,
+				1CC49046232416DD00759C72 /* WelcomeAnimation.swift in Sources */,
 				1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */,
 				1CFE9F3222293F3600F62935 /* ColorCollectionVC.swift in Sources */,
 				1C15192D222004F600226042 /* CaptureManager.swift in Sources */,
 				1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */,
 				1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */,
 				1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */,
+				1CC490442323EB2400759C72 /* Animator.swift in Sources */,
 				1C15192B2220002D00226042 /* Common.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
@@ -430,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -485,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -501,6 +509,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C49VQS6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				INFOPLIST_FILE = ColorCatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +531,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C49VQS6W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				INFOPLIST_FILE = ColorCatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -32,39 +32,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-PY-4mW">
-                                <rect key="frame" x="32" y="36" width="311" height="543"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soE-7Y-6wd">
+                                <rect key="frame" x="32" y="70" width="311" height="131"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soE-7Y-6wd">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="225"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Color" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lk-ux-GSv">
-                                                <rect key="frame" x="95.5" y="16" width="120" height="173"/>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="55"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Catcher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-cs-OLb" userLabel="Catcher">
-                                                <rect key="frame" x="95.5" y="173" width="120" height="36"/>
-                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="EkT-cs-OLb" firstAttribute="top" secondItem="8Lk-ux-GSv" secondAttribute="bottom" constant="-16" id="7Nm-D6-3qZ"/>
-                                            <constraint firstItem="EkT-cs-OLb" firstAttribute="centerX" secondItem="soE-7Y-6wd" secondAttribute="centerX" id="7pY-ka-3yv"/>
-                                            <constraint firstItem="EkT-cs-OLb" firstAttribute="trailing" secondItem="8Lk-ux-GSv" secondAttribute="trailing" id="Hqe-Zc-qsb"/>
-                                            <constraint firstItem="8Lk-ux-GSv" firstAttribute="top" secondItem="soE-7Y-6wd" secondAttribute="top" constant="16" id="O2S-v9-uow"/>
-                                            <constraint firstAttribute="bottom" secondItem="EkT-cs-OLb" secondAttribute="bottom" constant="16" id="P9I-t5-fb3"/>
-                                            <constraint firstItem="EkT-cs-OLb" firstAttribute="leading" secondItem="8Lk-ux-GSv" secondAttribute="leading" id="gqx-gx-aDC"/>
-                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8Lk-ux-GSv" secondAttribute="trailing" constant="8" id="gsr-Li-P4A"/>
-                                            <constraint firstItem="8Lk-ux-GSv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="soE-7Y-6wd" secondAttribute="leadingMargin" constant="8" id="rcZ-aU-2c8"/>
-                                            <constraint firstItem="8Lk-ux-GSv" firstAttribute="centerX" secondItem="soE-7Y-6wd" secondAttribute="centerX" id="zBh-Qe-aAd"/>
-                                        </constraints>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Color" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lk-ux-GSv">
+                                        <rect key="frame" x="95.5" y="16" width="120" height="79"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="55"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Catcher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-cs-OLb" userLabel="Catcher">
+                                        <rect key="frame" x="95.5" y="79" width="120" height="36"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EkT-cs-OLb" firstAttribute="top" secondItem="8Lk-ux-GSv" secondAttribute="bottom" constant="-16" id="7Nm-D6-3qZ"/>
+                                    <constraint firstItem="EkT-cs-OLb" firstAttribute="centerX" secondItem="soE-7Y-6wd" secondAttribute="centerX" id="7pY-ka-3yv"/>
+                                    <constraint firstItem="EkT-cs-OLb" firstAttribute="trailing" secondItem="8Lk-ux-GSv" secondAttribute="trailing" id="Hqe-Zc-qsb"/>
+                                    <constraint firstItem="8Lk-ux-GSv" firstAttribute="top" secondItem="soE-7Y-6wd" secondAttribute="top" constant="16" id="O2S-v9-uow"/>
+                                    <constraint firstAttribute="bottom" secondItem="EkT-cs-OLb" secondAttribute="bottom" constant="16" id="P9I-t5-fb3"/>
+                                    <constraint firstAttribute="width" secondItem="soE-7Y-6wd" secondAttribute="height" multiplier="311:131" id="Qt6-kf-PVz"/>
+                                    <constraint firstItem="EkT-cs-OLb" firstAttribute="leading" secondItem="8Lk-ux-GSv" secondAttribute="leading" id="gqx-gx-aDC"/>
+                                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8Lk-ux-GSv" secondAttribute="trailing" constant="8" id="gsr-Li-P4A"/>
+                                    <constraint firstItem="8Lk-ux-GSv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="soE-7Y-6wd" secondAttribute="leadingMargin" constant="8" id="rcZ-aU-2c8"/>
+                                    <constraint firstItem="8Lk-ux-GSv" firstAttribute="centerX" secondItem="soE-7Y-6wd" secondAttribute="centerX" id="zBh-Qe-aAd"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-PY-4mW">
+                                <rect key="frame" x="32" y="289" width="311" height="270"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUq-IP-hXK">
-                                        <rect key="frame" x="55.5" y="261" width="200" height="66"/>
+                                        <rect key="frame" x="55.5" y="0.0" width="200" height="66"/>
                                         <color key="backgroundColor" red="0.83760568633952248" green="0.5275493176394126" blue="0.74602498563789643" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
@@ -76,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-bS-pf9">
-                                        <rect key="frame" x="61.5" y="375" width="188" height="66"/>
+                                        <rect key="frame" x="61.5" y="102" width="188" height="66"/>
                                         <color key="backgroundColor" red="0.53062594931812568" green="0.88214015960693359" blue="0.87453010179811375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
@@ -88,7 +89,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141-lo-n0Y">
-                                        <rect key="frame" x="78.5" y="477" width="154" height="66"/>
+                                        <rect key="frame" x="78.5" y="204" width="154" height="66"/>
                                         <color key="backgroundColor" red="1" green="0.92364132243400032" blue="0.56783385356439586" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
@@ -118,11 +119,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="w3m-PY-4mW" secondAttribute="trailing" constant="16" id="Eai-4T-HtH"/>
-                            <constraint firstItem="w3m-PY-4mW" firstAttribute="top" secondItem="hw0-Xv-yH3" secondAttribute="bottom" constant="16" id="HxD-u0-O6I"/>
+                            <constraint firstItem="soE-7Y-6wd" firstAttribute="top" secondItem="Kg1-hd-gNB" secondAttribute="topMargin" constant="50" id="Hxp-YD-oZq"/>
+                            <constraint firstItem="soE-7Y-6wd" firstAttribute="leading" secondItem="Kg1-hd-gNB" secondAttribute="leadingMargin" constant="16" id="Rsm-ce-jM5"/>
                             <constraint firstAttribute="bottom" secondItem="Zj3-nm-Yho" secondAttribute="bottom" constant="8" id="UEP-aJ-p9d"/>
                             <constraint firstItem="w3m-PY-4mW" firstAttribute="leading" secondItem="Kg1-hd-gNB" secondAttribute="leadingMargin" constant="16" id="V7C-Mp-cvM"/>
-                            <constraint firstItem="Zj3-nm-Yho" firstAttribute="top" relation="greaterThanOrEqual" secondItem="w3m-PY-4mW" secondAttribute="bottom" constant="16" id="bCr-qv-2eK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="soE-7Y-6wd" secondAttribute="trailing" constant="16" id="XjF-I6-QRl"/>
+                            <constraint firstItem="Zj3-nm-Yho" firstAttribute="top" secondItem="w3m-PY-4mW" secondAttribute="bottom" constant="36" id="bCr-qv-2eK"/>
                             <constraint firstAttribute="trailing" secondItem="Zj3-nm-Yho" secondAttribute="trailing" constant="16" id="fuR-OA-BiQ"/>
+                            <constraint firstItem="w3m-PY-4mW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="soE-7Y-6wd" secondAttribute="bottom" constant="8" id="vcw-ap-dUj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="P8s-8h-wZd"/>
