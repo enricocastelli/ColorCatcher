@@ -65,6 +65,17 @@ class ColorController: UIViewController, StoreProvider {
         configureBarForDiscovery()
     }
     
+    func configureBarForMultiplayer(_ opponentName: String?) {
+        centerView.isHidden = false
+        rightView.isHidden = false
+        centerImage.image = UIImage(named: "painter-palette")
+        centerImage.tintColor = UIColor.CCWater
+        centerLabel.text = "Me: 0"
+        rightImage.image = UIImage(named: "high-five")
+        rightImage.tintColor = UIColor.CCWater
+        rightLabel.text = "Opp: 0"
+    }
+    
     private func addGradient() {
         gradient = CAGradientLayer()
         gradient!.colors = [UIColor.white.cgColor, UIColor.white.withAlphaComponent(0).cgColor]
@@ -80,6 +91,14 @@ class ColorController: UIViewController, StoreProvider {
     
     func updateCatchesLabel(_ catches: Int) {
         centerLabel.text = "\(catches) Catches"
+    }
+    
+    func updateOpponentLabel(_ catches: Int) {
+        rightLabel.text = "Opp: \(catches)"
+    }
+    
+    func updateMultiplayerLabel(_ catches: Int) {
+        centerLabel.text = "Me: \(catches)"
     }
     
     func updateCollectionLabel() {

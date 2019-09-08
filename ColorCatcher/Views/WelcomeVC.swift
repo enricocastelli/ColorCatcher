@@ -17,7 +17,7 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
     @IBOutlet weak var quickGameButton: UIButton!
     @IBOutlet weak var discoveryButton: UIButton!
     @IBOutlet var multiButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()

@@ -72,11 +72,17 @@ extension WelcomeAnimator where Self: UIViewController {
     }
     
     func animateSecondButterflies() {
-        let random = CGFloat(arc4random_uniform(13) + 14)
+        let random = CGFloat(arc4random_uniform(13) + 18)
         let but = Animator(CGRect(x: self.view.center.x, y: getButterfliesY(), width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.04 + random/1000))
         self.view.addSubview(but)
         but.tintColor = UIColor.generateCCRandom()
         but.start()
+        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
+            but.stop()
+        }
+        let _ = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
+            but.start()
+        }
         UIView.animate(withDuration: 3, delay: 5, options: [.curveEaseInOut], animations: {
             but.frame.origin.y = -self.getButterfliesY()
             but.frame.origin.x = self.view.center.x + self.getButterfliesY()
@@ -91,7 +97,7 @@ extension WelcomeAnimator where Self: UIViewController {
     
     func createPathObject() -> (path: UIBezierPath, duration: Double) {
         let path = UIBezierPath()
-        var randomDuration = (Double(arc4random_uniform(50) + 60))/10
+        var randomDuration = (Double(arc4random_uniform(40) + 45))/10
         let randomX = CGFloat(arc4random_uniform(10)) - 40
         let randomY = CGFloat(arc4random_uniform(10) + UInt32(getButterfliesY()))
         let randomCPX = CGFloat(arc4random_uniform(40) + 50)
@@ -106,7 +112,7 @@ extension WelcomeAnimator where Self: UIViewController {
             let randomCP4X = CGFloat(arc4random_uniform(100) + 200)
             let randomCP4Y = CGFloat(arc4random_uniform(100)) - 200
             path.addCurve(to: CGPoint(x: self.view.frame.width, y: 0), controlPoint1: CGPoint(x: randomCP3X, y: randomCP3Y), controlPoint2: CGPoint(x: randomCP4X, y: randomCP4Y))
-            randomDuration -= 1
+            randomDuration += 1
         }
         path.addCurve(to: CGPoint(x: self.view.frame.width + 20, y: 80), controlPoint1: CGPoint(x: randomCPX, y: randomCPY), controlPoint2: CGPoint(x: randomCP2X, y: randomCP2Y))
         return (path: path, duration: randomDuration)

@@ -27,6 +27,7 @@ class MultiGameVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureBarForMultiplayer(multiplayer.connectedPeerID?.displayName)
         multiplayer.updateDelegate(delegate: self, connectionDelegate: self)
     }
     
@@ -35,16 +36,17 @@ class MultiGameVC: GameVC {
         sendScorePoint()
     }
     
+    override func updatePoints() {
+        points += 1
+        updateMultiplayerLabel(points)
+    }
+    
     func sendScorePoint() {
-        if points < 10 {
-            multiplayer.sendPoint()
-        } else {
-            multiplayer.sendFinish()
-            showAlertEnd(winner: true)
-        }
+        multiplayer.sendPoint()
     }
     
     func showAlertEnd(winner: Bool) {
+        CaptureManager.shared.stopSession()
         let title = winner ? "YAS!" : "OUCH!"
         let message = winner ? "You just won \(points) to \(oppPoints)!" : "You lost \(oppPoints) to \(points)!"
         showAlert(title: title, message: message, firstButton: "Ok", secondButton: nil, firstCompletion: {
@@ -65,7 +67,7 @@ extension MultiGameVC: MultiplayerDelegate {
     func opponentDidScorePoint() {
         oppPoints += 1
         DispatchQueue.main.async {
-            // to do where to show opponent points?
+            self.updateOpponentLabel(self.oppPoints)
         }
     }
     

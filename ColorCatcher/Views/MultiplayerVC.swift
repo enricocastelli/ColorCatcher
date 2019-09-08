@@ -14,10 +14,20 @@ class MultiplayerVC: ColorController, AlertProvider {
     @IBOutlet weak var tableView: UITableView!
     var multiplayer: MultiplayerManager!
     var players : Array<MCPeerID> = []
+    lazy private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableView()
         setupMultiplayer()
+    }
+    
+    func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func peerIsKnown(_ peer: MCPeerID) -> Bool {
@@ -39,6 +49,13 @@ class MultiplayerVC: ColorController, AlertProvider {
     func didDismissPopup() {
     }
     
+    @objc func refresh(_ sender:AnyObject) {
+        players = []
+        multiplayer.stop()
+        multiplayer.start()
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
 }
 
 extension MultiplayerVC: MultiplayerConnectionDelegate {
@@ -50,7 +67,7 @@ extension MultiplayerVC: MultiplayerConnectionDelegate {
     }
     
     func didReceiveInvitation(peerID: MCPeerID, invitationHandler: @escaping (Bool) -> Void) {
-        showAlert(title: "Oh 🎨", message: "You just received an invitation game from: \(peerID.displayName).", firstButton: "Nope", secondButton: "Let's play!", firstCompletion: {
+        showAlert(title: "Hello! 🎨", message: "You just received an invitation game from: \(peerID.displayName).", firstButton: "Nope", secondButton: "Let's play!", firstCompletion: {
             invitationHandler(false)
         }) {
             invitationHandler(true)
@@ -58,7 +75,7 @@ extension MultiplayerVC: MultiplayerConnectionDelegate {
     }
     
     func didDisconnect() {
-        showAlert(title: "Ops", message: "Connection stopped", firstButton: "Ok", secondButton: nil, firstCompletion: {
+        showAlert(title: "Ops", message: "Connection with plaayer stopped", firstButton: "Ok", secondButton: nil, firstCompletion: {
         }, secondCompletion: nil)
     }
     
@@ -74,6 +91,7 @@ extension MultiplayerVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let peerID = players[indexPath.row]
+        multiplayer.connectedPeerID = peerID
         multiplayer.connect(peerID)
     }
 }

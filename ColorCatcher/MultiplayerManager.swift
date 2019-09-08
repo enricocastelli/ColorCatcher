@@ -36,6 +36,7 @@ class MultiplayerManager: NSObject {
     private let SessionName = "colorCatcher"
     
     let myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    var connectedPeerID: MCPeerID?
     private var serviceAdvertiser : MCNearbyServiceAdvertiser!
     private var serviceBrowser : MCNearbyServiceBrowser!
     
@@ -77,12 +78,6 @@ class MultiplayerManager: NSObject {
     
     func connect(_ peerID: MCPeerID) {
         serviceBrowser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 10)
-    }
-    
-    public func sendName(_ name: String) {
-        let playerName = UIDevice.current.name.lowercased()
-        let params = ["displayName": playerName]
-        self.sendData(params)
     }
     
     public func sendPoint() {
