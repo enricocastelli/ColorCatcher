@@ -29,7 +29,7 @@ User can go trough all the colors he catched on DiscoveryMode and clicking on it
 
   ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection1.PNG)
   
-  ![](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection2.PNG =10X10)
+  ![](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection2.PNG)
   
   ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/CollectionOpen.mov)
 
