@@ -27,11 +27,7 @@ A simple game using camera and color recognition.
 # Collection 
 User can go trough all the colors he catched on DiscoveryMode and clicking on it can check it's description and the time/place of the catch.
 
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection1.PNG)
-  
-  ![](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection2.PNG)
-  
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/CollectionOpen.gif)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection1.PNG) ![](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection2.PNG) ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/CollectionOpen.gif)
 
 
 
