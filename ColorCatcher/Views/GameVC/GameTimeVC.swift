@@ -10,6 +10,8 @@ import UIKit
 
 class GameTimeVC: GameVC {
     
+    var timerExpired = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBarForRace()
@@ -25,6 +27,16 @@ class GameTimeVC: GameVC {
         ColorTimer.shared.delegate = self
         ColorTimer.shared.fire()
         ColorManager.shared.tolerance = 0.8
+    }
+    
+    override func didDismissPopup() {
+        //TO BE OVERRIDEN
+        updatePoints()
+        guard !timerExpired else {
+            timerIsExpired()
+            return
+        }
+        new()
     }
     
     func updateTimerLabel(_ seconds: Int) {
@@ -46,6 +58,7 @@ class GameTimeVC: GameVC {
 extension GameTimeVC: ColorTimerDelegate {
     
     func timerIsExpired() {
+        timerExpired = true
         CaptureManager.shared.stopSession()
         showAlert(title: "Time is up!", message: "You catched \(points) colors", firstButton: "Yay", secondButton: nil, firstCompletion: {
             self.navigationController?.popToRootViewController(animated: true)

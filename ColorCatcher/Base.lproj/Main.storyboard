@@ -64,7 +64,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-PY-4mW">
                                 <rect key="frame" x="32" y="289" width="311" height="270"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUq-IP-hXK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUq-IP-hXK" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
                                         <rect key="frame" x="55.5" y="0.0" width="200" height="66"/>
                                         <color key="backgroundColor" red="0.83760568633952248" green="0.5275493176394126" blue="0.74602498563789643" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
@@ -76,7 +76,7 @@
                                             <action selector="raceTapped:" destination="cH8-Fz-haL" eventType="touchUpInside" id="Q8M-1f-LAO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-bS-pf9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-bS-pf9" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
                                         <rect key="frame" x="61.5" y="102" width="188" height="66"/>
                                         <color key="backgroundColor" red="0.53062594931812568" green="0.88214015960693359" blue="0.87453010179811375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
@@ -88,7 +88,7 @@
                                             <action selector="DiscoveryTapped:" destination="cH8-Fz-haL" eventType="touchUpInside" id="GxZ-CJ-3dP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141-lo-n0Y">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141-lo-n0Y" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
                                         <rect key="frame" x="78.5" y="204" width="154" height="66"/>
                                         <color key="backgroundColor" red="1" green="0.92364132243400032" blue="0.56783385356439586" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>

@@ -52,7 +52,7 @@ class CaptureManager: NSObject {
             let desiredZoomFactor = device.videoZoomFactor + atan2(velocity, pinchVelocityDividerFactor)
             device.videoZoomFactor = max(1.0, min(desiredZoomFactor, maxZoomFactor))
         } catch {
-            print(error)
+            Logger(error)
         }
     }
     
@@ -63,7 +63,7 @@ class CaptureManager: NSObject {
             defer { device.unlockForConfiguration() }
             device.videoZoomFactor = 1
         } catch {
-            print(error)
+            Logger(error)
         }
     }
     

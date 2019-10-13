@@ -14,24 +14,30 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
         return true
     }
     
-    @IBOutlet weak var quickGameButton: UIButton!
-    @IBOutlet weak var discoveryButton: UIButton!
-    @IBOutlet var multiButton: UIButton!
+    @IBOutlet weak var quickGameButton: BouncyButton!
+    @IBOutlet weak var discoveryButton: BouncyButton!
+    @IBOutlet var multiButton: BouncyButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startWelcomeAnimation()
+        setView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        quickGameButton.stop()
+        discoveryButton.stop()
+        multiButton.stop()
     }
     
     func setView() {
-        setButton(quickGameButton)
-        setButton(discoveryButton)
-        setButton(multiButton)
+        quickGameButton.set(0)
+        discoveryButton.set(0.2)
+        multiButton.set(0.4)
     }
     
     func setButton(_ button: UIView) {
@@ -71,7 +77,9 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
     }
     
     func goToDiscovery() {
+        showLoading()
         ColorManager.shared.fetchColors(success: {
+            self.stopLoading()
             self.pushToDiscoveryMode()
         }) {
             self.showGeneralError()
@@ -85,7 +93,9 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
     }
 
     @IBAction func collectionTapped(_ sender: UIButton) {
+        showLoading()
         ColorManager.shared.fetchColors(success: {
+            self.stopLoading()
             self.pushToCollectionMode()
         }) {
             self.showGeneralError()

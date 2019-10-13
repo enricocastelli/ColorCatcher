@@ -203,6 +203,10 @@ func Logger(_ error: String) {
     print("🎨⚠️ - \(error)")
 }
 
+func Logger(_ error: Error) {
+    print("🎨⚠️ - \((error as? NSError)?.description ?? "")")
+}
+
 func prettyPrint(data: Data?) {
     print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
 }
@@ -249,3 +253,18 @@ extension UIView {
     }
     
 }
+
+extension UIViewController {
+
+
+    func showLoading() {
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    func stopLoading() {
+        self.view.isUserInteractionEnabled = true
+    }
+
+    
+}
+

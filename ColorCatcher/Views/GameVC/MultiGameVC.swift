@@ -14,6 +14,7 @@ class MultiGameVC: GameVC {
     
     var oppPoints = 0
     var multiplayer: MultiplayerManager
+    var gameOver = false
     
     init(multiplayerManager: MultiplayerManager) {
         multiplayer = multiplayerManager
@@ -23,7 +24,6 @@ class MultiGameVC: GameVC {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,19 @@ class MultiGameVC: GameVC {
         multiplayer.sendPoint()
     }
     
+    override func didDismissPopup() {
+        updatePoints()
+        if points == 3 {
+            multiplayer.sendFinish()
+            showAlertEnd(winner: true)
+        } else {
+            new()
+        }
+    }
+    
+    
     func showAlertEnd(winner: Bool) {
+        gameOver = true
         CaptureManager.shared.stopSession()
         let title = winner ? "YAS!" : "OUCH!"
         let message = winner ? "You just won \(points) to \(oppPoints)!" : "You lost \(oppPoints) to \(points)!"
@@ -84,9 +96,11 @@ extension MultiGameVC: MultiplayerConnectionDelegate {
     
     func didDisconnect() {
         multiplayer.stop()
-        showAlert(title: "Ops", message: "Connection stopped!", firstButton: "Back", secondButton: nil, firstCompletion: {
-            self.navigationController?.popViewController(animated: true)
-        }, secondCompletion: nil)
+        if !gameOver {
+            showAlert(title: "Ops", message: "Connection stopped!", firstButton: "Back", secondButton: nil, firstCompletion: {
+                self.navigationController?.popViewController(animated: true)
+            }, secondCompletion: nil)
+        }
     }
     
     func didConnect() { }

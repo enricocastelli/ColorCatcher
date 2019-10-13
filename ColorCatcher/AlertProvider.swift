@@ -35,6 +35,7 @@ extension AlertProvider where Self: UIViewController {
     }
     
     func showGeneralError() {
+        stopLoading()
         showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
     
