@@ -5,7 +5,7 @@ A simple game using camera and color recognition.
 # General Gameplay: 
   User has assigned a color and through phone camera, has to point to a real color to match (with some tolerance) the assigned one.
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Welcome.PNG)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Welcome.PNG=100x20)
 
 
 # Timer mode: 
