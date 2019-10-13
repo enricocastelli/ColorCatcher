@@ -5,14 +5,14 @@ A simple game using camera and color recognition.
 # General Gameplay: 
   User has assigned a color and through phone camera, has to point to a real color to match (with some tolerance) the assigned one.
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Welcome.jpg)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Welcome.PNG)
 
 
 # Timer mode: 
   App generates a random color and the user has 1 minute to recognise as many colors he can.
   Everytime a color is catched, a new random color pops up.
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Timermode.jpg)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/TimeMode.jpg)
 
 # Discovery mode:
   User has to recognise a series of famous colors. No time here. And the matching has a higher tolerance. 
@@ -27,11 +27,11 @@ A simple game using camera and color recognition.
 # Collection 
 User can go trough all the colors he catched on DiscoveryMode and clicking on it can check it's description and the time/place of the catch.
 
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Collection1.jpg)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection1.PNG)
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Collection2.jpg)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/Collection2.PNG)
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/CollectionOpen.mov)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/CollectionOpen.mov)
 
 
 
