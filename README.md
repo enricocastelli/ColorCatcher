@@ -12,7 +12,7 @@ A simple game using camera and color recognition.
   App generates a random color and the user has 1 minute to recognise as many colors he can.
   Everytime a color is catched, a new random color pops up.
   
-  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/TimerMode.PNG)
+  ![alt text](https://github.com/enricocastelli/ColorCatcher/blob/master/media/Screenshots/TimerMode.jpg)
 
 # Discovery mode:
   User has to recognise a series of famous colors. No time here. And the matching has a higher tolerance. 
