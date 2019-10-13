@@ -2,19 +2,23 @@
 
 Small simple game using camera and color recognition.
 
-General Gameplay: 
+# General Gameplay: 
   User has assigned a color and through phone camera, has to point to a real color to match (with some tolerance) the assigned one.
   
 Main gameplay is divided in three part:
 
-- Timer mode: 
+# Timer mode: 
   App generates a random color and the user has 1 minute to recognise as many colors he can.
+  Everytime a color is catched, a new random color pops up.
 
-- Discovery mode:
-  Coming from API, user has to recognise a series of famous colors. After he recognise it, it comes a brief explanation of the color.
+# Discovery mode:
+  User has to recognise a series of famous colors. No time here. And the matching has a higher tolerance. 
+  After he recognise it, it comes a brief explanation of the color. The player's progress is saved. 
   Possible path here:
-    - colors used in famous brands (https://brandcolors.net/)
-    - set of colors used in famous paintings (http://colorlisa.com/)
+    - colors used in famous brands.
+    - set of colors used in famous paintings.
     
-- VS Mode:
+# VS Mode:
   User can connect with another phone and battle on who can find more colors.
+
+# Collection 
