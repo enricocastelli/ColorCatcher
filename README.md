@@ -19,6 +19,7 @@ Main gameplay is divided in three part:
     - set of colors used in famous paintings.
     
 # VS Mode:
-  User can connect with another phone and battle on who can find more colors.
+  User can connect with another phone and battle on who can find more colors. 
 
 # Collection 
+User can go trough all the colors he catched on DiscoveryMode and clicking on it can check it's description and the time/place of the catch.
