@@ -84,6 +84,37 @@ extension UIColor {
         }
         return nil
     }
+    
+    // create a similar color to the one passed (random values)
+    func variateColor() -> UIColor {
+        guard let hue = self.getHue() else {
+            return self
+        }
+        let randomHue = 0.005 - CGFloat(arc4random_uniform(10))/1000
+        let randomSat = 0.005 - CGFloat(arc4random_uniform(10))/1000
+        return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation + randomSat, brightness: hue.brightness, alpha: 1)
+    }
+    
+    static var CCpinky = UIColor(red: 214/255, green: 135/255, blue: 190/255, alpha: 1)
+    static var CCAqua = UIColor(red: 135/255, green: 225/255, blue: 223/255, alpha: 1)
+    static var CCYellow = UIColor(red: 255/255, green: 236/255, blue: 145/255, alpha: 1)
+    static var CCGreen = UIColor(red: 71/255, green: 201/255, blue: 60/255, alpha: 1)
+    static var CCCoral = UIColor(red: 255/255, green: 60/255, blue: 60/255, alpha: 1)
+    static var CCViola = UIColor(red: 182/255, green: 62/255, blue: 255/255, alpha: 1)
+    static var CCGreenlight = UIColor(red: 214/255, green: 255/255, blue: 186/255, alpha: 1)
+    static var CCWater = UIColor(red: 73/255, green: 136/255, blue: 255/255, alpha: 1)
+
+    static func generateCCRandom() -> UIColor {
+        let arr = [UIColor.CCpinky,
+                   UIColor.CCAqua,
+                   UIColor.CCYellow,
+                   UIColor.CCGreen,
+                   UIColor.CCCoral,
+                   UIColor.CCGreenlight,
+                   UIColor.CCViola,
+                   UIColor.CCWater]
+        return arr.randomElement()!
+    }
 }
 
 extension CGFloat {
@@ -93,7 +124,63 @@ extension CGFloat {
     }
     
     var string: String {
-        return String(format: "%.1f", (self))
+        return String(format: "%.0f", (self))
+    }
+    
+    var stringPercentage: String {
+        return "\(String(format: "%.0f", (self))) %"
+    }
+}
+
+extension UINavigationController {
+    
+    func insertHelpTransition(_ duration: Double) {
+        let transition = CATransition()
+        transition.duration = duration
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromTop
+        self.view.layer.add(transition, forKey: "pushIn")
+    }
+    
+    func removeHelpTransition(_ duration: Double) {
+        let transition = CATransition()
+        transition.duration = duration
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.view.layer.add(transition, forKey: "pushOut")
+    }
+}
+
+extension UILabel {
+    
+    func changeText(_ newText : String) {
+        let anim = CATransition()
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        anim.type = CATransitionType.push
+        anim.duration = 0.4
+        if self.text != newText {
+            self.layer.add(anim, forKey: "change")
+            self.text = newText
+        }
+    }
+}
+
+extension UIFont {
+    
+    public class func mediumFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Medium", size: size)!
+    }
+    
+    public class func regularFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Regular", size: size)!
+    }
+    
+    public class func boldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Bold", size: size)!
+    }
+    
+    public class func ultraBoldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Black", size: size)!
     }
 }
 
@@ -116,6 +203,68 @@ func Logger(_ error: String) {
     print("🎨⚠️ - \(error)")
 }
 
+func Logger(_ error: Error) {
+    print("🎨⚠️ - \((error as? NSError)?.description ?? "")")
+}
+
 func prettyPrint(data: Data?) {
     print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
 }
+
+func yesOrNo(_ options: UInt32) -> Bool {
+    return arc4random_uniform(options) == 0
+}
+
+extension UIView {
+    
+    /// add view subview that ocuppy the whole view.
+    func addContentView(_ contentView: UIView) {
+        let containerView = self
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(contentView)
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .top,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .bottom,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .right,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .right,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .left,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .left,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+    }
+    
+}
+
+extension UIViewController {
+
+
+    func showLoading() {
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    func stopLoading() {
+        self.view.isUserInteractionEnabled = true
+    }
+
+    
+}
+

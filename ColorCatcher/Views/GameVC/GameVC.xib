@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameVC" customModule="ColorCatcher" customModuleProvider="target">
+            <connections>
+                <outlet property="colorView" destination="dVH-yM-XdM" id="mV1-7v-LyE"/>
+                <outlet property="containerView" destination="EOi-0G-MeP" id="E6r-O2-yKh"/>
+                <outlet property="frameView" destination="v57-pq-l0B" id="8PK-a9-326"/>
+                <outlet property="imageView" destination="eH8-Zu-1QH" id="0WQ-BG-zDI"/>
+                <outlet property="progressView" destination="gTY-Sv-hlz" id="M5V-XC-0Ve"/>
+                <outlet property="skipButton" destination="45s-3i-2Ci" id="5Fq-1l-WQa"/>
+                <outlet property="view" destination="DWk-1i-u5R" id="cfE-nI-0oJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DWk-1i-u5R">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4vm-4L-6Pf">
+                    <rect key="frame" x="0.0" y="62.5" width="375" height="125"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v57-pq-l0B">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVH-yM-XdM">
+                            <rect key="frame" x="0.0" y="62.5" width="375" height="62.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4vm-4L-6Pf" secondAttribute="height" multiplier="3:1" id="HiD-sT-KoQ"/>
+                    </constraints>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-Zu-1QH">
+                    <rect key="frame" x="16" y="155.5" width="343" height="447.5"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cHv-lg-qgk">
+                    <rect key="frame" x="16" y="623" width="343" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45s-3i-2Ci">
+                            <rect key="frame" x="0.0" y="1.5" width="307" height="33"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                            <state key="normal" title="SKIP COLOR">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="helpTapped:" destination="-1" eventType="touchUpInside" id="QJl-YY-569"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-qC-Gn4">
+                            <rect key="frame" x="307" y="0.0" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="nX7-sP-jXg"/>
+                                <constraint firstAttribute="width" constant="36" id="x3l-MP-ZfB"/>
+                            </constraints>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="torch"/>
+                            <state key="selected" image="torchOn"/>
+                            <state key="highlighted" image="torchOn"/>
+                            <connections>
+                                <action selector="infoTapped:" destination="-1" eventType="touchUpInside" id="IfU-xY-v1e"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTY-Sv-hlz" customClass="RoundProgress" customModule="ColorCatcher" customModuleProvider="target">
+                    <rect key="frame" x="133" y="70.5" width="109" height="109"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gTY-Sv-hlz" secondAttribute="height" multiplier="1:1" id="O0j-cy-S3L"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOi-0G-MeP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EOi-0G-MeP" secondAttribute="height" multiplier="6:1" id="aV3-J1-X2f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="EOi-0G-MeP" firstAttribute="top" secondItem="DWk-1i-u5R" secondAttribute="top" id="7xN-ZP-WXx"/>
+                <constraint firstAttribute="trailing" secondItem="cHv-lg-qgk" secondAttribute="trailing" constant="16" id="E4q-X1-lfz"/>
+                <constraint firstItem="4vm-4L-6Pf" firstAttribute="top" secondItem="EOi-0G-MeP" secondAttribute="bottom" id="NMm-mp-TwF"/>
+                <constraint firstItem="gTY-Sv-hlz" firstAttribute="bottom" secondItem="4vm-4L-6Pf" secondAttribute="bottom" constant="-8" id="VK5-3G-x8c"/>
+                <constraint firstItem="eH8-Zu-1QH" firstAttribute="top" secondItem="4vm-4L-6Pf" secondAttribute="bottom" constant="-32" id="W7Y-oh-ZqG"/>
+                <constraint firstItem="gTY-Sv-hlz" firstAttribute="top" secondItem="4vm-4L-6Pf" secondAttribute="top" constant="8" id="X6V-8m-MxU"/>
+                <constraint firstAttribute="bottom" secondItem="cHv-lg-qgk" secondAttribute="bottom" constant="8" id="Xq9-gl-miE"/>
+                <constraint firstItem="cHv-lg-qgk" firstAttribute="leading" secondItem="DWk-1i-u5R" secondAttribute="leading" constant="16" id="Yty-qH-Ewa"/>
+                <constraint firstAttribute="trailing" secondItem="EOi-0G-MeP" secondAttribute="trailing" id="hJh-ct-a4f"/>
+                <constraint firstItem="cHv-lg-qgk" firstAttribute="top" secondItem="eH8-Zu-1QH" secondAttribute="bottom" constant="20" id="imR-XD-QyL"/>
+                <constraint firstAttribute="trailing" secondItem="4vm-4L-6Pf" secondAttribute="trailing" id="k5c-f4-nwL"/>
+                <constraint firstItem="eH8-Zu-1QH" firstAttribute="leading" secondItem="DWk-1i-u5R" secondAttribute="leading" constant="16" id="oRh-I7-SGE"/>
+                <constraint firstItem="4vm-4L-6Pf" firstAttribute="leading" secondItem="DWk-1i-u5R" secondAttribute="leading" id="rbN-ML-huN"/>
+                <constraint firstItem="gTY-Sv-hlz" firstAttribute="centerX" secondItem="DWk-1i-u5R" secondAttribute="centerX" id="wgw-ql-HvK"/>
+                <constraint firstItem="EOi-0G-MeP" firstAttribute="leading" secondItem="DWk-1i-u5R" secondAttribute="leading" id="xam-tB-sxY"/>
+                <constraint firstAttribute="trailing" secondItem="eH8-Zu-1QH" secondAttribute="trailing" constant="16" id="zQl-xp-vk2"/>
+            </constraints>
+            <point key="canvasLocation" x="248.80000000000001" y="135.38230884557723"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="torch" width="480" height="480"/>
+        <image name="torchOn" width="480" height="480"/>
+    </resources>
+</document>

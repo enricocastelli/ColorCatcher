@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Yes?</string>
+	<string>We need camera access to catch colors!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -44,6 +44,13 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Brandon_bld.otf</string>
+		<string>Brandon_blk.otf</string>
+		<string>Brandon_med.otf</string>
+		<string>Brandon_reg.otf</string>
 	</array>
 </dict>
 </plist>

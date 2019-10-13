@@ -11,25 +11,26 @@ import AVFoundation
 
 protocol CaptureManagerDelegate: class {
     func processCapturedImage(image: UIImage)
+    func failedInitializingSession()
 }
 
 class CaptureManager: NSObject {
     
     internal static let shared = CaptureManager()
     weak var delegate: CaptureManagerDelegate?
-    var session: AVCaptureSession?
+    var session: AVCaptureSession
     
     override init() {
-        super.init()
         session = AVCaptureSession()
+
+        super.init()
         
-        //setup input
-        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else { return }
         do {
+            let device = try getDevice()
             let input = try AVCaptureDeviceInput(device: device)
-            session?.addInput(input)
+            session.addInput(input)
         } catch {
-            print("error")
+            Logger("Error in input AV")
         }
         
         //setup output
@@ -37,16 +38,48 @@ class CaptureManager: NSObject {
         
         output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable as! String: kCVPixelFormatType_32BGRA]
         output.setSampleBufferDelegate(self, queue: DispatchQueue.main)
-        session?.addOutput(output)
+        session.addOutput(output)
+    }
+    
+    func zoom(_ velocity: CGFloat) {
+        do {
+            let device = try getDevice()
+            let maxZoomFactor = device.activeFormat.videoMaxZoomFactor
+            let pinchVelocityDividerFactor: CGFloat = 5.0
+            try device.lockForConfiguration()
+            defer { device.unlockForConfiguration() }
+            
+            let desiredZoomFactor = device.videoZoomFactor + atan2(velocity, pinchVelocityDividerFactor)
+            device.videoZoomFactor = max(1.0, min(desiredZoomFactor, maxZoomFactor))
+        } catch {
+            Logger(error)
+        }
+    }
+    
+    private func resetZoom() {
+        do {
+            let device = try getDevice()
+            try device.lockForConfiguration()
+            defer { device.unlockForConfiguration() }
+            device.videoZoomFactor = 1
+        } catch {
+            Logger(error)
+        }
     }
     
     
     func startSession() {
-        session?.startRunning()
+//        // TEST simulator
+//        guard !session.inputs.isEmpty else {
+//            delegate?.failedInitializingSession()
+//            return
+//        }
+        session.startRunning()
     }
     
     func stopSession() {
-        session?.stopRunning()
+        resetZoom()
+        session.stopRunning()
     }
     
     func getImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) ->UIImage? {
@@ -69,6 +102,12 @@ class CaptureManager: NSObject {
         let image = UIImage(cgImage: cgImage, scale: 1, orientation:.right)
         CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly)
         return image
+    }
+    
+    func getDevice() throws -> AVCaptureDevice {
+        guard let device =  AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+            throw NSError(domain: "", code: 0, userInfo: nil)}
+        return device
     }
 }
 

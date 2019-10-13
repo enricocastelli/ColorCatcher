@@ -6,60 +6,118 @@
 //  Copyright © 2019 Enrico Castelli. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class WelcomeVC: UIViewController, AlertProvider {
+class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBOutlet weak var quickGameButton: BouncyButton!
+    @IBOutlet weak var discoveryButton: BouncyButton!
+    @IBOutlet var multiButton: BouncyButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startWelcomeAnimation()
+        setView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        quickGameButton.stop()
+        discoveryButton.stop()
+        multiButton.stop()
+    }
+    
+    func setView() {
+        quickGameButton.set(0)
+        discoveryButton.set(0.2)
+        multiButton.set(0.4)
+    }
+    
+    func setButton(_ button: UIView) {
+        button.layer.cornerRadius = 20
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowColor = UIColor.lightGray.cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowRadius = 4
+    }
+    
+    func test() {
+        //        let test = EyeProximityTestVC()
+        //        self.navigationController?.show(test, sender: nil)
+        //        return
+    }
+
     @IBAction func raceTapped(_ sender: UIButton) {
-        let gameVC = GameTimeVC()
-        navigationController?.show(gameVC, sender: nil)
-//        showTestPopup()
+        guard !isFirtRace() else {
+            let helpVC = HelpVC(.race) {
+                self.pushToRaceMode()
+            }
+            self.navigationController?.present(helpVC, animated: true, completion: nil)
+            return
+        }
+        pushToRaceMode()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
-        ColorManager.fetchColors(success: {
+        guard !isFirtRace() else {
+            let helpVC = HelpVC(.discovery) {
+                self.goToDiscovery()
+            }
+            self.navigationController?.present(helpVC, animated: true, completion: nil)
+            return
+        }
+        goToDiscovery()
+    }
+    
+    func goToDiscovery() {
+        showLoading()
+        ColorManager.shared.fetchColors(success: {
+            self.stopLoading()
             self.pushToDiscoveryMode()
         }) {
             self.showGeneralError()
         }
     }
     
-    func didDismissPopup() {
+    
+    @IBAction func multiTapped(_ sender: UIButton) {
+        let multiVC = MultiplayerVC()
+        navigationController?.show(multiVC, sender: nil)
+    }
+
+    @IBAction func collectionTapped(_ sender: UIButton) {
+        showLoading()
+        ColorManager.shared.fetchColors(success: {
+            self.stopLoading()
+            self.pushToCollectionMode()
+        }) {
+            self.showGeneralError()
+        }
     }
     
+    private func pushToRaceMode() {
+        let gameVC = GameTimeVC()
+        navigationController?.show(gameVC, sender: nil)
+    }
     
-    func pushToDiscoveryMode() {
+    private func pushToCollectionMode() {
+        let collection = ColorCollectionVC()
+        navigationController?.show(collection, sender: nil)
+    }
+    
+    private func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()
         navigationController?.show(gameVC, sender: nil)
     }
     
-    func animation() {
-        let center = self.view.center.x
-        let red = UIImageView(frame: CGRect(x: center - 100, y: 90, width: 120, height: 120))
-        let blue = UIImageView(frame: CGRect(x: center - 50, y: 140, width: 150, height: 150))
-        let green = UIImageView(frame: CGRect(x: center - 40, y: 50, width: 160, height: 160))
-        
-        red.image = UIImage(named: "red")
-        green.image = UIImage(named: "green")
-        blue.image = UIImage(named: "blue")
+    func didDismissPopup() {}
 
-        red.alpha = 0
-        blue.alpha = 0
-        green.alpha = 0
-
-
-        self.view.addSubview(red)
-        self.view.addSubview(green)
-        self.view.addSubview(blue)
-
-        UIView.animate(withDuration: 0.3, animations: {
-            red.alpha = 1
-        }) { (done) in
-            green.alpha = 1
-            UIView.animate(withDuration: 0.2, animations: {
-                blue.alpha = 1
-            })
-        }
-    }
+    
 }

@@ -1,5 +1,4 @@
 
-
 import UIKit
 
 fileprivate enum PopupDirection {
@@ -17,6 +16,8 @@ class PopupVC: UIViewController {
     var titleString: String
     var message: String
     var button: String
+    var color: UIColor?
+    var shouldAutoRemove: Bool = false
     weak var delegate: PopupDelegate?
 
     @IBOutlet weak var descView: UIView!
@@ -24,6 +25,7 @@ class PopupVC: UIViewController {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
     // CONSTRAINTS
     @IBOutlet weak var descLeading: NSLayoutConstraint!
     @IBOutlet weak var descTrailing: NSLayoutConstraint!
@@ -31,11 +33,11 @@ class PopupVC: UIViewController {
     @IBOutlet weak var descTop: NSLayoutConstraint!
     
     
-    
-    init(titleString: String, message: String, button: String) {
+    init(titleString: String, message: String, button: String, color: UIColor? = nil) {
         self.titleString = titleString
         self.message = message
         self.button = button
+        self.color = color
         super.init(nibName: String(describing: PopupVC.self), bundle: nil)
     }
     
@@ -49,6 +51,9 @@ class PopupVC: UIViewController {
         self.view.addGestureRecognizer(tap)
         titleLabel.text = titleString
         textView.text = "\(message)\n"
+        if titleString == "" {
+            closeButton.isHidden = true
+        }
         addBlurEffect()
         preAnimation()
     }
@@ -56,9 +61,16 @@ class PopupVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showColors()
+        if shouldAutoRemove {
+            let _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { (_) in
+                self.tappedView()
+            }
+        } else {
+            animateFadeIn()
+        }
     }
     
-    @objc func tappedView(_ sender: UITapGestureRecognizer) {
+    @objc func tappedView() {
         self.removePopup {
             self.delegate?.didDismissPopup()
             self.dismiss(animated: false, completion: {
@@ -66,11 +78,15 @@ class PopupVC: UIViewController {
         }
     }
     
+    @IBAction func closeTapped(_ sender: UIButton) {
+        tappedView()
+    }
+    
     func preAnimation() {
         descView.alpha = 0
         coverView.alpha = 0
-        descTop.constant = 100
-        descBottom.constant = -100
+        descTop.constant = 700
+        descBottom.constant = -700
     }
     
     func removePopup(done: @escaping () -> ()) {
@@ -78,13 +94,16 @@ class PopupVC: UIViewController {
         opAnim.duration = 0.3
         opAnim.fromValue = 1
         opAnim.toValue = 0
+        opAnim.isRemovedOnCompletion = false
         masterView.layer.add(opAnim, forKey: "opacity")
-        coverView.layer.add(opAnim, forKey: "opacity")
-        descView.layer.add(opAnim, forKey: "opacity")
-        
         masterView.layer.opacity = 0
-        coverView.layer.opacity = 0
-        descView.layer.opacity = 0
+
+        if !shouldAutoRemove {
+            coverView.layer.add(opAnim, forKey: "opacity")
+            descView.layer.add(opAnim, forKey: "opacity")
+            coverView.layer.opacity = 0
+            descView.layer.opacity = 0
+        }
 
         let _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { (_) in
             done()
@@ -92,7 +111,6 @@ class PopupVC: UIViewController {
     }
     
     func showColors() {
-        animateFadeIn()
         addColorLayer(.left)
         let _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { (_) in
             self.addColorLayer(.right)
@@ -111,14 +129,17 @@ class PopupVC: UIViewController {
     }
     
     func animateFadeIn() {
-        descTop.constant = -8
-        descBottom.constant = 0
+        UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseInOut, animations: {
+            self.descTop.constant = -8
+            self.descBottom.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
         UIView.animate(withDuration: 0.7, delay: 0, options: [.allowUserInteraction, .curveEaseOut], animations: {
             self.coverView.alpha = 1
             self.descView.alpha = 1
-            self.view.layoutIfNeeded()
         }) { (done) in
         }
+        
     }
     
     private func addColorLayer(_ direction: PopupDirection) {
@@ -134,7 +155,7 @@ class PopupVC: UIViewController {
         let rect = CGRect(x: position.x, y: position.y, width: randomSize, height: randomSize)
         let bezier = UIBezierPath(ovalIn: rect)
         
-        let mainColor = randomAnimationColor()
+        let mainColor = color ?? randomAnimationColor()
 
         let shapeLayer = newShapeLayer(mainColor, initialPath: initialBezier, finalPath: bezier)
         masterView.layer.addSublayer(shapeLayer)
@@ -163,13 +184,14 @@ class PopupVC: UIViewController {
     
     private func positionForDirection(_ direction: PopupDirection) -> CGPoint {
         let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
         switch direction {
         case .left:
-            return CGPoint(x: width/6, y: 80)
+            return CGPoint(x: width/6, y: shouldAutoRemove ? height/2.5 : height/9.8)
         case .center:
-            return CGPoint(x: width/3.5, y: 130)
+            return CGPoint(x: width/3.5, y: shouldAutoRemove ? height/2.1 : height/8.7)
         case .right:
-            return CGPoint(x: width/2, y: 85)
+            return CGPoint(x: width/2, y: shouldAutoRemove ? height/2.6 : height/10)
         }
     }
     
@@ -203,7 +225,7 @@ class PopupVC: UIViewController {
         
         let dropLayer = CAShapeLayer()
         dropLayer.path = initialPath.cgPath
-        dropLayer.fillColor = color.withAlphaComponent(randomAlpha).cgColor
+        dropLayer.fillColor = color.variateColor().withAlphaComponent(randomAlpha).cgColor
         
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = duration
