@@ -1,6 +1,6 @@
 # ColorCatcher
 
-Small simple game using camera and color recognition.
+A simple game using camera and color recognition.
 
 # General Gameplay: 
   User has assigned a color and through phone camera, has to point to a real color to match (with some tolerance) the assigned one.
