@@ -39,7 +39,7 @@ extension StoreProvider {
         if let value = UserDefaults.standard.value(forKey: StoreKeys.Level.rawValue) as? Int {
             return value
         }
-        return 0
+        return 5
     }
 
     func reset() {

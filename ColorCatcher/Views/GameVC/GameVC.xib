@@ -31,23 +31,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4vm-4L-6Pf">
-                    <rect key="frame" x="0.0" y="62.5" width="375" height="125"/>
+                    <rect key="frame" x="0.0" y="62.5" width="375" height="163"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v57-pq-l0B">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVH-yM-XdM">
-                            <rect key="frame" x="0.0" y="62.5" width="375" height="62.5"/>
+                            <rect key="frame" x="0.0" y="81.5" width="375" height="81.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="4vm-4L-6Pf" secondAttribute="height" multiplier="3:1" id="HiD-sT-KoQ"/>
+                        <constraint firstAttribute="width" secondItem="4vm-4L-6Pf" secondAttribute="height" multiplier="2.3:1" id="HiD-sT-KoQ"/>
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-Zu-1QH">
-                    <rect key="frame" x="16" y="155.5" width="343" height="447.5"/>
+                    <rect key="frame" x="16" y="193.5" width="343" height="409.5"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cHv-lg-qgk">
                     <rect key="frame" x="16" y="623" width="343" height="36"/>
@@ -79,7 +79,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTY-Sv-hlz" customClass="RoundProgress" customModule="ColorCatcher" customModuleProvider="target">
-                    <rect key="frame" x="133" y="70.5" width="109" height="109"/>
+                    <rect key="frame" x="122" y="78.5" width="131" height="131"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="gTY-Sv-hlz" secondAttribute="height" multiplier="1:1" id="O0j-cy-S3L"/>
@@ -98,9 +98,9 @@
                 <constraint firstItem="EOi-0G-MeP" firstAttribute="top" secondItem="DWk-1i-u5R" secondAttribute="top" id="7xN-ZP-WXx"/>
                 <constraint firstAttribute="trailing" secondItem="cHv-lg-qgk" secondAttribute="trailing" constant="16" id="E4q-X1-lfz"/>
                 <constraint firstItem="4vm-4L-6Pf" firstAttribute="top" secondItem="EOi-0G-MeP" secondAttribute="bottom" id="NMm-mp-TwF"/>
-                <constraint firstItem="gTY-Sv-hlz" firstAttribute="bottom" secondItem="4vm-4L-6Pf" secondAttribute="bottom" constant="-8" id="VK5-3G-x8c"/>
+                <constraint firstItem="gTY-Sv-hlz" firstAttribute="bottom" secondItem="4vm-4L-6Pf" secondAttribute="bottom" constant="-16" id="VK5-3G-x8c"/>
                 <constraint firstItem="eH8-Zu-1QH" firstAttribute="top" secondItem="4vm-4L-6Pf" secondAttribute="bottom" constant="-32" id="W7Y-oh-ZqG"/>
-                <constraint firstItem="gTY-Sv-hlz" firstAttribute="top" secondItem="4vm-4L-6Pf" secondAttribute="top" constant="8" id="X6V-8m-MxU"/>
+                <constraint firstItem="gTY-Sv-hlz" firstAttribute="top" secondItem="4vm-4L-6Pf" secondAttribute="top" constant="16" id="X6V-8m-MxU"/>
                 <constraint firstAttribute="bottom" secondItem="cHv-lg-qgk" secondAttribute="bottom" constant="8" id="Xq9-gl-miE"/>
                 <constraint firstItem="cHv-lg-qgk" firstAttribute="leading" secondItem="DWk-1i-u5R" secondAttribute="leading" constant="16" id="Yty-qH-Ewa"/>
                 <constraint firstAttribute="trailing" secondItem="EOi-0G-MeP" secondAttribute="trailing" id="hJh-ct-a4f"/>

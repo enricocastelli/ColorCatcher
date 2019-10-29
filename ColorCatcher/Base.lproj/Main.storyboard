@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="-540" y="155"/>
         </scene>
-        <!--Nav Bar-->
+        <!--Navigation Controller-->
         <scene sceneID="ElZ-Ke-dnS">
             <objects>
-                <navigationController navigationBarHidden="YES" id="4xj-BJ-WCR" customClass="NavBar" customModule="ColorCatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="4xj-BJ-WCR" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Hz-xT-bm8">
                         <autoresizingMask key="autoresizingMask"/>

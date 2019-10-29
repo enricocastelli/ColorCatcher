@@ -21,14 +21,13 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     static let shared = ColorManager()
     var goalColor = UIColor.generateRandom()
     var userColor = UIColor.white
-    var tolerance: Double = 0.8
+    var tolerance: Double = 90
     
     var colors = [ColorModel]()
     var currentColor: ColorModel?
     
     weak  var delegate: ColorRecognitionDelegate?
     
-    // check color based on r/g/b values
     func checkColor(_ userColor: UIColor) {
         ColorManager.shared.userColor = userColor
         let proximity = ColorManager.shared.getColorProximity(userColor, goalColor)

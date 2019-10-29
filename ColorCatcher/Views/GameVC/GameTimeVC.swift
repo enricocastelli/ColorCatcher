@@ -26,7 +26,7 @@ class GameTimeVC: GameVC {
         super.startGame()
         ColorTimer.shared.delegate = self
         ColorTimer.shared.fire()
-        ColorManager.shared.tolerance = 0.8
+        ColorManager.shared.tolerance = 90
     }
     
     override func didDismissPopup() {

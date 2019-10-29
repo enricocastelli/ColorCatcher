@@ -90,8 +90,8 @@ extension UIColor {
         guard let hue = self.getHue() else {
             return self
         }
-        let randomHue = 0.005 - CGFloat(arc4random_uniform(10))/1000
-        let randomSat = 0.005 - CGFloat(arc4random_uniform(10))/1000
+        let randomHue = 0.01 - CGFloat(arc4random_uniform(20))/1000
+        let randomSat = 0.02 - CGFloat(arc4random_uniform(50))/1000
         return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation + randomSat, brightness: hue.brightness, alpha: 1)
     }
     

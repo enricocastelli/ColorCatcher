@@ -49,9 +49,8 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
     }
     
     func test() {
-        //        let test = EyeProximityTestVC()
-        //        self.navigationController?.show(test, sender: nil)
-        //        return
+        let test = EyeProximityTestVC()
+        self.navigationController?.show(test, sender: nil)
     }
 
     @IBAction func raceTapped(_ sender: UIButton) {
@@ -88,6 +87,7 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
     
     
     @IBAction func multiTapped(_ sender: UIButton) {
+//        test()
         let multiVC = MultiplayerVC()
         navigationController?.show(multiVC, sender: nil)
     }

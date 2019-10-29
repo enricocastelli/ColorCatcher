@@ -16,7 +16,6 @@ class ColorCollectionVC: ColorController, AlertProvider {
     var oldY: CGFloat  = 0
     var barHidden = false
     
-    @IBOutlet weak var gradientView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

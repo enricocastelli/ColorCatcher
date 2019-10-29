@@ -17,7 +17,7 @@ class EyeProximityTestVC: UIViewController, ColorCalculator {
     var views = [UIView]()
     var xPos: CGFloat = 0
     var yPos: CGFloat = 36
-    var level = 0.8
+    var level = 90.0
     var goalColor = UIColor.white
     var foundCount = 0
     

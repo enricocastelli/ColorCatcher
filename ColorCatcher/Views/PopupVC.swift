@@ -165,6 +165,9 @@ class PopupVC: UIViewController {
         for _ in 0...77 {
             addSmall(shapeLayer, color: mainColor, position: position, circleWidth: UInt32(randomSize))
         }
+        for _ in 0...2 {
+            addSmallRandom(shapeLayer, color: mainColor)
+        }
     }
     
     func addSmall(_ masterLayer: CAShapeLayer, color: UIColor, position: CGPoint, circleWidth: UInt32) {
@@ -179,6 +182,20 @@ class PopupVC: UIViewController {
         let finalBezier = UIBezierPath(ovalIn: rect)
         
         let smallLayer = newDropLayer(color, initialPath: initialBezier, finalPath: finalBezier)
+        masterLayer.addSublayer(smallLayer)
+    }
+    
+    func addSmallRandom(_ masterLayer: CAShapeLayer, color: UIColor) {
+        let width: CGFloat = CGFloat(arc4random_uniform(5) + 2)
+        let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
+        let randomY: CGFloat = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.height)))
+        let noneRect = CGRect(x: randomX, y: randomY, width: 0, height: 0)
+        let initialBezier = UIBezierPath(ovalIn: noneRect)
+        
+        let rect = CGRect(x: randomX, y: randomY, width: width, height: width)
+        let finalBezier = UIBezierPath(ovalIn: rect)
+        
+        let smallLayer = newDropLayer(color, initialPath: initialBezier, finalPath: finalBezier, forceSlow: true)
         masterLayer.addSublayer(smallLayer)
     }
     
@@ -218,11 +235,10 @@ class PopupVC: UIViewController {
         shapeLayer.opacity = 1
     }
     
-    private func newDropLayer(_ color: UIColor, initialPath: UIBezierPath, finalPath: UIBezierPath) -> CAShapeLayer {
+    private func newDropLayer(_ color: UIColor, initialPath: UIBezierPath, finalPath: UIBezierPath, forceSlow: Bool = false) -> CAShapeLayer {
         let isSlow = arc4random_uniform(20) == 5
         let randomAlpha: CGFloat = isSlow ? 1 : (CGFloat(arc4random_uniform(10)) + 2)/10
-        let duration: Double =  isSlow ? Double(arc4random_uniform(40) + 30)/10 : Double(arc4random_uniform(3) + 2)/10
-        
+        let duration: Double =  isSlow || forceSlow ? Double(arc4random_uniform(40) + 30)/10 : Double(arc4random_uniform(3) + 2)/10
         let dropLayer = CAShapeLayer()
         dropLayer.path = initialPath.cgPath
         dropLayer.fillColor = color.variateColor().withAlphaComponent(randomAlpha).cgColor

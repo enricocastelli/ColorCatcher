@@ -38,6 +38,9 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
         ColorManager.shared.delegate = self
         progressView.alpha = 0
         addTapGesture()
+        imageView.layer.cornerRadius = 5
+        imageView.layer.borderColor = UIColor.gray.cgColor
+        imageView.layer.borderWidth = 2
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -84,7 +87,7 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     }
     
     func updateProximityString(_ proximity: Float) {
-        progressView.updateProgress(CGFloat(proximity*1.25))
+        progressView.updateProgress(CGFloat((proximity/100)*1.05))
     }
     
     func new() {

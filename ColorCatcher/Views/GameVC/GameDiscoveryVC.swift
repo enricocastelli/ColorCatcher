@@ -12,7 +12,7 @@ class GameDiscoveryVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ColorManager.shared.tolerance = 0.85
+        ColorManager.shared.tolerance = 95
         nextColor()
         updateColorView()
         configureBarForDiscovery()

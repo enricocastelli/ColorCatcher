@@ -35,7 +35,7 @@
                         <outlet property="delegate" destination="-1" id="st8-Fd-wA9"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ8-J5-q6h" customClass="GradientView" customModule="ColorCatcher" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ8-J5-q6h">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
