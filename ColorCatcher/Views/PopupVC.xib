@@ -23,10 +23,9 @@
                 <outlet property="coverView" destination="oI1-8a-R5b" id="kNs-LA-I49"/>
                 <outlet property="descBottom" destination="r4H-BD-JMO" id="wey-qw-0Se"/>
                 <outlet property="descLeading" destination="Mwz-MN-ynI" id="LF2-Rq-fIA"/>
-                <outlet property="descTop" destination="kTP-CC-MMI" id="tHa-bP-dg3"/>
+                <outlet property="descTop" destination="Yre-bB-QIe" id="Vgn-9s-Dfq"/>
                 <outlet property="descTrailing" destination="qJV-8y-Csd" id="HFP-h8-2uM"/>
                 <outlet property="descView" destination="Plw-L8-eFq" id="hBv-dL-2HZ"/>
-                <outlet property="masterView" destination="kia-0u-XTN" id="1CF-8h-WRH"/>
                 <outlet property="textView" destination="j9f-oK-Fc7" id="47m-3f-1vm"/>
                 <outlet property="titleLabel" destination="lbJ-M1-VL4" id="UiJ-Q8-r3a"/>
                 <outlet property="view" destination="iN0-l3-epB" id="GFY-Zk-ac0"/>
@@ -41,29 +40,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kia-0u-XTN">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-i1-PeX">
-                            <rect key="frame" x="164.5" y="16" width="46" height="54"/>
-                            <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
-                            <state key="normal" title="𝗫">
-                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="closeTapped:" destination="-1" eventType="touchUpInside" id="cND-JM-kgj"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="lm2-i1-PeX" firstAttribute="centerX" secondItem="kia-0u-XTN" secondAttribute="centerX" id="0y7-8Q-qAV"/>
-                        <constraint firstItem="lm2-i1-PeX" firstAttribute="top" secondItem="kia-0u-XTN" secondAttribute="top" constant="16" id="9A4-cY-WqJ"/>
-                        <constraint firstAttribute="width" secondItem="kia-0u-XTN" secondAttribute="height" multiplier="125:94" id="Riw-CC-lxN"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-L8-eFq" userLabel="DescView">
-                    <rect key="frame" x="0.0" y="274" width="375" height="393"/>
+                    <rect key="frame" x="0.0" y="154" width="375" height="513"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-M1-VL4">
                             <rect key="frame" x="40" y="0.0" width="295" height="39"/>
@@ -72,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cum odioque civiuda." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-oK-Fc7">
-                            <rect key="frame" x="20" y="55" width="335" height="318"/>
+                            <rect key="frame" x="20" y="55" width="335" height="438"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" red="0.13002748842592593" green="0.13393373842592593" blue="0.17132040895061729" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="23"/>
@@ -90,19 +68,28 @@
                         <constraint firstAttribute="bottom" secondItem="j9f-oK-Fc7" secondAttribute="bottom" constant="20" id="vB7-Ws-R66"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-i1-PeX">
+                    <rect key="frame" x="164.5" y="36" width="46" height="54"/>
+                    <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                    <state key="normal" title="𝗫">
+                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="closeTapped:" destination="-1" eventType="touchUpInside" id="cND-JM-kgj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="kia-0u-XTN" secondAttribute="trailing" id="MLj-ZB-QTW"/>
                 <constraint firstItem="Plw-L8-eFq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mwz-MN-ynI"/>
                 <constraint firstItem="oI1-8a-R5b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NSq-Ih-UtU"/>
+                <constraint firstItem="lm2-i1-PeX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NUs-Vd-kGQ"/>
                 <constraint firstItem="oI1-8a-R5b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Py1-ZI-JKZ"/>
+                <constraint firstItem="lm2-i1-PeX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="VBG-0V-Mv0"/>
+                <constraint firstItem="Plw-L8-eFq" firstAttribute="top" secondItem="lm2-i1-PeX" secondAttribute="bottom" constant="64" id="Yre-bB-QIe"/>
                 <constraint firstAttribute="trailing" secondItem="oI1-8a-R5b" secondAttribute="trailing" id="Zvt-4O-1m3"/>
-                <constraint firstItem="kia-0u-XTN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e82-18-b42"/>
-                <constraint firstItem="Plw-L8-eFq" firstAttribute="top" secondItem="kia-0u-XTN" secondAttribute="bottom" constant="-8" id="kTP-CC-MMI"/>
                 <constraint firstAttribute="trailing" secondItem="Plw-L8-eFq" secondAttribute="trailing" id="qJV-8y-Csd"/>
                 <constraint firstAttribute="bottom" secondItem="Plw-L8-eFq" secondAttribute="bottom" id="r4H-BD-JMO"/>
-                <constraint firstItem="kia-0u-XTN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vth-9H-50d"/>
                 <constraint firstAttribute="bottom" secondItem="oI1-8a-R5b" secondAttribute="bottom" id="zYf-Kc-6ZU"/>
             </constraints>
             <point key="canvasLocation" x="50" y="152"/>

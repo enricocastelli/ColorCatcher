@@ -90,7 +90,7 @@ extension UIColor {
         guard let hue = self.getHue() else {
             return self
         }
-        let randomHue = 0.01 - CGFloat(arc4random_uniform(20))/1000
+        let randomHue = 0.02 - CGFloat(arc4random_uniform(30))/1000
         let randomSat = 0.02 - CGFloat(arc4random_uniform(50))/1000
         return UIColor(hue: hue.hue + randomHue, saturation: hue.saturation + randomSat, brightness: hue.brightness, alpha: 1)
     }
@@ -115,6 +115,35 @@ extension UIColor {
                    UIColor.CCWater]
         return arr.randomElement()!
     }
+    
+    static func generatePopupRandom() -> UIColor {
+        let array = [UIColor(hex: "9BB7D4"),
+                     UIColor(hex: "C74375"),
+                     UIColor(hex: "BF1932"),
+                     UIColor(hex: "7BC4C4"),
+                     UIColor(hex: "E2583E"),
+                     UIColor(hex: "DECDBE"),
+                     UIColor(hex: "9B1B30"),
+                     UIColor(hex: "5A5B9F"),
+                     UIColor(hex: "F0C05A"),
+                     UIColor(hex: "F0C05A"),
+                     UIColor(hex: "45B5AA"),
+                     UIColor(hex: "DD4124"),
+                     UIColor(hex: "D94F70"),
+                     UIColor(hex: "009473"),
+                     UIColor(hex: "B163A3"),
+                     UIColor(hex: "955251"),
+                     UIColor(hex: "F7CAC9"),
+                     UIColor(hex: "92A8D1"),
+                     UIColor(hex: "88B04B"),
+                     UIColor(hex: "5F4B8B"),
+                     UIColor(hex: "FF6F61"),
+                     UIColor(hex: "00008b"),
+        ]
+        let random = array.randomElement()!
+        return random
+    }
+    
 }
 
 extension CGFloat {
