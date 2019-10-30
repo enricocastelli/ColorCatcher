@@ -24,6 +24,22 @@ class ColorCollectionVC: ColorController, AlertProvider {
     func hasColorIndex(_ index: Int) -> Bool {
         return retrieveColorCatched().index > index
     }
+    
+    func openItem(_ index: Int) {
+        let catched = retrieveColorCatched().catched[index]
+        let color = ColorManager.shared.colors[index]
+        var model = PopupModel(titleString: color.name, message: color.desc)
+        model.color = UIColor(hex: color.hex)
+        let subtitleString: String = {
+            var str = "Catched \(catched.date.string)"
+            if let loc = catched.location {
+                str.append(contentsOf: " in \(loc)")
+            }
+            return str
+        }()
+        model.subtitleString = subtitleString
+        showPopup(model)
+    }
 }
 
 extension ColorCollectionVC: UICollectionViewDataSource {
@@ -60,18 +76,6 @@ extension ColorCollectionVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard hasColorIndex(indexPath.row) else { return }
-        let catched = retrieveColorCatched().catched[indexPath.row]
-        let color = ColorManager.shared.colors[indexPath.row]
-        var model = PopupModel(titleString: color.name, message: color.desc)
-        model.color = UIColor(hex: color.hex)
-        let subtitleString: String = {
-            var str = "Catched \(catched.date.string)"
-            if let loc = catched.location {
-                str.append(contentsOf: " in \(loc)")
-            }
-            return str
-        }()
-        model.subtitleString = subtitleString
-        showPopup(model)
+        openItem(indexPath.row)
     }
 }

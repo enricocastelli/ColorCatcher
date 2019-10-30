@@ -27,7 +27,7 @@ class PopupVC: UIViewController {
     var drops = [DropLayer]()
 
     @IBOutlet weak var descView: UIView!
-    @IBOutlet weak var coverView: UIView!
+    @IBOutlet weak var coverView: BlurredView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -58,7 +58,6 @@ class PopupVC: UIViewController {
         if model.titleString == "" {
             closeButton.isHidden = true
         }
-        addBlurEffect()
         preAnimation()
         masterLayer.opacity = 0.8
         view.layer.insertSublayer(masterLayer, above: coverView.layer)
@@ -117,15 +116,7 @@ class PopupVC: UIViewController {
             self.addDropSet()
         }
     }
-    
-    func addBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = coverView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coverView.addSubview(blurEffectView)
-    }
-    
+
     func animateFadeIn() {
         UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
             self.descTop.constant = -8
