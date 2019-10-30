@@ -1,85 +1,100 @@
 
 {
-"colors": [
-{
-"hex": "fa7268",
-"name": "Coral red",
-"desc": "Since 2000, the Pantone Color Institute declares a particular color `Color of the Year`. Twice a year the company hosts, in a European capital, a secret meeting of representatives from various nations' color standards groups. After two days of presentations and debate, they choose a color for the following year. `Living Coral welcomes and encourages lighthearted activity. Symbolising our innate need for optimism and joyful pursuits, it embodies our desire for playful expression.`"
-},
-{
-"hex": "3b5998",
-"name": "Facebook blue",
-"desc": "According to The New Yorker, Zuckerberg is red-green colourblind, which means the color he can see best is blue. That also happens to be the color that dominates the Facebook website and mobile app. `Blue is the richest color for me,` he told the magazine. `I can see all of blue.`"
-},
-{
-"hex": "ed1c16",
-"name": "Coca Cola's red",
-"desc": "You may think that the red color come from one of the company’s first advertisements, which featured Santa Claus wearing his famous red-and-white suit and holding a Coke bottle. But according to the Coca-Cola Company, its famous logo dates back to the very beginning of the brand itself.  Over 130 years ago, Coca-Cola was sold in barrels at American drug stores and pharmacies. Alcohol was distributed in the same way. But while alcohol was taxed at the time, soft drinks were not. So, the Coca-Cola Company began painting its barrels red in order to help customs and tax officials distinguish them from barrels of booze."
-},
-{
-"hex": "FFD90F",
-"name": "Simpson's skin",
-"desc": "The Simpsons are one of the most successful TV series all time, impersonating American cultures for decades. Why yellow though? Matt Groening explained it in a BBC interview: `An animator came up with the Simpsons' yellow and as soon as she showed it to me I said: 'This is the answer!' because when you're flicking through channels with your remote control, and a flash of yellow goes by, you'll know you're watching The Simpsons.` Since then, this is their characteristic, unique color."
-},
-{
-"hex": "8F4B28",
-"name": "Mummy's brown",
-"desc": "This color was produced until 1964, after the seller just ran out of mummies to produce it. Painters used for centuries this shade of brown, collecting it initially from a pharmacist who sold it for medical purposes. In 1712, in Paris, a forniture shop for artists, was called `À la Momie` for this color. "
-},
-{
-"hex": "1db954",
-"name": "Spotify",
-"desc": "Spotify changed it's green many times in the last years. The original green was chosen by founder Daniel Ek in 2011, because no one was using that particular shade at the time. The new, latest green, reflects the vibrancy of their music business: is meant to look modern, fresh and  `pop`."
-},
-{
-"hex": "2B41A7",
-"name": "",
-"desc": "VanGogh's starry night blue"
-},
-{
-"hex": "DA1884",
-"name": "Barbie's pink",
-"desc": "It’s trademarked for use in more than 100 categories, from bubble bath to cereal."
-},
-{
-"hex": "81D8D0",
-"name": "Tiffany's Blue",
-"desc": "Tiffany Blue was first associated with the upscale jeweler in 1845, when Charles Lewis Tiffany chose the robin's egg shade for the cover of the company's first catalog, or `Blue Book.` According to the company, he may have selected the color because turquoise was a popular gemstone at the time. Today the color is not only trademarked (it has been since 1998), it also has its own custom Pantone number: 1837, the year the company was founded."
-},
-{
-"hex": "1034a6",
-"name": "Egyptian blue",
-"desc": "It was the first artificial pigment, invented more than 4000 years ago, and saw wide use in the ancient Mediterranean world. After the fall of Rome, became unused because no one could understood how it was made. Until the early 19th century, when archeologists found a pot of `pale blue color` in the ruins of Pompeii. The color was recreated and spread again."
-},
-{
-"hex": "704214",
-"name": "Sepia",
-"desc": "Sepia ink was used a lot in Greece and Rome. It was it actually squeezed out from cuttlefish's ink. Many painters used it during the years for notes as an alternative to basic black. Among them, Leonardo Da Vinci, who used very often this colours for his sketches."
-},
-{
-"hex": "e34234",
-"name": "Vermilion",
-"desc": "Used a lot from Romans, this shade of red is made of powdered cinnabar, which is full of mercury. It was so rare and valuable that the Romans had to make laws controlling its price or no one could ever afford it. The Chinese also used it, and a couple hundred years after Rome fell they worked out how to synthesise it from mercury and sulfur."
-},
-{
-"hex": "66023c",
-"name": "Tyrian purple",
-"desc": "It was made of snail shells and was created smashing specific crustaceans out of the city walls, because the smell was unbearable. Cleopatra was obsessed with this colours. Caesar, while visiting her, loved the color that much that decided to make it the official roman royal color. There were laws in Rome that banned people from wearing this purple. In fact, only emperors could wear it."
-},
-{
-"hex": "e3a857",
-"name": "Indian yellow",
-"desc": "Created in a remote Indian village where they fed cows nothing but mango leaves, which left them malnourished but made their pee bright shining yellow. People would collect the pee, dry it, press it into cakes, and eventually some of it would arrive in Europe. That’s the story, anyway. As far as I can tell, no one actually knows for sure how it was made, nor have they really tried. If you buy 'Indian Yellow' today, you’re getting an artificial mixture of things that aren’t mango-cow-urine. What a rip off."
-},
-{
-"hex": "50c878",
-"name": "Emerald",
-"desc": "Also known as Scheele green, was created in 1775 using copper arsenic. It was widely used at that time to paint bedrooms and house interiors. Legends says that this particular color could be the cause of Napoleon's death. In his last days in St Elena's Island, he was sleeping in a emerald painted bedroom. The island humidity could have slowly released arsenic, poisoning the air."
-},
-{
-"hex": "e32636",
-"name": "Rose Madder",
-"desc": "Used in Turkey and in Europe since 1730, this color was used for interior coverings of king Louis XIV's apartments. To create this color, was used ox's blood and sheep's manure, mixed with various different oils."
-}
-]
+    "colors": [
+        {
+            "hex": "fa7268",
+            "name": "Coral red",
+            "desc": "Since 2000, the Pantone Color Institute declares a particular color `Color of the Year`. Twice a year the company hosts, in a European capital, a secret meeting of representatives from various nations' color standards groups. After two days of presentations and debate, they choose a color for the following year. `Living Coral welcomes and encourages lighthearted activity. Symbolising our innate need for optimism and joyful pursuits, it embodies our desire for playful expression.`"
+        },
+        {
+            "hex": "3b5998",
+            "name": "Facebook blue",
+            "desc": "According to The New Yorker, Zuckerberg is red-green colourblind, which means the color he can see best is blue. That also happens to be the color that dominates the Facebook website and mobile app. `Blue is the richest color for me,` he told the magazine. `I can see all of blue.`"
+        },
+        {
+            "hex": "ed1c16",
+            "name": "Coca Cola's red",
+            "desc": "You may think that the red color come from one of the company’s first advertisements, which featured Santa Claus wearing his famous red-and-white suit and holding a Coke bottle. But according to the Coca-Cola Company, its famous logo dates back to the very beginning of the brand itself.  Over 130 years ago, Coca-Cola was sold in barrels at American drug stores and pharmacies. Alcohol was distributed in the same way. But while alcohol was taxed at the time, soft drinks were not. So, the Coca-Cola Company began painting its barrels red in order to help customs and tax officials distinguish them from barrels of booze."
+        },
+        {
+            "hex": "FFD90F",
+            "name": "Simpson's skin",
+            "desc": "The Simpsons are one of the most successful TV series all time, impersonating American cultures for decades. Why yellow though? Matt Groening explained it in a BBC interview: `An animator came up with the Simpsons' yellow and as soon as she showed it to me I said: 'This is the answer!' because when you're flicking through channels with your remote control, and a flash of yellow goes by, you'll know you're watching The Simpsons.` Since then, this is their characteristic, unique color."
+        },
+        {
+            "hex": "8F4B28",
+            "name": "Mummy's brown",
+            "desc": "This color was produced until 1964, after the seller just ran out of mummies to produce it. Painters used for centuries this shade of brown, collecting it initially from a pharmacist who sold it for medical purposes. In 1712, in Paris, a forniture shop for artists, was called `À la Momie` for this color. "
+        },
+        {
+            "hex": "1db954",
+            "name": "Spotify",
+            "desc": "Spotify changed it's green many times in the last years. The original green was chosen by founder Daniel Ek in 2011, because no one was using that particular shade at the time. The new, latest green, reflects the vibrancy of their music business: is meant to look modern, fresh and  `pop`."
+        },
+        {
+            "hex": "2B41A7",
+            "name": "",
+            "desc": "VanGogh's starry night blue"
+        },
+        {
+            "hex": "DA1884",
+            "name": "Barbie's pink",
+            "desc": "It’s trademarked for use in more than 100 categories, from bubble bath to cereal."
+        },
+        {
+            "hex": "81D8D0",
+            "name": "Tiffany's Blue",
+            "desc": "Tiffany Blue was first associated with the upscale jeweler in 1845, when Charles Lewis Tiffany chose the robin's egg shade for the cover of the company's first catalog, or `Blue Book.` According to the company, he may have selected the color because turquoise was a popular gemstone at the time. Today the color is not only trademarked (it has been since 1998), it also has its own custom Pantone number: 1837, the year the company was founded."
+        },
+        {
+            "hex": "1034a6",
+            "name": "Egyptian blue",
+            "desc": "It was the first artificial pigment, invented more than 4000 years ago, and saw wide use in the ancient Mediterranean world. After the fall of Rome, became unused because no one could understood how it was made. Until the early 19th century, when archeologists found a pot of `pale blue color` in the ruins of Pompeii. The color was recreated and spread again."
+        },
+        {
+            "hex": "704214",
+            "name": "Sepia",
+            "desc": "Sepia ink was used a lot in Greece and Rome. It was it actually squeezed out from cuttlefish's ink. Many painters used it during the years for notes as an alternative to basic black. Among them, Leonardo Da Vinci, who used very often this colours for his sketches."
+        },
+        {
+            "hex": "e34234",
+            "name": "Vermilion",
+            "desc": "Used a lot from Romans, this shade of red is made of powdered cinnabar, which is full of mercury. It was so rare and valuable that the Romans had to make laws controlling its price or no one could ever afford it. The Chinese also used it, and a couple hundred years after Rome fell they worked out how to synthesise it from mercury and sulfur."
+        },
+        {
+            "hex": "66023c",
+            "name": "Tyrian purple",
+            "desc": "It was made of snail shells and was created smashing specific crustaceans out of the city walls, because the smell was unbearable. Cleopatra was obsessed with this colours. Caesar, while visiting her, loved the color that much that decided to make it the official roman royal color. There were laws in Rome that banned people from wearing this purple. In fact, only emperors could wear it."
+        },
+        {
+            "hex": "e3a857",
+            "name": "Indian yellow",
+            "desc": "Created in a remote Indian village where they fed cows nothing but mango leaves, which left them malnourished but made their pee bright shining yellow. People would collect the pee, dry it, press it into cakes, and eventually some of it would arrive in Europe. That’s the story, anyway. As far as I can tell, no one actually knows for sure how it was made, nor have they really tried. If you buy 'Indian Yellow' today, you’re getting an artificial mixture of things that aren’t mango-cow-urine. What a rip off."
+        },
+        {
+            "hex": "50c878",
+            "name": "Emerald",
+            "desc": "Also known as Scheele green, was created in 1775 using copper arsenic. It was widely used at that time to paint bedrooms and house interiors. Legends says that this particular color could be the cause of Napoleon's death. In his last days in St Elena's Island, he was sleeping in a emerald painted bedroom. The island humidity could have slowly released arsenic, poisoning the air."
+        },
+        {
+            "hex": "e32636",
+            "name": "Rose Madder",
+            "desc": "Used in Turkey and in Europe since 1730, this color was used for interior coverings of king Louis XIV's apartments. To create this color, was used ox's blood and sheep's manure, mixed with various different oils."
+        },
+        {
+            "hex": "9a150e",
+            "name": "Red Ochre",
+            "desc": "Found in iron-rich soil and first employed as an artistic material (as far as we know) in prehistoric cave paintings, red ochre is one of the oldest pigments still in use. Centuries later, during the 16th and 17th centuries, the most popular red pigment came from a cochineal insect, a creature that could only be found on prickly-pear cacti in Mexico. These white bugs produced a potent red dye so sought-after by artists and patrons that it quickly became the third greatest import out of the “New World” (after gold and silver), as explains Victoria Finlay in A Brilliant History of Color in Art. Raphael, Rembrandt, Rubens, all used cochineal as a glaze, layering the pigment atop other reds (like red ochre) to increase their intensity. A non-toxic source for red pigment, the cochineal bug is still used to color lipsticks and blush today."
+        },
+        {
+            "hex": "26619c",
+            "name": "Lapis Lazuli",
+            "desc": "This color comes from a gemstone that for centuries could only be found in a single mountain range in Afghanistan. This precious material achieved global popularity, adorning Egyptian funerary portraits, Iranian Qur’ans, and later the headdress in Vermeer’s Girl with a Pearl Earring (1665). For hundreds of years, the cost of lapis lazuli rivaled even the price of gold. In the 1950s, Yves Klein collaborated with a Parisian paint supplier to invent a synthetic version of ultramarine blue, and this color became the French artist’s signature."
+        },
+        {
+            "hex": "00704a",
+            "name": "Starbucks Green",
+            "desc": "Starbucks aprons weren't always green, according to a press release on the bean brewer's site. It started out, similar to their logo, as a brown-hued version in 1971 at their first location in Seattle's Pike Place Market. The smock didn't change colors until 1987, when Starbucks transitioned towards a more European-style coffee shop vibe, including the sale of handcrafted drinks and espresso specialty sips (white shirts, black bow ties, and jazz music included)."
+        }
+    ]
 }
