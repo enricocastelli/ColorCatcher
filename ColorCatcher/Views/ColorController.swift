@@ -102,7 +102,7 @@ class ColorController: UIViewController, StoreProvider {
     }
     
     func updateCollectionLabel() {
-        rightLabel.text = "\(retrieveLevel())/\(ColorManager.shared.colors.count)"
+        rightLabel.text = "\(retrieveColorCatched().index)/\(ColorManager.shared.colors.count)"
     }
     
     @IBAction func backTapped(_ sender: UIButton) {

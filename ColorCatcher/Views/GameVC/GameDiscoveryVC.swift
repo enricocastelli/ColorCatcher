@@ -46,10 +46,12 @@ class GameDiscoveryVC: GameVC {
     override func colorRecognized() {
         vibrate()
         CaptureManager.shared.stopSession()
-        storeLevelUp()
         updateCollectionLabel()
         guard let currentColor = ColorManager.shared.currentColor else { return }
-        showPopup(titleString: currentColor.name, message: currentColor.desc, button: "", color: UIColor(hex: currentColor.hex))
+        storeColorCatched(Catched(hex: currentColor.hex))
+        var model = PopupModel(titleString: currentColor.name, message: currentColor.desc)
+        model.color = UIColor(hex: currentColor.hex)
+        showPopup(model)
     }
     
     override func showFinishColors() {

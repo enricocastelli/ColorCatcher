@@ -1,10 +1,17 @@
 
 import UIKit
 
-fileprivate enum PopupDirection {
-    case left
-    case center
-    case right
+struct PopupModel {
+    let titleString: String
+    let message: String
+    var subtitleString: String?
+    var button: String?
+    var color: UIColor?
+    
+    init(titleString: String, message: String) {
+        self.titleString = titleString
+        self.message = message
+    }
 }
 
 protocol PopupDelegate: class {
@@ -13,10 +20,7 @@ protocol PopupDelegate: class {
 
 class PopupVC: UIViewController {
     
-    var titleString: String
-    var message: String
-    var button: String
-    var color: UIColor?
+    var model: PopupModel
     var shouldAutoRemove: Bool = false
     weak var delegate: PopupDelegate?
     var masterLayer = CALayer()
@@ -26,6 +30,8 @@ class PopupVC: UIViewController {
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     // CONSTRAINTS
     @IBOutlet weak var descLeading: NSLayoutConstraint!
@@ -34,11 +40,8 @@ class PopupVC: UIViewController {
     @IBOutlet weak var descTop: NSLayoutConstraint!
     
     
-    init(titleString: String, message: String, button: String, color: UIColor? = nil) {
-        self.titleString = titleString
-        self.message = message
-        self.button = button
-        self.color = color
+    init(_ model: PopupModel) {
+        self.model = model
         super.init(nibName: String(describing: PopupVC.self), bundle: nil)
     }
     
@@ -49,9 +52,10 @@ class PopupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTapRecognizer()
-        titleLabel.text = titleString
-        textView.text = "\(message)\n"
-        if titleString == "" {
+        titleLabel.text = model.titleString
+        subtitleLabel.text = model.subtitleString
+        textView.text = "\(model.message)\n"
+        if model.titleString == "" {
             closeButton.isHidden = true
         }
         addBlurEffect()
@@ -92,10 +96,17 @@ class PopupVC: UIViewController {
     func preAnimation() {
         descView.alpha = 0
         coverView.alpha = 0
-        descTop.constant = 700
-        descBottom.constant = -700
+        descTop.constant = UIScreen.main.bounds.height
+        descBottom.constant = -UIScreen.main.bounds.height
     }
     
+    func postAnimation() {
+        descTop.constant = -100
+        descBottom.constant = 100
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
     func addDrops() {
         addDropSet()
@@ -116,7 +127,7 @@ class PopupVC: UIViewController {
     }
     
     func animateFadeIn() {
-        UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
             self.descTop.constant = -8
             self.descBottom.constant = 0
             self.view.layoutIfNeeded()
@@ -131,7 +142,7 @@ class PopupVC: UIViewController {
     private func addDropSet() {
         // creating 27 small drops with different alpha
         for _ in 0...26 {
-            let layer = DropLayer(color ?? UIColor.generatePopupRandom())
+            let layer = DropLayer(model.color ?? UIColor.generatePopupRandom())
             drops.append(layer)
             masterLayer.addSublayer(layer)
         }
@@ -140,6 +151,7 @@ class PopupVC: UIViewController {
     func removePopup(done: @escaping () -> ()) {
         closeButton.layer.fadeOut(0.3)
         if !shouldAutoRemove {
+            postAnimation()
             coverView.layer.fadeOut(0.3)
             descView.layer.fadeOut(0.3)
         }

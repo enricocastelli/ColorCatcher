@@ -18,14 +18,13 @@ class ColorCollectionVC: ColorController, AlertProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let cellNib = UINib(nibName: String(describing: ColorCollectionCell.self), bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         configureBarForCollection()
     }
     
     func hasColorIndex(_ index: Int) -> Bool {
-        return retrieveLevel() > index
+        return retrieveColorCatched().index > index
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -93,8 +92,18 @@ extension ColorCollectionVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard hasColorIndex(indexPath.row) else { return }
+        let catched = retrieveColorCatched().catched[indexPath.row]
         let color = ColorManager.shared.colors[indexPath.row]
-        showPopup(titleString: color.name, message: color.desc
-            , button: "Ok", color: UIColor(hex: color.hex))
+        var model = PopupModel(titleString: color.name, message: color.desc)
+        model.color = UIColor(hex: color.hex)
+        let subtitleString: String = {
+            var str = "Catched \(catched.date.string)"
+            if let loc = catched.location {
+                str.append(contentsOf: " in \(loc)")
+            }
+            return str
+        }()
+        model.subtitleString = subtitleString
+        showPopup(model)
     }
 }

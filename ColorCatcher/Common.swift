@@ -297,3 +297,13 @@ extension UIViewController {
     
 }
 
+extension Date {
+    
+    var string : String {
+        let form = DateFormatter()
+        form.dateFormat = "dd MMMM yyyy"
+        return form.string(from: self)
+    }
+    
+}
+

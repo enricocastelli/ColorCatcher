@@ -42,7 +42,7 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     }
     
     func updateColorWithLevel() {
-        let level = ColorManager().retrieveLevel()
+        let level = ColorManager().retrieveColorCatched().index
         guard level < colors.count else {
             delegate?.didFinishColors()
             return

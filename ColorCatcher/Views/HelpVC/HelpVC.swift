@@ -38,6 +38,9 @@ class HelpVC: ColorController {
         image.tintColor = UIColor.lightGray
         // to ask permission for camera
         CaptureManager.shared.startSession()
+        if model == .discovery {
+            let _ = LocationManager.shared
+        }
     }
     
     func setButton(_ button: UIButton) {

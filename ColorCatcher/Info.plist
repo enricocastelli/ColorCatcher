@@ -52,5 +52,9 @@
 		<string>Brandon_med.otf</string>
 		<string>Brandon_reg.otf</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Save the location of your colors!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Save the location of your colors!</string>
 </dict>
 </plist>

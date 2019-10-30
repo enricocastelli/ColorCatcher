@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
 		1C15191E221FFF9D00226042 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C15191C221FFF9D00226042 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1C151915221FFF9D00226042 /* ColorCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C15191A221FFF9D00226042 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */,
 				1CFE9EF92226CADF00F62935 /* ColorModel.swift */,
 				1C15D99A22257EBE0037F8D6 /* ColorManager.swift */,
+				1C02C6752368CE27008312BC /* LocationManager.swift */,
 				1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */,
 				1C15D99D22258FE60037F8D6 /* ColorTimer.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
@@ -416,6 +419,7 @@
 				1CBFB62F2230103600CB46C5 /* PopupVC.swift in Sources */,
 				1C15191B221FFF9D00226042 /* GameVC.swift in Sources */,
 				1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */,
+				1C02C6762368CE27008312BC /* LocationManager.swift in Sources */,
 				1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */,
 				1CFE9EFC2226DC6900F62935 /* StoreProvider.swift in Sources */,
 				1CFE9EF82226BAF200F62935 /* Service.swift in Sources */,

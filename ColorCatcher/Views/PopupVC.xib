@@ -26,6 +26,7 @@
                 <outlet property="descTop" destination="Yre-bB-QIe" id="Vgn-9s-Dfq"/>
                 <outlet property="descTrailing" destination="qJV-8y-Csd" id="HFP-h8-2uM"/>
                 <outlet property="descView" destination="Plw-L8-eFq" id="hBv-dL-2HZ"/>
+                <outlet property="subtitleLabel" destination="AMB-xS-s6e" id="nuH-Lh-mfw"/>
                 <outlet property="textView" destination="j9f-oK-Fc7" id="47m-3f-1vm"/>
                 <outlet property="titleLabel" destination="lbJ-M1-VL4" id="UiJ-Q8-r3a"/>
                 <outlet property="view" destination="iN0-l3-epB" id="GFY-Zk-ac0"/>
@@ -43,29 +44,38 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-L8-eFq" userLabel="DescView">
                     <rect key="frame" x="0.0" y="154" width="375" height="513"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-M1-VL4">
-                            <rect key="frame" x="40" y="0.0" width="295" height="39"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="27"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-M1-VL4">
+                            <rect key="frame" x="40" y="0.0" width="295" height="46"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="32"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMB-xS-s6e">
+                            <rect key="frame" x="40" y="62" width="295" height="33"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="23"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cum odioque civiuda." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-oK-Fc7">
-                            <rect key="frame" x="20" y="55" width="335" height="438"/>
+                            <rect key="frame" x="20" y="111" width="335" height="402"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" red="0.13002748842592593" green="0.13393373842592593" blue="0.17132040895061729" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="23"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lbJ-M1-VL4" firstAttribute="leading" secondItem="Plw-L8-eFq" secondAttribute="leading" constant="40" id="8AM-Y7-K2T"/>
+                        <constraint firstItem="AMB-xS-s6e" firstAttribute="top" secondItem="lbJ-M1-VL4" secondAttribute="bottom" constant="16" id="8FF-df-wb3"/>
                         <constraint firstItem="j9f-oK-Fc7" firstAttribute="leading" secondItem="Plw-L8-eFq" secondAttribute="leading" constant="20" id="Eqg-Wa-b1e"/>
                         <constraint firstAttribute="trailing" secondItem="j9f-oK-Fc7" secondAttribute="trailing" constant="20" id="IW7-sC-Xkg"/>
-                        <constraint firstItem="j9f-oK-Fc7" firstAttribute="top" secondItem="lbJ-M1-VL4" secondAttribute="bottom" constant="16" id="IqJ-7N-8W4"/>
+                        <constraint firstAttribute="trailing" secondItem="AMB-xS-s6e" secondAttribute="trailing" constant="40" id="TEy-ce-BJ3"/>
+                        <constraint firstItem="j9f-oK-Fc7" firstAttribute="top" secondItem="AMB-xS-s6e" secondAttribute="bottom" constant="16" id="aIc-l4-xGg"/>
                         <constraint firstItem="lbJ-M1-VL4" firstAttribute="top" secondItem="Plw-L8-eFq" secondAttribute="top" id="eUr-cK-Cy6"/>
                         <constraint firstAttribute="trailing" secondItem="lbJ-M1-VL4" secondAttribute="trailing" constant="40" id="seL-8w-S1N"/>
-                        <constraint firstAttribute="bottom" secondItem="j9f-oK-Fc7" secondAttribute="bottom" constant="20" id="vB7-Ws-R66"/>
+                        <constraint firstAttribute="bottom" secondItem="j9f-oK-Fc7" secondAttribute="bottom" id="vB7-Ws-R66"/>
+                        <constraint firstItem="AMB-xS-s6e" firstAttribute="leading" secondItem="Plw-L8-eFq" secondAttribute="leading" constant="40" id="zTl-Tt-vIg"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-i1-PeX">

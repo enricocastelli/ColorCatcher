@@ -39,8 +39,8 @@ extension AlertProvider where Self: UIViewController {
         showAlert(title: "Ops!", message: "Something went wrong...\nTry again!", firstButton: "Ok", secondButton: nil, firstCompletion: {}, secondCompletion: nil)
     }
     
-    func showPopup(titleString: String, message: String, button: String, color: UIColor? = nil) {
-        let popup = PopupVC(titleString: titleString, message: message, button: button, color: color)
+    func showPopup(_ model: PopupModel) {
+        let popup = PopupVC(model)
         popup.view.backgroundColor = UIColor.clear
         popup.modalPresentationStyle = .overCurrentContext
         popup.delegate = self
@@ -49,16 +49,12 @@ extension AlertProvider where Self: UIViewController {
     }
     
     func showTimePopup() {
-        let popup = PopupVC(titleString: "", message: "", button: "")
+        let popup = PopupVC(PopupModel(titleString: "", message: ""))
         popup.view.backgroundColor = UIColor.clear
         popup.modalPresentationStyle = .overCurrentContext
         popup.delegate = self
         popup.shouldAutoRemove = true
         self.present(popup, animated: false) {
         }
-    }
-    
-    func showTestPopup() {
-        showPopup(titleString: "Short string", message: "Super long string telling a lot of stuff about color description bla bla.\nAlso a lot of infos about where the color is used and how. History of it and who used it and a lot more bla bla bla.", button: "I'm a button")
     }
 }

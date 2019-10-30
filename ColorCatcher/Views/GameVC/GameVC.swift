@@ -74,11 +74,15 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
         vibrate()
         showTimePopup()
         CaptureManager.shared.stopSession()
+        // TODO:
+        imageView.image = UIImage(named: "fox0")
     }
     
     func updateColorView() {
-        frameView.backgroundColor = ColorManager.shared.goalColor
-        progressView.progressColor = ColorManager.shared.goalColor
+        UIView.animate(withDuration: 0.4) {
+            self.frameView.backgroundColor = ColorManager.shared.goalColor
+            self.progressView.progressColor = ColorManager.shared.goalColor
+        }
     }
     
     func updatePoints() {
