@@ -58,7 +58,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="qQF-KI-bgT" firstAttribute="leading" secondItem="KOc-sN-or1" secondAttribute="trailing" constant="16" id="4Ip-Fv-jsa"/>
                         <constraint firstItem="KOc-sN-or1" firstAttribute="centerY" secondItem="tz5-eL-7Iv" secondAttribute="centerY" id="F2M-aW-nMe"/>
@@ -87,7 +87,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="vIt-9f-7Eo" firstAttribute="leading" secondItem="bAb-Bm-drV" secondAttribute="trailing" constant="16" id="4AV-6x-Wuj"/>
                         <constraint firstItem="bAb-Bm-drV" firstAttribute="leading" secondItem="PEn-m9-LWr" secondAttribute="leading" id="Aft-mX-RqD"/>
@@ -100,7 +100,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tz5-eL-7Iv" secondAttribute="bottom" id="Ebg-kL-KDr"/>
                 <constraint firstItem="piT-5s-QGo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="F2H-EL-oTZ"/>

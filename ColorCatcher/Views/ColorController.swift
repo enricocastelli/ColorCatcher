@@ -38,6 +38,7 @@ class ColorController: UIViewController, StoreProvider {
         centerImage.tintColor = UIColor.lightGray
         rightImage.tintColor = UIColor.lightGray
         backArrow.tintColor = UIColor.lightGray
+        addGradient()
     }
     
     private func addNib() {
@@ -79,7 +80,7 @@ class ColorController: UIViewController, StoreProvider {
     private func addGradient() {
         gradient = CAGradientLayer()
         gradient!.colors = [UIColor.white.cgColor, UIColor.white.withAlphaComponent(0).cgColor]
-        gradient!.locations = [0.2,1]
+        gradient!.locations = [0,1]
         gradient!.frame = self.containerView!.frame
         self.barView?.backgroundColor = UIColor.clear
         self.barView?.layer.insertSublayer(gradient!, at: 0)

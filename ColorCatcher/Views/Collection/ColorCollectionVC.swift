@@ -13,8 +13,6 @@ private let reuseIdentifier = "colorCollectionCell"
 class ColorCollectionVC: ColorController, AlertProvider {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var oldY: CGFloat  = 0
-    var barHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,36 +23,6 @@ class ColorCollectionVC: ColorController, AlertProvider {
     
     func hasColorIndex(_ index: Int) -> Bool {
         return retrieveColorCatched().index > index
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        if offsetY > oldY {
-            hideBar()
-        } else {
-            showBar()
-        }
-        if offsetY > 0 && offsetY < 553 {
-            oldY = scrollView.contentOffset.y
-        }
-    }
-    
-    private func hideBar() {
-        guard barHidden == false else { return }
-        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.barView?.alpha = 0
-        }, completion: { (done) in
-            self.barHidden = true
-        })
-    }
-    
-    private func showBar() {
-        guard barHidden == true else { return }
-        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.barView?.alpha = 1
-        }, completion: { (done) in
-            self.barHidden = false
-        })
     }
 }
 
