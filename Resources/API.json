@@ -95,6 +95,46 @@
             "hex": "00704a",
             "name": "Starbucks Green",
             "desc": "Starbucks aprons weren't always green, according to a press release on the bean brewer's site. It started out, similar to their logo, as a brown-hued version in 1971 at their first location in Seattle's Pike Place Market. The smock didn't change colors until 1987, when Starbucks transitioned towards a more European-style coffee shop vibe, including the sale of handcrafted drinks and espresso specialty sips (white shirts, black bow ties, and jazz music included)."
+        },
+        {
+            "hex": "ff2052",
+            "name": "Awesome Color",
+            "desc": ""
+        },
+        {
+            "hex": "ac9877",
+            "name": "Bear Hug",
+            "desc": ""
+        },
+        {
+            "hex": "bada55",
+            "name": "Soft Yellow",
+            "desc": ""
+        },
+        {
+            "hex": "00cccc",
+            "name": "Robin Egg Blue",
+            "desc": "Robin egg blue, also called eggshell blue, is a shade of cyan (greenish-blue color), approximating the shade of the eggs laid by the American robin."
+        },
+        {
+            "hex": "fae7b5",
+            "name": "Banana Mania",
+            "desc": ""
+        },
+        {
+            "hex": "663399",
+            "name": "Rebecca Purple",
+            "desc": "Rebecca purple, was introduced to honor the life of Rebecca Meyer, the daughter of Eric Meyer, a respected programmer and CSS writer. Rebecca died of brain cancer at the age of six; the hue was chosen to reflect her favorite color"
+        },
+        {
+            "hex": "ffefd5",
+            "name": "Papaya Whip",
+            "desc": ""
+        },
+        {
+            "hex": "c0ffee",
+            "name": "Lime green",
+            "desc": ""
         }
     ]
 }

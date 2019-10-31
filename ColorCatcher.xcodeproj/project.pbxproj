@@ -27,6 +27,7 @@
 		1C4B92CE227B338E004773D4 /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C7227B32E3004773D4 /* Brandon_reg_it.otf */; };
 		1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92C8227B32E3004773D4 /* Brandon_reg.otf */; };
 		1C5332F52369E173003D421B /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5332F42369E173003D421B /* BlurredView.swift */; };
+		1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5332F6236B2151003D421B /* ChameleonView.swift */; };
 		1C5E7C322328151C001542E4 /* BouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E7C312328151C001542E4 /* BouncyButton.swift */; };
 		1C5E7C34232A163F001542E4 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E7C33232A163F001542E4 /* API.json */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
@@ -96,6 +97,7 @@
 		1C4B92C9227B32E3004773D4 /* Brandon_med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med.otf; sourceTree = "<group>"; };
 		1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
 		1C5332F42369E173003D421B /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		1C5332F6236B2151003D421B /* ChameleonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonView.swift; sourceTree = "<group>"; };
 		1C5E7C312328151C001542E4 /* BouncyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButton.swift; sourceTree = "<group>"; };
 		1C5E7C33232A163F001542E4 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */,
 				1C15D99D22258FE60037F8D6 /* ColorTimer.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
+				1C5332F6236B2151003D421B /* ChameleonView.swift */,
 				1C8853B923685F8D00FF9770 /* Extensions.swift */,
 				1CFE9F3A22296CD600F62935 /* Mock.json */,
 				1CFE9F2F2229347D00F62935 /* Views */,
@@ -441,6 +444,7 @@
 				1C15192B2220002D00226042 /* Common.swift in Sources */,
 				1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
+				1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
 				1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */,
 				1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */,

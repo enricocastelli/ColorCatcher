@@ -14,6 +14,8 @@ open class Animator: UIImageView {
     private var frameTime: Double
     private var timer = Timer()
     private var imageCount = 0
+    private var shouldStop = false
+    private var completionStop: ()->()? = {}
     
     public init(_ frame: CGRect, images: [UIImage], frameTime: Double) {
         self.images = images
@@ -32,10 +34,15 @@ open class Animator: UIImageView {
             imageCount = 0
         }
         self.image = images[imageCount]
+        if imageCount == 0 && shouldStop {
+            timer.invalidate()
+            completionStop()
+        }
         imageCount += 1
     }
     
     open func start() {
+        shouldStop = false
         timer = Timer.scheduledTimer(withTimeInterval: frameTime, repeats: true, block: { (timer) in
             self.timerCall()
         })
@@ -44,6 +51,11 @@ open class Animator: UIImageView {
     
     open func stop() {
         timer.invalidate()
+    }
+    
+    open func stopAtFirst(completion: @escaping()->()) {
+        shouldStop = true
+        self.completionStop = completion
     }
     
     required public init?(coder aDecoder: NSCoder) {

@@ -32,6 +32,7 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
         quickGameButton.stop()
         discoveryButton.stop()
         multiButton.stop()
+        removeAllAnimations()
     }
     
     func setView() {
