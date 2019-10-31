@@ -41,9 +41,9 @@ open class Animator: UIImageView {
         imageCount += 1
     }
     
-    open func start() {
+    open func start(_ frameTime: Double? = nil) {
         shouldStop = false
-        timer = Timer.scheduledTimer(withTimeInterval: frameTime, repeats: true, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: frameTime ?? self.frameTime, repeats: true, block: { (timer) in
             self.timerCall()
         })
         timer.fire()

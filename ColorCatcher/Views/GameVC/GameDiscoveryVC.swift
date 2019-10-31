@@ -49,7 +49,7 @@ class GameDiscoveryVC: GameVC {
         updateCollectionLabel()
         guard let currentColor = ColorManager.shared.currentColor else { return }
         storeColorCatched(Catched(hex: currentColor.hex))
-        var model = PopupModel(titleString: currentColor.name, message: currentColor.desc)
+        var model = PopupModel(titleString: currentColor.name, message: currentColor.description)
         model.color = UIColor(hex: currentColor.hex)
         showPopup(model)
     }

@@ -53,8 +53,8 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     
     
     func fetchColors(success: @escaping () -> (), failure: @escaping () -> ()) {
-        Service.shared.get(success: { (object) in
-            ColorManager.shared.colors = object.colors
+        Service.shared.get(success: { (colors) in
+            ColorManager.shared.colors = colors
             success()
         }) { (error) in
             failure()

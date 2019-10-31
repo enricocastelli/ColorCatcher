@@ -28,7 +28,7 @@ class ColorCollectionVC: ColorController, AlertProvider {
     func openItem(_ index: Int) {
         let catched = retrieveColorCatched().catched[index]
         let color = ColorManager.shared.colors[index]
-        var model = PopupModel(titleString: color.name, message: color.desc)
+        var model = PopupModel(titleString: color.name, message: color.description)
         model.color = UIColor(hex: color.hex)
         let subtitleString: String = {
             var str = "Catched \(catched.date.string)"

@@ -40,13 +40,13 @@ class Service: NSObject, URLSessionDelegate {
 //        task.resume()
 //    }
     
-    func get(success: @escaping (ColorObjectModel) -> (), failure: @escaping (Error) -> ()) {
+    func get(success: @escaping ([ColorModel]) -> (), failure: @escaping (Error) -> ()) {
         do {
             let jsonMock = Bundle.main.path(forResource: "API", ofType: "json")
             let dataMock = try Data(contentsOf: URL(fileURLWithPath: jsonMock!))
-            success(try JSONDecoder().decode(ColorObjectModel.self, from: dataMock))
+            success(try JSONDecoder().decode([ColorModel].self, from: dataMock))
         } catch {
-            Logger(error.localizedDescription)
+            Logger(error)
             failure(error as NSError)
         }
     }

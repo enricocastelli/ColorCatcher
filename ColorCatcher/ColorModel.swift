@@ -8,26 +8,20 @@
 
 import UIKit
 
-struct ColorObjectModel: Decodable {
-    
-    var colors: [ColorModel]
-
-    enum CodingKeys:  Any, CodingKey
-    {
-        case colors
-    }
-}
 
 struct ColorModel: Decodable {
     
-    var hex: String
-    var name: String
-    var desc: String
+    let hex: String
+    let name: String
+    let description: String
+    let type: ColorModelType
+}
 
-    enum CodingKeys:  Any, CodingKey
-    {
-        case hex
-        case name
-        case desc
-    }
+enum ColorModelType: String,Codable {
+    case General
+    case Name
+    case Logo
+    case History
+    case Art
+    case Movies
 }

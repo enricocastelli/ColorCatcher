@@ -38,7 +38,7 @@ extension WelcomeAnimator where Self: UIViewController {
         let chameleon = ChameleonView()
         self.view.addSubview(chameleon)
         chameleon.start()
-        UIView.animate(withDuration: 12, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 9.8, delay: 0, options: [], animations: {
             chameleon.frame.origin.x = self.view.center.x - chameleon.frame.width/2
         }, completion: { (_) in
             chameleon.stopAtFirst {
@@ -46,6 +46,11 @@ extension WelcomeAnimator where Self: UIViewController {
                 chameleon.changeColor(0.8)
             }
         })
+        let _ = Timer.scheduledTimer(withTimeInterval: 8, repeats: false) { (_) in
+            chameleon.stop()
+            chameleon.start(0.065)
+        }
+
     }
     
     func animateButterflies() {
@@ -73,12 +78,16 @@ extension WelcomeAnimator where Self: UIViewController {
         UIView.animate(withDuration: 1.4, delay: 5, options: [], animations: {
             but.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
-        let _ = Timer.scheduledTimer(withTimeInterval: 7, repeats: false) { (_) in
+        let _ = Timer.scheduledTimer(withTimeInterval: 6, repeats: false) { (_) in
             but.stopAtFirst(completion: {})
         }
-        let _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
+        let _ = Timer.scheduledTimer(withTimeInterval: 9, repeats: false) { (_) in
             but.start()
             but.animatePos(self.createFinalPathObject(random))
+            UIView.animate(withDuration: 4, animations: {
+                but.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            })
+
         }
     }
     
