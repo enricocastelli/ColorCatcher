@@ -42,12 +42,14 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
     }
     
     func updateColorWithLevel() {
-        let level = ColorManager().retrieveColorCatched().index
-        guard level < colors.count else {
+        let colorCatched = ColorManager().retrieveColorCatched()
+        guard colorCatched.count != colors.count else {
             delegate?.didFinishColors()
             return
         }
-        currentColor = colors[level]
+        currentColor = colors.filter { (color) -> Bool in
+            return !colorCatched.contains(where: { $0.hex == color.hex })
+        }.first ?? colors.first
         goalColor = UIColor(hex: currentColor!.hex)
     }
     

@@ -47,6 +47,7 @@ class GameDiscoveryVC: GameVC {
         vibrate()
         CaptureManager.shared.stopSession()
         updateCollectionLabel()
+        setFlashIcon(false)
         guard let currentColor = ColorManager.shared.currentColor else { return }
         storeColorCatched(Catched(hex: currentColor.hex))
         var model = PopupModel(titleString: currentColor.name, message: currentColor.description)

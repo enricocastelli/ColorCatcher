@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="colorView" destination="dVH-yM-XdM" id="mV1-7v-LyE"/>
                 <outlet property="containerView" destination="EOi-0G-MeP" id="E6r-O2-yKh"/>
+                <outlet property="flashButton" destination="vIl-qC-Gn4" id="qWY-om-woB"/>
                 <outlet property="frameView" destination="v57-pq-l0B" id="8PK-a9-326"/>
                 <outlet property="imageView" destination="eH8-Zu-1QH" id="0WQ-BG-zDI"/>
                 <outlet property="progressView" destination="gTY-Sv-hlz" id="M5V-XC-0Ve"/>

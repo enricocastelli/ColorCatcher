@@ -43,7 +43,7 @@ extension WelcomeAnimator where Self: UIViewController {
         }, completion: { (_) in
             chameleon.stopAtFirst {
                 chameleon.goToStatic()
-                chameleon.changeColor(0.8)
+                chameleon.changeColor(1)
             }
         })
         let _ = Timer.scheduledTimer(withTimeInterval: 8, repeats: false) { (_) in

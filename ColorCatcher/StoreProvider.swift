@@ -29,19 +29,10 @@ struct Catched: Codable {
     }
 }
 
-struct CatchedObject: Codable {
-    
-    var index: Int
-    var catched: [Catched]
-    
-    static func empty() -> CatchedObject {
-        return CatchedObject(index: 0, catched: [])
-    }
-}
 
 protocol StoreProvider {
     func storeColorCatched(_ catched: Catched)
-    func retrieveColorCatched() -> CatchedObject
+    func retrieveColorCatched() -> [Catched]
     func reset()
     func isFirstLaunch() -> Bool
     func isFirtRace() -> Bool
@@ -52,11 +43,11 @@ extension StoreProvider {
     
     func storeColorCatched(_ catched: Catched) {
         var catchedObject = self.retrieveColorCatched()
-        catchedObject.index += 1
+        guard !catchedObject.contains(where: { ($0.hex == catched.hex)}) else { return }
         var catched = catched
         LocationManager.shared.getCurrentPlace({ (location) in
             catched.location = location
-            catchedObject.catched.append(catched)
+            catchedObject.append(catched)
             do {
                 UserDefaults.standard.set(try PropertyListEncoder().encode(catchedObject), forKey: StoreKeys.ColorCatched.rawValue)
             } catch {
@@ -65,24 +56,20 @@ extension StoreProvider {
         })
     }
     
-    func retrieveColorCatched() -> CatchedObject {
+    func retrieveColorCatched() -> [Catched] {
         do {
             guard let storedObject: Data = UserDefaults.standard.object(forKey: StoreKeys.ColorCatched.rawValue) as? Data else {
-                return CatchedObject.empty()
+                return []
             }
-            return try PropertyListDecoder().decode(CatchedObject.self, from: storedObject)
+            return try PropertyListDecoder().decode([Catched].self, from: storedObject)
         } catch {
             Logger("Catched colors not found!")
-            return CatchedObject.empty()
+            return []
         }
     }
 
     func reset() {
-        do {
-            UserDefaults.standard.set(try PropertyListEncoder().encode(CatchedObject.empty()), forKey: StoreKeys.ColorCatched.rawValue)
-        } catch {
-            Logger("Can't update catched colors!")
-        }
+        UserDefaults.standard.set([], forKey: StoreKeys.ColorCatched.rawValue)
     }
     
     func isFirstLaunch() -> Bool {

@@ -21,13 +21,14 @@ class ColorCollectionVC: ColorController, AlertProvider {
         configureBarForCollection()
     }
     
-    func hasColorIndex(_ index: Int) -> Bool {
-        return retrieveColorCatched().index > index
+    func hasColor(_ hex: String) -> Bool {
+        return retrieveColorCatched().contains(where: { ($0.hex == hex)})
     }
     
-    func openItem(_ index: Int) {
-        let catched = retrieveColorCatched().catched[index]
-        let color = ColorManager.shared.colors[index]
+    func openColor(_ color: ColorModel) {
+        guard let catched = retrieveColorCatched().first(where: { ($0.hex == color.hex ) }) else {
+            return
+        }
         var model = PopupModel(titleString: color.name, message: color.description)
         model.color = UIColor(hex: color.hex)
         let subtitleString: String = {
@@ -55,7 +56,7 @@ extension ColorCollectionVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ColorCollectionCell
         let color = ColorManager.shared.colors[indexPath.row]
-        cell.color = hasColorIndex(indexPath.row) ? color : nil
+        cell.color = hasColor(color.hex) ? color : nil
         return cell
     }
     
@@ -75,7 +76,8 @@ extension ColorCollectionVC: UICollectionViewDataSource {
 extension ColorCollectionVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard hasColorIndex(indexPath.row) else { return }
-        openItem(indexPath.row)
+        let current = ColorManager.shared.colors[indexPath.row]
+        guard hasColor(current.hex) else { return }
+        openColor(current)
     }
 }

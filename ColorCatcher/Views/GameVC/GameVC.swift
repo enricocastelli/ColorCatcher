@@ -19,6 +19,7 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressView: RoundProgress!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
     
     var points = 0
     var gameStarted = false
@@ -74,8 +75,9 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
         vibrate()
         showTimePopup()
         CaptureManager.shared.stopSession()
+        setFlashIcon(false)
         // TODO:
-        imageView.image = UIImage(named: "fox0")
+        imageView.image = UIImage(named: "chameleonX")
     }
     
     func updateColorView() {
@@ -120,9 +122,13 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     
     @IBAction func infoTapped(_ sender: UIButton) {
         openFlash { (on) in
-            sender.isSelected = on
-            sender.tintColor = on ? .blue : .darkGray
+            self.setFlashIcon(on)
         }
+    }
+    
+    func setFlashIcon(_ on: Bool) {
+        flashButton.isSelected = on
+        flashButton.tintColor = on ? .blue : .darkGray
     }
     
 }

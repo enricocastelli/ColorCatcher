@@ -306,3 +306,7 @@ extension Date {
     }
     
 }
+
+extension Notification.Name {
+    static let shouldStopTimer = Notification.Name(rawValue: "shouldStopTimer")
+}

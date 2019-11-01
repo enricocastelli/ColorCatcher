@@ -21,12 +21,25 @@ open class Animator: UIImageView {
         self.images = images
         self.frameTime = frameTime
         super.init(frame: frame)
+        addObserver()
     }
     
     public init(_ frame: CGRect, imageName: String, count: Int, frameTime: Double) {
         self.images = getImages(imageName, count)
         self.frameTime = frameTime
         super.init(frame: frame)
+        addObserver()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self,
+                                       selector: #selector(self.dismiss),
+                                       name: .shouldStopTimer,
+                                       object: nil)
     }
     
     private func timerCall() {
@@ -56,6 +69,11 @@ open class Animator: UIImageView {
     open func stopAtFirst(completion: @escaping()->()) {
         shouldStop = true
         self.completionStop = completion
+    }
+    
+    @objc private func dismiss() {
+        stop()
+        removeFromSuperview()
     }
     
     required public init?(coder aDecoder: NSCoder) {
