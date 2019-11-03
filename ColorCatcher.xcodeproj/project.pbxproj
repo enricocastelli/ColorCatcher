@@ -61,7 +61,6 @@
 		1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F34222942E800F62935 /* ColorCollectionVC.xib */; };
 		1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9F362229461600F62935 /* ColorCollectionCell.swift */; };
 		1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F372229461600F62935 /* ColorCollectionCell.xib */; };
-		1CFE9F3B22296CD600F62935 /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F3A22296CD600F62935 /* Mock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,7 +132,6 @@
 		1CFE9F34222942E800F62935 /* ColorCollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionVC.xib; sourceTree = "<group>"; };
 		1CFE9F362229461600F62935 /* ColorCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCell.swift; sourceTree = "<group>"; };
 		1CFE9F372229461600F62935 /* ColorCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionCell.xib; sourceTree = "<group>"; };
-		1CFE9F3A22296CD600F62935 /* Mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +212,6 @@
 				1CC490432323EB2400759C72 /* Animator.swift */,
 				1C5332F6236B2151003D421B /* ChameleonView.swift */,
 				1C8853B923685F8D00FF9770 /* Extensions.swift */,
-				1CFE9F3A22296CD600F62935 /* Mock.json */,
 				1CFE9F2F2229347D00F62935 /* Views */,
 				1C15191C221FFF9D00226042 /* Main.storyboard */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
@@ -402,7 +399,6 @@
 				1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */,
 				1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */,
 				1C15191E221FFF9D00226042 /* Main.storyboard in Resources */,
-				1CFE9F3B22296CD600F62935 /* Mock.json in Resources */,
 				1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
