@@ -180,19 +180,6 @@ extension UINavigationController {
     }
 }
 
-extension UILabel {
-    
-    func changeText(_ newText : String) {
-        let anim = CATransition()
-        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        anim.type = CATransitionType.push
-        anim.duration = 0.4
-        if self.text != newText {
-            self.layer.add(anim, forKey: "change")
-            self.text = newText
-        }
-    }
-}
 
 extension UIFont {
     
@@ -233,7 +220,7 @@ func Logger(_ error: String) {
 }
 
 func Logger(_ error: Error) {
-    print("🎨⚠️ - \((error as? NSError)?.description ?? "")")
+    print("🎨⚠️ - \((error as NSError).description)")
 }
 
 func prettyPrint(data: Data?) {

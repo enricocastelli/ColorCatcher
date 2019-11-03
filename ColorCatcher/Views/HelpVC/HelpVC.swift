@@ -7,106 +7,91 @@
 //
 
 import UIKit
+import AVFoundation // for Authorization on using camera
 
-class HelpVC: ColorController {
+fileprivate let texts: [String] = ["You will be given a color to find and catch",
+                                          "Look for that color around you...",
+                                          "And point your phone on it!",
+                                          "",
+                                          "Please enable camera access and location"]
 
+class HelpVC: UIViewController, PopupProvider {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var continueButton: UIButton!
-    
-    var model: HelpModel
-    var continuation: (()->Void)
+    @IBOutlet weak var continueButton: BouncyButton!
+    @IBOutlet weak var titleLabel: TimerLabel!
 
-    
-    init(_ model: HelpModel, continuation: @escaping() ->()) {
-        self.model = model
-        self.continuation = continuation
-        super.init(nibName: String(describing: HelpVC.self), bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = model.mainText()
-        image.image = model.image()
-        continueButton.setTitle(model.buttonText(), for: .normal)
-        setButton(continueButton)
-        image.tintColor = UIColor.lightGray
-        // to ask permission for camera
-        CaptureManager.shared.startSession()
-        if model == .discovery {
-            let _ = LocationManager.shared
+        titleLabel.changeText("Welcome to ColorCatcher!")
+        continueButton.setTitle("Skip Intro", for: .normal)
+        continueButton.setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addPhoneView()
+        let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in self.titleLabel.start(texts) }
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (_) in self.addAppleImage() }
+        let _ = Timer.scheduledTimer(withTimeInterval: 11, repeats: false) { (_) in
+            var model = PopupModel(titleString: "Collect all colors and find out cool facts about them you would never imagined", message: "")
+            model.autoremoveTime = 3
+            self.showPopup(model)
+        }
+        let _ = Timer.scheduledTimer(withTimeInterval: 13.5, repeats: false) { (_) in
+            self.continueButton.set(0.5)
+            self.animateChameleon()
+        }
+        let _ = Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { (_) in self.askPermissions() }
+    }
+
+    func addPhoneView() {
+        let width = UIScreen.main.bounds.width
+        let phoneFrame = CGRect(x: width, y: 0, width: width, height: width)
+        let phoneView = PhoneTourView(frame: phoneFrame)
+        phoneView.center.y = self.view.center.y/0.9
+        view.addSubview(phoneView)
+        phoneView.startAnimation()
+    }
+    
+    func addAppleImage() {
+        let width = UIScreen.main.bounds.width
+        let appleFrame = CGRect(x: width, y: -width, width: width, height: width)
+        self.view.insertSubview(AppleImageView(appleFrame, .Green, 0.7), at: 0)
+        self.view.insertSubview(AppleImageView(appleFrame, .Yellow, 0.5), at: 0)
+        self.view.insertSubview(AppleImageView(appleFrame, .Red, 0.6), at: 0)
+    }
+    
+    func animateChameleon() {
+        let chameleon = ChameleonView()
+        chameleon.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        chameleon.center = self.view.center
+        self.view.addSubview(chameleon)
+        chameleon.alpha = 0
+        chameleon.start(0.03)
+        UIView.animate(withDuration: 2) {
+            chameleon.alpha = 1
         }
     }
     
-    func setButton(_ button: UIButton) {
-        button.layer.cornerRadius = 20
-        button.layer.shadowOffset = CGSize(width: 0, height: 4)
-        button.layer.shadowColor = UIColor.lightGray.cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowRadius = 4
+    func askPermissions() {
+        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+            //already authorized
+        } else {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                let _ = LocationManager.shared
+            })
+        }
     }
     
     @IBAction func continueTapped(_ sender: UIButton) {
-        self.continuation()
-        self.dismiss(animated: true) {}
-        CaptureManager.shared.stopSession()
+        navigationController?.show(WelcomeVC(), sender: nil)
+        close()
     }
     
-    override func backTapped(_ sender: UIButton) {
+    func close() {
         CaptureManager.shared.stopSession()
         self.dismiss(animated: true, completion: nil)
     }
 }
 
 
-enum HelpModel {
-    
-    case race
-    case discovery
-    case multi
-    case help
-    
-    func mainText() -> String {
-        switch self {
-        case .race:
-            return "Welcome to race mode"
-        case .discovery:
-            return "Welcome to discovery mode"
-        case .multi:
-            return "Welcome to race mode"
-        case .help:
-            return "Welcome to race mode"
-        }
-    }
-    
-    func image() -> UIImage? {
-        switch self {
-        case .race:
-            return UIImage(named: "time")
-        case .discovery:
-            return UIImage(named: "time")
-        case .multi:
-            return UIImage(named: "time")
-        case .help:
-            return UIImage(named: "time")
-        }
-    }
-    
-    func buttonText() -> String {
-        switch self {
-        case .race:
-            return "Ok let's go!"
-        case .discovery:
-            return "Ok let's go!"
-        case .multi:
-            return "Ok let's go!"
-        case .help:
-            return "Ok let's go!"
-        }
-    }
-}

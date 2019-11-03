@@ -29,12 +29,17 @@ class ChameleonView: Animator {
         super.init(chFrame, imageName: "chameleon", count: 50, frameTime: 0.05)
     }
     
+    init(_ frame: CGRect) {
+        let chFrame = frame
+        super.init(chFrame, imageName: "chameleon", count: 50, frameTime: 0.05)
+    }
+    
     func goToStatic() {
         self.image = UIImage(named: "chameleonX")
     }
     
     func changeColor(_ delay: Double? = nil) {
-        let _ = Timer.scheduledTimer(withTimeInterval: 0, repeats: false) { (_) in
+        let _ = Timer.scheduledTimer(withTimeInterval: delay ?? 0, repeats: false) { (_) in
             UIView.transition(with: self,
                               duration: 1,
                               options: .transitionCrossDissolve,

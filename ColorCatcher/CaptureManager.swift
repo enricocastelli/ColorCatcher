@@ -68,7 +68,7 @@ class CaptureManager: NSObject {
     
     
     func startSession() {
-//        // TEST simulator
+        // TEST simulator
 //        guard !session.inputs.isEmpty else {
 //            delegate?.failedInitializingSession()
 //            return

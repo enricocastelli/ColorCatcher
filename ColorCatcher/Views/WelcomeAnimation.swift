@@ -22,7 +22,7 @@ struct PathObject {
 extension WelcomeAnimator where Self: UIViewController {
     
     func startWelcomeAnimation() {
-        animatechameleon()
+        animateChameleon()
         animateButterflies()
         animateSecondButterfly()
     }
@@ -34,7 +34,7 @@ extension WelcomeAnimator where Self: UIViewController {
         }
     }
     
-    func animatechameleon() {
+    func animateChameleon() {
         let chameleon = ChameleonView()
         self.view.addSubview(chameleon)
         chameleon.start()
@@ -50,7 +50,6 @@ extension WelcomeAnimator where Self: UIViewController {
             chameleon.stop()
             chameleon.start(0.065)
         }
-
     }
     
     func animateButterflies() {

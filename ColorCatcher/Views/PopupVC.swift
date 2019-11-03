@@ -7,21 +7,25 @@ struct PopupModel {
     var subtitleString: String?
     var button: String?
     var color: UIColor?
+    var autoremoveTime: Double?
     
     init(titleString: String, message: String) {
         self.titleString = titleString
         self.message = message
     }
+    
+    static func empty() -> PopupModel {
+        return PopupModel(titleString: "", message: "")
+    }
 }
 
-protocol PopupDelegate: class {
-    func didDismissPopup()
+@objc protocol PopupDelegate: class {
+    @objc optional func didDismissPopup()
 }
 
 class PopupVC: UIViewController {
     
     var model: PopupModel
-    var shouldAutoRemove: Bool = false
     weak var delegate: PopupDelegate?
     var masterLayer = CALayer()
     var drops = [DropLayer]()
@@ -66,12 +70,11 @@ class PopupVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addDrops()
-        if shouldAutoRemove {
-            let _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { (_) in
+        animateFadeIn()
+        if let autoremoveTime = model.autoremoveTime {
+            let _ = Timer.scheduledTimer(withTimeInterval: autoremoveTime, repeats: false) { (_) in
                 self.tappedView()
             }
-        } else {
-            animateFadeIn()
         }
     }
     
@@ -82,7 +85,7 @@ class PopupVC: UIViewController {
     
     @objc func tappedView() {
         self.removePopup {
-            self.delegate?.didDismissPopup()
+            self.delegate?.didDismissPopup?()
             self.dismiss(animated: false, completion: {
             })
         }
@@ -141,11 +144,9 @@ class PopupVC: UIViewController {
     
     func removePopup(done: @escaping () -> ()) {
         closeButton.layer.fadeOut(0.3)
-        if !shouldAutoRemove {
-            postAnimation()
-            coverView.layer.fadeOut(0.3)
-            descView.layer.fadeOut(0.3)
-        }
+        postAnimation()
+        coverView.layer.fadeOut(0.3)
+        descView.layer.fadeOut(0.3)
         for drop in drops {
             drop.fade()
         }

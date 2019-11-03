@@ -6,16 +6,19 @@ class BouncyButton: UIButton {
     var timer = Timer()
     
     func set(_ delay: Double) {
-        layer.cornerRadius = 20
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOpacity = 1
-        layer.shadowRadius = 4
+        setup()
         let _ = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { (_) in
             self.startTimer()
         }
     }
     
+    func setup() {
+        layer.cornerRadius = 20
+        layer.shadowOffset = CGSize(width: 0, height: 4)
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 4
+    }
     
     func stop() {
         timer.invalidate()

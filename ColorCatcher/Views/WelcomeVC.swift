@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator {
+class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -20,6 +20,9 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isFirstLaunch() {
+            reset()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,38 +44,18 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
         multiButton.set(0.4)
     }
     
-    func setButton(_ button: UIView) {
-        button.layer.cornerRadius = 20
-        button.layer.shadowOffset = CGSize(width: 0, height: 4)
-        button.layer.shadowColor = UIColor.lightGray.cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowRadius = 4
-    }
-    
     func test() {
-        let test = EyeProximityTestVC()
-        self.navigationController?.show(test, sender: nil)
+//        let test = EyeProximityTestVC()
+//        self.navigationController?.show(test, sender: nil)
+        let helpVC = HelpVC()
+        self.navigationController?.present(helpVC, animated: true, completion: nil)
     }
 
     @IBAction func raceTapped(_ sender: UIButton) {
-        guard !isFirtRace() else {
-            let helpVC = HelpVC(.race) {
-                self.pushToRaceMode()
-            }
-            self.navigationController?.present(helpVC, animated: true, completion: nil)
-            return
-        }
         pushToRaceMode()
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
-        guard !isFirtRace() else {
-            let helpVC = HelpVC(.discovery) {
-                self.goToDiscovery()
-            }
-            self.navigationController?.present(helpVC, animated: true, completion: nil)
-            return
-        }
         goToDiscovery()
     }
     
@@ -86,11 +69,10 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
         }
     }
     
-    
     @IBAction func multiTapped(_ sender: UIButton) {
-//        test()
-        let multiVC = MultiplayerVC()
-        navigationController?.show(multiVC, sender: nil)
+        test()
+//        let multiVC = MultiplayerVC()
+//        navigationController?.show(multiVC, sender: nil)
     }
 
     @IBAction func collectionTapped(_ sender: UIButton) {
@@ -117,8 +99,4 @@ class WelcomeVC: UIViewController, AlertProvider, StoreProvider, WelcomeAnimator
         let gameVC = GameDiscoveryVC()
         navigationController?.show(gameVC, sender: nil)
     }
-    
-    func didDismissPopup() {}
-
-    
 }

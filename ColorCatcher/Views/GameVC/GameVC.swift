@@ -12,7 +12,7 @@ import AudioToolbox
 
 
 // Superclass of the game happening
-class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizerDelegate {
+class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var frameView: UIView!
@@ -73,7 +73,7 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     
     func colorRecognized() {
         vibrate()
-        showTimePopup()
+        showPopup(PopupModel.empty())
         CaptureManager.shared.stopSession()
         setFlashIcon(false)
         // TODO:

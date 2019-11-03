@@ -9,7 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class MultiplayerVC: ColorController, AlertProvider {
+class MultiplayerVC: ColorController, PopupProvider {
     
     @IBOutlet weak var tableView: UITableView!
     var multiplayer: MultiplayerManager!
@@ -44,9 +44,6 @@ class MultiplayerVC: ColorController, AlertProvider {
     override func backTapped(_ sender: UIButton) {
         multiplayer.stop()
         super.backTapped(sender)
-    }
-    
-    func didDismissPopup() {
     }
     
     @objc func refresh(_ sender:AnyObject) {

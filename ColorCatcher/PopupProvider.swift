@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol AlertProvider: PopupDelegate {
+protocol PopupProvider: PopupDelegate {
     
     func showAlert(title : String, message : String, firstButton : String, secondButton : String?, firstCompletion: @escaping () -> (), secondCompletion: (() -> ())?)
     func showGeneralError()
     
 }
 
-extension AlertProvider where Self: UIViewController {
+extension PopupProvider where Self: UIViewController {
     
     func showAlert(title : String, message : String, firstButton : String, secondButton : String?, firstCompletion: @escaping () -> (), secondCompletion: (() -> ())?) {
         DispatchQueue.main.async {
@@ -44,16 +44,6 @@ extension AlertProvider where Self: UIViewController {
         popup.view.backgroundColor = UIColor.clear
         popup.modalPresentationStyle = .overCurrentContext
         popup.delegate = self
-        self.present(popup, animated: false) {
-        }
-    }
-    
-    func showTimePopup() {
-        let popup = PopupVC(PopupModel(titleString: "", message: ""))
-        popup.view.backgroundColor = UIColor.clear
-        popup.modalPresentationStyle = .overCurrentContext
-        popup.delegate = self
-        popup.shouldAutoRemove = true
         self.present(popup, animated: false) {
         }
     }

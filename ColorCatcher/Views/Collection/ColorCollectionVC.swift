@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "colorCollectionCell"
 
-class ColorCollectionVC: ColorController, AlertProvider {
+class ColorCollectionVC: ColorController, PopupProvider {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -67,10 +67,6 @@ extension ColorCollectionVC: UICollectionViewDataSource {
         colorCell.animateShowing()
     }
     
-    
-    func didDismissPopup() {
-        
-    }
 }
 
 extension ColorCollectionVC: UICollectionViewDelegate {

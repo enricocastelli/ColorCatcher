@@ -17,7 +17,7 @@
 		1C15192D222004F600226042 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15192C222004F600226042 /* CaptureManager.swift */; };
 		1C15D99B22257EBE0037F8D6 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99A22257EBE0037F8D6 /* ColorManager.swift */; };
 		1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99D22258FE60037F8D6 /* ColorTimer.swift */; };
-		1C15D9A02225955E0037F8D6 /* AlertProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* AlertProvider.swift */; };
+		1C15D9A02225955E0037F8D6 /* PopupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* PopupProvider.swift */; };
 		1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D9A122269D530037F8D6 /* GameVC.xib */; };
 		1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */; };
 		1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */; };
@@ -31,6 +31,10 @@
 		1C5E7C322328151C001542E4 /* BouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E7C312328151C001542E4 /* BouncyButton.swift */; };
 		1C5E7C34232A163F001542E4 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E7C33232A163F001542E4 /* API.json */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
+		1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */; };
+		1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */; };
+		1C7FDDCD236F65D100CC72CE /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDCC236F65D100CC72CE /* TimerLabel.swift */; };
+		1C7FDDCF236F705C00CC72CE /* AppleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */; };
 		1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8853B923685F8D00FF9770 /* Extensions.swift */; };
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
@@ -86,7 +90,7 @@
 		1C15192C222004F600226042 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 		1C15D99A22257EBE0037F8D6 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		1C15D99D22258FE60037F8D6 /* ColorTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTimer.swift; sourceTree = "<group>"; };
-		1C15D99F2225955E0037F8D6 /* AlertProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProvider.swift; sourceTree = "<group>"; };
+		1C15D99F2225955E0037F8D6 /* PopupProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProvider.swift; sourceTree = "<group>"; };
 		1C15D9A122269D530037F8D6 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
 		1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeProximityTestVC.swift; sourceTree = "<group>"; };
 		1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyeProximityTestVC.xib; sourceTree = "<group>"; };
@@ -100,6 +104,10 @@
 		1C5E7C312328151C001542E4 /* BouncyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButton.swift; sourceTree = "<group>"; };
 		1C5E7C33232A163F001542E4 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
+		1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTourView.xib; sourceTree = "<group>"; };
+		1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTourView.swift; sourceTree = "<group>"; };
+		1C7FDDCC236F65D100CC72CE /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
+		1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleImageView.swift; sourceTree = "<group>"; };
 		1C8853B923685F8D00FF9770 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
@@ -200,7 +208,7 @@
 				1C15192A2220002D00226042 /* Common.swift */,
 				1CFE9EFB2226DC6900F62935 /* StoreProvider.swift */,
 				1CBFB636223193BF00CB46C5 /* FlashProvider.swift */,
-				1C15D99F2225955E0037F8D6 /* AlertProvider.swift */,
+				1C15D99F2225955E0037F8D6 /* PopupProvider.swift */,
 				1C15192C222004F600226042 /* CaptureManager.swift */,
 				1CFE9EF72226BAF200F62935 /* Service.swift */,
 				1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */,
@@ -235,6 +243,10 @@
 		1CA50F7E22788694009D6424 /* HelpVC */ = {
 			isa = PBXGroup;
 			children = (
+				1C7FDDCC236F65D100CC72CE /* TimerLabel.swift */,
+				1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */,
+				1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */,
+				1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */,
 				1CA50F7A2278868B009D6424 /* HelpVC.swift */,
 				1CA50F7B2278868B009D6424 /* HelpVC.xib */,
 			);
@@ -386,6 +398,7 @@
 				1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */,
 				1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */,
 				1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */,
+				1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */,
 				1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */,
 				1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */,
 				1C151923221FFF9F00226042 /* LaunchScreen.storyboard in Resources */,
@@ -420,6 +433,7 @@
 				1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */,
 				1CBFB62F2230103600CB46C5 /* PopupVC.swift in Sources */,
 				1C15191B221FFF9D00226042 /* GameVC.swift in Sources */,
+				1C7FDDCF236F705C00CC72CE /* AppleImageView.swift in Sources */,
 				1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */,
 				1C02C6762368CE27008312BC /* LocationManager.swift in Sources */,
 				1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */,
@@ -441,6 +455,7 @@
 				1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
 				1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */,
+				1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
 				1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */,
 				1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */,
@@ -448,9 +463,10 @@
 				1CFE9EFA2226CADF00F62935 /* ColorModel.swift in Sources */,
 				1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */,
 				1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */,
+				1C7FDDCD236F65D100CC72CE /* TimerLabel.swift in Sources */,
 				1CCB093F22242BEF00F4C812 /* MultiplayerManager.swift in Sources */,
 				1CCB093D222428F900F4C812 /* MultiplayerVC.swift in Sources */,
-				1C15D9A02225955E0037F8D6 /* AlertProvider.swift in Sources */,
+				1C15D9A02225955E0037F8D6 /* PopupProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
