@@ -50,16 +50,16 @@ class GameVC: ColorController, AlertProvider, FlashProvider, UIGestureRecognizer
     }
     
     func addTapGesture() {
-        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
+        let pinch = UIPanGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
         pinch.delegate = self
         let pinchView = UIView(frame: imageView.frame)
         self.view.addSubview(pinchView)
         pinchView.addGestureRecognizer(pinch)
     }
     
-    @objc func pinchToZoom(_ sender: UIPinchGestureRecognizer) {
+    @objc func pinchToZoom(_ sender: UIPanGestureRecognizer) {
         if sender.state == .changed {
-            CaptureManager.shared.zoom(sender.velocity)
+            CaptureManager.shared.zoom(sender.velocity(in: imageView).y)
         }
     }
     
