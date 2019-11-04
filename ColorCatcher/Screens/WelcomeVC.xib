@@ -116,22 +116,39 @@
                         <action selector="collectionTapped:" destination="-1" eventType="touchUpInside" id="Hng-FU-f3A"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-3X-bbg">
+                    <rect key="frame" x="16" y="824" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="mfS-63-1mu"/>
+                    </constraints>
+                    <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                    <state key="normal" image="settings"/>
+                    <connections>
+                        <action selector="settingsTapped:" destination="-1" eventType="touchUpInside" id="EBq-47-iQQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9SX-Do-Ccx" firstAttribute="top" secondItem="YLY-Ht-GTe" secondAttribute="topMargin" constant="50" id="T4K-4n-hmz"/>
                 <constraint firstItem="9SX-Do-Ccx" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leadingMargin" constant="16" id="XxY-Va-OSd"/>
+                <constraint firstAttribute="bottom" secondItem="vwX-3X-bbg" secondAttribute="bottom" constant="8" id="a3D-xm-ZrS"/>
                 <constraint firstItem="nrs-yX-dex" firstAttribute="top" secondItem="Ci1-LZ-MVC" secondAttribute="bottom" constant="36" id="bn7-EY-il3"/>
+                <constraint firstItem="vwX-3X-bbg" firstAttribute="width" secondItem="vwX-3X-bbg" secondAttribute="height" multiplier="1:1" id="boe-dZ-uhe"/>
                 <constraint firstItem="Ci1-LZ-MVC" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leadingMargin" constant="16" id="g37-8d-1Y5"/>
                 <constraint firstItem="Ci1-LZ-MVC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9SX-Do-Ccx" secondAttribute="bottom" constant="8" id="jSk-ne-e8A"/>
                 <constraint firstAttribute="trailing" secondItem="nrs-yX-dex" secondAttribute="trailing" constant="16" id="jnE-Uj-9hA"/>
+                <constraint firstItem="vwX-3X-bbg" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leading" constant="16" id="l07-Mh-gp9"/>
                 <constraint firstAttribute="trailingMargin" secondItem="9SX-Do-Ccx" secondAttribute="trailing" constant="16" id="ldI-R9-YV4"/>
                 <constraint firstAttribute="trailingMargin" secondItem="Ci1-LZ-MVC" secondAttribute="trailing" constant="16" id="rQy-I1-1cd"/>
                 <constraint firstAttribute="bottom" secondItem="nrs-yX-dex" secondAttribute="bottom" constant="8" id="uoN-HA-ue4"/>
             </constraints>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
     <resources>
         <image name="painter-palette" width="480" height="480"/>
+        <image name="settings" width="480" height="480"/>
     </resources>
 </document>

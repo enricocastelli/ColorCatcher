@@ -8,6 +8,7 @@ struct PopupModel {
     var button: String?
     var color: UIColor?
     var autoremoveTime: Double?
+    var opacity: Float?
     
     init(titleString: String, message: String) {
         self.titleString = titleString
@@ -63,7 +64,7 @@ class PopupVC: UIViewController, DropProvider {
             closeButton.isHidden = true
         }
         preAnimation()
-        masterLayer.opacity = 0.8
+        masterLayer.opacity = model.opacity ?? 0.8
         view.layer.insertSublayer(masterLayer, above: coverView.layer)
     }
     

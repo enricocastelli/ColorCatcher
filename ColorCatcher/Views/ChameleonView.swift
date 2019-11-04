@@ -8,6 +8,25 @@
 
 import UIKit
 
+enum ChameleonColor: String {
+    case Blue, Brown, Purple, Aqua, Salmon, Red
+    
+    static func random() -> ChameleonColor {
+        return [.Blue, .Brown, .Purple, .Aqua, .Salmon, .Red].randomElement()!
+    }
+    
+    func color() -> UIColor {
+        switch self {
+        case .Blue: return UIColor(hex: "7FB6B9")
+        case .Brown: return UIColor(hex: "9D8B3D")
+        case .Purple: return UIColor(hex: "b091ff")
+        case .Aqua: return UIColor(hex: "acaee6")
+        case .Salmon: return UIColor(hex: "faa289")
+        case .Red: return UIColor(hex: "fc6b5d")
+        }
+    }
+}
+
 // chameleon image original ratio: ratio 325:125
 
 fileprivate var getChameleonHeight: CGFloat = {
@@ -38,22 +57,19 @@ class ChameleonView: Animator {
         self.image = UIImage(named: "chameleonX")
     }
     
-    func changeColor(_ delay: Double? = nil) {
+    func changeColor(_ color: ChameleonColor, _ delay: Double? = nil) {
         let _ = Timer.scheduledTimer(withTimeInterval: delay ?? 0, repeats: false) { (_) in
             UIView.transition(with: self,
                               duration: 1,
                               options: .transitionCrossDissolve,
                               animations: {
-                                self.image = self.getRandomColor()
+                                self.image = self.getImage(color)
             },completion: nil)
         }
     }
     
-    private func getRandomColor() -> UIImage? {
-        let ar = [UIImage(named: "chameleonXPurple"),
-                  UIImage(named: "chameleonXBlue"),
-                  UIImage(named: "chameleonXBrown")]
-        return ar.randomElement() ?? UIImage(named: "chameleonX")
+    private func getImage(_ color: ChameleonColor) -> UIImage? {
+        return UIImage(named: "chameleon\(color.rawValue)")
     }
     
     required public init?(coder aDecoder: NSCoder) {

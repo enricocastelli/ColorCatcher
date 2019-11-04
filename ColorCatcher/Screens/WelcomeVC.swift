@@ -44,7 +44,7 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     }
 
     @IBAction func raceTapped(_ sender: UIButton) {
-        pushToRaceMode()
+        navigationController?.pushViewController(GameTimeVC(), animated: true)
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
@@ -77,14 +77,12 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
         }
     }
     
-    private func pushToRaceMode() {
-        let gameVC = GameTimeVC()
-        navigationController?.pushViewController(gameVC, animated: true)
+    @IBAction func settingsTapped(_ sender: UIButton) {
+        navigationController?.pushViewController(SettingsVC(), animated: true)
     }
     
     private func pushToCollectionMode() {
-        let collection = ColorCollectionVC()
-        navigationController?.pushViewController(collection, animated: true)
+        navigationController?.pushViewController(ColorCollectionVC(), animated: true)
     }
     
     private func pushToDiscoveryMode() {

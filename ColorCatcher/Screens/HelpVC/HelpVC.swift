@@ -120,7 +120,7 @@ class HelpVC: UIViewController, DropProvider {
     
     func addDrops() {
         let layer = CAShapeLayer()
-        layer.opacity = 0.7
+        layer.opacity = 0.5
         view.layer.insertSublayer(layer, at: 0)
         drops = addDropSet(100, masterLayer: layer)
     }

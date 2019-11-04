@@ -19,9 +19,12 @@ struct PathObject {
     let duration: Double
 }
 
+fileprivate var animationColor = ChameleonColor.random()
+
 extension WelcomeAnimator where Self: UIViewController {
     
     func startWelcomeAnimation() {
+        animationColor = ChameleonColor.random()
         animateChameleon()
         animateButterflies()
         animateSecondButterfly()
@@ -36,20 +39,17 @@ extension WelcomeAnimator where Self: UIViewController {
     
     func animateChameleon() {
         let chameleon = ChameleonView()
+        chameleon.center.x = view.center.x - 5
         self.view.addSubview(chameleon)
         chameleon.start()
-        UIView.animate(withDuration: 9.8, delay: 0, options: [], animations: {
-            chameleon.frame.origin.x = self.view.center.x - chameleon.frame.width/2
+        UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
+            chameleon.center.x = self.view.center.x
         }, completion: { (_) in
             chameleon.stopAtFirst {
                 chameleon.goToStatic()
-                chameleon.changeColor(1)
+                chameleon.changeColor(animationColor, 1)
             }
         })
-        let _ = Timer.scheduledTimer(withTimeInterval: 8, repeats: false) { (_) in
-            chameleon.stop()
-            chameleon.start(0.065)
-        }
     }
     
     func animateButterflies() {
@@ -69,24 +69,21 @@ extension WelcomeAnimator where Self: UIViewController {
     
     func animateSecondButterfly() {
         let random = CGFloat(arc4random_uniform(13) + 18)
-        let but = ButterflyView(CGRect(x: self.view.center.x, y: getButterfliesY(), width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.04 + random/1000))
-        but.transform = CGAffineTransform(scaleX: 0, y: 0)
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: -random, y: getButterfliesY()))
+        path.addLine(to: CGPoint(x: self.view.center.x + random/2, y: getButterfliesY() + random/2))
+        let but = ButterflyView(CGRect(x: 0, y: 0, width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.04 + random/1000))
         self.view.addSubview(but)
-        but.tintColor = UIColor.generateCCRandom()
+        but.tintColor = animationColor.color()
         but.start()
-        UIView.animate(withDuration: 1.4, delay: 5, options: [], animations: {
-            but.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }, completion: nil)
-        let _ = Timer.scheduledTimer(withTimeInterval: 6, repeats: false) { (_) in
-            but.stopAtFirst(completion: {})
-        }
+        let pathObject = PathObject(path: path, duration: 7)
+        but.animatePos(pathObject, remove: false)
         let _ = Timer.scheduledTimer(withTimeInterval: 9, repeats: false) { (_) in
             but.start()
             but.animatePos(self.createFinalPathObject(random))
             UIView.animate(withDuration: 4, animations: {
                 but.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             })
-
         }
     }
     
@@ -120,7 +117,6 @@ extension WelcomeAnimator where Self: UIViewController {
     func createFinalPathObject(_ width: CGFloat) -> PathObject {
         let path = UIBezierPath()
         let randomDuration = 5.0
-        
         let randomCPX = self.view.center.x + 60
         let randomCPY = getButterfliesY()
         let randomCP2X = self.view.center.x + 100
@@ -133,7 +129,7 @@ extension WelcomeAnimator where Self: UIViewController {
 
 class ButterflyView: Animator {
     
-    func animatePos(_ pathOb: PathObject) {
+    func animatePos(_ pathOb: PathObject, remove: Bool? = nil) {
         let anim = CAKeyframeAnimation(keyPath: "position")
         anim.path = pathOb.path.cgPath
         anim.duration = pathOb.duration
@@ -142,8 +138,10 @@ class ButterflyView: Animator {
         anim.fillMode = CAMediaTimingFillMode.forwards
         anim.isRemovedOnCompletion = false
         let _ = Animation(animation: anim, object: layer) {
-            self.stop()
-            self.removeFromSuperview()
+            self.stopAtFirst {}
+            if remove ?? true {
+                self.removeFromSuperview()
+            }
         }
     }
 }

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC" customModule="ColorCatcher" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="yyQ-0d-6Pj" id="O6r-Vc-pc6"/>
+                <outlet property="creditsButton" destination="nPa-eX-WCx" id="QoW-ow-kS1"/>
+                <outlet property="shareButton" destination="s4D-EA-Bob" id="Xea-i9-9Vs"/>
+                <outlet property="tourButton" destination="fgE-Lh-1L4" id="A25-IC-cdr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-nM-63y">
+                    <rect key="frame" x="64" y="581" width="286" height="279"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4D-EA-Bob" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                            <rect key="frame" x="84.5" y="0.0" width="117" height="69"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
+                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                            <state key="normal" title="Share">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="shareTapped:" destination="-1" eventType="touchUpInside" id="eZI-hP-FeT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-Lh-1L4" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                            <rect key="frame" x="40.5" y="105" width="205" height="69"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
+                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                            <state key="normal" title="Watch tour again">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tourTapped:" destination="-1" eventType="touchUpInside" id="5is-1I-fnY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-eX-WCx" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                            <rect key="frame" x="78" y="210" width="130" height="69"/>
+                            <color key="backgroundColor" red="0.2873419411" green="0.53166163710000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
+                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                            <state key="normal" title="Credits">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="creditsTapped:" destination="-1" eventType="touchUpInside" id="Sw2-aK-paB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyQ-0d-6Pj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="yyQ-0d-6Pj" secondAttribute="height" multiplier="6:1" id="A1U-no-CCi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yyQ-0d-6Pj" secondAttribute="trailing" id="HqP-xw-zrZ"/>
+                <constraint firstItem="Z8P-nM-63y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="XWn-A3-yTa"/>
+                <constraint firstItem="yyQ-0d-6Pj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YvQ-mP-7vd"/>
+                <constraint firstItem="yyQ-0d-6Pj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iKY-Ok-Frs"/>
+                <constraint firstAttribute="trailing" secondItem="Z8P-nM-63y" secondAttribute="trailing" constant="64" id="tZp-R4-O4I"/>
+                <constraint firstAttribute="bottom" secondItem="Z8P-nM-63y" secondAttribute="bottom" constant="36" id="uVU-xF-OwF"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
+        </view>
+    </objects>
+</document>

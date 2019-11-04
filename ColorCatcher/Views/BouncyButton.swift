@@ -31,13 +31,13 @@ class BouncyButton: UIButton {
     }
     
     private func animate() {
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
             self.transform = CGAffineTransform(scaleX: 1.07, y: 1.07)
         }) { (_) in
-            UIView.animate(withDuration: 0.4, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
                 self.transform = CGAffineTransform(scaleX: 1, y: 1)
-            })
+
+            }, completion: nil)
         }
     }
-    
 }
