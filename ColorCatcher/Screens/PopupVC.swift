@@ -23,7 +23,7 @@ struct PopupModel {
     @objc optional func didDismissPopup()
 }
 
-class PopupVC: UIViewController {
+class PopupVC: UIViewController, DropProvider {
     
     var model: PopupModel
     weak var delegate: PopupDelegate?
@@ -111,13 +111,17 @@ class PopupVC: UIViewController {
     }
     
     func addDrops() {
-        addDropSet()
+        addDrop()
         let _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { (_) in
-            self.addDropSet()
+            self.addDrop()
         }
         let _ = Timer.scheduledTimer(withTimeInterval: 0.14, repeats: false) { (_) in
-            self.addDropSet()
+            self.addDrop()
         }
+    }
+    
+    func addDrop() {
+        drops.append(contentsOf: addDropSet(26, color: model.color, masterLayer: masterLayer))
     }
 
     func animateFadeIn() {
@@ -130,15 +134,6 @@ class PopupVC: UIViewController {
             self.coverView.alpha = 1
             self.descView.alpha = 1
         }) { (done) in
-        }
-    }
-    
-    private func addDropSet() {
-        // creating 27 small drops with different alpha
-        for _ in 0...26 {
-            let layer = DropLayer(model.color ?? UIColor.generatePopupRandom())
-            drops.append(layer)
-            masterLayer.addSublayer(layer)
         }
     }
     

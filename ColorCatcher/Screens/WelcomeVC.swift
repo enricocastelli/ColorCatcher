@@ -18,12 +18,6 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     @IBOutlet weak var discoveryButton: BouncyButton!
     @IBOutlet var multiButton: BouncyButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if isFirstLaunch() {
-            reset()
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,10 +39,8 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     }
     
     func test() {
-//        let test = EyeProximityTestVC()
-//        self.navigationController?.show(test, sender: nil)
-        let helpVC = HelpVC()
-        self.navigationController?.present(helpVC, animated: true, completion: nil)
+        let test = EyeProximityTestVC()
+        self.navigationController?.show(test, sender: nil)
     }
 
     @IBAction func raceTapped(_ sender: UIButton) {
@@ -70,9 +62,9 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     }
     
     @IBAction func multiTapped(_ sender: UIButton) {
-        test()
-//        let multiVC = MultiplayerVC()
-//        navigationController?.show(multiVC, sender: nil)
+//        test()
+        let multiVC = MultiplayerVC()
+        navigationController?.show(multiVC, sender: nil)
     }
 
     @IBAction func collectionTapped(_ sender: UIButton) {
@@ -87,16 +79,16 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     
     private func pushToRaceMode() {
         let gameVC = GameTimeVC()
-        navigationController?.show(gameVC, sender: nil)
+        navigationController?.pushViewController(gameVC, animated: true)
     }
     
     private func pushToCollectionMode() {
         let collection = ColorCollectionVC()
-        navigationController?.show(collection, sender: nil)
+        navigationController?.pushViewController(collection, animated: true)
     }
     
     private func pushToDiscoveryMode() {
         let gameVC = GameDiscoveryVC()
-        navigationController?.show(gameVC, sender: nil)
+        navigationController?.pushViewController(gameVC, animated: true)
     }
 }

@@ -9,14 +9,27 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, StoreProvider {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.isIdleTimerDisabled = true
+        UIView.setAnimationsEnabled(!isUITestRunning())
+        let nav = UINavigationController(rootViewController: getStartVC())
+        nav.isNavigationBarHidden = true
+        self.window?.rootViewController = nav
         return true
+    }
+    
+    func getStartVC() -> UIViewController {
+        if isFirstLaunch() {
+            reset()
+            return HelpVC()
+        } else {
+            return WelcomeVC()
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

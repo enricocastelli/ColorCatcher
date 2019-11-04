@@ -29,7 +29,7 @@ class AppleImageView: UIImageView {
     private func setup() {
         alpha = 0
         animate()
-        let _ = Timer.scheduledTimer(withTimeInterval: 9, repeats: false) { (_) in
+        let _ = Timer.scheduledTimer(withTimeInterval: 8.5, repeats: false) { (_) in
             self.animateAway()
         }
     }

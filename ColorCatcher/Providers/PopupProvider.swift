@@ -47,4 +47,13 @@ extension PopupProvider where Self: UIViewController {
         self.present(popup, animated: false) {
         }
     }
+    
+    func showPopupOnBackground(_ model: PopupModel) {
+        let popup = PopupVC(model)
+        popup.view.backgroundColor = UIColor.clear
+        popup.modalPresentationStyle = .overCurrentContext
+        popup.delegate = self
+        self.present(popup, animated: false) {
+        }
+    }
 }

@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 
-class LocationManager: NSObject, CLLocationManagerDelegate  {
+class LocationManager: NSObject  {
 
     static var shared = LocationManager()
     private var manager: CLLocationManager = CLLocationManager()
@@ -45,6 +45,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate  {
                 return
             }
             completion("\(placemark.locality ?? ""), \(placemark.country ?? "")")
+        }
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse || status == .denied {
+            NotificationCenter.default.post(Notification(name: .locationStatusDidChange))
         }
     }
 }

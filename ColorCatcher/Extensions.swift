@@ -8,6 +8,112 @@
 
 import UIKit
 
+extension UIView {
+    
+    /// add view subview that ocuppy the whole view.
+    func addContentView(_ contentView: UIView) {
+        let containerView = self
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(contentView)
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .top,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .bottom,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .right,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .right,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+        NSLayoutConstraint.init(item: contentView,
+                                attribute: .left,
+                                relatedBy: .equal,
+                                toItem: containerView,
+                                attribute: .left,
+                                multiplier: 1,
+                                constant: 0).isActive = true
+    }
+    
+}
+
+extension UIViewController {
+    
+    
+    func showLoading() {
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    func stopLoading() {
+        self.view.isUserInteractionEnabled = true
+    }
+}
+
+extension UILabel {
+   
+    func changeText(_ newText: String) {
+        let anim = CATransition()
+        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        anim.type = CATransitionType.push
+        anim.duration = 0.55
+        if self.text != newText {
+            self.layer.add(anim, forKey: "change")
+            self.text = newText
+        }
+    }
+}
+
+
+extension UIFont {
+    
+    public class func mediumFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Medium", size: size)!
+    }
+    
+    public class func regularFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Regular", size: size)!
+    }
+    
+    public class func boldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Bold", size: size)!
+    }
+    
+    public class func ultraBoldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "BrandonGrotesque-Black", size: size)!
+    }
+}
+
+extension CGFloat {
+    
+    var stringPercentage: String {
+        return "\(String(format: "%.0f", (self))) %"
+    }
+}
+
+extension Date {
+    
+    var string : String {
+        let form = DateFormatter()
+        form.dateFormat = "dd MMMM yyyy"
+        return form.string(from: self)
+    }
+    
+}
+
+extension Notification.Name {
+    static let shouldStopTimer = Notification.Name(rawValue: "shouldStopTimer")
+    static let locationStatusDidChange = Notification.Name(rawValue: "locationStatusDidChange")
+}
 
 extension CALayer {
     

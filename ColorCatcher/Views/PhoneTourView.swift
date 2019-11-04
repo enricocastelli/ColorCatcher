@@ -12,6 +12,9 @@ import UIKit
 class PhoneTourView: UIView {
     
     var view: UIView!
+    var firstDuration = 4.0
+    var secondDuration = 3.0
+    var delay: Double?
     
     @IBOutlet weak var phoneImage: UIImageView!
     
@@ -42,14 +45,17 @@ class PhoneTourView: UIView {
         return nibView
     }
     
-    func startAnimation() {
+    func startAnimation(_ firstDuration: Double, _ secondDuration: Double, delay: Double? = nil) {
+        self.firstDuration = firstDuration
+        self.secondDuration = secondDuration
+        self.delay = delay
         doneImage.transform = CGAffineTransform.init(scaleX: 0, y: 0)
         self.frame.origin.x = UIScreen.main.bounds.width
         firstAnimation()
     }
     
     func firstAnimation() {
-        UIView.animate(withDuration: 4, delay: 2, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: firstDuration, delay: delay ?? 0, options: .curveEaseOut, animations: {
             self.center.x = 0
         }) { (_) in
             self.secondAnimation()
@@ -57,7 +63,7 @@ class PhoneTourView: UIView {
     }
     
     func secondAnimation() {
-        UIView.animate(withDuration: 3, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: secondDuration, delay: 0, options: .curveEaseOut, animations: {
             self.center.x = UIScreen.main.bounds.width/1.8
         }) { (_) in
             self.showColorDone()
