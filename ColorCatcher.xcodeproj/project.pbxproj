@@ -50,7 +50,7 @@
 		1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */; };
 		1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB636223193BF00CB46C5 /* FlashProvider.swift */; };
 		1CC490442323EB2400759C72 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC490432323EB2400759C72 /* Animator.swift */; };
-		1CC49046232416DD00759C72 /* WelcomeAnimationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC49045232416DD00759C72 /* WelcomeAnimationProvider.swift */; };
+		1CC49046232416DD00759C72 /* WelcomeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */; };
 		1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB09362223E5AF00F4C812 /* testVCViewController.swift */; };
 		1CCB09392223E5AF00F4C812 /* testVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCB09372223E5AF00F4C812 /* testVCViewController.xib */; };
 		1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093A22241AE200F4C812 /* WelcomeVC.swift */; };
@@ -129,7 +129,7 @@
 		1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculator.swift; sourceTree = "<group>"; };
 		1CBFB636223193BF00CB46C5 /* FlashProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashProvider.swift; sourceTree = "<group>"; };
 		1CC490432323EB2400759C72 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		1CC49045232416DD00759C72 /* WelcomeAnimationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAnimationProvider.swift; sourceTree = "<group>"; };
+		1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAnimationView.swift; sourceTree = "<group>"; };
 		1CCB09362223E5AF00F4C812 /* testVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVCViewController.swift; sourceTree = "<group>"; };
 		1CCB09372223E5AF00F4C812 /* testVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testVCViewController.xib; sourceTree = "<group>"; };
 		1CCB093A22241AE200F4C812 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -266,7 +266,6 @@
 				1CFE9EFB2226DC6900F62935 /* StoreProvider.swift */,
 				1CBFB636223193BF00CB46C5 /* FlashProvider.swift */,
 				1C15D99F2225955E0037F8D6 /* PopupProvider.swift */,
-				1CC49045232416DD00759C72 /* WelcomeAnimationProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -329,6 +328,7 @@
 		1CFE9F2F2229347D00F62935 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
 				1C5332F6236B2151003D421B /* ChameleonView.swift */,
 				1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */,
@@ -479,7 +479,7 @@
 				1CFE9EF82226BAF200F62935 /* Service.swift in Sources */,
 				1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */,
 				1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */,
-				1CC49046232416DD00759C72 /* WelcomeAnimationProvider.swift in Sources */,
+				1CC49046232416DD00759C72 /* WelcomeAnimationView.swift in Sources */,
 				1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */,
 				1CFE9F3222293F3600F62935 /* ColorCollectionVC.swift in Sources */,
 				1C5E7C322328151C001542E4 /* BouncyButton.swift in Sources */,

@@ -44,7 +44,7 @@ class ChameleonView: Animator {
     init() {
         let chameleonHeight = getChameleonHeight
         let chameleonWidth = getChameleonWidth
-        let chFrame = CGRect(x: -chameleonWidth, y: getChameleonY, width: chameleonWidth, height: chameleonHeight)
+        let chFrame = CGRect(x: 0, y: 0, width: chameleonWidth, height: chameleonHeight)
         super.init(chFrame, imageName: "chameleon", count: 50, frameTime: 0.05)
     }
     
@@ -73,6 +73,6 @@ class ChameleonView: Animator {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(CGRect.zero, imageName: "chameleon", count: 50, frameTime: 0.05)
     }
 }

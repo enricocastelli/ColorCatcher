@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator {
+class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -17,11 +17,11 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
     @IBOutlet weak var quickGameButton: BouncyButton!
     @IBOutlet weak var discoveryButton: BouncyButton!
     @IBOutlet var multiButton: BouncyButton!
+    @IBOutlet var welcomeAnimationView: WelcomeAnimationView!
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startWelcomeAnimation()
+        welcomeAnimationView.startWelcomeAnimation()
         setView()
     }
     
@@ -29,7 +29,7 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, WelcomeAnimator
         quickGameButton.stop()
         discoveryButton.stop()
         multiButton.stop()
-        removeAllAnimations()
+        welcomeAnimationView.removeAllAnimations()
     }
     
     func setView() {
