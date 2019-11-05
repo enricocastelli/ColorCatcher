@@ -59,6 +59,7 @@
 		1CEE2DAC2370904E00FF4056 /* DropProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAB2370904E00FF4056 /* DropProvider.swift */; };
 		1CEE2DAF2370B74E00FF4056 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */; };
 		1CEE2DB02370B74E00FF4056 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */; };
+		1CEE2DF62371C6D300FF4056 /* PathObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DF52371C6D200FF4056 /* PathObject.swift */; };
 		1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF122269FD700F62935 /* GameTimeVC.swift */; };
 		1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */; };
 		1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF52226A01400F62935 /* MultiGameVC.swift */; };
@@ -138,6 +139,7 @@
 		1CEE2DAB2370904E00FF4056 /* DropProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropProvider.swift; sourceTree = "<group>"; };
 		1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		1CEE2DF52371C6D200FF4056 /* PathObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathObject.swift; sourceTree = "<group>"; };
 		1CFE9EF122269FD700F62935 /* GameTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeVC.swift; sourceTree = "<group>"; };
 		1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDiscoveryVC.swift; sourceTree = "<group>"; };
 		1CFE9EF52226A01400F62935 /* MultiGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGameVC.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				1C15192A2220002D00226042 /* ColorsExtension.swift */,
 				1C8853B923685F8D00FF9770 /* Extensions.swift */,
 				1C7FDDD7237068CF00CC72CE /* Utils.swift */,
+				1CEE2DF52371C6D200FF4056 /* PathObject.swift */,
 				1C7FDDD02370611300CC72CE /* Screens */,
 				1CFE9F2F2229347D00F62935 /* Views */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
@@ -489,6 +492,7 @@
 				1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */,
 				1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */,
 				1CC490442323EB2400759C72 /* Animator.swift in Sources */,
+				1CEE2DF62371C6D300FF4056 /* PathObject.swift in Sources */,
 				1C15192B2220002D00226042 /* ColorsExtension.swift in Sources */,
 				1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,

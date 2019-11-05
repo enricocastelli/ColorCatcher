@@ -6,7 +6,7 @@
 //  Copyright © 2019 Enrico Castelli. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 func Logger(_ error: String) {
     print("🎨⚠️ - \(error)")
@@ -29,3 +29,6 @@ func isUITestRunning() -> Bool {
     return arguments.contains("NoAnimations")
 }
 
+func random(_ min: Int, _ max: Int) -> CGFloat {
+    return CGFloat(arc4random_uniform(UInt32(max - min))) + CGFloat(min)
+}

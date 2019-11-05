@@ -9,11 +9,6 @@
 import UIKit
 
 
-struct PathObject {
-    let path: UIBezierPath
-    let duration: Double
-}
-
 
 class WelcomeAnimationView: UIView {
     
@@ -21,8 +16,10 @@ class WelcomeAnimationView: UIView {
     let sWidth = UIScreen.main.bounds.width
     let sHeight = UIScreen.main.bounds.height
 
+    var chameleon: ChameleonView!
 
     func startWelcomeAnimation() {
+        animationColor = ChameleonColor.random()
         animateChameleon()
         animateButterflies()
         animateSecondButterfly()
@@ -36,17 +33,17 @@ class WelcomeAnimationView: UIView {
     }
     
     func animateChameleon() {
-        let chameleon = ChameleonView()
+        chameleon = ChameleonView()
         chameleon.center.x = (self.sWidth/2) - 5
         chameleon.center.y = 0
         self.addSubview(chameleon)
         chameleon.start()
         UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
-            chameleon.center.x = (self.sWidth/2)
+            self.chameleon.center.x = (self.sWidth/2)
         }, completion: { (_) in
-            chameleon.stopAtFirst {
-                chameleon.goToStatic()
-                chameleon.changeColor(self.animationColor, 1)
+            self.chameleon.stopAtFirst {
+                self.chameleon.goToStatic()
+                self.chameleon.changeColor(self.animationColor, 1)
             }
         })
     }
@@ -61,17 +58,17 @@ class WelcomeAnimationView: UIView {
         let random = CGFloat(arc4random_uniform(13) + 14)
         let but = ButterflyView(CGRect(x: -20, y: getButterfliesY(), width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.02 + random/1000))
         self.addSubview(but)
-        but.tintColor = UIColor.generateCCRandom()
         but.start()
         but.animatePos(createPathObject())
     }
     
     func animateSecondButterfly() {
-        let random = CGFloat(arc4random_uniform(13) + 18)
+        let width = sWidth/15
+        let butY = chameleon.frame.minY + (width/2)
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: -random, y: getButterfliesY()))
-        path.addLine(to: CGPoint(x: (sWidth/2) + random/2, y: getButterfliesY() + random/2))
-        let but = ButterflyView(CGRect(x: 0, y: 0, width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.04 + random/1000))
+        path.move(to: CGPoint(x: -width, y: butY))
+        path.addLine(to: CGPoint(x: (sWidth/2) + width/2, y: butY))
+        let but = ButterflyView(CGRect(x: 0, y: 0, width: width, height: width), imageName: "but", count: 6, frameTime: Double(0.04 + width/1000))
         self.addSubview(but)
         but.tintColor = animationColor.color()
         but.start()
@@ -79,7 +76,7 @@ class WelcomeAnimationView: UIView {
         but.animatePos(pathObject, remove: false)
         let _ = Timer.scheduledTimer(withTimeInterval: 9, repeats: false) { (_) in
             but.start()
-            but.animatePos(self.createFinalPathObject(random))
+            but.animatePos(self.createFinalPathObject(width), shouldRotate: false)
             UIView.animate(withDuration: 4, animations: {
                 but.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             })
@@ -92,52 +89,59 @@ class WelcomeAnimationView: UIView {
     
     func createPathObject() -> PathObject {
         let path = UIBezierPath()
-        var randomDuration = (Double(arc4random_uniform(40) + 45))/10
-        let randomX = CGFloat(arc4random_uniform(10)) - 40
-        let randomY = -CGFloat(arc4random_uniform(10) + UInt32(getButterfliesY()))
-        let randomCPX = CGFloat(arc4random_uniform(100) + 50)
-        let randomCPY = CGFloat(arc4random_uniform(20)) - 20
-        let randomCP2X = CGFloat(arc4random_uniform(150) + 50)
-        let randomCP2Y = CGFloat(arc4random_uniform(200)) + 100
+        var randomDuration = Double(random(40, 100))/10
         
-        path.move(to: CGPoint(x: randomX, y: randomY))
-        if yesOrNo(4) {
-            let randomCP3X = CGFloat(arc4random_uniform(10) + 50)
-            let randomCP3Y = CGFloat(arc4random_uniform(30)) + 20
-            let randomCP4X = CGFloat(arc4random_uniform(200) + 200)
-            let randomCP4Y = CGFloat(arc4random_uniform(130)) - 200
-            path.addCurve(to: CGPoint(x: sWidth, y: 0), controlPoint1: CGPoint(x: randomCP3X, y: randomCP3Y), controlPoint2: CGPoint(x: randomCP4X, y: randomCP4Y))
-            randomDuration += 1
+        let randomFinalY = chameleon.frame.minY + random(-80, 80)
+        let randomStartX = random(-30, -10)
+        let randomStartY = chameleon.frame.minY + random(-20, 20)
+        let randomCPX = random(50, 150)
+        let randomCPY = random(-200, 10)
+        let randomCP2X = random(120, 330)
+        let randomCP2Y = random(-100, 160)
+        
+        path.move(to: CGPoint(x: randomStartX, y: randomStartY))
+        if yesOrNo(10) {
+            let randomCP3X = random(70,130)
+            let randomCP3Y = random(0,120)
+            let randomCP4X = random(200,320)
+            let randomCP4Y = random(-40,120)
+            path.addCurve(to: CGPoint(x: sWidth/2, y: -frame.height/2), controlPoint1: CGPoint(x: randomCP3X, y: randomCP3Y), controlPoint2: CGPoint(x: randomCP4X, y: randomCP4Y))
+            randomDuration += 2
         }
-        path.addCurve(to: CGPoint(x: sWidth + 20, y: 80), controlPoint1: CGPoint(x: randomCPX, y: randomCPY), controlPoint2: CGPoint(x: randomCP2X, y: randomCP2Y))
+        path.addCurve(to: CGPoint(x: frame.width + 30, y: randomFinalY), controlPoint1: CGPoint(x: randomCPX, y: randomCPY), controlPoint2: CGPoint(x: randomCP2X, y: randomCP2Y))
         return PathObject(path: path, duration: randomDuration)
     }
     
     func createFinalPathObject(_ width: CGFloat) -> PathObject {
         let path = UIBezierPath()
+        let startPoint = CGPoint(x: (sWidth/2) + width/2, y: chameleon.frame.minY + (width/2))
         let randomDuration = 5.0
-        let randomCPX = (sWidth/2) + 60
-        let randomCPY = getButterfliesY()
-        let randomCP2X = (sWidth/2) + 100
-        let randomCP2Y: CGFloat = -100.0
-        path.move(to: CGPoint(x: (sWidth/2) + width/2, y: getButterfliesY() + width/2))
-        path.addCurve(to: CGPoint(x: (sWidth/2), y: -frame.height), controlPoint1: CGPoint(x: randomCPX, y: randomCPY), controlPoint2: CGPoint(x: randomCP2X, y: randomCP2Y))
+        let randomCPX =  sWidth/1.1
+        let randomCPY = frame.height/(-0.54)
+        let randomCP2X = sWidth/2
+        let randomCP2Y: CGFloat = frame.height/(-0.2)
+        path.move(to: startPoint)
+        path.addCurve(to: CGPoint(x: (sWidth/2), y: frame.height/(-0.36)), controlPoint1: CGPoint(x: randomCPX, y: randomCPY), controlPoint2: CGPoint(x: randomCP2X, y: randomCP2Y))
         return PathObject(path: path, duration: randomDuration)
     }
 }
 
 class ButterflyView: Animator {
     
-    func animatePos(_ pathOb: PathObject, remove: Bool? = nil) {
+    override func setup() {
+        tintColor = UIColor.generateCCRandom()
+    }
+    
+    func animatePos(_ pathOb: PathObject, remove: Bool? = nil, shouldRotate: Bool? = nil) {
         let anim = CAKeyframeAnimation(keyPath: "position")
         anim.path = pathOb.path.cgPath
         anim.duration = pathOb.duration
-        anim.rotationMode = CAAnimationRotationMode.rotateAuto
+        anim.rotationMode = (shouldRotate == false) ? nil : .rotateAuto
         anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         anim.fillMode = CAMediaTimingFillMode.forwards
         anim.isRemovedOnCompletion = false
         let _ = Animation(animation: anim, object: layer) {
-            self.stopAtFirst {}
+            self.stopAtFirst()
             if remove ?? true {
                 self.removeFromSuperview()
             }

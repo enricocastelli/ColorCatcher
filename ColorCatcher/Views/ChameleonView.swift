@@ -53,6 +53,10 @@ class ChameleonView: Animator {
         super.init(chFrame, imageName: "chameleon", count: 50, frameTime: 0.05)
     }
     
+    override func shouldStopTimer() {
+        stopAtFirst()
+    }
+    
     func goToStatic() {
         self.image = UIImage(named: "chameleonX")
     }

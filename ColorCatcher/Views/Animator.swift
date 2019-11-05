@@ -22,6 +22,7 @@ open class Animator: UIImageView {
         self.frameTime = frameTime
         super.init(frame: frame)
         addObserver()
+        setup()
     }
     
     public init(_ frame: CGRect, imageName: String, count: Int, frameTime: Double) {
@@ -29,6 +30,7 @@ open class Animator: UIImageView {
         self.frameTime = frameTime
         super.init(frame: frame)
         addObserver()
+        setup()
     }
     
     deinit {
@@ -37,10 +39,12 @@ open class Animator: UIImageView {
     
     private func addObserver() {
         NotificationCenter.default.addObserver(self,
-                                       selector: #selector(self.dismiss),
+                                       selector: #selector(self.shouldStopTimer),
                                        name: .shouldStopTimer,
                                        object: nil)
     }
+    
+    func setup() {} // overriden
     
     private func timerCall() {
         if imageCount >= images.count {
@@ -71,7 +75,11 @@ open class Animator: UIImageView {
         self.completionStop = completion
     }
     
-    @objc private func dismiss() {
+    open func stopAtFirst() {
+        shouldStop = true
+    }
+    
+    @objc func shouldStopTimer() {
         stop()
         removeFromSuperview()
     }
