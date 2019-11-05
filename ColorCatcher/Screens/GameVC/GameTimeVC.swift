@@ -29,8 +29,12 @@ class GameTimeVC: GameVC {
         ColorManager.shared.tolerance = 90
     }
     
+    override func colorRecognized() {
+        super.colorRecognized()
+        showPopup(PopupModel.plusOne(0.8))
+    }
+    
     override func didDismissPopup() {
-        //TO BE OVERRIDEN
         updatePoints()
         guard !timerExpired else {
             timerIsExpired()

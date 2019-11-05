@@ -22,9 +22,7 @@ class CaptureManager: NSObject {
     
     override init() {
         session = AVCaptureSession()
-
         super.init()
-        
         do {
             let device = try getDevice()
             let input = try AVCaptureDeviceInput(device: device)

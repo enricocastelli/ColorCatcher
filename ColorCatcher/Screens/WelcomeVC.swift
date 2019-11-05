@@ -21,8 +21,12 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        welcomeAnimationView.startWelcomeAnimation()
         setView()
+        guard isWelcomeAnimationOn() else {
+            welcomeAnimationView.addChameleon(false)
+            return }
+        welcomeAnimationView.startWelcomeAnimation()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

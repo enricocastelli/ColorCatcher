@@ -41,6 +41,8 @@ fileprivate var getChameleonY: CGFloat = {
 
 class ChameleonView: Animator {
     
+    var wentBackground = false
+    
     init() {
         let chameleonHeight = getChameleonHeight
         let chameleonWidth = getChameleonWidth
@@ -54,6 +56,7 @@ class ChameleonView: Animator {
     }
     
     override func shouldStopTimer() {
+        wentBackground = true
         stopAtFirst()
     }
     

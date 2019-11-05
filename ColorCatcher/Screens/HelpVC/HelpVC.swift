@@ -55,7 +55,7 @@ class HelpVC: UIViewController, DropProvider {
     
     
     func start() {
-        titleLabel.changeText("Welcome to ColorCatcher!")
+        titleLabel.changeText("Welcome to ColorCatcher!", .fade, 3.0)
         // animate chameleon?
         setTimer()
     }

@@ -23,6 +23,7 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
     
     var points = 0
     var gameStarted = false
+    var gamePaused = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: String(describing: GameVC.self), bundle: nil)
@@ -34,9 +35,9 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CaptureManager.shared.startSession()
         CaptureManager.shared.delegate = self
         ColorManager.shared.delegate = self
+        CaptureManager.shared.startSession()
         progressView.alpha = 0
         addTapGesture()
         imageView.layer.cornerRadius = 5
@@ -72,12 +73,12 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
     }
     
     func colorRecognized() {
-        vibrate()
-        showPopup(PopupModel.empty())
         CaptureManager.shared.stopSession()
+        imageView.image = nil
+        vibrate()
         setFlashIcon(false)
         // TODO:
-        imageView.image = UIImage(named: "chameleonX")
+//        imageView.image = UIImage(named: "chameleonX")
     }
     
     func updateColorView() {
@@ -143,7 +144,6 @@ extension GameVC: ColorRecognitionDelegate {
         updateProximityString(Float(proximity))
     }
     
-    
     func didFinishColors() {
         showFinishColors()
     }
@@ -157,6 +157,7 @@ extension GameVC: CaptureManagerDelegate {
             startGame()
         }
         DispatchQueue.main.async {
+            guard !self.gamePaused else { return }
             self.imageView.image = image
             if let color = image.averageColor {
                 self.colorView.backgroundColor = color

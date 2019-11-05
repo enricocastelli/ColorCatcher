@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, StoreProvider {
     
     func getStartVC() -> UIViewController {
         if isFirstLaunch() {
-            reset()
+            firstLaunchReset()
             return HelpVC()
         } else {
             return WelcomeVC()

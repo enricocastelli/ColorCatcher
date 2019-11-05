@@ -61,11 +61,11 @@ extension UIViewController {
 
 extension UILabel {
    
-    func changeText(_ newText: String) {
+    func changeText(_ newText: String, _ type: CATransitionType? = nil, _ duration: Double? = nil) {
         let anim = CATransition()
         anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        anim.type = CATransitionType.push
-        anim.duration = 0.55
+        anim.type = type ?? .push
+        anim.duration = duration ?? 0.55
         if self.text != newText {
             self.layer.add(anim, forKey: "change")
             self.text = newText

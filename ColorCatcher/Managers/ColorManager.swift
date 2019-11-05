@@ -41,7 +41,7 @@ class ColorManager: NSObject, StoreProvider, ColorCalculator {
         goalColor = UIColor.generateRandom()
     }
     
-    func updateColorWithLevel() {
+    func updateNextColor() {
         let colorCatched = ColorManager().retrieveColorCatched()
         guard colorCatched.count != colors.count else {
             delegate?.didFinishColors()

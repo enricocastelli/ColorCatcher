@@ -13,8 +13,7 @@ enum StoreKeys: String {
 
     case ColorCatched
     case FirstLaunch
-    case isFirstRace
-    case isFirstDiscovery
+    case WelcomeAnimationOn
 }
 
 struct Catched: Codable {
@@ -30,12 +29,7 @@ struct Catched: Codable {
 }
 
 
-protocol StoreProvider {
-    func storeColorCatched(_ catched: Catched)
-    func retrieveColorCatched() -> [Catched]
-    func reset()
-    func isFirstLaunch() -> Bool
-}
+protocol StoreProvider {}
 
 extension StoreProvider {
     
@@ -70,6 +64,11 @@ extension StoreProvider {
         UserDefaults.standard.set([], forKey: StoreKeys.ColorCatched.rawValue)
     }
     
+    func firstLaunchReset() {
+        UserDefaults.standard.set([], forKey: StoreKeys.ColorCatched.rawValue)
+        UserDefaults.standard.set(true, forKey: StoreKeys.WelcomeAnimationOn.rawValue)
+    }
+    
     func isFirstLaunch() -> Bool {
         if let _ = UserDefaults.standard.value(forKey: StoreKeys.FirstLaunch.rawValue) as? Bool {
             return false
@@ -77,5 +76,15 @@ extension StoreProvider {
         UserDefaults.standard.setValue(false, forKey: StoreKeys.FirstLaunch.rawValue)
         return true
     }
+    
+    func setWelcomeAnimation(_ on: Bool) {
+        UserDefaults.standard.set(on, forKey: StoreKeys.WelcomeAnimationOn.rawValue)
+    }
+    
+    func isWelcomeAnimationOn() -> Bool {
+        return UserDefaults.standard.object(forKey: StoreKeys.WelcomeAnimationOn.rawValue) as? Bool ?? true
+    }
+
+
 }
 

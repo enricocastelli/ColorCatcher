@@ -20,7 +20,7 @@ class WelcomeAnimationView: UIView {
 
     func startWelcomeAnimation() {
         animationColor = ChameleonColor.random()
-        animateChameleon()
+        addChameleon(true)
         animateButterflies()
         animateSecondButterfly()
     }
@@ -32,15 +32,21 @@ class WelcomeAnimationView: UIView {
         }
     }
     
-    func animateChameleon() {
+    func addChameleon(_ animated: Bool) {
         chameleon = ChameleonView()
-        chameleon.center.x = (self.sWidth/2) - 5
         chameleon.center.y = 0
         self.addSubview(chameleon)
+        chameleon.center.x = (self.sWidth/2) - 5
+        guard animated else {
+            chameleon.goToStatic()
+            chameleon.center.x = (self.sWidth/2)
+            return
+        }
         chameleon.start()
         UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
             self.chameleon.center.x = (self.sWidth/2)
         }, completion: { (_) in
+            guard !self.chameleon.wentBackground else { return }
             self.chameleon.stopAtFirst {
                 self.chameleon.goToStatic()
                 self.chameleon.changeColor(self.animationColor, 1)

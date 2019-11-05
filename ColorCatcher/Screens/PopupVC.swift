@@ -9,14 +9,18 @@ struct PopupModel {
     var color: UIColor?
     var autoremoveTime: Double?
     var opacity: Float?
+    var plusOneVisible: Bool = false
     
     init(titleString: String, message: String) {
         self.titleString = titleString
         self.message = message
     }
     
-    static func empty() -> PopupModel {
-        return PopupModel(titleString: "", message: "")
+    static func plusOne(_ autoRemove: Double? = nil) -> PopupModel {
+        var model = PopupModel(titleString: "", message: "")
+        model.autoremoveTime = autoRemove
+        model.plusOneVisible = true
+        return model
     }
 }
 

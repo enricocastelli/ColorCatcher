@@ -25,7 +25,7 @@ class GameDiscoveryVC: GameVC {
         }
     }
     
-    override func new() {
+    override func helpTapped(_ sender: UIButton) {
         colorRecognized()
     }
     
@@ -38,18 +38,22 @@ class GameDiscoveryVC: GameVC {
     }
     
     func nextColor() {
-        ColorManager.shared.updateColorWithLevel()
-        updateColorView()
+        gamePaused = false
         CaptureManager.shared.startSession()
+        ColorManager.shared.updateNextColor()
+        updateColorView()
     }
     
     override func colorRecognized() {
-        vibrate()
-        CaptureManager.shared.stopSession()
+        super.colorRecognized()
+        gamePaused = true
         updateCollectionLabel()
-        setFlashIcon(false)
         guard let currentColor = ColorManager.shared.currentColor else { return }
         storeColorCatched(Catched(hex: currentColor.hex))
+        presentPopup(currentColor)
+    }
+    
+    func presentPopup(_ currentColor: ColorModel) {
         var model = PopupModel(titleString: currentColor.name, message: currentColor.description)
         model.color = UIColor(hex: currentColor.hex)
         showPopup(model)

@@ -14,17 +14,27 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var tourButton: BouncyButton!
     @IBOutlet weak var creditsButton: BouncyButton!
 
+    @IBOutlet weak var animationLabel: UILabel!
+    @IBOutlet weak var animationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shareButton.backgroundColor = UIColor.generatePopupRandom()
-        tourButton.backgroundColor = UIColor.generatePopupRandom()
-        creditsButton.backgroundColor = UIColor.generatePopupRandom()
-        shareButton.set(0)
-        tourButton.set(0.2)
-        creditsButton.set(0.4)
-        // Do any additional setup after loading the view.
+        setButton(shareButton, 0)
+        setButton(tourButton, 0.2)
+        setButton(creditsButton, 0.4)
+        animationLabel.text = "Welcome animation"
+        animationSwitch.isOn = isWelcomeAnimationOn()
     }
+    
+    func setButton(_ button: BouncyButton,_ delay: Double) {
+        button.backgroundColor = UIColor.generatePopupRandom()
+        button.set(delay)
+    }
+    
+    @IBAction func animationSwitchTapped(_ sender: UISwitch) {
+        setWelcomeAnimation(animationSwitch.isOn)
+    }
+    
     
     @IBAction func shareTapped(_ sender: UIButton) {
         //todo
