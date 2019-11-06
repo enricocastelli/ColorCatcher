@@ -34,6 +34,7 @@ class MultiGameVC: GameVC {
     override func colorRecognized() {
         super.colorRecognized()
         sendScorePoint()
+        showPopup(PopupModel.plusOne(0.8))
     }
     
     override func updatePoints() {
@@ -54,7 +55,6 @@ class MultiGameVC: GameVC {
             new()
         }
     }
-    
     
     func showAlertEnd(winner: Bool) {
         gameOver = true
