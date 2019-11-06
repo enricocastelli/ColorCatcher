@@ -72,7 +72,7 @@ extension MultiplayerVC: MultiplayerConnectionDelegate {
     }
     
     func didDisconnect() {
-        showAlert(title: "Ops", message: "Connection with plaayer stopped", firstButton: "Ok", secondButton: nil, firstCompletion: {
+        showAlert(title: "Ops", message: "Connection with player stopped", firstButton: "Ok", secondButton: nil, firstCompletion: {
         }, secondCompletion: nil)
     }
     
