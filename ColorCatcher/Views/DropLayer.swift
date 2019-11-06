@@ -57,7 +57,7 @@ class DropLayer: CAShapeLayer {
     }
     
     private func animateDrop(initialPath: UIBezierPath, finalPath: UIBezierPath) {
-        let duration: Double =  isSlow ? Double(arc4random_uniform(40) + 30)/10 : Double(arc4random_uniform(3) + 2)/10
+        let duration: Double =  isSlow ? Double(random(4, 9))/10 : Double(random(2, 6))/10
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = duration
         animation.fromValue = initialPath.cgPath
@@ -68,7 +68,7 @@ class DropLayer: CAShapeLayer {
     }
     
     func fade() {
-        let duration: Double =  Double(arc4random_uniform(3) + 2)/10
+        let duration: Double =  Double(random(2, 6))/10
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = duration
         animation.fromValue = path
