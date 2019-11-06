@@ -62,7 +62,7 @@ class WelcomeAnimationView: UIView {
     
     func animateBut() {
         let random = CGFloat(arc4random_uniform(13) + 14)
-        let but = ButterflyView(CGRect(x: -20, y: getButterfliesY(), width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.02 + random/1000))
+        let but = ButterflyView(CGRect(x: -20, y: 0, width: random, height: random), imageName: "but", count: 6, frameTime: Double(0.02 + random/1000))
         self.addSubview(but)
         but.start()
         but.animatePos(createPathObject())
@@ -87,10 +87,6 @@ class WelcomeAnimationView: UIView {
                 but.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             })
         }
-    }
-    
-    func getButterfliesY() -> CGFloat {
-        return 0
     }
     
     func createPathObject() -> PathObject {
@@ -132,26 +128,13 @@ class WelcomeAnimationView: UIView {
     }
 }
 
-class ButterflyView: Animator {
+struct PathObject {
+    let path: UIBezierPath
+    let duration: Double
     
-    override func setup() {
-        tintColor = UIColor.generateCCRandom()
-    }
     
-    func animatePos(_ pathOb: PathObject, remove: Bool? = nil, shouldRotate: Bool? = nil) {
-        let anim = CAKeyframeAnimation(keyPath: "position")
-        anim.path = pathOb.path.cgPath
-        anim.duration = pathOb.duration
-        anim.rotationMode = (shouldRotate == false) ? nil : .rotateAuto
-        anim.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        anim.fillMode = CAMediaTimingFillMode.forwards
-        anim.isRemovedOnCompletion = false
-        let _ = Animation(animation: anim, object: layer) {
-            self.stopAtFirst()
-            if remove ?? true {
-                self.removeFromSuperview()
-            }
-        }
+    init(path: UIBezierPath, duration: Double) {
+        self.path = path
+        self.duration = duration
     }
 }
-

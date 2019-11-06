@@ -37,6 +37,7 @@
 		1C7FDDD62370684C00CC72CE /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDD52370684C00CC72CE /* RoundView.swift */; };
 		1C7FDDD8237068CF00CC72CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDD7237068CF00CC72CE /* Utils.swift */; };
 		1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8853B923685F8D00FF9770 /* Extensions.swift */; };
+		1C9B56F32372DE92004BD568 /* ButterflyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9B56F22372DE92004BD568 /* ButterflyView.swift */; };
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
 		1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */; };
@@ -59,7 +60,6 @@
 		1CEE2DAC2370904E00FF4056 /* DropProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAB2370904E00FF4056 /* DropProvider.swift */; };
 		1CEE2DAF2370B74E00FF4056 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */; };
 		1CEE2DB02370B74E00FF4056 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */; };
-		1CEE2DF62371C6D300FF4056 /* PathObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DF52371C6D200FF4056 /* PathObject.swift */; };
 		1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF122269FD700F62935 /* GameTimeVC.swift */; };
 		1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */; };
 		1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9EF52226A01400F62935 /* MultiGameVC.swift */; };
@@ -115,6 +115,7 @@
 		1C7FDDD52370684C00CC72CE /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		1C7FDDD7237068CF00CC72CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1C8853B923685F8D00FF9770 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1C9B56F22372DE92004BD568 /* ButterflyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyView.swift; sourceTree = "<group>"; };
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
 		1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerVC.xib; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		1CEE2DAB2370904E00FF4056 /* DropProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropProvider.swift; sourceTree = "<group>"; };
 		1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
-		1CEE2DF52371C6D200FF4056 /* PathObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathObject.swift; sourceTree = "<group>"; };
 		1CFE9EF122269FD700F62935 /* GameTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTimeVC.swift; sourceTree = "<group>"; };
 		1CFE9EF322269FF700F62935 /* GameDiscoveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDiscoveryVC.swift; sourceTree = "<group>"; };
 		1CFE9EF52226A01400F62935 /* MultiGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiGameVC.swift; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 				1C15192A2220002D00226042 /* ColorsExtension.swift */,
 				1C8853B923685F8D00FF9770 /* Extensions.swift */,
 				1C7FDDD7237068CF00CC72CE /* Utils.swift */,
-				1CEE2DF52371C6D200FF4056 /* PathObject.swift */,
 				1C7FDDD02370611300CC72CE /* Screens */,
 				1CFE9F2F2229347D00F62935 /* Views */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
@@ -334,6 +333,7 @@
 				1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
 				1C5332F6236B2151003D421B /* ChameleonView.swift */,
+				1C9B56F22372DE92004BD568 /* ButterflyView.swift */,
 				1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */,
 				1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */,
 				1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */,
@@ -492,10 +492,10 @@
 				1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */,
 				1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */,
 				1CC490442323EB2400759C72 /* Animator.swift in Sources */,
-				1CEE2DF62371C6D300FF4056 /* PathObject.swift in Sources */,
 				1C15192B2220002D00226042 /* ColorsExtension.swift in Sources */,
 				1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
+				1C9B56F32372DE92004BD568 /* ButterflyView.swift in Sources */,
 				1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */,
 				1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
