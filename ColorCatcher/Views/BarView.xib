@@ -23,6 +23,7 @@
                 <outlet property="rightImage" destination="bAb-Bm-drV" id="xtG-Ia-hcU"/>
                 <outlet property="rightLabel" destination="vIt-9f-7Eo" id="vFv-AX-Hja"/>
                 <outlet property="rightView" destination="PEn-m9-LWr" id="EMa-pv-uIp"/>
+                <outlet property="stackView" destination="WSc-9p-NW3" id="Wkg-cp-bNo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -80,7 +81,7 @@
                                 <constraint firstAttribute="height" constant="20" id="xgq-je-2Lc"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIt-9f-7Eo">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIt-9f-7Eo" customClass="ScoreLabel" customModule="ColorCatcher" customModuleProvider="target">
                             <rect key="frame" x="36" y="0.0" width="37.5" height="62"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -99,9 +100,15 @@
                         <constraint firstAttribute="trailing" secondItem="vIt-9f-7Eo" secondAttribute="trailing" id="tSI-Oi-1MH"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WSc-9p-NW3">
+                    <rect key="frame" x="258.5" y="0.0" width="216.5" height="62"/>
+                </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="WSc-9p-NW3" secondAttribute="bottom" id="9YU-kz-TZG"/>
+                <constraint firstAttribute="trailing" secondItem="WSc-9p-NW3" secondAttribute="trailing" constant="-100" id="CFa-Of-iC5"/>
+                <constraint firstItem="WSc-9p-NW3" firstAttribute="leading" secondItem="tz5-eL-7Iv" secondAttribute="trailing" constant="8" id="EX5-FH-Ttb"/>
                 <constraint firstAttribute="bottom" secondItem="tz5-eL-7Iv" secondAttribute="bottom" id="Ebg-kL-KDr"/>
                 <constraint firstItem="piT-5s-QGo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="F2H-EL-oTZ"/>
                 <constraint firstItem="tz5-eL-7Iv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="piT-5s-QGo" secondAttribute="trailing" constant="36" id="HdT-Mc-DF7"/>
@@ -111,13 +118,14 @@
                 <constraint firstItem="PEn-m9-LWr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bmH-8k-eS2"/>
                 <constraint firstAttribute="bottom" secondItem="PEn-m9-LWr" secondAttribute="bottom" id="cGd-yq-xMM"/>
                 <constraint firstAttribute="trailing" secondItem="PEn-m9-LWr" secondAttribute="trailing" constant="16" id="fwb-SA-PC9"/>
+                <constraint firstItem="WSc-9p-NW3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h1k-ce-ZSn"/>
                 <constraint firstItem="piT-5s-QGo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="jC2-GH-ZIM"/>
                 <constraint firstItem="tz5-eL-7Iv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lgm-yD-Rch"/>
                 <constraint firstItem="piT-5s-QGo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="mLP-QS-VnW"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="73" y="-81"/>
+            <point key="canvasLocation" x="72.799999999999997" y="-81.859070464767626"/>
         </view>
     </objects>
     <resources>

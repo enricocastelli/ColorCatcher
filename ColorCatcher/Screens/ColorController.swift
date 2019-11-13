@@ -16,8 +16,9 @@ class ColorController: UIViewController, StoreProvider {
     @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var centerLabel: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var rightLabel: ScoreLabel!
     @IBOutlet weak var rightImage: UIImageView!
+    @IBOutlet weak var stackView: UIStackView!
     
     var gradient: CAGradientLayer?
     var barView: UIView?
@@ -33,6 +34,7 @@ class ColorController: UIViewController, StoreProvider {
             return
         }
         addNib()
+        stackView.isHidden = true
         centerView.isHidden = true
         rightView.isHidden = true
         centerImage.tintColor = UIColor.lightGray
@@ -66,15 +68,20 @@ class ColorController: UIViewController, StoreProvider {
         configureBarForDiscovery()
     }
     
-    func configureBarForMultiplayer(_ opponentName: String?) {
+    func configureBarForMultiplayer(_ opponents: [String]) {
         centerView.isHidden = false
-        rightView.isHidden = false
+        rightView.isHidden = true
+        stackView.isHidden = false
         centerImage.image = UIImage(named: "painter-palette")
         centerImage.tintColor = UIColor.CCWater
         centerLabel.text = "Me: 0"
-        rightImage.image = UIImage(named: "high-five")
-        rightImage.tintColor = UIColor.CCWater
-        rightLabel.text = "Opp: 0"
+        rightLabel.text = ""
+        for opponent in opponents {
+            let label = ScoreLabel(frame: stackView.frame)
+            label.opponent = opponent
+            label.updatePoints(0)
+            stackView.insertArrangedSubview(label, at: 0)
+        }
     }
     
     private func addGradient() {
@@ -96,8 +103,20 @@ class ColorController: UIViewController, StoreProvider {
         centerLabel.text = "\(catches) Catches"
     }
     
-    func updateOpponentLabel(_ catches: Int) {
-        rightLabel.text = "Opp: \(catches)"
+    func updateOpponentLabel(_ opponent: String,_ catches: Int) {
+        for label in stackView.subviews as? [ScoreLabel] ?? [] {
+            if label.isOpponent(opponent) {
+                label.updatePoints(catches)
+            }
+        }
+        order()
+    }
+    
+    func order() {
+        guard var labels = stackView.subviews as? [ScoreLabel] else { return }
+        labels.sort(by: { ($0.points < $1.points)})
+        stackView.clear()
+        stackView.add(labels)
     }
     
     func updateMultiplayerLabel(_ catches: Int) {

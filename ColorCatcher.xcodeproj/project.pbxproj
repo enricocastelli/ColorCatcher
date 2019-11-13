@@ -29,6 +29,12 @@
 		1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5332F6236B2151003D421B /* ChameleonView.swift */; };
 		1C5E7C322328151C001542E4 /* BouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E7C312328151C001542E4 /* BouncyButton.swift */; };
 		1C5E7C34232A163F001542E4 /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E7C33232A163F001542E4 /* API.json */; };
+		1C61CF81237C519B00E5E49D /* MultiplayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF7F237C519B00E5E49D /* MultiplayerCell.swift */; };
+		1C61CF82237C519B00E5E49D /* MultiplayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C61CF80237C519B00E5E49D /* MultiplayerCell.xib */; };
+		1C61CF86237C68A800E5E49D /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF85237C68A800E5E49D /* SessionDelegate.swift */; };
+		1C61CF88237C68E000E5E49D /* BrowsingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF87237C68E000E5E49D /* BrowsingDelegate.swift */; };
+		1C61CF8A237C68F000E5E49D /* MultiplayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */; };
+		1C61CF8C237C700100E5E49D /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF8B237C700100E5E49D /* ScoreLabel.swift */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
 		1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */; };
 		1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */; };
@@ -107,6 +113,12 @@
 		1C5332F6236B2151003D421B /* ChameleonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonView.swift; sourceTree = "<group>"; };
 		1C5E7C312328151C001542E4 /* BouncyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButton.swift; sourceTree = "<group>"; };
 		1C5E7C33232A163F001542E4 /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		1C61CF7F237C519B00E5E49D /* MultiplayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerCell.swift; sourceTree = "<group>"; };
+		1C61CF80237C519B00E5E49D /* MultiplayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerCell.xib; sourceTree = "<group>"; };
+		1C61CF85237C68A800E5E49D /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		1C61CF87237C68E000E5E49D /* BrowsingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsingDelegate.swift; sourceTree = "<group>"; };
+		1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerModel.swift; sourceTree = "<group>"; };
+		1C61CF8B237C700100E5E49D /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
 		1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTourView.xib; sourceTree = "<group>"; };
 		1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTourView.swift; sourceTree = "<group>"; };
@@ -241,6 +253,28 @@
 			path = TestingColors;
 			sourceTree = "<group>";
 		};
+		1C61CF83237C51A100E5E49D /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */,
+				1CCB093C222428F900F4C812 /* MultiplayerVC.swift */,
+				1C61CF7F237C519B00E5E49D /* MultiplayerCell.swift */,
+				1C61CF80237C519B00E5E49D /* MultiplayerCell.xib */,
+			);
+			path = Multiplayer;
+			sourceTree = "<group>";
+		};
+		1C61CF84237C688700E5E49D /* Multiplayer */ = {
+			isa = PBXGroup;
+			children = (
+				1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */,
+				1C61CF85237C68A800E5E49D /* SessionDelegate.swift */,
+				1C61CF87237C68E000E5E49D /* BrowsingDelegate.swift */,
+				1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */,
+			);
+			path = Multiplayer;
+			sourceTree = "<group>";
+		};
 		1C7FDDD02370611300CC72CE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +283,7 @@
 				1C7FDDD32370632800CC72CE /* WelcomeVC.xib */,
 				1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */,
 				1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */,
-				1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */,
-				1CCB093C222428F900F4C812 /* MultiplayerVC.swift */,
+				1C61CF83237C51A100E5E49D /* Multiplayer */,
 				1CBFB6352231603300CB46C5 /* Collection */,
 				1CA50F7E22788694009D6424 /* HelpVC */,
 				1CA72EF12278C9FE00BBA004 /* ColorController.swift */,
@@ -277,7 +310,7 @@
 			children = (
 				1C02C6752368CE27008312BC /* LocationManager.swift */,
 				1C15D99A22257EBE0037F8D6 /* ColorManager.swift */,
-				1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */,
+				1C61CF84237C688700E5E49D /* Multiplayer */,
 				1C15192C222004F600226042 /* CaptureManager.swift */,
 				1C15D99D22258FE60037F8D6 /* ColorTimer.swift */,
 				1CFE9EF72226BAF200F62935 /* Service.swift */,
@@ -331,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */,
+				1C61CF8B237C700100E5E49D /* ScoreLabel.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
 				1C5332F6236B2151003D421B /* ChameleonView.swift */,
 				1C9B56F22372DE92004BD568 /* ButterflyView.swift */,
@@ -448,6 +482,7 @@
 				1C5E7C34232A163F001542E4 /* API.json in Resources */,
 				1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */,
 				1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */,
+				1C61CF82237C519B00E5E49D /* MultiplayerCell.xib in Resources */,
 				1C151920221FFF9F00226042 /* Assets.xcassets in Resources */,
 				1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */,
 				1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */,
@@ -479,6 +514,7 @@
 				1C02C6762368CE27008312BC /* LocationManager.swift in Sources */,
 				1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */,
 				1CFE9EFC2226DC6900F62935 /* StoreProvider.swift in Sources */,
+				1C61CF8A237C68F000E5E49D /* MultiplayerModel.swift in Sources */,
 				1CFE9EF82226BAF200F62935 /* Service.swift in Sources */,
 				1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */,
 				1CFE9EF62226A01400F62935 /* MultiGameVC.swift in Sources */,
@@ -493,19 +529,23 @@
 				1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */,
 				1CC490442323EB2400759C72 /* Animator.swift in Sources */,
 				1C15192B2220002D00226042 /* ColorsExtension.swift in Sources */,
+				1C61CF88237C68E000E5E49D /* BrowsingDelegate.swift in Sources */,
 				1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */,
 				1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */,
 				1C9B56F32372DE92004BD568 /* ButterflyView.swift in Sources */,
 				1C5332F7236B2151003D421B /* ChameleonView.swift in Sources */,
 				1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */,
 				1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */,
+				1C61CF8C237C700100E5E49D /* ScoreLabel.swift in Sources */,
 				1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */,
+				1C61CF81237C519B00E5E49D /* MultiplayerCell.swift in Sources */,
 				1CEE2DAF2370B74E00FF4056 /* SettingsVC.swift in Sources */,
 				1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */,
 				1C15D99B22257EBE0037F8D6 /* ColorManager.swift in Sources */,
 				1CFE9EFA2226CADF00F62935 /* ColorModel.swift in Sources */,
 				1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */,
 				1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */,
+				1C61CF86237C68A800E5E49D /* SessionDelegate.swift in Sources */,
 				1CCB093F22242BEF00F4C812 /* MultiplayerManager.swift in Sources */,
 				1C7FDDD62370684C00CC72CE /* RoundView.swift in Sources */,
 				1CEE2DAC2370904E00FF4056 /* DropProvider.swift in Sources */,

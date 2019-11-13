@@ -12,9 +12,9 @@ import MultipeerConnectivity
 
 class MultiGameVC: GameVC {
     
-    var oppPoints = 0
     var multiplayer: MultiplayerManager
     var gameOver = false
+    var shouldShowDisconnectAlert = true
     
     init(multiplayerManager: MultiplayerManager) {
         multiplayer = multiplayerManager
@@ -27,12 +27,13 @@ class MultiGameVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureBarForMultiplayer(multiplayer.connectedPeerID?.displayName)
+        configureBarForMultiplayer(multiplayer.connectedPeerID.names())
         multiplayer.updateDelegate(delegate: self, connectionDelegate: self)
     }
     
     override func colorRecognized() {
         super.colorRecognized()
+        updatePoints()
         sendScorePoint()
         showPopup(PopupModel.plusOne(0.8))
     }
@@ -42,25 +43,29 @@ class MultiGameVC: GameVC {
         updateMultiplayerLabel(points)
     }
     
+    override func helpTapped(_ sender: UIButton) {
+        // TODO:
+        colorRecognized()
+    }
+    
     func sendScorePoint() {
-        multiplayer.sendPoint()
+        multiplayer.sendPoint(points)
     }
     
     override func didDismissPopup() {
-        updatePoints()
         if points == 3 {
             multiplayer.sendFinish()
-            showAlertEnd(winner: true)
+            showAlertEnd("", userDidWin: true)
         } else {
             new()
         }
     }
     
-    func showAlertEnd(winner: Bool) {
+    func showAlertEnd(_ winner: String, userDidWin: Bool) {
         gameOver = true
         CaptureManager.shared.stopSession()
-        let title = winner ? "YAS!" : "OUCH!"
-        let message = winner ? "You just won \(points) to \(oppPoints)!" : "You lost \(oppPoints) to \(points)!"
+        let title = userDidWin ? "YAS!" : "OUCH!"
+        let message = userDidWin ? "You won!" : "\(winner) Won!"
         showAlert(title: title, message: message, firstButton: "Ok", secondButton: nil, firstCompletion: {
             self.multiplayer.stop()
             self.navigationController?.popToRootViewController(animated: true)
@@ -68,41 +73,49 @@ class MultiGameVC: GameVC {
     }
     
     override func backTapped(_ sender: UIButton) {
-        multiplayer.stop()
-        super.backTapped(sender)
+        showAlert(title: "Sure?", message: "If you leave the game you will lose the game!", firstButton: "Exit", secondButton: "Keep Playing", firstCompletion: {
+            self.multiplayer.stop()
+            self.shouldShowDisconnectAlert = false
+            self.navigationController?.popToRootViewController(animated: true)
+        }) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }
 
 extension MultiGameVC: MultiplayerDelegate {
     
-    func opponentDidScorePoint() {
-        oppPoints += 1
+    func opponentDidScorePoint(_ opponent: String, point: Int) {
         DispatchQueue.main.async {
-            self.updateOpponentLabel(self.oppPoints)
+            self.updateOpponentLabel(opponent, point)
         }
     }
     
-    func opponentDidFinish() {
-        showAlertEnd(winner: false)
+    func opponentDidFinish(_ opponent: String) {
+        showAlertEnd(opponent, userDidWin: false)
     }
 }
 
 extension MultiGameVC: MultiplayerConnectionDelegate {
     
+    
+    func didConnect(_ peer: MCPeerID) {}
     func didFoundPeer(_ peer: MCPeerID) { }
+    func didLostPeer(_ peer: MCPeerID) {}
     
     func didReceiveInvitation(peerID: MCPeerID, invitationHandler: @escaping (Bool) -> Void) { }
     
-    func didDisconnect() {
+    func didDisconnect(_ peer: MCPeerID, _ reason: DisconnectReason) {
+        guard shouldShowDisconnectAlert else { return }
+        multiplayer.connectedPeerID.remove(at: multiplayer.connectedPeerID.firstIndex(of: peer)!)
+        guard multiplayer.connectedPeerID.isEmpty else { return }
         multiplayer.stop()
         if !gameOver {
             showAlert(title: "Ops", message: "Connection stopped!", firstButton: "Back", secondButton: nil, firstCompletion: {
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
             }, secondCompletion: nil)
         }
     }
-    
-    func didConnect() { }
 }
 

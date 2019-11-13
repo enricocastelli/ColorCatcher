@@ -45,6 +45,20 @@ extension UIView {
                                 constant: 0).isActive = true
     }
     
+    func clear() {
+        for sub in subviews {
+            sub.removeFromSuperview()
+        }
+    }
+}
+
+extension UIStackView {
+    
+    func add(_ views: [UIView]) {
+        for view in views {
+            self.insertArrangedSubview(view, at: 0)
+        }
+    }
 }
 
 extension UIViewController {
@@ -138,4 +152,11 @@ extension CALayer {
         opacity = 0
     }
     
+}
+
+extension String {
+    
+    var multiplayerName: String {
+        return self.replacingOccurrences(of: "iPhone", with: "")
+    }
 }
