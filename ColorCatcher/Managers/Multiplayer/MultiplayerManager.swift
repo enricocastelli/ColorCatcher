@@ -17,31 +17,32 @@ protocol MultiplayerDelegate: class {
 protocol MultiplayerConnectionDelegate: class {
     func didFoundPeer(_ peer: MCPeerID)
     func didLostPeer(_ peer: MCPeerID)
-    func didReceiveInvitation(peerID: MCPeerID, invitationHandler: @escaping (Bool) -> Void)
+    func didReceiveInvitation(peerID: MCPeerID, room: Bool, invitationHandler: @escaping (Bool) -> ())
     func didDisconnect(_ peer: MCPeerID, _ reason: DisconnectReason)
     func didConnect(_ peer: MCPeerID)
 }
 
 
-class MultiplayerManager: NSObject {
+class MultiplayerManager: NSObject, StoreProvider {
     
     private let SessionName = "colorCatcher"
     
-    let myPeerId = MCPeerID(displayName: UIDevice.current.name.multiplayerName)
+    lazy var myPeerId: MCPeerID = MCPeerID(displayName: getMultiplayerName())
     var connectedPeerID = [MCPeerID]()
     private var serviceAdvertiser : MCNearbyServiceAdvertiser!
     private var serviceBrowser : MCNearbyServiceBrowser!
     
-    var session : MCSession
+    var session : MCSession!
     
     weak var delegate: MultiplayerDelegate?
     weak var connectionDelegate: MultiplayerConnectionDelegate?
     
     init(delegate: MultiplayerDelegate?, connectionDelegate: MultiplayerConnectionDelegate?) {
+        // TODO: do not initialize with delegates!
         self.delegate = delegate
         self.connectionDelegate = connectionDelegate
-        session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .none)
         super.init()
+        session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .none)
         session.delegate = self
         start()
     }
@@ -68,8 +69,9 @@ class MultiplayerManager: NSObject {
     }
     
     
-    func connect(_ peerID: MCPeerID) {
-        serviceBrowser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 10)
+    func connect(_ peerID: MCPeerID, room: Bool) {
+        let context = room ? Data(base64Encoded: "room") : nil
+        serviceBrowser.invitePeer(peerID, to: self.session, withContext: context, timeout: 10)
     }
     
     public func sendPoint(_ points: Int) {

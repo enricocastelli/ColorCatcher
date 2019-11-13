@@ -104,7 +104,7 @@ extension MultiGameVC: MultiplayerConnectionDelegate {
     func didFoundPeer(_ peer: MCPeerID) { }
     func didLostPeer(_ peer: MCPeerID) {}
     
-    func didReceiveInvitation(peerID: MCPeerID, invitationHandler: @escaping (Bool) -> Void) { }
+    func didReceiveInvitation(peerID: MCPeerID, room: Bool, invitationHandler: @escaping (Bool) -> ()) {}
     
     func didDisconnect(_ peer: MCPeerID, _ reason: DisconnectReason) {
         guard shouldShowDisconnectAlert else { return }

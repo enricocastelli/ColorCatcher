@@ -14,6 +14,7 @@ enum StoreKeys: String {
     case ColorCatched
     case FirstLaunch
     case WelcomeAnimationOn
+    case MultiplayerName
 }
 
 struct Catched: Codable {
@@ -66,7 +67,8 @@ extension StoreProvider {
     
     func firstLaunchReset() {
         UserDefaults.standard.set([], forKey: StoreKeys.ColorCatched.rawValue)
-        UserDefaults.standard.set(true, forKey: StoreKeys.WelcomeAnimationOn.rawValue)
+        setWelcomeAnimation(true)
+        setMultiplayerName(UIDevice.current.name.multiplayerName)
     }
     
     func isFirstLaunch() -> Bool {
@@ -85,6 +87,13 @@ extension StoreProvider {
         return UserDefaults.standard.object(forKey: StoreKeys.WelcomeAnimationOn.rawValue) as? Bool ?? true
     }
 
+    func setMultiplayerName(_ name: String) {
+        UserDefaults.standard.set(name, forKey: StoreKeys.MultiplayerName.rawValue)
+    }
+    
+    func getMultiplayerName() -> String {
+        return UserDefaults.standard.object(forKey: StoreKeys.MultiplayerName.rawValue) as? String ?? UIDevice.current.name.multiplayerName
+    }
 
 }
 

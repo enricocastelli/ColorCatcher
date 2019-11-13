@@ -15,8 +15,9 @@ extension MultiplayerManager: MCNearbyServiceAdvertiserDelegate {
         
     }
     
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-        connectionDelegate?.didReceiveInvitation(peerID: peerID, invitationHandler: { (accepted) in
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> ()) {
+        let isRoom = context?.base64EncodedString() == "room"
+        connectionDelegate?.didReceiveInvitation(peerID: peerID, room: isRoom, invitationHandler: { (accepted) in
             invitationHandler(accepted, self.session)
         })
     }

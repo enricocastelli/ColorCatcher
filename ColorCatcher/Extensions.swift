@@ -157,6 +157,16 @@ extension CALayer {
 extension String {
     
     var multiplayerName: String {
-        return self.replacingOccurrences(of: "iPhone", with: "")
+        return self.replacingOccurrences(of: "iPhone", with: "").replacingOccurrences(of: " ", with: "")
+    }
+}
+
+extension UITextField {
+    
+    func getValidText() -> String? {
+        guard text != "", let text = text else {
+            return nil
+        }
+        return text
     }
 }

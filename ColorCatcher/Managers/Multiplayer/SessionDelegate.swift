@@ -15,7 +15,7 @@ extension MultiplayerManager: MCSessionDelegate {
         switch state.rawValue {
         case 0:
             Logger("Players Disconnected 🛑")
-            let reason = connectedPeerID.isEmpty ? DisconnectReason.Disconnect : DisconnectReason.RefusedInvite
+            let reason = connectedPeerID.isEmpty ? DisconnectReason.RefusedInvite : DisconnectReason.Disconnect
             connectionDelegate?.didDisconnect(peerID, reason)
         case 1:
             Logger("Connecting...🔶")

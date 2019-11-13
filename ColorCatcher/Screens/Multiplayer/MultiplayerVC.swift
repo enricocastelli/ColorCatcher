@@ -67,7 +67,7 @@ class MultiplayerVC: ColorController, PopupProvider, MultiplayerConnectionDelega
     
     @IBAction func startTapped(_ sender: BouncyButton) {
         for player in players {
-            multiplayer.connect(player)
+            multiplayer.connect(player, room: true)
         }
     }
     
@@ -89,15 +89,18 @@ class MultiplayerVC: ColorController, PopupProvider, MultiplayerConnectionDelega
     }
     
     func didLostPeer(_ peer: MCPeerID) {
-        guard peerIsKnown(peer) else { return }
+        guard peerIsKnown(peer) && players.contains(peer) else { return }
         players.remove(at: players.firstIndex(of: peer)!)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-    func didReceiveInvitation(peerID: MCPeerID, invitationHandler: @escaping (Bool) -> Void) {
-        showAlert(title: "Hello! 🎨", message: "You just received an invitation game from: \(peerID.displayName).", firstButton: "Nope", secondButton: "Let's play!", firstCompletion: {
+    func didReceiveInvitation(peerID: MCPeerID, room: Bool, invitationHandler: @escaping (Bool) -> ()) {
+        let title = room ? "Multi game! 🎨" : "VS Game!"
+        let messageString = room ? "You just received an invitation from: \(peerID.displayName) to join a multi game!" :
+            "You just received an invitation from: \(peerID.displayName) to join a VS game"
+        showAlert(title: title, message: messageString, firstButton: "Nope", secondButton: "Let's play!", firstCompletion: {
             invitationHandler(false)
         }) {
             invitationHandler(true)
@@ -149,6 +152,6 @@ extension MultiplayerVC: MultiplayerCellDelegate {
     
     func didTapVSButton(_ peer: MCPeerID) {
         guard players.contains(peer) else { return }
-        multiplayer.connect(peer)
+        multiplayer.connect(peer, room: false)
     }
 }

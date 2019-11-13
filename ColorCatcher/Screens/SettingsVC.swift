@@ -17,6 +17,9 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var animationLabel: UILabel!
     @IBOutlet weak var animationSwitch: UISwitch!
     
+    @IBOutlet weak var multiplayerLabel: UILabel!
+    @IBOutlet weak var multiplayerField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton(shareButton, 0)
@@ -24,6 +27,9 @@ class SettingsVC: ColorController, PopupProvider {
         setButton(creditsButton, 0.4)
         animationLabel.text = "Welcome animation"
         animationSwitch.isOn = isWelcomeAnimationOn()
+        multiplayerLabel.text = "Multiplayer name"
+        multiplayerField.placeholder = getMultiplayerName()
+        multiplayerField.delegate = self
     }
     
     func setButton(_ button: BouncyButton,_ delay: Double) {
@@ -53,6 +59,16 @@ class SettingsVC: ColorController, PopupProvider {
         model.opacity = 0.5
         showPopup(model)
     }
+}
 
-
+extension SettingsVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard let text = textField.getValidText() else {
+            return false
+        }
+        setMultiplayerName(text)
+        return true
+    }
 }
