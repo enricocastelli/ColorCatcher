@@ -13,11 +13,13 @@ import MultipeerConnectivity
 class MultiGameVC: GameVC {
     
     var multiplayer: MultiplayerManager
+    let pointsToWin: Int
     var gameOver = false
     var shouldShowDisconnectAlert = true
     
     init(multiplayerManager: MultiplayerManager) {
         multiplayer = multiplayerManager
+        pointsToWin = multiplayer.connectedPeerID.count*3
         super.init(nibName: String(describing: GameVC.self), bundle: nil)
     }
     
@@ -44,8 +46,9 @@ class MultiGameVC: GameVC {
     }
     
     override func helpTapped(_ sender: UIButton) {
-        // TODO:
-        colorRecognized()
+        points -= 1
+        updateMultiplayerLabel(points)
+        sendScorePoint()
     }
     
     func sendScorePoint() {
@@ -53,7 +56,7 @@ class MultiGameVC: GameVC {
     }
     
     override func didDismissPopup() {
-        if points == 3 {
+        if points >= pointsToWin {
             multiplayer.sendFinish()
             showAlertEnd("", userDidWin: true)
         } else {
