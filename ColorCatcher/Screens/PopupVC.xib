@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -95,13 +96,14 @@
                 <constraint firstItem="oI1-8a-R5b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NSq-Ih-UtU"/>
                 <constraint firstItem="lm2-i1-PeX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NUs-Vd-kGQ"/>
                 <constraint firstItem="oI1-8a-R5b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Py1-ZI-JKZ"/>
-                <constraint firstItem="lm2-i1-PeX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="VBG-0V-Mv0"/>
                 <constraint firstItem="Plw-L8-eFq" firstAttribute="top" secondItem="lm2-i1-PeX" secondAttribute="bottom" constant="64" id="Yre-bB-QIe"/>
                 <constraint firstAttribute="trailing" secondItem="oI1-8a-R5b" secondAttribute="trailing" id="Zvt-4O-1m3"/>
                 <constraint firstAttribute="trailing" secondItem="Plw-L8-eFq" secondAttribute="trailing" id="qJV-8y-Csd"/>
                 <constraint firstAttribute="bottom" secondItem="Plw-L8-eFq" secondAttribute="bottom" id="r4H-BD-JMO"/>
+                <constraint firstItem="lm2-i1-PeX" firstAttribute="top" secondItem="62y-mO-03c" secondAttribute="top" constant="16" id="wU5-6P-miy"/>
                 <constraint firstAttribute="bottom" secondItem="oI1-8a-R5b" secondAttribute="bottom" id="zYf-Kc-6ZU"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="62y-mO-03c"/>
             <point key="canvasLocation" x="50" y="152"/>
         </view>
     </objects>

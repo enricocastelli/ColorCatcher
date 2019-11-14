@@ -47,6 +47,7 @@
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
 		1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */; };
+		1CA69EB5237D9FFE00516665 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA69EB4237D9FFE00516665 /* GradientView.swift */; };
 		1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA72EF12278C9FE00BBA004 /* ColorController.swift */; };
 		1CA72EF422799A6000BBA004 /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA72EF322799A6000BBA004 /* BarView.xib */; };
 		1CB484B42368499800BC4F55 /* ColorCatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB484B32368499800BC4F55 /* ColorCatcherTests.swift */; };
@@ -131,6 +132,7 @@
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
 		1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerVC.xib; sourceTree = "<group>"; };
+		1CA69EB4237D9FFE00516665 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		1CA72EF12278C9FE00BBA004 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		1CA72EF322799A6000BBA004 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
 		1CB484B12368499800BC4F55 /* ColorCatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorCatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */,
+				1CA69EB4237D9FFE00516665 /* GradientView.swift */,
 				1C61CF8B237C700100E5E49D /* ScoreLabel.swift */,
 				1CC490432323EB2400759C72 /* Animator.swift */,
 				1C5332F6236B2151003D421B /* ChameleonView.swift */,
@@ -542,6 +545,7 @@
 				1CEE2DAF2370B74E00FF4056 /* SettingsVC.swift in Sources */,
 				1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */,
 				1C15D99B22257EBE0037F8D6 /* ColorManager.swift in Sources */,
+				1CA69EB5237D9FFE00516665 /* GradientView.swift in Sources */,
 				1CFE9EFA2226CADF00F62935 /* ColorModel.swift in Sources */,
 				1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */,
 				1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */,

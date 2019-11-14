@@ -13,7 +13,7 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var shareButton: BouncyButton!
     @IBOutlet weak var tourButton: BouncyButton!
     @IBOutlet weak var creditsButton: BouncyButton!
-
+    @IBOutlet var buttonsStackView: UIStackView!
     @IBOutlet weak var animationLabel: UILabel!
     @IBOutlet weak var animationSwitch: UISwitch!
     
@@ -30,6 +30,7 @@ class SettingsVC: ColorController, PopupProvider {
         multiplayerLabel.text = "Multiplayer name"
         multiplayerField.placeholder = getMultiplayerName()
         multiplayerField.delegate = self
+        buttonsStackView.spacing = Device.isSE() ? 16 : 32
     }
     
     func setButton(_ button: BouncyButton,_ delay: Double) {

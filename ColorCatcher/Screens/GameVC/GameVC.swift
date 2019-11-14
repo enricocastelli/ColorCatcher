@@ -39,10 +39,14 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
         ColorManager.shared.delegate = self
         CaptureManager.shared.startSession()
         progressView.alpha = 0
-        addTapGesture()
         imageView.layer.cornerRadius = 5
         imageView.layer.borderColor = UIColor.gray.cgColor
         imageView.layer.borderWidth = 2
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addTapGesture()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -53,6 +57,7 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
     func addTapGesture() {
         let pinch = UIPanGestureRecognizer(target: self, action: #selector(pinchToZoom(_:)))
         pinch.delegate = self
+        view.layoutIfNeeded()
         let pinchView = UIView(frame: imageView.frame)
         self.view.addSubview(pinchView)
         pinchView.addGestureRecognizer(pinch)

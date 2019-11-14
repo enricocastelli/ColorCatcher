@@ -20,7 +20,6 @@ class ColorController: UIViewController, StoreProvider {
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     
-    var gradient: CAGradientLayer?
     var barView: UIView?
     
     override var prefersStatusBarHidden: Bool {
@@ -85,12 +84,9 @@ class ColorController: UIViewController, StoreProvider {
     }
     
     private func addGradient() {
-        gradient = CAGradientLayer()
-        gradient!.colors = [UIColor.white.withAlphaComponent(0.9).cgColor, UIColor.white.withAlphaComponent(0).cgColor]
-        gradient!.locations = [0, 0.8]
-        gradient!.frame = self.containerView!.frame
+        let gradient = GradientView()
         self.barView?.backgroundColor = UIColor.clear
-        self.barView?.layer.insertSublayer(gradient!, at: 0)
+        self.barView?.addContentView(gradient, 0)
 //        let blur = BlurredView(frame: self.containerView!.frame)
 //        self.barView?.layer.insertSublayer(blur.layer, above: gradient)
     }

@@ -61,6 +61,10 @@ enum Device : String {
         return UIDevice.current.getDevice() == Device.SE
     }
     
+    static func isX() -> Bool {
+        return UIDevice.current.getDevice() == Device.X
+    }
+    
 }
 
 extension UIDevice {

@@ -77,3 +77,12 @@ extension ColorCollectionVC: UICollectionViewDelegate {
         openColor(current)
     }
 }
+
+extension ColorCollectionVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = UIScreen.main.bounds.height/3.70
+        let width = UIScreen.main.bounds.width/4.16
+        return CGSize(width: width, height: height)
+    }
+}

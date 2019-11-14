@@ -11,10 +11,14 @@ import UIKit
 extension UIView {
     
     /// add view subview that ocuppy the whole view.
-    func addContentView(_ contentView: UIView) {
+    func addContentView(_ contentView: UIView, _ atIndex: Int? = nil) {
         let containerView = self
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(contentView)
+        if let atIndex = atIndex {
+            containerView.insertSubview(contentView, at: atIndex)
+        } else {
+            containerView.addSubview(contentView)
+        }
         NSLayoutConstraint.init(item: contentView,
                                 attribute: .top,
                                 relatedBy: .equal,

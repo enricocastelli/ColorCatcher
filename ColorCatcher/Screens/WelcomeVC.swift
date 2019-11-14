@@ -23,7 +23,7 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonsStackView.spacing = Device.isSE() ? 16 : 36
+        buttonsStackView.spacing = Device.isSE() ? 16 : 32
     }
 
     override func viewWillAppear(_ animated: Bool) {
