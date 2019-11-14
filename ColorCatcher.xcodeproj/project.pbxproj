@@ -48,6 +48,7 @@
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
 		1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */; };
 		1CA69EB5237D9FFE00516665 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA69EB4237D9FFE00516665 /* GradientView.swift */; };
+		1CA69EB7237DAB0100516665 /* Progress in Resources */ = {isa = PBXBuildFile; fileRef = 1CA69EB6237DAB0100516665 /* Progress */; };
 		1CA72EF22278C9FE00BBA004 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA72EF12278C9FE00BBA004 /* ColorController.swift */; };
 		1CA72EF422799A6000BBA004 /* BarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA72EF322799A6000BBA004 /* BarView.xib */; };
 		1CB484B42368499800BC4F55 /* ColorCatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB484B32368499800BC4F55 /* ColorCatcherTests.swift */; };
@@ -133,6 +134,7 @@
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
 		1CA50F7F2278C3E5009D6424 /* MultiplayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerVC.xib; sourceTree = "<group>"; };
 		1CA69EB4237D9FFE00516665 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		1CA69EB6237DAB0100516665 /* Progress */ = {isa = PBXFileReference; lastKnownFileType = text; path = Progress; sourceTree = "<group>"; };
 		1CA72EF12278C9FE00BBA004 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		1CA72EF322799A6000BBA004 /* BarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarView.xib; sourceTree = "<group>"; };
 		1CB484B12368499800BC4F55 /* ColorCatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorCatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				1C151918221FFF9D00226042 /* AppDelegate.swift */,
+				1CA69EB6237DAB0100516665 /* Progress */,
 				1C15D99C22258EDB0037F8D6 /* TestingColors */,
 				1C7FDDD92370693E00CC72CE /* Providers */,
 				1C7FDDDA2370697B00CC72CE /* Managers */,
@@ -473,6 +476,7 @@
 				1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */,
 				1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */,
 				1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */,
+				1CA69EB7237DAB0100516665 /* Progress in Resources */,
 				1C4B92CC227B338E004773D4 /* Brandon_blk.otf in Resources */,
 				1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */,
 				1C4B92CF227B338E004773D4 /* Brandon_reg.otf in Resources */,

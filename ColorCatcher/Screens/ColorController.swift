@@ -87,8 +87,6 @@ class ColorController: UIViewController, StoreProvider {
         let gradient = GradientView()
         self.barView?.backgroundColor = UIColor.clear
         self.barView?.addContentView(gradient, 0)
-//        let blur = BlurredView(frame: self.containerView!.frame)
-//        self.barView?.layer.insertSublayer(blur.layer, above: gradient)
     }
     
     func updateTimeLabel(_ time: Int) {
