@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,6 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeVC" customModule="ColorCatcher" customModuleProvider="target">
             <connections>
+                <outlet property="buttonsStackView" destination="Ci1-LZ-MVC" id="Bm0-Xd-lPO"/>
                 <outlet property="discoveryButton" destination="EN0-D2-Z0n" id="DRL-Za-BI9"/>
                 <outlet property="multiButton" destination="jcE-YT-yV5" id="Hgb-R9-hdS"/>
                 <outlet property="quickGameButton" destination="f0P-Pb-90G" id="40b-4u-YcP"/>
@@ -31,81 +32,95 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="YLY-Ht-GTe">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SX-Do-Ccx">
-                    <rect key="frame" x="36" y="94" width="342" height="144"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-Ii-Vxa">
+                    <rect key="frame" x="0.0" y="16" width="320" height="464"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" text="Color" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laJ-Uf-Jxj">
-                            <rect key="frame" x="111" y="16" width="120" height="79"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="55"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" text="Catcher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsc-T6-K3v" userLabel="Catcher">
-                            <rect key="frame" x="111" y="79" width="120" height="36"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SX-Do-Ccx">
+                            <rect key="frame" x="4.5" y="0.0" width="311" height="131"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Color" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laJ-Uf-Jxj">
+                                    <rect key="frame" x="95.5" y="16" width="120" height="79"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="55"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Catcher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsc-T6-K3v" userLabel="Catcher">
+                                    <rect key="frame" x="95.5" y="79" width="120" height="36"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="laJ-Uf-Jxj" secondAttribute="trailing" constant="8" id="25U-5Z-MW1"/>
+                                <constraint firstItem="Lsc-T6-K3v" firstAttribute="top" secondItem="laJ-Uf-Jxj" secondAttribute="bottom" constant="-16" id="Dwz-Np-H1k"/>
+                                <constraint firstItem="Lsc-T6-K3v" firstAttribute="centerX" secondItem="9SX-Do-Ccx" secondAttribute="centerX" id="FZm-8k-vIC"/>
+                                <constraint firstAttribute="bottom" secondItem="Lsc-T6-K3v" secondAttribute="bottom" constant="16" id="I6H-fI-Aaz"/>
+                                <constraint firstAttribute="width" secondItem="9SX-Do-Ccx" secondAttribute="height" multiplier="311:131" id="OT4-hp-Ypc"/>
+                                <constraint firstItem="laJ-Uf-Jxj" firstAttribute="top" secondItem="9SX-Do-Ccx" secondAttribute="top" constant="16" id="Woe-BH-O96"/>
+                                <constraint firstItem="laJ-Uf-Jxj" firstAttribute="centerX" secondItem="9SX-Do-Ccx" secondAttribute="centerX" id="Xas-Mg-tvq"/>
+                                <constraint firstItem="Lsc-T6-K3v" firstAttribute="leading" secondItem="laJ-Uf-Jxj" secondAttribute="leading" id="bkW-m8-kx1"/>
+                                <constraint firstItem="Lsc-T6-K3v" firstAttribute="trailing" secondItem="laJ-Uf-Jxj" secondAttribute="trailing" id="gQc-uw-tC2"/>
+                                <constraint firstItem="laJ-Uf-Jxj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9SX-Do-Ccx" secondAttribute="leadingMargin" constant="8" id="hbl-7g-OOb"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLT-XF-eih" customClass="WelcomeAnimationView" customModule="ColorCatcher" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="132" width="320" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-LZ-MVC">
+                            <rect key="frame" x="60" y="183" width="200" height="281"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0P-Pb-90G" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="66"/>
+                                    <color key="backgroundColor" red="0.83760568629999999" green="0.52754931760000001" blue="0.74602498559999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
+                                    <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                                    <state key="normal" title="Race against Time">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="raceTapped:" destination="-1" eventType="touchUpInside" id="uiW-eF-OvQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-D2-Z0n" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                                    <rect key="frame" x="6" y="107.5" width="188" height="66"/>
+                                    <color key="backgroundColor" red="0.53062594929999995" green="0.88214015960000003" blue="0.87453010180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
+                                    <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                                    <state key="normal" title="Discovery Mode">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="DiscoveryTapped:" destination="-1" eventType="touchUpInside" id="kJD-L1-Omv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcE-YT-yV5" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                                    <rect key="frame" x="23" y="215" width="154" height="66"/>
+                                    <color key="backgroundColor" red="1" green="0.92364132239999996" blue="0.56783385360000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
+                                    <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                                    <state key="normal" title="Multiplayer">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="multiTapped:" destination="-1" eventType="touchUpInside" id="11g-tZ-lHY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="laJ-Uf-Jxj" secondAttribute="trailing" constant="8" id="25U-5Z-MW1"/>
-                        <constraint firstItem="Lsc-T6-K3v" firstAttribute="top" secondItem="laJ-Uf-Jxj" secondAttribute="bottom" constant="-16" id="Dwz-Np-H1k"/>
-                        <constraint firstItem="Lsc-T6-K3v" firstAttribute="centerX" secondItem="9SX-Do-Ccx" secondAttribute="centerX" id="FZm-8k-vIC"/>
-                        <constraint firstAttribute="bottom" secondItem="Lsc-T6-K3v" secondAttribute="bottom" constant="16" id="I6H-fI-Aaz"/>
-                        <constraint firstAttribute="width" secondItem="9SX-Do-Ccx" secondAttribute="height" multiplier="311:131" id="OT4-hp-Ypc"/>
-                        <constraint firstItem="laJ-Uf-Jxj" firstAttribute="top" secondItem="9SX-Do-Ccx" secondAttribute="top" constant="16" id="Woe-BH-O96"/>
-                        <constraint firstItem="laJ-Uf-Jxj" firstAttribute="centerX" secondItem="9SX-Do-Ccx" secondAttribute="centerX" id="Xas-Mg-tvq"/>
-                        <constraint firstItem="Lsc-T6-K3v" firstAttribute="leading" secondItem="laJ-Uf-Jxj" secondAttribute="leading" id="bkW-m8-kx1"/>
-                        <constraint firstItem="Lsc-T6-K3v" firstAttribute="trailing" secondItem="laJ-Uf-Jxj" secondAttribute="trailing" id="gQc-uw-tC2"/>
-                        <constraint firstItem="laJ-Uf-Jxj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9SX-Do-Ccx" secondAttribute="leadingMargin" constant="8" id="hbl-7g-OOb"/>
+                        <constraint firstAttribute="trailing" secondItem="wLT-XF-eih" secondAttribute="trailing" id="29S-oG-s6S"/>
+                        <constraint firstItem="wLT-XF-eih" firstAttribute="centerX" secondItem="o5U-Ii-Vxa" secondAttribute="centerX" id="Ncp-zh-yZn"/>
+                        <constraint firstItem="wLT-XF-eih" firstAttribute="leading" secondItem="o5U-Ii-Vxa" secondAttribute="leading" id="O64-gj-qxJ"/>
                     </constraints>
-                </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-LZ-MVC">
-                    <rect key="frame" x="36" y="518" width="342" height="270"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0P-Pb-90G" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
-                            <rect key="frame" x="71" y="0.0" width="200" height="66"/>
-                            <color key="backgroundColor" red="0.83760568629999999" green="0.52754931760000001" blue="0.74602498559999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
-                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
-                            <state key="normal" title="Race against Time">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="raceTapped:" destination="-1" eventType="touchUpInside" id="uiW-eF-OvQ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-D2-Z0n" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
-                            <rect key="frame" x="77" y="102" width="188" height="66"/>
-                            <color key="backgroundColor" red="0.53062594929999995" green="0.88214015960000003" blue="0.87453010180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
-                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
-                            <state key="normal" title="Discovery Mode">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="DiscoveryTapped:" destination="-1" eventType="touchUpInside" id="kJD-L1-Omv"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcE-YT-yV5" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
-                            <rect key="frame" x="94" y="204" width="154" height="66"/>
-                            <color key="backgroundColor" red="1" green="0.92364132239999996" blue="0.56783385360000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="18"/>
-                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
-                            <state key="normal" title="Multiplayer">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="multiTapped:" destination="-1" eventType="touchUpInside" id="11g-tZ-lHY"/>
-                            </connections>
-                        </button>
-                    </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrs-yX-dex">
-                    <rect key="frame" x="334" y="824" width="64" height="64"/>
+                    <rect key="frame" x="240" y="496" width="64" height="64"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nrs-yX-dex" secondAttribute="height" multiplier="1:1" id="acf-9Z-etv"/>
                         <constraint firstAttribute="height" constant="64" id="obf-BB-bwv"/>
@@ -118,7 +133,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-3X-bbg">
-                    <rect key="frame" x="16" y="824" width="64" height="64"/>
+                    <rect key="frame" x="16" y="496" width="64" height="64"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="mfS-63-1mu"/>
                     </constraints>
@@ -129,30 +144,21 @@
                         <action selector="settingsTapped:" destination="-1" eventType="touchUpInside" id="EBq-47-iQQ"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLT-XF-eih" customClass="WelcomeAnimationView" customModule="ColorCatcher" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="254" width="414" height="248"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="wLT-XF-eih" secondAttribute="trailing" id="7tb-P4-Bfn"/>
-                <constraint firstItem="wLT-XF-eih" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leading" id="IbH-dV-hb0"/>
-                <constraint firstItem="9SX-Do-Ccx" firstAttribute="top" secondItem="YLY-Ht-GTe" secondAttribute="topMargin" constant="50" id="T4K-4n-hmz"/>
-                <constraint firstItem="wLT-XF-eih" firstAttribute="top" secondItem="9SX-Do-Ccx" secondAttribute="bottom" constant="16" id="Uy8-he-icJ"/>
-                <constraint firstItem="9SX-Do-Ccx" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leadingMargin" constant="16" id="XxY-Va-OSd"/>
+                <constraint firstItem="o5U-Ii-Vxa" firstAttribute="centerX" secondItem="YLY-Ht-GTe" secondAttribute="centerX" id="De3-Ym-qZZ"/>
+                <constraint firstItem="o5U-Ii-Vxa" firstAttribute="top" secondItem="YLY-Ht-GTe" secondAttribute="top" constant="16" id="SZD-ru-55H"/>
+                <constraint firstAttribute="trailing" secondItem="o5U-Ii-Vxa" secondAttribute="trailing" id="SxH-TO-PBc"/>
                 <constraint firstAttribute="bottom" secondItem="vwX-3X-bbg" secondAttribute="bottom" constant="8" id="a3D-xm-ZrS"/>
-                <constraint firstItem="nrs-yX-dex" firstAttribute="top" secondItem="Ci1-LZ-MVC" secondAttribute="bottom" constant="36" id="bn7-EY-il3"/>
+                <constraint firstItem="o5U-Ii-Vxa" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leading" id="bg1-cr-hCY"/>
                 <constraint firstItem="vwX-3X-bbg" firstAttribute="width" secondItem="vwX-3X-bbg" secondAttribute="height" multiplier="1:1" id="boe-dZ-uhe"/>
-                <constraint firstItem="Ci1-LZ-MVC" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leadingMargin" constant="16" id="g37-8d-1Y5"/>
+                <constraint firstItem="nrs-yX-dex" firstAttribute="top" secondItem="o5U-Ii-Vxa" secondAttribute="bottom" constant="16" id="hBb-ri-yW2"/>
                 <constraint firstAttribute="trailing" secondItem="nrs-yX-dex" secondAttribute="trailing" constant="16" id="jnE-Uj-9hA"/>
                 <constraint firstItem="vwX-3X-bbg" firstAttribute="leading" secondItem="YLY-Ht-GTe" secondAttribute="leading" constant="16" id="l07-Mh-gp9"/>
-                <constraint firstAttribute="trailingMargin" secondItem="9SX-Do-Ccx" secondAttribute="trailing" constant="16" id="ldI-R9-YV4"/>
-                <constraint firstItem="Ci1-LZ-MVC" firstAttribute="top" secondItem="wLT-XF-eih" secondAttribute="bottom" constant="16" id="m1w-au-HEo"/>
-                <constraint firstAttribute="trailingMargin" secondItem="Ci1-LZ-MVC" secondAttribute="trailing" constant="16" id="rQy-I1-1cd"/>
                 <constraint firstAttribute="bottom" secondItem="nrs-yX-dex" secondAttribute="bottom" constant="8" id="uoN-HA-ue4"/>
             </constraints>
-            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+            <point key="canvasLocation" x="-135" y="94.014084507042256"/>
         </view>
     </objects>
     <resources>

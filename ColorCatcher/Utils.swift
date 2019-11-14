@@ -43,3 +43,44 @@ func isSimulator() -> Bool {
     }
     return identifier == "i386" || identifier == "x86_64"
 }
+
+
+enum Device : String {
+    
+    case SE
+    case Seven
+    case Plus
+    case X
+    case XPlus
+    case XR
+    case Simulator
+    case iPad
+    case Unknown
+    
+    static func isSE() -> Bool {
+        return UIDevice.current.getDevice() == Device.SE
+    }
+    
+}
+
+extension UIDevice {
+    
+    func getDevice() -> Device {
+        switch UIScreen.main.bounds.height {
+        case 812:
+            return Device.X
+        case 736:
+            return Device.Plus
+        case 667:
+            return Device.Seven
+        case 568:
+            return Device.SE
+        case 896:
+            return Device.X
+        default:
+            Logger("Device Size not recognized!")
+            return Device.Seven
+        }
+    }
+    
+}

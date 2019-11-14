@@ -26,6 +26,7 @@ class GameDiscoveryVC: GameVC {
     }
     
     override func helpTapped(_ sender: UIButton) {
+        // TODO
         colorRecognized()
     }
     

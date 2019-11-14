@@ -34,7 +34,7 @@ class WelcomeAnimationView: UIView {
     
     func addChameleon(_ animated: Bool) {
         chameleon = ChameleonView()
-        chameleon.center.y = 0
+        chameleon.center.y = frame.height/2
         self.addSubview(chameleon)
         chameleon.center.x = (self.sWidth/2) - 5
         guard animated else {

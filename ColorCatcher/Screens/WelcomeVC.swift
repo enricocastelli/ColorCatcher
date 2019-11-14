@@ -17,12 +17,20 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     @IBOutlet weak var quickGameButton: BouncyButton!
     @IBOutlet weak var discoveryButton: BouncyButton!
     @IBOutlet var multiButton: BouncyButton!
+    @IBOutlet var buttonsStackView: UIStackView!
     @IBOutlet var welcomeAnimationView: WelcomeAnimationView!
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        buttonsStackView.spacing = Device.isSE() ? 16 : 36
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setView()
         guard isWelcomeAnimationOn() else {
+            self.view.layoutIfNeeded()
             welcomeAnimationView.addChameleon(false)
             return }
         welcomeAnimationView.startWelcomeAnimation()

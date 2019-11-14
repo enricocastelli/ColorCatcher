@@ -45,7 +45,7 @@ class ColorController: UIViewController, StoreProvider {
     
     private func addNib() {
         barView = Bundle.main.loadNibNamed("BarView", owner: self, options: nil)?.first as? UIView
-        self.containerView?.addSubview(barView!)
+        self.containerView?.addContentView(barView!)
     }
     
     func configureBarForRace() {
