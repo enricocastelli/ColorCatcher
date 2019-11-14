@@ -10,19 +10,29 @@ import UIKit
 import MultipeerConnectivity
 
 fileprivate let cellID = String(describing: MultiplayerCell.self)
-class MultiplayerVC: ColorController, PopupProvider, MultiplayerConnectionDelegate {
+class MultiplayerVC: ColorController, PopupProvider {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var roomButton: BouncyButton!
+    @IBOutlet weak var explanationView: UIView!
+    @IBOutlet weak var explanationLabel: UILabel!
+
+
     
     var multiplayer: MultiplayerManager!
-    var players = [MCPeerID]()
+    var players = [MCPeerID]() {
+        didSet {
+            self.hideExplanationView()
+        }
+    }
     lazy private var refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         addRefresh()
+        setExplanationView()
         setupMultiplayer()
         roomButton.setup()
         roomButton.setTitle("Create a Room", for: .normal)
@@ -39,6 +49,15 @@ class MultiplayerVC: ColorController, PopupProvider, MultiplayerConnectionDelega
     func addRefresh() {
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
+    }
+    
+    func setExplanationView() {
+        explanationView.alpha = 0
+        explanationView.layer.cornerRadius = 20
+        explanationLabel.text = "Be sure to be around other players and that Wi-Fi & Bluetooth are active!"
+        let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in
+            self.showExplanationView()
+        }
     }
     
     func peerIsKnown(_ peer: MCPeerID) -> Bool {
@@ -78,7 +97,23 @@ class MultiplayerVC: ColorController, PopupProvider, MultiplayerConnectionDelega
         }
     }
     
-    //MultiplayerConnectionDelegate
+    func showExplanationView() {
+        guard players.isEmpty else { return }
+        explanationView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.explanationView.alpha = 1
+        }
+
+    }
+    
+    func hideExplanationView() {
+        UIView.animate(withDuration: 0.3) {
+            self.explanationView.alpha = 0
+        }
+    }
+}
+    
+extension MultiplayerVC: MultiplayerConnectionDelegate {
     
     func didFoundPeer(_ peer: MCPeerID) {
         guard !peerIsKnown(peer) else { return }

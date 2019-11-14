@@ -49,6 +49,7 @@ class MultiGameVC: GameVC {
         points -= 1
         updateMultiplayerLabel(points)
         sendScorePoint()
+        new()
     }
     
     func sendScorePoint() {

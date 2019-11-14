@@ -24,6 +24,7 @@
                 <outlet property="creditsButton" destination="nPa-eX-WCx" id="QoW-ow-kS1"/>
                 <outlet property="multiplayerField" destination="FVq-Dk-pyg" id="u0C-KL-yC9"/>
                 <outlet property="multiplayerLabel" destination="fUd-nZ-sYb" id="aHb-RE-ynU"/>
+                <outlet property="optionsStackView" destination="64n-Mi-woR" id="MHE-WK-em5"/>
                 <outlet property="shareButton" destination="s4D-EA-Bob" id="Xea-i9-9Vs"/>
                 <outlet property="tourButton" destination="fgE-Lh-1L4" id="A25-IC-cdr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -80,8 +81,8 @@
                         <constraint firstAttribute="width" secondItem="yyQ-0d-6Pj" secondAttribute="height" multiplier="6:1" id="A1U-no-CCi"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="64n-Mi-woR">
-                    <rect key="frame" x="8" y="129" width="398" height="183"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="64n-Mi-woR">
+                    <rect key="frame" x="8" y="129" width="398" height="199"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-6A-K9B">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="91.5"/>
@@ -110,7 +111,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWl-cl-HqI">
-                            <rect key="frame" x="0.0" y="91.5" width="398" height="91.5"/>
+                            <rect key="frame" x="0.0" y="107.5" width="398" height="91.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-nZ-sYb" userLabel="Multiplayer Name">
                                     <rect key="frame" x="16" y="8" width="41.5" height="75.5"/>

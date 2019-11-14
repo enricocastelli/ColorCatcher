@@ -14,6 +14,9 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var tourButton: BouncyButton!
     @IBOutlet weak var creditsButton: BouncyButton!
     @IBOutlet var buttonsStackView: UIStackView!
+    
+    @IBOutlet var optionsStackView: UIStackView!
+
     @IBOutlet weak var animationLabel: UILabel!
     @IBOutlet weak var animationSwitch: UISwitch!
     

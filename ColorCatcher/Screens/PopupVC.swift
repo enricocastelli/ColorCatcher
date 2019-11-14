@@ -81,6 +81,7 @@ class PopupVC: UIViewController, DropProvider {
                 self.tappedView()
             }
         }
+        textView.setContentOffset(.zero, animated: false)
     }
     
     private func addTapRecognizer() {
