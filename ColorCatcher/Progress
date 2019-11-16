@@ -3,6 +3,10 @@ DESIGN:
     Chameleon front face (to add when color is recognized and tour)
     General review
 
+BUGS:
+    multi inviting too many times
+    4 points -> no alert to loser
+
 FRAMEWORK:
     Firebase
 
@@ -15,5 +19,4 @@ OTHER:
 
 IDEAS:
     Add level?
-
-
+    Animator can be done native!
