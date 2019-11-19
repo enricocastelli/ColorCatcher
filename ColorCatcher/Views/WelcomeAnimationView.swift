@@ -46,7 +46,9 @@ class WelcomeAnimationView: UIView {
         UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
             self.chameleon.center.x = (self.sWidth/2)
         }, completion: { (_) in
-            guard !self.chameleon.wentBackground else { return }
+            guard !self.chameleon.wentBackground else {
+                self.chameleon.goToStatic()
+                return }
             self.chameleon.stopAtFirst {
                 self.chameleon.goToStatic()
                 self.chameleon.changeColor(self.animationColor, 1)
