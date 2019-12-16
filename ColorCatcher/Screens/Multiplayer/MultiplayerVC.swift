@@ -85,6 +85,7 @@ class MultiplayerVC: ColorController, PopupProvider {
     }
     
     @IBAction func startTapped(_ sender: BouncyButton) {
+        logEvent(.MultiplayerRoomCreated)
         for player in players {
             multiplayer.connect(player, room: true)
         }
@@ -132,18 +133,22 @@ extension MultiplayerVC: MultiplayerConnectionDelegate {
     }
     
     func didReceiveInvitation(peerID: MCPeerID, room: Bool, invitationHandler: @escaping (Bool) -> ()) {
+        logEvent(.MultiplayerInviteReceived)
         let title = room ? "Multi game! 🎨" : "VS Game!"
         let messageString = room ? "You just received an invitation from: \(peerID.displayName) to join a multi game!" :
             "You just received an invitation from: \(peerID.displayName) to join a VS game"
         showAlert(title: title, message: messageString, firstButton: "Nope", secondButton: "Let's play!", firstCompletion: {
+            self.logEvent(.MultiplayerInviteRefused)
             invitationHandler(false)
         }) {
+            self.logEvent(.MultiplayerInviteAccepted)
             invitationHandler(true)
         }
     }
     
     func didDisconnect(_ peer: MCPeerID, _ reason: DisconnectReason) {
         // handle cases
+        logEvent(.MultiplayerDisconnected)
         if multiplayer.connectedPeerID.contains(peer) {
             multiplayer.connectedPeerID.remove(at: multiplayer.connectedPeerID.firstIndex(of: peer)!)
         }
@@ -187,6 +192,7 @@ extension MultiplayerVC: MultiplayerCellDelegate {
     
     func didTapVSButton(_ peer: MCPeerID) {
         guard players.contains(peer) else { return }
+        logEvent(.MultiplayerInviteSent)
         multiplayer.connect(peer, room: false)
     }
 }

@@ -7,24 +7,38 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, StoreProvider {
+class AppDelegate: UIResponder, UIApplicationDelegate, StoreProvider, AnalyticsProvider {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        UIApplication.shared.isIdleTimerDisabled = true
+        UIApplication.shared.isIdleTimerDisabled = true
         UIView.setAnimationsEnabled(!isUITestRunning())
         let nav = UINavigationController(rootViewController: getStartVC())
         nav.isNavigationBarHidden = true
         self.window?.rootViewController = nav
+        FirebaseApp.configure()
+        RemoteConfig.remoteConfig().fetch(withExpirationDuration: 7200) { (status, error) in
+            if status == .success {
+              RemoteConfig.remoteConfig().activate(completionHandler: { (error) in
+                if let error = error {
+                    Logger(error)
+                }
+              })
+            } else {
+              Logger("remoteConfig fetch error")
+            }
+        }
         return true
     }
     
     func getStartVC() -> UIViewController {
         if isFirstLaunch() {
+            logEvent(.FirstLaunch)
             firstLaunchReset()
             return HelpVC()
         } else {

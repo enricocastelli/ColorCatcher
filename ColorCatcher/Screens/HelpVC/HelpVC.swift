@@ -8,16 +8,15 @@
 
 import UIKit
 import AVFoundation // for Authorization on using camera
-import CoreLocation // for Authorization on location
 
 fileprivate let texts: [String] = ["You will be given a color to find and catch",
                                           "Look for that color around you...",
-                                          "And point your phone on it!",
+                                          "And point your phone at it!",
                                           "Collect all colors and find out cool facts about them you would never imagined",
                                           "Please enable camera access",
                                             "...and location", "", ""]
 
-class HelpVC: UIViewController, DropProvider {
+class HelpVC: UIViewController, DropProvider, AnalyticsProvider, StoreProvider {
     
     @IBOutlet weak var continueButton: BouncyButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -47,10 +46,13 @@ class HelpVC: UIViewController, DropProvider {
     }
     
     private func addObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(locationStatusDidChange),
-                                               name: .locationStatusDidChange,
-                                               object: nil)
+        NotificationCenter.default.addObserver(forName: .locationStatusDidChange, object: nil, queue: nil) { (notification) in
+            guard let status = notification.userInfo?["status"] as? Int else {
+                Logger("location notification parsing error")
+                return
+            }
+            self.locationStatusDidChange(status)
+        }
     }
     
     
@@ -161,25 +163,28 @@ class HelpVC: UIViewController, DropProvider {
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
             DispatchQueue.main.async {
                 self.timerCallback()
+                self.logEvent(.AllowedCamera, parameters: ["Granted": "\(granted)"])
             }
         })
     }
     
-    @objc func locationStatusDidChange() {
+    @objc func locationStatusDidChange(_ status: Int) {
+        self.logEvent(.AllowedLocation, parameters: ["Status": "\(status)"])
         timerCallback()
     }
     
     func pushFoward() {
+        setFirstLaunchDone()
         timer.invalidate()
         navigationController?.pushViewController(WelcomeVC(), animated: true)
     }
     
     @IBAction func continueTapped(_ sender: UIButton) {
+        logEvent(.SkippedIntro)
         timer.invalidate()
         setTimer()
         timerCallback()
     }
 }
 
-extension HelpVC: CLLocationManagerDelegate {}
 

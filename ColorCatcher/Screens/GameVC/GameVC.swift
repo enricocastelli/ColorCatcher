@@ -38,6 +38,7 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
         CaptureManager.shared.delegate = self
         ColorManager.shared.delegate = self
         CaptureManager.shared.startSession()
+        applyLevel()
         progressView.alpha = 0
         imageView.layer.cornerRadius = 5
         imageView.layer.borderColor = UIColor.gray.cgColor
@@ -52,6 +53,18 @@ class GameVC: ColorController, PopupProvider, FlashProvider, UIGestureRecognizer
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         CaptureManager.shared.stopSession()
+    }
+    
+    func applyLevel() {
+        ColorManager.shared.tolerance = {
+            let level = getLevel()
+            switch level {
+            case 0: return 80
+            case 1: return 90
+            case 2: return 95
+            default: return 90
+            }
+        }()
     }
     
     func addTapGesture() {

@@ -29,12 +29,14 @@ class MultiGameVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ColorManager.shared.tolerance = 90
         configureBarForMultiplayer(multiplayer.connectedPeerID.names())
         multiplayer.updateDelegate(delegate: self, connectionDelegate: self)
     }
     
     override func colorRecognized() {
         super.colorRecognized()
+        logEvent(.MultiplayerColorCatched)
         updatePoints()
         sendScorePoint()
         showPopup(PopupModel.plusOne(0.8))
@@ -47,6 +49,7 @@ class MultiGameVC: GameVC {
     
     override func helpTapped(_ sender: UIButton) {
         points -= 1
+        logEvent(.MultiplayerSkippedColor)
         updateMultiplayerLabel(points)
         sendScorePoint()
         new()
@@ -67,6 +70,7 @@ class MultiGameVC: GameVC {
     
     func showAlertEnd(_ winner: String, userDidWin: Bool) {
         gameOver = true
+        logEvent(userDidWin ? Event.MultiplayerGameWon : Event.MultiplayerGameLost)
         CaptureManager.shared.stopSession()
         let title = userDidWin ? "YAS!" : "OUCH!"
         let message = userDidWin ? "You won!" : "\(winner) Won!"
@@ -112,6 +116,7 @@ extension MultiGameVC: MultiplayerConnectionDelegate {
     
     func didDisconnect(_ peer: MCPeerID, _ reason: DisconnectReason) {
         guard shouldShowDisconnectAlert else { return }
+        logEvent(.MultiplayerGameDisconnected)
         multiplayer.connectedPeerID.remove(at: multiplayer.connectedPeerID.firstIndex(of: peer)!)
         guard multiplayer.connectedPeerID.isEmpty else { return }
         multiplayer.stop()

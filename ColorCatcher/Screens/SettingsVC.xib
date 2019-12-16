@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +20,8 @@
                 <outlet property="buttonsStackView" destination="Z8P-nM-63y" id="1Ed-Fo-zUw"/>
                 <outlet property="containerView" destination="yyQ-0d-6Pj" id="O6r-Vc-pc6"/>
                 <outlet property="creditsButton" destination="nPa-eX-WCx" id="QoW-ow-kS1"/>
+                <outlet property="levelLabel" destination="OIC-aZ-NBy" id="XfE-tw-5Ha"/>
+                <outlet property="levelSegment" destination="fEK-Tp-igI" id="EXD-P5-zsw"/>
                 <outlet property="multiplayerField" destination="FVq-Dk-pyg" id="u0C-KL-yC9"/>
                 <outlet property="multiplayerLabel" destination="fUd-nZ-sYb" id="aHb-RE-ynU"/>
                 <outlet property="optionsStackView" destination="64n-Mi-woR" id="MHE-WK-em5"/>
@@ -82,7 +82,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="64n-Mi-woR">
-                    <rect key="frame" x="8" y="129" width="398" height="199"/>
+                    <rect key="frame" x="8" y="129" width="398" height="306.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-6A-K9B">
                             <rect key="frame" x="0.0" y="0.0" width="398" height="91.5"/>
@@ -110,8 +110,39 @@
                                 <constraint firstItem="Krw-m8-Hre" firstAttribute="top" secondItem="1xV-6A-K9B" secondAttribute="top" constant="8" id="kdU-Xs-B5Q"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWl-cl-HqI">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXk-Mz-86O">
                             <rect key="frame" x="0.0" y="107.5" width="398" height="91.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIC-aZ-NBy">
+                                    <rect key="frame" x="16" y="8" width="41" height="75.5"/>
+                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
+                                    <color key="textColor" white="0.17818970479999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-Tp-igI">
+                                    <rect key="frame" x="176" y="30.5" width="206" height="32"/>
+                                    <segments>
+                                        <segment title="Easy"/>
+                                        <segment title="Medium"/>
+                                        <segment title="Hard"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="levelSegmentTapped:" destination="-1" eventType="valueChanged" id="IHd-Vf-Qze"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="fEK-Tp-igI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OIC-aZ-NBy" secondAttribute="trailing" constant="16" id="2Rp-FA-kby"/>
+                                <constraint firstAttribute="trailing" secondItem="fEK-Tp-igI" secondAttribute="trailing" constant="16" id="4jl-vm-C6n"/>
+                                <constraint firstItem="OIC-aZ-NBy" firstAttribute="leading" secondItem="pXk-Mz-86O" secondAttribute="leading" constant="16" id="8OQ-dA-Pvg"/>
+                                <constraint firstItem="fEK-Tp-igI" firstAttribute="centerY" secondItem="pXk-Mz-86O" secondAttribute="centerY" id="AF1-Bl-ynY"/>
+                                <constraint firstItem="OIC-aZ-NBy" firstAttribute="top" secondItem="pXk-Mz-86O" secondAttribute="top" constant="8" id="geh-lb-8A9"/>
+                                <constraint firstAttribute="bottom" secondItem="OIC-aZ-NBy" secondAttribute="bottom" constant="8" id="qIv-sI-eZg"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWl-cl-HqI">
+                            <rect key="frame" x="0.0" y="215" width="398" height="91.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-nZ-sYb" userLabel="Multiplayer Name">
                                     <rect key="frame" x="16" y="8" width="41.5" height="75.5"/>
@@ -120,11 +151,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Multiplayer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVq-Dk-pyg">
-                                    <rect key="frame" x="262" y="31" width="120" height="30"/>
+                                    <rect key="frame" x="246" y="29" width="136" height="34"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="FVq-Dk-pyg" secondAttribute="height" multiplier="4:1" id="fmx-Rv-yak"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 </textField>

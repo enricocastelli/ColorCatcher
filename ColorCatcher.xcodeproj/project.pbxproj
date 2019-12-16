@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15714D9D7CE1DBFB3D3CA380 /* Pods_ColorCatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */; };
 		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
@@ -43,6 +44,9 @@
 		1C7FDDD62370684C00CC72CE /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDD52370684C00CC72CE /* RoundView.swift */; };
 		1C7FDDD8237068CF00CC72CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDD7237068CF00CC72CE /* Utils.swift */; };
 		1C8853BA23685F8D00FF9770 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8853B923685F8D00FF9770 /* Extensions.swift */; };
+		1C8EA7482391506B00781B47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8EA7472391506B00781B47 /* GoogleService-Info.plist */; };
+		1C8EA74A2391528900781B47 /* AnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA7492391528900781B47 /* AnalyticsProvider.swift */; };
+		1C8EA74C239152E500781B47 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EA74B239152E500781B47 /* Events.swift */; };
 		1C9B56F32372DE92004BD568 /* ButterflyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9B56F22372DE92004BD568 /* ButterflyView.swift */; };
 		1CA50F7C2278868B009D6424 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA50F7A2278868B009D6424 /* HelpVC.swift */; };
 		1CA50F7D2278868B009D6424 /* HelpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F7B2278868B009D6424 /* HelpVC.xib */; };
@@ -78,6 +82,7 @@
 		1CFE9F35222942E800F62935 /* ColorCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F34222942E800F62935 /* ColorCollectionVC.xib */; };
 		1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9F362229461600F62935 /* ColorCollectionCell.swift */; };
 		1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F372229461600F62935 /* ColorCollectionCell.xib */; };
+		824F89547A33071D4A3EE09A /* Pods_ColorCatcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +134,9 @@
 		1C7FDDD52370684C00CC72CE /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		1C7FDDD7237068CF00CC72CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1C8853B923685F8D00FF9770 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1C8EA7472391506B00781B47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1C8EA7492391528900781B47 /* AnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsProvider.swift; sourceTree = "<group>"; };
+		1C8EA74B239152E500781B47 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		1C9B56F22372DE92004BD568 /* ButterflyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyView.swift; sourceTree = "<group>"; };
 		1CA50F7A2278868B009D6424 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		1CA50F7B2278868B009D6424 /* HelpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpVC.xib; sourceTree = "<group>"; };
@@ -166,6 +174,12 @@
 		1CFE9F34222942E800F62935 /* ColorCollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionVC.xib; sourceTree = "<group>"; };
 		1CFE9F362229461600F62935 /* ColorCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCell.swift; sourceTree = "<group>"; };
 		1CFE9F372229461600F62935 /* ColorCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionCell.xib; sourceTree = "<group>"; };
+		9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorCatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcher.release.xcconfig"; path = "Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher.release.xcconfig"; sourceTree = "<group>"; };
+		CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorCatcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B7B13CE2C7DF1605A34286 /* Pods-ColorCatcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcherTests.debug.xcconfig"; path = "Target Support Files/Pods-ColorCatcherTests/Pods-ColorCatcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E84C9282E90A434058FF2F /* Pods-ColorCatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcher.debug.xcconfig"; path = "Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher.debug.xcconfig"; sourceTree = "<group>"; };
+		EFFD142B6123721624895B3D /* Pods-ColorCatcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcherTests.release.xcconfig"; path = "Target Support Files/Pods-ColorCatcherTests/Pods-ColorCatcherTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15714D9D7CE1DBFB3D3CA380 /* Pods_ColorCatcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824F89547A33071D4A3EE09A /* Pods_ColorCatcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +230,8 @@
 				1C0E04EA227B2C24003DA1FB /* Resources */,
 				1CB484B22368499800BC4F55 /* ColorCatcherTests */,
 				1C151916221FFF9D00226042 /* Products */,
+				2897F1AAAE88EB9F1F9EB8D9 /* Pods */,
+				9056437F58A9D5D61E6376FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,12 +254,14 @@
 				1C7FDDDA2370697B00CC72CE /* Managers */,
 				1CFE9EF92226CADF00F62935 /* ColorModel.swift */,
 				1C15192A2220002D00226042 /* ColorsExtension.swift */,
+				1C8EA74B239152E500781B47 /* Events.swift */,
 				1C8853B923685F8D00FF9770 /* Extensions.swift */,
 				1C7FDDD7237068CF00CC72CE /* Utils.swift */,
 				1C7FDDD02370611300CC72CE /* Screens */,
 				1CFE9F2F2229347D00F62935 /* Views */,
 				1C15191F221FFF9F00226042 /* Assets.xcassets */,
 				1C151921221FFF9F00226042 /* LaunchScreen.storyboard */,
+				1C8EA7472391506B00781B47 /* GoogleService-Info.plist */,
 				1C151924221FFF9F00226042 /* Info.plist */,
 			);
 			path = ColorCatcher;
@@ -304,6 +324,7 @@
 				1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */,
 				1CEE2DAB2370904E00FF4056 /* DropProvider.swift */,
 				1CFE9EFB2226DC6900F62935 /* StoreProvider.swift */,
+				1C8EA7492391528900781B47 /* AnalyticsProvider.swift */,
 				1CBFB636223193BF00CB46C5 /* FlashProvider.swift */,
 				1C15D99F2225955E0037F8D6 /* PopupProvider.swift */,
 			);
@@ -387,6 +408,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2897F1AAAE88EB9F1F9EB8D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9E84C9282E90A434058FF2F /* Pods-ColorCatcher.debug.xcconfig */,
+				A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */,
+				E4B7B13CE2C7DF1605A34286 /* Pods-ColorCatcherTests.debug.xcconfig */,
+				EFFD142B6123721624895B3D /* Pods-ColorCatcherTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9056437F58A9D5D61E6376FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */,
+				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -394,9 +435,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C151927221FFF9F00226042 /* Build configuration list for PBXNativeTarget "ColorCatcher" */;
 			buildPhases = (
+				54E941B0B47BCD7D8D6E9219 /* [CP] Check Pods Manifest.lock */,
 				1C151911221FFF9D00226042 /* Sources */,
 				1C151912221FFF9D00226042 /* Frameworks */,
 				1C151913221FFF9D00226042 /* Resources */,
+				3EA3BEA62E949757A42D3565 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +454,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CB484BA2368499800BC4F55 /* Build configuration list for PBXNativeTarget "ColorCatcherTests" */;
 			buildPhases = (
+				5ABA7FD6E348CD3F28E34CC7 /* [CP] Check Pods Manifest.lock */,
 				1CB484AD2368499800BC4F55 /* Sources */,
 				1CB484AE2368499800BC4F55 /* Frameworks */,
 				1CB484AF2368499800BC4F55 /* Resources */,
@@ -492,6 +536,7 @@
 				1C61CF82237C519B00E5E49D /* MultiplayerCell.xib in Resources */,
 				1C151920221FFF9F00226042 /* Assets.xcassets in Resources */,
 				1CA50F802278C3E5009D6424 /* MultiplayerVC.xib in Resources */,
+				1C8EA7482391506B00781B47 /* GoogleService-Info.plist in Resources */,
 				1C4B92CD227B338E004773D4 /* Brandon_med.otf in Resources */,
 				1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */,
 				1C7FDDD42370632800CC72CE /* WelcomeVC.xib in Resources */,
@@ -507,6 +552,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EA3BEA62E949757A42D3565 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54E941B0B47BCD7D8D6E9219 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ColorCatcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ABA7FD6E348CD3F28E34CC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ColorCatcherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1C151911221FFF9D00226042 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -517,6 +626,7 @@
 				1C15191B221FFF9D00226042 /* GameVC.swift in Sources */,
 				1C7FDDCF236F705C00CC72CE /* AppleImageView.swift in Sources */,
 				1CCB09382223E5AF00F4C812 /* testVCViewController.swift in Sources */,
+				1C8EA74A2391528900781B47 /* AnalyticsProvider.swift in Sources */,
 				1C7FDDD8237068CF00CC72CE /* Utils.swift in Sources */,
 				1C02C6762368CE27008312BC /* LocationManager.swift in Sources */,
 				1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */,
@@ -550,6 +660,7 @@
 				1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */,
 				1C15D99B22257EBE0037F8D6 /* ColorManager.swift in Sources */,
 				1CA69EB5237D9FFE00516665 /* GradientView.swift in Sources */,
+				1C8EA74C239152E500781B47 /* Events.swift in Sources */,
 				1CFE9EFA2226CADF00F62935 /* ColorModel.swift in Sources */,
 				1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */,
 				1CFE9EF422269FF700F62935 /* GameDiscoveryVC.swift in Sources */,
@@ -711,10 +822,12 @@
 		};
 		1C151928221FFF9F00226042 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E84C9282E90A434058FF2F /* Pods-ColorCatcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94C49VQS6W;
+				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -724,8 +837,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EC.ColorCatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -733,10 +847,12 @@
 		};
 		1C151929221FFF9F00226042 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94C49VQS6W;
+				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -746,8 +862,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EC.ColorCatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -755,6 +872,7 @@
 		};
 		1CB484B82368499800BC4F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B7B13CE2C7DF1605A34286 /* Pods-ColorCatcherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -766,7 +884,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EC.ColorCatcherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Appstelli.ColorCatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -776,6 +894,7 @@
 		};
 		1CB484B92368499800BC4F55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFFD142B6123721624895B3D /* Pods-ColorCatcherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -787,7 +906,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EC.ColorCatcherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Appstelli.ColorCatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -15,6 +15,7 @@ enum StoreKeys: String {
     case FirstLaunch
     case WelcomeAnimationOn
     case MultiplayerName
+    case Level
 }
 
 struct Catched: Codable {
@@ -75,8 +76,11 @@ extension StoreProvider {
         if let _ = UserDefaults.standard.value(forKey: StoreKeys.FirstLaunch.rawValue) as? Bool {
             return false
         }
-        UserDefaults.standard.setValue(false, forKey: StoreKeys.FirstLaunch.rawValue)
         return true
+    }
+    
+    func setFirstLaunchDone() {
+        UserDefaults.standard.setValue(false, forKey: StoreKeys.FirstLaunch.rawValue)
     }
     
     func setWelcomeAnimation(_ on: Bool) {
@@ -94,6 +98,14 @@ extension StoreProvider {
     func getMultiplayerName() -> String {
         return UserDefaults.standard.object(forKey: StoreKeys.MultiplayerName.rawValue) as? String ?? UIDevice.current.name.multiplayerName
     }
+    
+    func getLevel() -> Int {
+        return UserDefaults.standard.object(forKey: StoreKeys.Level.rawValue) as? Int ?? 0
+    }
+    
+    func setLevel(_ level: Int) {
+          UserDefaults.standard.set(level, forKey: StoreKeys.Level.rawValue)
+      }
 
 }
 

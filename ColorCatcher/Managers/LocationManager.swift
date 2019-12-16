@@ -52,8 +52,9 @@ class LocationManager: NSObject  {
 extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse || status == .denied {
-            NotificationCenter.default.post(Notification(name: .locationStatusDidChange))
+        if status != .notDetermined {
+            let notification = Notification(name: .locationStatusDidChange, object: nil, userInfo: ["status": Int(status.rawValue)])
+            NotificationCenter.default.post(notification)
         }
     }
 }

@@ -26,11 +26,11 @@ class GameTimeVC: GameVC {
         super.startGame()
         ColorTimer.shared.delegate = self
         ColorTimer.shared.fire()
-        ColorManager.shared.tolerance = 90
     }
     
     override func colorRecognized() {
         super.colorRecognized()
+        logEvent(.RaceColorCatched)
         showPopup(PopupModel.plusOne(0.8))
     }
     
@@ -49,12 +49,18 @@ class GameTimeVC: GameVC {
     
     override func helpTapped(_ sender: UIButton) {
         super.helpTapped(sender)
+        logEvent(.RaceSkippedColor)
         ColorTimer.shared.applyPenalty()
     }
     
     override func backTapped(_ sender: UIButton) {
         ColorTimer.shared.invalidate()
         super.backTapped(sender)
+    }
+    
+    override func infoTapped(_ sender: UIButton) {
+        super.infoTapped(sender)
+        logEvent(.FlashOpened)
     }
     
 }

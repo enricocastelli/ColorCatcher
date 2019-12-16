@@ -39,7 +39,7 @@ fileprivate var getChameleonY: CGFloat = {
     return UIScreen.main.bounds.height/4
 }()
 
-class ChameleonView: Animator {
+class ChameleonView: Animator, AnalyticsProvider {
     
     var wentBackground = false
     
@@ -53,6 +53,10 @@ class ChameleonView: Animator {
     init(_ frame: CGRect) {
         let chFrame = frame
         super.init(chFrame, imageName: "chameleon", count: 50, frameTime: 0.05)
+    }
+    
+    override func setup() {
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
     }
     
     override func shouldStopTimer() {
@@ -77,6 +81,10 @@ class ChameleonView: Animator {
     
     private func getImage(_ color: ChameleonColor) -> UIImage? {
         return UIImage(named: "chameleon\(color.rawValue)")
+    }
+    
+    @objc private func viewTapped() {
+        logEvent(.ChameleonTapped)
     }
     
     required public init?(coder aDecoder: NSCoder) {

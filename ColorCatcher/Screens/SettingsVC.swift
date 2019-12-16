@@ -20,6 +20,9 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var animationLabel: UILabel!
     @IBOutlet weak var animationSwitch: UISwitch!
     
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var levelSegment: UISegmentedControl!
+
     @IBOutlet weak var multiplayerLabel: UILabel!
     @IBOutlet weak var multiplayerField: UITextField!
     
@@ -32,6 +35,8 @@ class SettingsVC: ColorController, PopupProvider {
         animationSwitch.isOn = isWelcomeAnimationOn()
         multiplayerLabel.text = "Multiplayer name"
         multiplayerField.placeholder = getMultiplayerName()
+        levelLabel.text = "Level"
+        levelSegment.selectedSegmentIndex = getLevel()
         multiplayerField.delegate = self
         buttonsStackView.spacing = Device.isSE() ? 16 : 32
     }
@@ -42,22 +47,31 @@ class SettingsVC: ColorController, PopupProvider {
     }
     
     @IBAction func animationSwitchTapped(_ sender: UISwitch) {
+        animationSwitch.isOn ?
+            logEvent(.WelcomeAnimationTurnedOn) :
+            logEvent(.WelcomeAnimationTurnedOff)
         setWelcomeAnimation(animationSwitch.isOn)
     }
     
+    @IBAction func levelSegmentTapped(_ sender: UISegmentedControl) {
+        setLevel(sender.selectedSegmentIndex)
+    }
     
     @IBAction func shareTapped(_ sender: UIButton) {
         //todo
+        logEvent(.ShareTapped)
         let vc = UIActivityViewController(activityItems: ["Color Catcher  https:www.google.com"], applicationActivities: [])
         self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func tourTapped(_ sender: UIButton) {
+        logEvent(.WatchTourAgainTapped)
         navigationController?.pushViewController(HelpVC(), animated: true)
     }
     
     @IBAction func creditsTapped(_ sender: UIButton) {
-        var model = PopupModel(titleString: "Credits!", message: "🍏 Many thanks to the sweet and talented Marie Benoist, for helping me out with the design of the app.\n\n🍎 Christopher Jones for letting me use his chameleon animation.\n\n🍊 Kassia St Clair for her book \"The Secret Lives of Colors\"")
+        logEvent(.CreditsTapped)
+        var model = PopupModel(titleString: "Credits!", message: "🍏 Many thanks to the sweet and talented Marie Benoist, for helping me out with the design of the app. \n\n🍅Adamo for being tester!\n\n🍊 Christopher Jones for letting me use his chameleon animation.\n\n")
         model.subtitleString = "This app was made with ❤️ by Enrico Castelli"
         model.color = UIColor.generateCCRandom()
         model.opacity = 0.5
@@ -73,6 +87,7 @@ extension SettingsVC: UITextFieldDelegate {
             return false
         }
         setMultiplayerName(text)
+        logEvent(.MultiplayerNameChanged)
         return true
     }
 }

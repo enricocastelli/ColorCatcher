@@ -47,6 +47,7 @@ class GameDiscoveryVC: GameVC {
     
     override func colorRecognized() {
         super.colorRecognized()
+        logEvent(.DiscoveryColorCatched)
         gamePaused = true
         updateCollectionLabel()
         guard let currentColor = ColorManager.shared.currentColor else { return }

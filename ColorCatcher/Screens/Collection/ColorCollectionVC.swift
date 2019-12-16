@@ -67,13 +67,33 @@ extension ColorCollectionVC: UICollectionViewDataSource {
         colorCell.animateShowing()
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let height = scrollView.frame.size.height
+//        let contentYoffset = scrollView.contentOffset.y
+//        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+//        if distanceFromBottom < height {
+//            logEvent(.CollectionScrolledToEnd)
+//        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            logEvent(.CollectionScrolledToEnd)
+        }
+    }
 }
 
 extension ColorCollectionVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let current = ColorManager.shared.colors[indexPath.row]
-        guard hasColor(current.hex) else { return }
+        guard hasColor(current.hex) else {
+            logEvent(.ColorUncatchedTapped)
+            return }
+        logEvent(.ColorTapped)
         openColor(current)
     }
 }

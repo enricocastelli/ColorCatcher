@@ -1,24 +1,24 @@
 
 DESIGN:
-    Chameleon front face (to add when color is recognized and tour)
-    General review
+    🍎 Chameleon front face (to add when color is recognized and tour)
+    🍎 General review
     Buttons with different set of colors
 
 BUGS:
-    multi inviting too many times
-    4 points -> no alert to loser
-    no direct multiplayer if more people are online
+    🍎 multi inviting too many times (loader?)
+    🍏 4 points -> no alert to loser
+    🍏 no direct multiplayer if more people are online (timer?)
 
 FRAMEWORK:
-    Firebase
+    🍎 Firebase
 
 COLORS:
-    Create database (Copy, color selection, difficulty)
+    🍎 Create database (Copy, color selection, difficulty)
 
 OTHER:
-    Clean project
-    Clean TODO's
+    🍎 Clean project
+    🍎 Clean TODO's
 
 IDEAS:
     Add level?
-    Animator can be done native!
+    🍎 Animator can be done native!

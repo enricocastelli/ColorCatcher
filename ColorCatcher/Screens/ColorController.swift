@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorController: UIViewController, StoreProvider {
+class ColorController: UIViewController, StoreProvider, AnalyticsProvider {
     
     @IBOutlet weak var containerView: UIView?
     @IBOutlet weak var backArrow: UIButton!

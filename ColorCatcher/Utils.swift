@@ -16,6 +16,11 @@ func Logger(_ error: Error) {
     print("🎨⚠️ - \((error as NSError).description)")
 }
 
+func Logger(_ event: Event,_ parameters: [String: String]? = nil) {
+    let parameterString = parameters == nil ? "" : "\(String(describing: parameters))"
+    print("🎨🎯 - \((event.rawValue, parameterString))")
+}
+
 func prettyPrint(data: Data?) {
     print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
 }

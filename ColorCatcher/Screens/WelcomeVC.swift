@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
+class WelcomeVC: UIViewController, PopupProvider, StoreProvider, AnalyticsProvider {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -56,10 +56,12 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     }
 
     @IBAction func raceTapped(_ sender: UIButton) {
+        logEvent(.RaceModeTapped)
         navigationController?.pushViewController(GameTimeVC(), animated: true)
     }
     
     @IBAction func DiscoveryTapped(_ sender: UIButton) {
+        logEvent(.DiscoveryModeTapped)
         goToDiscovery()
     }
     
@@ -75,12 +77,14 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     
     @IBAction func multiTapped(_ sender: UIButton) {
 //        test()
+        logEvent(.MultiplayerTapped)
         let multiVC = MultiplayerVC()
         navigationController?.show(multiVC, sender: nil)
     }
 
     @IBAction func collectionTapped(_ sender: UIButton) {
         showLoading()
+        logEvent(.CollectionTapped)
         ColorManager.shared.fetchColors(success: {
             self.stopLoading()
             self.pushToCollectionMode()
@@ -90,6 +94,7 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider {
     }
     
     @IBAction func settingsTapped(_ sender: UIButton) {
+        logEvent(.SettingsTapped)
         navigationController?.pushViewController(SettingsVC(), animated: true)
     }
     
