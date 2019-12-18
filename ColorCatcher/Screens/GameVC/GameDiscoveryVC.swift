@@ -12,9 +12,9 @@ class GameDiscoveryVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ColorManager.shared.tolerance = 95
         nextColor()
         updateColorView()
+        skipButton.alpha = Service.shared.isSkippingEnabled() ? 1 : 0
         configureBarForDiscovery()
     }
     
@@ -25,8 +25,19 @@ class GameDiscoveryVC: GameVC {
         }
     }
     
+    override func applyLevel() {
+        ColorManager.shared.tolerance = {
+            let level = getLevel()
+            switch level {
+            case 0: return 90
+            case 1: return 94
+            case 2: return 98
+            default: return 94
+            }
+        }()
+    }
+    
     override func helpTapped(_ sender: UIButton) {
-        // TODO
         colorRecognized()
     }
     

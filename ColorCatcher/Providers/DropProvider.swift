@@ -22,4 +22,10 @@ extension DropProvider {
         }
         return drops
     }
+    
+    func addStroke(_ color: UIColor, masterLayer: CALayer) -> StrokeLayer {
+        let stroke = StrokeLayer(color)
+        masterLayer.addSublayer(stroke)
+        return stroke
+    }
 }

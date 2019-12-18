@@ -16,6 +16,7 @@ enum StoreKeys: String {
     case WelcomeAnimationOn
     case MultiplayerName
     case Level
+    case AskedForReview
 }
 
 struct Catched: Codable {
@@ -107,5 +108,12 @@ extension StoreProvider {
           UserDefaults.standard.set(level, forKey: StoreKeys.Level.rawValue)
       }
 
+    func setAppleReviewAsked() {
+        UserDefaults.standard.set(true, forKey: StoreKeys.AskedForReview.rawValue)
+    }
+    
+    func isAppleReviewAsked() -> Bool {
+        return UserDefaults.standard.object(forKey: StoreKeys.AskedForReview.rawValue) as? Bool ?? false
+    }
 }
 

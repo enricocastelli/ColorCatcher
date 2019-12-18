@@ -58,9 +58,8 @@ class SettingsVC: ColorController, PopupProvider {
     }
     
     @IBAction func shareTapped(_ sender: UIButton) {
-        //todo
         logEvent(.ShareTapped)
-        let vc = UIActivityViewController(activityItems: ["Color Catcher  https:www.google.com"], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: ["https://testflight.apple.com/join/akIZhZVg"], applicationActivities: [])
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -71,7 +70,7 @@ class SettingsVC: ColorController, PopupProvider {
     
     @IBAction func creditsTapped(_ sender: UIButton) {
         logEvent(.CreditsTapped)
-        var model = PopupModel(titleString: "Credits!", message: "🍏 Many thanks to the sweet and talented Marie Benoist, for helping me out with the design of the app. \n\n🍅Adamo for being tester!\n\n🍊 Christopher Jones for letting me use his chameleon animation.\n\n")
+        var model = PopupModel(titleString: "Credits!", message: "🍏 Many thanks to the sweet and talented Marie Benoist, for helping me out with the design of the app. \n\n🍊 Christopher Jones for letting me use his chameleon animation.\n\n")
         model.subtitleString = "This app was made with ❤️ by Enrico Castelli"
         model.color = UIColor.generateCCRandom()
         model.opacity = 0.5

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +41,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-L8-eFq" userLabel="DescView">
-                    <rect key="frame" x="0.0" y="154" width="375" height="513"/>
+                    <rect key="frame" x="0.0" y="144" width="375" height="523"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-M1-VL4">
                             <rect key="frame" x="40" y="0.0" width="295" height="46"/>
@@ -58,7 +56,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cum odioque civiuda." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-oK-Fc7">
-                            <rect key="frame" x="20" y="111" width="335" height="402"/>
+                            <rect key="frame" x="20" y="111" width="335" height="412"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" red="0.13002748842592593" green="0.13393373842592593" blue="0.17132040895061729" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
@@ -80,9 +78,14 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-i1-PeX">
-                    <rect key="frame" x="164.5" y="36" width="46" height="54"/>
+                    <rect key="frame" x="155.5" y="16" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="49i-vy-OmJ"/>
+                        <constraint firstAttribute="width" secondItem="lm2-i1-PeX" secondAttribute="height" id="R3I-1P-kAe"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
-                    <state key="normal" title="𝗫">
+                    <state key="normal" image="close">
                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -107,4 +110,7 @@
             <point key="canvasLocation" x="50" y="152"/>
         </view>
     </objects>
+    <resources>
+        <image name="close" width="500" height="500"/>
+    </resources>
 </document>

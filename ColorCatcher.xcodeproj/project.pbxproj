@@ -69,6 +69,7 @@
 		1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093A22241AE200F4C812 /* WelcomeVC.swift */; };
 		1CCB093D222428F900F4C812 /* MultiplayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093C222428F900F4C812 /* MultiplayerVC.swift */; };
 		1CCB093F22242BEF00F4C812 /* MultiplayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */; };
+		1CE146D523A90D4200CCC356 /* StrokeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE146D423A90D4200CCC356 /* StrokeLayer.swift */; };
 		1CEE2DAC2370904E00FF4056 /* DropProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAB2370904E00FF4056 /* DropProvider.swift */; };
 		1CEE2DAF2370B74E00FF4056 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */; };
 		1CEE2DB02370B74E00FF4056 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */; };
@@ -161,6 +162,7 @@
 		1CCB093A22241AE200F4C812 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		1CCB093C222428F900F4C812 /* MultiplayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerVC.swift; sourceTree = "<group>"; };
 		1CCB093E22242BEF00F4C812 /* MultiplayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerManager.swift; sourceTree = "<group>"; };
+		1CE146D423A90D4200CCC356 /* StrokeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeLayer.swift; sourceTree = "<group>"; };
 		1CEE2DAB2370904E00FF4056 /* DropProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropProvider.swift; sourceTree = "<group>"; };
 		1CEE2DAD2370B74E00FF4056 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1CEE2DAE2370B74E00FF4056 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				1C5E7C312328151C001542E4 /* BouncyButton.swift */,
 				1C5332F42369E173003D421B /* BlurredView.swift */,
 				1CB484BD2368517B00BC4F55 /* DropLayer.swift */,
+				1CE146D423A90D4200CCC356 /* StrokeLayer.swift */,
 				1CA72EF322799A6000BBA004 /* BarView.xib */,
 			);
 			path = Views;
@@ -640,6 +643,7 @@
 				1CFE9F3222293F3600F62935 /* ColorCollectionVC.swift in Sources */,
 				1C5E7C322328151C001542E4 /* BouncyButton.swift in Sources */,
 				1C5332F52369E173003D421B /* BlurredView.swift in Sources */,
+				1CE146D523A90D4200CCC356 /* StrokeLayer.swift in Sources */,
 				1C15192D222004F600226042 /* CaptureManager.swift in Sources */,
 				1CCB093B22241AE200F4C812 /* WelcomeVC.swift in Sources */,
 				1CFE9EF222269FD700F62935 /* GameTimeVC.swift in Sources */,

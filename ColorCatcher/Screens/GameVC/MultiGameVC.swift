@@ -29,7 +29,6 @@ class MultiGameVC: GameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ColorManager.shared.tolerance = 90
         configureBarForMultiplayer(multiplayer.connectedPeerID.names())
         multiplayer.updateDelegate(delegate: self, connectionDelegate: self)
     }
@@ -40,6 +39,10 @@ class MultiGameVC: GameVC {
         updatePoints()
         sendScorePoint()
         showPopup(PopupModel.plusOne(0.8))
+    }
+    
+    override func applyLevel() {
+        ColorManager.shared.tolerance = 90
     }
     
     override func updatePoints() {

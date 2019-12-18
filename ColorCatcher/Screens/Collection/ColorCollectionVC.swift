@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 private let reuseIdentifier = "colorCollectionCell"
 
@@ -19,6 +20,7 @@ class ColorCollectionVC: ColorController, PopupProvider {
         let cellNib = UINib(nibName: String(describing: ColorCollectionCell.self), bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         configureBarForCollection()
+        promptForReview()
     }
     
     func hasColor(_ hex: String) -> Bool {
@@ -40,6 +42,13 @@ class ColorCollectionVC: ColorController, PopupProvider {
         }()
         model.subtitleString = subtitleString
         showPopup(model)
+    }
+    
+    private func promptForReview() {
+        if retrieveColorCatched().count > 5 && !isAppleReviewAsked() {
+            SKStoreReviewController.requestReview()
+            setAppleReviewAsked()
+        }
     }
 }
 

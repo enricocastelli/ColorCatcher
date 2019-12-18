@@ -34,6 +34,7 @@ class PopupVC: UIViewController, DropProvider {
     weak var delegate: PopupDelegate?
     var masterLayer = CALayer()
     var drops = [DropLayer]()
+    var stroke: StrokeLayer?
 
     @IBOutlet weak var descView: UIView!
     @IBOutlet weak var coverView: BlurredView!
@@ -75,6 +76,7 @@ class PopupVC: UIViewController, DropProvider {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addDrops()
+        addLine()
         animateFadeIn()
         if let autoremoveTime = model.autoremoveTime {
             let _ = Timer.scheduledTimer(withTimeInterval: autoremoveTime, repeats: false) { (_) in
@@ -129,6 +131,11 @@ class PopupVC: UIViewController, DropProvider {
     func addDrop() {
         drops.append(contentsOf: addDropSet(26, color: model.color, masterLayer: masterLayer))
     }
+    
+    func addLine() {
+        guard let color = model.color else { return }
+        self.stroke = addStroke(color, masterLayer: masterLayer)
+    }
 
     func animateFadeIn() {
         UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
@@ -148,6 +155,7 @@ class PopupVC: UIViewController, DropProvider {
         postAnimation()
         coverView.layer.fadeOut(0.3)
         descView.layer.fadeOut(0.3)
+        stroke?.fade()
         for drop in drops {
             drop.fade()
         }

@@ -42,4 +42,12 @@ class Service: NSObject, URLSessionDelegate {
 //            failure(error as NSError)
 //        }
 //    }
+    
+    func isSkippingEnabled() -> Bool {
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        return remoteConfig.configValue(forKey: "isSkippingEnabled").boolValue
+    }
 }

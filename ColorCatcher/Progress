@@ -2,7 +2,8 @@
 DESIGN:
     🍎 Chameleon front face (to add when color is recognized and tour)
     🍎 General review
-    Buttons with different set of colors
+    🍎 Add help for zoom
+    Buttons with different set of colors ?
 
 BUGS:
     🍎 multi inviting too many times (loader?)
@@ -10,15 +11,11 @@ BUGS:
     🍏 no direct multiplayer if more people are online (timer?)
 
 FRAMEWORK:
-    🍎 Firebase
-
-COLORS:
-    🍎 Create database (Copy, color selection, difficulty)
 
 OTHER:
     🍎 Clean project
     🍎 Clean TODO's
 
 IDEAS:
-    Add level?
     🍎 Animator can be done native!
+    
