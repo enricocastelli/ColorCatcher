@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Crashlytics.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Fabric.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,7 +79,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ColorCatcher.xcscheme</key>
+		<key>Pods-Color Catcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

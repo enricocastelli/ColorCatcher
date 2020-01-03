@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
   - Firebase/Analytics (6.13.0):
     - Firebase/Core
   - Firebase/Core (6.13.0):
@@ -83,11 +86,15 @@ PODS:
   - Protobuf (3.11.2)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - Firebase/Analytics
   - Firebase/RemoteConfig
 
 SPEC REPOS:
   trunk:
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -105,6 +112,8 @@ SPEC REPOS:
     - Protobuf
 
 SPEC CHECKSUMS:
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
@@ -121,6 +130,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
 
-PODFILE CHECKSUM: 9b00b6d8239146271dfff1b96f14cc563dd02229
+PODFILE CHECKSUM: 4814cc61df9cbfbef5d6f35c086009bc85545637
 
 COCOAPODS: 1.8.4

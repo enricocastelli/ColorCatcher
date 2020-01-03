@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15714D9D7CE1DBFB3D3CA380 /* Pods_ColorCatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */; };
 		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
@@ -84,6 +83,7 @@
 		1CFE9F382229461600F62935 /* ColorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE9F362229461600F62935 /* ColorCollectionCell.swift */; };
 		1CFE9F392229461600F62935 /* ColorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE9F372229461600F62935 /* ColorCollectionCell.xib */; };
 		824F89547A33071D4A3EE09A /* Pods_ColorCatcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */; };
+		C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Color_Catcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1C151915221FFF9D00226042 /* Color Catcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Catcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +177,8 @@
 		1CFE9F34222942E800F62935 /* ColorCollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionVC.xib; sourceTree = "<group>"; };
 		1CFE9F362229461600F62935 /* ColorCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCell.swift; sourceTree = "<group>"; };
 		1CFE9F372229461600F62935 /* ColorCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionCell.xib; sourceTree = "<group>"; };
-		9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorCatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2157D7C094FAB6DB351E6362 /* Pods-Color Catcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color Catcher.release.xcconfig"; path = "Target Support Files/Pods-Color Catcher/Pods-Color Catcher.release.xcconfig"; sourceTree = "<group>"; };
+		7D936155D1100588C8CB8141 /* Pods-Color Catcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color Catcher.debug.xcconfig"; path = "Target Support Files/Pods-Color Catcher/Pods-Color Catcher.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcher.release.xcconfig"; path = "Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher.release.xcconfig"; sourceTree = "<group>"; };
 		CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorCatcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B7B13CE2C7DF1605A34286 /* Pods-ColorCatcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorCatcherTests.debug.xcconfig"; path = "Target Support Files/Pods-ColorCatcherTests/Pods-ColorCatcherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15714D9D7CE1DBFB3D3CA380 /* Pods_ColorCatcher.framework in Frameworks */,
+				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +420,8 @@
 				A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */,
 				E4B7B13CE2C7DF1605A34286 /* Pods-ColorCatcherTests.debug.xcconfig */,
 				EFFD142B6123721624895B3D /* Pods-ColorCatcherTests.release.xcconfig */,
+				7D936155D1100588C8CB8141 /* Pods-Color Catcher.debug.xcconfig */,
+				2157D7C094FAB6DB351E6362 /* Pods-Color Catcher.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -425,8 +429,8 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9435BA92C40BD6837E6FF80D /* Pods_ColorCatcher.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
+				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -443,6 +447,7 @@
 				1C151912221FFF9D00226042 /* Frameworks */,
 				1C151913221FFF9D00226042 /* Resources */,
 				3EA3BEA62E949757A42D3565 /* [CP] Embed Pods Frameworks */,
+				1C12A77F23BF50B600DE2744 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -556,21 +561,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C12A77F23BF50B600DE2744 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n\n";
+		};
 		3EA3BEA62E949757A42D3565 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Color Catcher/Pods-Color Catcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Color Catcher/Pods-Color Catcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorCatcher/Pods-ColorCatcher-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Color Catcher/Pods-Color Catcher-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		54E941B0B47BCD7D8D6E9219 /* [CP] Check Pods Manifest.lock */ = {
@@ -588,7 +610,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ColorCatcher-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Color Catcher-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -826,12 +848,12 @@
 		};
 		1C151928221FFF9F00226042 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9E84C9282E90A434058FF2F /* Pods-ColorCatcher.debug.xcconfig */;
+			baseConfigurationReference = 7D936155D1100588C8CB8141 /* Pods-Color Catcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -844,7 +866,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -852,12 +874,12 @@
 		};
 		1C151929221FFF9F00226042 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7CCD46F673F89D21AD0BB3B /* Pods-ColorCatcher.release.xcconfig */;
+			baseConfigurationReference = 2157D7C094FAB6DB351E6362 /* Pods-Color Catcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -870,7 +892,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
