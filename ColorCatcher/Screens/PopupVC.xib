@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupVC" customModule="ColorCatcher" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupVC" customModule="Color_Catcher" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="lm2-i1-PeX" id="sPp-K8-fgI"/>
                 <outlet property="coverView" destination="oI1-8a-R5b" id="kNs-LA-I49"/>
@@ -36,7 +36,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI1-8a-R5b" customClass="BlurredView" customModule="ColorCatcher" customModuleProvider="target">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI1-8a-R5b" customClass="BlurredView" customModule="Color_Catcher" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -55,12 +55,13 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cum odioque civiuda." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-oK-Fc7">
+                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cum odioque civiuda." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-oK-Fc7">
                             <rect key="frame" x="20" y="111" width="335" height="412"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" red="0.13002748842592593" green="0.13393373842592593" blue="0.17132040895061729" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="25"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
                         </textView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

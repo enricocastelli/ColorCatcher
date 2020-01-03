@@ -29,6 +29,7 @@ class WelcomeVC: UIViewController, PopupProvider, StoreProvider, AnalyticsProvid
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setView()
+        self.view.layoutIfNeeded()
         guard isWelcomeAnimationOn() else {
             self.view.layoutIfNeeded()
             welcomeAnimationView.addChameleon(false)

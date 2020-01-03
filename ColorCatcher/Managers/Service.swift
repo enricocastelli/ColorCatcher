@@ -18,12 +18,16 @@ class Service: NSObject, URLSessionDelegate {
         }
     }
     
-    func get(success: @escaping ([ColorModel]) -> (), failure: @escaping (Error) -> ()) {
+    private func remoteConfig() -> RemoteConfig {
         let remoteConfig = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
         remoteConfig.configSettings = settings
-        let colors = remoteConfig.configValue(forKey: "Colors").dataValue
+        return remoteConfig
+    }
+    
+    func get(success: @escaping ([ColorModel]) -> (), failure: @escaping (Error) -> ()) {
+        let colors = remoteConfig().configValue(forKey: "Colors").dataValue
         do {
             success(try JSONDecoder().decode([ColorModel].self, from: colors))
         } catch {
@@ -44,10 +48,11 @@ class Service: NSObject, URLSessionDelegate {
 //    }
     
     func isSkippingEnabled() -> Bool {
-        let remoteConfig = RemoteConfig.remoteConfig()
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
-        remoteConfig.configSettings = settings
-        return remoteConfig.configValue(forKey: "isSkippingEnabled").boolValue
+        return remoteConfig().configValue(forKey: "isSkippingEnabled").boolValue
+    }
+    
+    func getCredits() -> String {
+        return remoteConfig().configValue(forKey: "credits").stringValue ?? "enricoappstelli@gmail.com"
+
     }
 }

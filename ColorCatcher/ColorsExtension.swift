@@ -52,6 +52,14 @@ extension UIColor {
         return nil
     }
     
+    func getBrightness() -> CGFloat {
+        let red = (redValue*299)
+        let green = (greenValue*587)
+        let blue = (blueValue*114)
+        let brightness = (red + green + blue)/1000
+        return brightness
+    }
+    
     // create a similar color to the one passed (random values)
     func variateColor() -> UIColor {
         guard let hue = self.getHue() else {

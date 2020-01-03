@@ -99,6 +99,11 @@ class PopupVC: UIViewController, DropProvider {
         }
     }
     
+    func isDarkMode() -> Bool {
+        guard let brightness = model.color?.getBrightness() else { return false }
+        return brightness > 0.8
+    }
+    
     @IBAction func closeTapped(_ sender: UIButton) {
         tappedView()
     }

@@ -1,243 +1,283 @@
 
 [
-    {
-        "hex": "fa7268",
-        "name": "Living Coral",
-        "description": "Since 2000, the Pantone Color Institute declares a particular color Color of the Year. Twice a year the company hosts, in a European capital, a secret meeting of representatives from various nations' color standards groups. After two days of presentations and debate, they choose a color for the following year.Living Coral welcomes and encourages lighthearted activity. Symbolising our innate need for optimism and joyful pursuits, it embodies our desire for playful expression.",
-        "type": "General"
-    },
-    {
-        "hex": "ffd90f",
-        "name": "Simpson Skin",
-        "description": "The Simpsons are one of the most successful TV series all time, impersonating American cultures for decades. Why yellow though? Matt Groening explained it in a BBC interview: \"An animator came up with the Simpsons' yellow and as soon as she showed it to me I said: 'This is the answer!' because when you're flicking through channels with your remote control, and a flash of yellow goes by, you'll know you're watching The Simpsons.\" Since then, this is their characteristic, unique color.",
-        "type": "General"
-    },
-    {
-        "hex": "ff2052",
-        "name": "Awesome",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "ac9877",
-        "name": "Bear Hug",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "00cccc",
-        "name": "Robin Egg Blue",
-        "description": "Robin egg blue, also called eggshell blue, is a shade of cyan (greenish-blue color), approximating the shade of the eggs laid by the American robin.",
-        "type": "Name"
-    },
-    {
-        "hex": "fae7b5",
-        "name": "Banana Mania",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "663399",
-        "name": "Rebecca Purple",
-        "description": "“Rebecca purple,” was introduced to honor the life of Rebecca Meyer, the daughter of Eric Meyer, a respected programmer and CSS writer. Rebecca died of brain cancer at the age of six; the hue was chosen to reflect her favorite color",
-        "type": "Name"
-    },
-    {
-        "hex": "ffefd5",
-        "name": "Papaya Whip",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "ffdab9",
-        "name": "PeachPuff",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "c0ffee",
-        "name": "Lime green",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "bada55",
-        "name": "Soft Yellow",
-        "description": "",
-        "type": "Name"
-    },
-    {
-        "hex": "f0f8ff ",
-        "name": "Alice blue",
-        "description": "Named after Teddy Roosevelt's eldest daughter, Alice, who had grayish-blue eyes. The Navy uses Alice Blue as one of the colors on its insignia.",
-        "type": "General"
-    },
-    {
-        "hex": "800020",
-        "name": "Burgundy",
-        "description": "The color burgundy takes its name from the color of the wines made in the Burgundy region of France. And like a glass of my favorite Pinot Noir, this rich red has depth. It responds dramatically to light and shade.",
-        "type": "General"
-    },
-    {
-        "hex": "004225",
-        "name": "British Racing Green",
-        "description": "I think fondly of British racing green, as I had an MG in exactly this color when I was in my twenties. I would use it in high gloss for a library, because it gives a room lots of shine and drama, creating a cool, quiet space. It goes well with old leather bound books and comfortable furniture.",
-        "type": "General"
-    },
-    {
-        "hex": "7fff00",
-        "name": "Chartreuse",
-        "description": "the traditional yellow color (the Web color chartreuse is different) was named because it was just about the same color as a French liqueur called yellow chartreuse. The liqueur was named because it was produced by Carthusian monks whose headquarters, the Grand Chartreuse, was located in the Chartreuse Mountains in France.",
-        "type": "General"
-    },
-    {
-        "hex": "ff00ff",
-        "name": "Fuchsia",
-        "description": "was named for the color of the flowers on the fuchsia plant. The plant is named for Leonard Fuchs, a 16th-century botanist.",
-        "type": "General"
-    },
-    {
-        "hex": "997a8d",
-        "name": "Mountbatten pink",
-        "description": "was invented by Louis Mountbatten of the British Royal Navy during WWII. Louis Mountbatten noted that a particular shade of pink was just about the color of the sky during dawn and dusk and would be ideal for camouflage during those hours.",
-        "type": "General"
-    },
-    {
-        "hex": "003153",
-        "name": "Prussian Blue",
-        "description": "is also called Berlin Blue, because the synthetic pigment was accidentally discovered in Berlin in 1704. It became Prussian Blue when the Prussian army dyed their uniforms with the pigment.",
-        "type": "General"
-    },
-    {
-        "hex": "ebc2af",
-        "name": "Zinnwaldite",
-        "description": "You probably know this color as \"beige.\" It was named after the mineral zinnwaldite. When people found it easier to say \"beige,\" the telecommunications giant rolled with it. Military combat boots are often zinnwaldite.",
-        "type": "General"
-    },
-    {
-        "hex": "007ba7",
-        "name": "Cerulean",
-        "description": "The color name has been around since 1590, at least, and probably has Latin roots - \"caeruleus\" means dark blue, blue or blue-green in Latin. In turn, \"caeruleus\" probably comes from the diminutive of the Latin word \"caelum,\" which means heaven or sky. Devil wears Prada.",
-        "type": "General"
-    },
-    {
-        "hex": "3b5998",
-        "name": "Facebook ",
-        "description": "According to The New Yorker, Zuckerberg is red-green colourblind, which means the color he can see best is blue. That also happens to be the color that dominates the Facebook website and mobile app.  `Blue is the richest color for me,` he told the magazine. `I can see all of blue.`",
-        "type": "Logo"
-    },
-    {
-        "hex": "ed1c16",
-        "name": "Coca Cola",
-        "description": "You may think that the red color come from one of the company’s first advertisements, which featured Santa Claus wearing his famous red-and-white suit and holding a Coke bottle. But according to the Coca-Cola Company, its famous logo dates back to the very beginning of the brand itself.  Over 130 years ago, Coca-Cola was sold in barrels at American drug stores and pharmacies. Alcohol was distributed in the same way. But while alcohol was taxed at the time, soft drinks were not. So, the Coca-Cola Company began painting its barrels red in order to help customs and tax officials distinguish them from barrels of booze.",
-        "type": "Logo"
-    },
-    {
-        "hex": "da1884",
-        "name": "Barbie's Pink",
-        "description": "It’s trademarked for use in more than 100 categories, from bubble bath to cereal.",
-        "type": "Logo"
-    },
-    {
-        "hex": "1db954",
-        "name": "Spotify",
-        "description": "Spotify changed it's green many times in the last years. The original green was chosen by founder Daniel Ek in 2011, because no one was using that particular shade at the time. The new, latest green, reflects the vibrancy of their music business: is meant to look modern, fresh and  “pop”.",
-        "type": "Logo"
-    },
-    {
-        "hex": "81d8d0",
-        "name": "Tiffany's blue",
-        "description": "Tiffany Blue was first associated with the upscale jeweler in 1845, when Charles Lewis Tiffany chose the robin's egg shade for the cover of the company's first catalog, or \"Blue Book.\" According to the company, he may have selected the color because turquoise was a popular gemstone at the time. Today the color is not only trademarked (it has been since 1998), it also has its own custom Pantone number: 1837, the year the company was founded.",
-        "type": "Logo"
-    },
-    {
-        "hex": "ddb321",
-        "name": "Lamborghini",
-        "description": "",
-        "type": "Logo"
-    },
-    {
-        "hex": "00704a",
-        "name": "Starbucks",
-        "description": "Starbucks aprons weren't always green, according to a press release on the bean brewer's site. It started out, similar to their logo, as a brown-hued version in 1971 at their first location in Seattle's Pike Place Market. The smock didn't change colors until 1987, when Starbucks transitioned towards a more European-style coffee shop vibe, including the sale of handcrafted drinks and espresso specialty sips (white shirts, black bow ties, and jazz music included).",
-        "type": "Logo"
-    },
-    {
-        "hex": "8f4b28",
-        "name": "Mummy's Brown",
-        "description": "This color was produced until 1964, after the seller just ran out of mummies to produce it. Painters used for centuries this shade of brown, collecting it initially from a pharmacist who sold it for medical purposes. In 1712, in Paris, a forniture shop for artists, was called “À la Momie\" for this color. ",
-        "type": "History"
-    },
-    {
-        "hex": "1034a6",
-        "name": "Egyptian's Blue",
-        "description": "It was the first artificial pigment, invented more than 4000 years ago, and saw wide use in the ancient Mediterranean world. After the fall of Rome, became unused because no one could understood how it was made. Until the early 19th century, when archeologists found a pot of “pale blue color” in the ruins of Pompeii. The color was recreated and spread again.",
-        "type": "History"
-    },
-    {
-        "hex": "704214",
-        "name": "Sepia",
-        "description": "Sepia ink was used a lot in Greece and Rome. It was it actually squeezed out from cuttlefish's ink. Many painters used it during the years for notes as an alternative to basic black. Among them, Leonardo Da Vinci, who used very often this colours for his sketches.",
-        "type": "History"
-    },
-    {
-        "hex": "e34234",
-        "name": "Vermilion",
-        "description": "Used a lot from Romans, this shade of red is made of powdered cinnabar, which is full of mercury. It was so rare and valuable that the Romans had to make laws controlling its price or no one could ever afford it. The Chinese also used it, and a couple hundred years after Rome fell they worked out how to synthesise it from mercury and sulfur.",
-        "type": "History"
-    },
-    {
-        "hex": "66023c",
-        "name": "Tyrian purple",
-        "description": "It was made of snail shells and was created smashing specific crustaceans out of the city walls, because the smell was unbearable. Cleopatra was obsessed with this colours. Caesar, while visiting her, loved the color that much that decided to make it the official roman royal color. There were laws in Rome that banned people from wearing this purple. In fact, only emperors could wear it.",
-        "type": "History"
-    },
-    {
-        "hex": "e3a857",
-        "name": "Indian yellow",
-        "description": "Created in a remote Indian village where they fed cows nothing but mango leaves, which left them malnourished but made their pee bright shining yellow. People would collect the pee, dry it, press it into cakes, and eventually some of it would arrive in Europe. That’s the story, anyway. As far as I can tell, no one actually knows for sure how it was made, nor have they really tried. William Turner used this color for a lot of his sunset paintings.",
-        "type": "History"
-    },
-    {
-        "hex": "50c878",
-        "name": "Emerald",
-        "description": "Also known as Scheele green, was created in 1775 using copper arsenic. It was widely used at that time to paint bedrooms and house interiors. Legends says that this particular color could be the cause of Napoleon's death. In his last days in St Elena's Island, he was sleeping in a emerald painted bedroom. The island humidity could have slowly released arsenic, poisoning the air.",
-        "type": "History"
-    },
-    {
-        "hex": "e32636",
-        "name": "Rose Madder",
-        "description": "Used in Turkey and in Europe since 1730, this color was used for interior coverings of king Louis XIV's apartments. To create this color, was used ox's blood and sheep's manure, mixed with various different oils.",
-        "type": "History"
-    },
-    {
-        "hex": "9a150e",
-        "name": "Red Ochre",
-        "description": "Found in iron-rich soil and first employed as an artistic material (as far as we know) in prehistoric cave paintings, red ochre is one of the oldest pigments still in use. Centuries later, during the 16th and 17th centuries, the most popular red pigment came from a cochineal insect, a creature that could only be found on prickly-pear cacti in Mexico. These white bugs produced a potent red dye so sought-after by artists and patrons that it quickly became the third greatest import out of the “New World” (after gold and silver), as explains Victoria Finlay in A Brilliant History of Color in Art. Raphael, Rembrandt, Rubens, all used cochineal as a glaze, layering the pigment atop other reds (like red ochre) to increase their intensity. A non-toxic source for red pigment, the cochineal bug is still used to color lipsticks and blush today.",
-        "type": "History"
-    },
-    {
-        "hex": "26619c",
-        "name": "Lapis Lazuli",
-        "description": "This color comes from a gemstone that for centuries could only be found in a single mountain range in Afghanistan. This precious material achieved global popularity, adorning Egyptian funerary portraits, Iranian Qur’ans, and later the headdress in Vermeer’s Girl with a Pearl Earring (1665). For hundreds of years, the cost of lapis lazuli rivaled even the price of gold. In the 1950s, Yves Klein collaborated with a Parisian paint supplier to invent a synthetic version of ultramarine blue, and this color became the French artist’s signature.",
-        "type": "History"
-    },
-    {
-        "hex": "2b41a7",
-        "name": "Van Gogh's Starry Night",
-        "description": "",
-        "type": "Art"
-    },
-    {
-        "hex": "2E67A0",
-        "name": "Avatar Na'Vi",
-        "description": "",
-        "type": "Movies"
-    },
-    {
-        "hex": "A2CD48",
-        "name": "Hulk green ",
-        "description": "Stan Lee'soriginal concept for the character was based on the story of Dr. Jekyll and Mr. Hyde and, wanting to give the Hulk a creepy presence, he colored him gray. When Lee went to print the first issue, however, the printer had trouble keeping the gray of the Hulk’s skin consistent on every page. This prompted the comic mogul to change the color of his skin to the classic green color we’ve known for nearly 60 years.",
-        "type": "Movies"
-    }
+  {
+    "hex": "fa7268",
+    "name": "Living Coral",
+    "subtitle": "Pantone Color of the year 2019",
+    "description": "Since 2000, the Pantone Color Institute declares a particular color \"Color of the Year\". The company hosts, in a European capital, a secret meeting of representatives from various nation's color standards groups. After two days of presentations and debate, they choose a color for the following year. \"Living Coral welcomes and encourages lighthearted activity.\" Says Pantone. \"Symbolising our innate need for optimism and joyful pursuits, it embodies our desire for playful expression.\"",
+    "type": "General"
+  },
+  {
+    "hex": "fae7b5",
+    "name": "Banana Mania",
+    "subtitle": "",
+    "description": "Banana Mania is one of the crazy names of Crayola drawing colors. Introduced in 1997, is still sell today. It's a light and warm yellow shade. You know, at the beginning does not look like banana color. But stare at it for some time and you'll see clearly bananas all around you!",
+    "type": "Name"
+  },
+  {
+    "hex": "A2CD48",
+    "name": "Hulk green",
+    "subtitle": "",
+    "description": "Stan Lee'soriginal concept for the character was based on the story of Dr. Jekyll and Mr. Hyde and, wanting to give the Hulk a creepy presence, he colored him gray. When Lee went to print the first issue, however, the printer had trouble keeping the gray of the Hulk’s skin consistent on every page. This prompted the comic mogul to change the color of his skin to the classic green color we’ve known for nearly 60 years.",
+    "type": "Movies"
+  },
+  {
+    "hex": "800020",
+    "name": "Burgundy",
+    "subtitle": "",
+    "description": "The color burgundy takes it's name from the specific color of a wine made in the Burgundy region of France (Bourgogne). Wines made here are usually dry and quite strong. The color, deep and  dark, is made mixing red with a dash of green and blue, resulting in brown with purple undertones. ",
+    "type": "General"
+  },
+  {
+    "hex": "3b5998",
+    "name": "Facebook Blue",
+    "subtitle": "",
+    "description": "According to The New Yorker, Facebook inventor, Mark Zuckerberg is red-green colourblind, which means the color he can see best is blue. That also happens to be the color that dominates the Facebook website and mobile app. And the logo, of course. \"Blue is the richest color for me,\" he told the magazine. \"I can see all of blue.\"",
+    "type": "Logo"
+  },
+  {
+    "hex": "195905",
+    "name": "Lincoln Green",
+    "subtitle": "Robin hood's Color",
+    "description": "Lincoln, in England, used to be a major cloth town during the high Middle Ages. It's close to the Sherwood forest, and that's why Lincoln green is Robin Hood's color. The legendary thief and his merry men, are often depicted as dressed in Lincoln Green and Scarlet, typical colours of those times. More recently, this color was revived in the great war, when it was adopted as the colour of the full-dress uniform of the British Army.",
+    "type": "History"
+  },
+  {
+    "hex": "ac9877",
+    "name": "Bear Hug",
+    "subtitle": "",
+    "description": "Try to imagine a bear hugging you. Maybe not an actual bear, but one of those giant toys. This warm color is probably what's coming out. Is a neutral, tree branch beige with an earthy undertone. Very famous in wall painting and interior design. Maybe because it's calm and peaceful. Like a teddy bear hug!",
+    "type": "Name"
+  },
+  {
+    "hex": "ffefd5",
+    "name": "Papaya Whip",
+    "subtitle": "",
+    "description": "Such a beautiful name don't you think? Papaya whip is a pale tint of orange. Quiet, calm, dry... Ideally, Papaya whip would be the color that results if you start mashing papayas and blend it with vanilla ice cream, whipped cream, or yogurt. It is one of the 140 X11 web color list, created to visualise color names for a better usage.",
+    "type": "Name"
+  },
+  {
+    "hex": "e3a857",
+    "name": "Indian yellow",
+    "subtitle": "",
+    "description": "In a remote village of India, cows were fed with nothing but mango leaves and water. Which left them malnourished but made their pee bright shining yellow.  People would then collect the pee, dry it and obtain a beautifully coloured pigment. For centuries painters and artist were using this bright color for their art. One of them? William Turner, who used this color for many of his sunset paintings!",
+    "type": "History"
+  },
+  {
+    "hex": "007ba7",
+    "name": "Cerulean",
+    "subtitle": "",
+    "description": "The color name has been around since the renaissance and has Latin roots (caeruleus means dark blue and probably derives from caelum, sky). The pigment was discovered only centuries later and quickly spread around modern artists. In fact cerulean was widely used by pointillists such as Signac, Monet and years later by Picasso. ",
+    "type": "General"
+  },
+  {
+    "hex": "004225",
+    "name": "British Racing Green",
+    "subtitle": "",
+    "description": "In the old days, Grand Prix were completely different from now. They were battles between nations and the winner got to host the next year cup. England won the 1902 edition, but a law prohibited cars to drive faster than 12mph. So, British organisers switched the location to Ireland, a land where the local laws were \"adjusted\" to accommodate road racing. And they painted their car with a tint of green in honour of hosting Ireland. This green became historic in racing, being the classic traditional color for Bentley, Jaguar and other famous brands. ",
+    "type": "History"
+  },
+  {
+    "hex": "704214",
+    "name": "Sepia",
+    "subtitle": "",
+    "description": "Almost all cephalopods (octopus, squid and cuttlefish) have a defence mechanism of producing a dense black liquid commonly called ink. Since ancient Greek times, this ink was extracted from animals and let dry. The pigment resulted, had very strong tint and was used for writing and sketching. Many painters used it during the years for notes as an alternative to basic black. Among them, Leonardo Da Vinci, who used very often this color for his sketches.",
+    "type": "History"
+  },
+  {
+    "hex": "003153",
+    "name": "Prussian Blue",
+    "subtitle": "",
+    "description": "It is believed to be the first modern synthetic pigment and it was discovered accidentally in 1706 by a paint maker in Berlin, who mixed the wrong ingredients trying to obtain a vivid red. It became Prussian Blue only when the Prussian army dyed their uniforms with this pigment, in the beginning of 18th century.",
+    "type": "General"
+  },
+  {
+    "hex": "e32636",
+    "name": "Rose Madder",
+    "subtitle": "",
+    "description": "This color is everywhere in human history: it was found in Tutankhamun's tomb, in ruins of Pompeii, in king Louis XIV's apartments. Is even a Stephen King's novel! It used to be created with a very complex technique, involving rancid oil, ox's blood and sheep's manure. The smell, as you imagine, was very strong but the final result was bright, long-lasting and beautiful.",
+    "type": "History"
+  },
+  {
+    "hex": "8f4b28",
+    "name": "Mummy's Brown",
+    "subtitle": "",
+    "description": "This color has probably the most interesting story among all. It was actually produced crushing ancient Egyptian mummies into powder and the sold to artist for centuries. Hard to imagine, but if you wonder around in a big museum, there's a very high change mummy's brown is in some of the paintings. Its use became slowly less popular but it was produced until 1964! The demand was simply too low and sellers ran out of mummies as well...",
+    "type": "History"
+  },
+  {
+    "hex": "635147",
+    "name": "Umber",
+    "subtitle": "",
+    "description": "The name comes from central Italy region of Umbria, where the pigment was originally extracted but has an interesting assonance with the Latin \"ombra\" which means shadow. It is one of the first pigments ever used by humans and widely used in art for the dark shades in the chiaroscuro style of painting.You can surely find traces of Umber in almost every Caravaggio's masterpieces or Rembrandt's paintings.",
+    "type": "History"
+  },
+  {
+    "hex": "536878",
+    "name": "Payne's grey",
+    "subtitle": "",
+    "description": "William Payne was an English painter, famous for his rendering of sunlight and atmosphere. To better capture landscape prospective and the fading effect of mountains into dust and pollution he created a new tint, mixing indigo, sienna and lake. The Payne's grey became immediately one of Romanticists favourite color for its melancholic distance and its effect in representing nature. ",
+    "type": "History"
+  },
+  {
+    "hex": "663399",
+    "name": "Rebecca Purple",
+    "subtitle": "",
+    "description": "CSS4 is yet another web color scale, invented among others by the programmer Eric Meyer. \"Rebecca purple\" was introduced to honour the life of Rebecca Meyer, his daughter. Rebecca passed away of brain cancer at the age of six; the hue was chosen to reflect her favorite color. A bright and lively purple. ",
+    "type": "Name"
+  },
+  {
+    "hex": "ed1c16",
+    "name": "Coca Cola",
+    "subtitle": "",
+    "description": "You may think that the red color come from one of the company’s first advertisements, which featured Santa Claus wearing his famous red-and-white suit and holding a Coke bottle. But according to the Coca-Cola Company, its famous logo dates back to the very beginning of the brand itself.  Over 130 years ago, Coca-Cola was sold in barrels at American drug stores and pharmacies. Alcohol was distributed in the same way. But while alcohol was taxed at the time, soft drinks were not. So, the Coca-Cola Company began painting its barrels red in order to help customs and tax officials distinguish them from barrels of booze.",
+    "type": "Logo"
+  },
+  {
+    "hex": "26619c",
+    "name": "Lapis Lazuli",
+    "subtitle": "",
+    "description": "This color comes from a gemstone that for centuries could only be found in a single mountain range in Afghanistan.This is why the cost of lapis lazuli rivalled even the price of gold. It was a beautiful pigment and exceptionally long lasting. Artists were crazy for it: the headdress of the \"Girl with a Pearl Earring\" from Vermeer? Pure lapis! No worries though, nowadays there's a synthetic version of it, called Ultramarine. ",
+    "type": "History"
+  },
+  {
+    "hex": "81d8d0",
+    "name": "Tiffany'sblue",
+    "subtitle": "",
+    "description": "Tiffany Blue was first associated with the upscale jeweller in 1845, when Charles Lewis Tiffany chose a robin's egg shade for the cover of the company's first catalog, or \"Blue Book.\" According to the company, he may have selected the color because turquoise was a popular gemstone at the time. Today the color is not only trademarked (it has been since 1998), it also has its own custom Pantone number: 1837, the year the company was founded.",
+    "type": "Logo"
+  },
+  {
+    "hex": "f0f8ff",
+    "name": "Alice blue",
+    "subtitle": "",
+    "description": "This pale shade of blue is also referred as the color of ice, and includes a hint of green, as does actual ice. Is named after Teddy Roosevelt's eldest daughter, Alice. At age 17, at her social debut, she wore an azure tint dress, sparking a color trend in women's clothing. It's said her eyes were this beautiful greyish blue.",
+    "type": "General"
+  },
+  {
+    "hex": "9a150e",
+    "name": "Cochineal Red",
+    "subtitle": "",
+    "description": "Found in prehistoric cave paintings, this is one of the oldest pigments still in use. It comes from a cochineal insect, a creature that could only be found on prickly-pear cacti in Mexico. These white bugs produced a strong red dye loved by artists so much that it became the third greatest import out of the New World. Raphael, Rembrandt, Rubens, all used cochineal to increase red intensity in their paintings.",
+    "type": "History"
+  },
+  {
+    "hex": "1db954",
+    "name": "Spotify Green",
+    "subtitle": "",
+    "description": "Spotify changed its green many times in the last years. The original green was chosen by founder Daniel Ek in 2011, because no one was using that particular shade at the time. The new, latest green, reflects the vibrancy of their music business: is meant to look modern, fresh and  pop. Now if you look at this shade of green in combination with black, you'll recognise instantly Spotify's color scheme!",
+    "type": "Logo"
+  },
+  {
+    "hex": "66023c",
+    "name": "Tyrian purple",
+    "subtitle": "",
+    "description": "It was made of snail shells and was created smashing crustaceans out of the city walls, because the smell was unbearable! Cleopatra was obsessed with this colour and Caesar, decided to make it the official roman royal color. There were even laws in Rome that banned people from wearing this purple: in fact, only emperors could wear it.",
+    "type": "History"
+  },
+  {
+    "hex": "43b3ae",
+    "name": "Verdigris",
+    "subtitle": "",
+    "description": "This quiet and melancholic color is the natural patina formed when brass or bronze is exposed to air or seawater over time. Its name is very descriptive, as it combines verd (green) and gris (grey). You can clearly recognise this color when looking downside New York, as the statue of liberty is naturally covered in this color!",
+    "type": "History"
+  },
+  {
+    "hex": "4b0082",
+    "name": "Indigo",
+    "subtitle": "",
+    "description": "Although its name means \"Indian dye\" (coming from ancient Greek), this color was probably discovered in different part of the world and in different times. It was obtained processing the leaves of a purple plant called true indigo and the result was a strong blue-violet, extremely resistant and powerful that could overshadow other colors.",
+    "type": "History"
+  },
+  {
+    "hex": "e34234",
+    "name": "Vermilion",
+    "subtitle": "",
+    "description": "Frequently used by Romans, this shade of red is made of powdered cinnabar, which is full of mercury. The creation of this pigment was extremely toxic and only expert alchemist could approach it. At some point, it became so rare and valuable that the Romans had to make laws controlling its price or no one could ever afford it. It was even more precious than gold!",
+    "type": "History"
+  },
+  {
+    "hex": "FADA5E",
+    "name": "Naples Yellow",
+    "subtitle": "",
+    "description": "Is one of the oldest synthetic pigment ever used. Its name comes from the presence of a large deposit in the volcanic earth of Mount Vesuvius, close to Naples. Although the origin of this color is uncertain, it has been essential to the landscape painting tradition for its use in representing distance sun and direct light. ",
+    "type": "History"
+  },
+  {
+    "hex": "1034a6",
+    "name": "Egyptian's Blue",
+    "subtitle": "",
+    "description": "This was the first artificial pigment, invented more than 4000 years ago, and saw wide use in the ancient Mediterranean world. After the fall of Rome, suddenly disappeared because no one could find out how it was made! Until the early 19th century, when archeologists found a pot of “pale blue color” in the ruins of Pompeii. The color was recreated and spread again.",
+    "type": "History"
+  },
+  {
+    "hex": "997a8d",
+    "name": "Mountbatten Pink",
+    "subtitle": "",
+    "description": "In 1940, British royal navy had big issues with enemies U-boot submarines. Lord Louis Mountbatten, once noted that one of his ship suddenly disappeared from sight. The ship was painted using a particular shade of pink that was just about the color of the sky, during dawn and dusk, often dangerous times for ship attacks. Mountbatten pink was immediately adopted by every ship in British fleet and proved to be very effective camouflage.",
+    "type": "General"
+  },
+  {
+    "hex": "d40000",
+    "name": "Rosso Corsa",
+    "subtitle": "",
+    "description": "As you learned before, car racing in their beginnings, were among nations. Every country had its own color and Italy had Rosso Corsa. It comes originally from Scipione Borghese, an Italian aristocrat, who won the Peking-Paris race in 1907. He was accompanied by his mechanic and a large supply of champagne! His car was painted with shiny color and since then is the traditional color of Italian racing brands. ",
+    "type": "History"
+  },
+  {
+    "hex": "ffd90f",
+    "name": "Simpson Skin",
+    "subtitle": "",
+    "description": "The Simpsons are one of the most successful TV series all time, impersonating American cultures for decades. Why yellow though? Matt Groening explained it in a BBC interview: \"An animator came up with the Simpsons' yellow and as soon as she showed it to me I said: 'This is the answer!' because when you're flicking through channels with your remote control, and a flash of yellow goes by, you'll know you're watching The Simpsons.\" Since then, this is their characteristic, unique color.",
+    "type": "General"
+  },
+  {
+    "hex": "50c878",
+    "name": "Scheele's Green",
+    "subtitle": "",
+    "description": "It was created in 1775 using copper arsenic. It was widely used at that time to paint bedrooms and house interiors because of its beautiful tint, but was also extremely toxic Is it said that his particular color could be the cause of Napoleon's death. In his last days in St Elena's Island, he was sleeping in an emerald painted bedroom. The island humidity could have slowly released arsenic, poisoning the air and worsen his illness ",
+    "type": "History"
+  },
+  {
+    "hex": "FF91AF",
+    "name": "Drunk Tank Pink",
+    "subtitle": "",
+    "description": "In late 70's in a prison in Washington, two officers (this color is also known with their name as Baker-Miller Pink) decided to try to fight the increasing violent behaviour of the prisoners. They started painting the cells with this calm, relaxing shade of pink and the results were outstanding. Incidents  rapidly decreased and prisoners appeared weak and less violent. Recently, the efficiency of this color was proved to be contradictory but still intriguing!",
+    "type": "History"
+  },
+  {
+    "hex": "00cccc",
+    "name": "Robin Egg Blue",
+    "subtitle": "",
+    "description": "The American Robin is a small cute bird living in America. What's special about it? It lays incredibly beautiful eggs, with a specific shade of cyan blue. Ornithologists (Charles Darwin among them) are wondering for years about why this eggs are blue. Some hypotheses that explain this pigmentation are either camouflage or protection from sunlight. ",
+    "type": "Name"
+  },
+  {
+    "hex": "da1884",
+    "name": "Barbie's Pink",
+    "subtitle": "",
+    "description": "Of course! The iconic doll Barbie, has her own trademarked color. Is this shade of bright pink, used by Mattel's Barbie in logos, packaging, and promotional materials: more than 100 categories, from bubble bath to cereal! Do you know why it's called Barbie? It's simple. Ruth Handler invented the doll in the 60's. Barbara was her daughter!",
+    "type": "Logo"
+  },
+  {
+    "hex": "ff00ff",
+    "name": "Fuchsia",
+    "subtitle": "",
+    "description": "Charles Plumier, a famous explorer and botanic of the '600, was in the Caribbeans, in one of his trips.  When he found this little plant and it's beautiful spark flowers, he decided immediately to call it in honour of a person he admired. Leonard Fuchs, one of the most famous German botanist, devoted his life to studying plants and is the author of a large book about it. The book contained 500 detailed drawings and descriptions of plants and their uses as medicines.",
+    "type": "General"
+  },
+  {
+    "hex": "DFFF00",
+    "name": "Yellow Chartreuse",
+    "subtitle": "",
+    "description": "There's an order of monks and nuns (the Carthusians) that since 1737 produces a yellow/green liquor with130 herbs, plants and flowers, deep in the mountains of France. This vivid color is named after the delicious liqueur. It combines the vitality of green with the energy and optimism of yellow. ",
+    "type": "General"
+  },
+  {
+    "hex": "ff2052",
+    "name": "Awesome",
+    "subtitle": "",
+    "description": "Yes! There is a color named \"Awesome\"! This name comes from Crayola drawing colors and it used to be one of their famous crayons. It's a luminous and vivid shade of pink-red, sparkling and fresh. And you know what else is Awesome? YOU! Because you just finished all colors to catch. New colors are coming soon don't worry 🤓",
+    "type": "Name"
+  }
 ]

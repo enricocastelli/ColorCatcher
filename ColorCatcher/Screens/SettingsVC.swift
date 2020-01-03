@@ -70,8 +70,8 @@ class SettingsVC: ColorController, PopupProvider {
     
     @IBAction func creditsTapped(_ sender: UIButton) {
         logEvent(.CreditsTapped)
-        var model = PopupModel(titleString: "Credits!", message: "🍏 Many thanks to the sweet and talented Marie Benoist, for helping me out with the design of the app. \n\n🍊 Christopher Jones for letting me use his chameleon animation.\n\n")
-        model.subtitleString = "This app was made with ❤️ by Enrico Castelli"
+        var model = PopupModel(titleString: "Credits!", message: Service.shared.getCredits())
+        model.subtitleString = "This app was made with ❤️ by Enrico Castelli."
         model.color = UIColor.generateCCRandom()
         model.opacity = 0.5
         showPopup(model)

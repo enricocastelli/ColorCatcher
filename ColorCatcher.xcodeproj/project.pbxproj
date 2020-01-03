@@ -98,7 +98,7 @@
 
 /* Begin PBXFileReference section */
 		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		1C151915221FFF9D00226042 /* ColorCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C151915221FFF9D00226042 /* Color Catcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Catcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C15191A221FFF9D00226042 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		1C15191F221FFF9F00226042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 		1C151916221FFF9D00226042 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C151915221FFF9D00226042 /* ColorCatcher.app */,
+				1C151915221FFF9D00226042 /* Color Catcher.app */,
 				1CB484B12368499800BC4F55 /* ColorCatcherTests.xctest */,
 			);
 			name = Products;
@@ -434,9 +434,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C151914221FFF9D00226042 /* ColorCatcher */ = {
+		1C151914221FFF9D00226042 /* Color Catcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C151927221FFF9F00226042 /* Build configuration list for PBXNativeTarget "ColorCatcher" */;
+			buildConfigurationList = 1C151927221FFF9F00226042 /* Build configuration list for PBXNativeTarget "Color Catcher" */;
 			buildPhases = (
 				54E941B0B47BCD7D8D6E9219 /* [CP] Check Pods Manifest.lock */,
 				1C151911221FFF9D00226042 /* Sources */,
@@ -448,9 +448,9 @@
 			);
 			dependencies = (
 			);
-			name = ColorCatcher;
+			name = "Color Catcher";
 			productName = ColorCatcher;
-			productReference = 1C151915221FFF9D00226042 /* ColorCatcher.app */;
+			productReference = 1C151915221FFF9D00226042 /* Color Catcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1CB484B02368499800BC4F55 /* ColorCatcherTests */ = {
@@ -509,7 +509,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1C151914221FFF9D00226042 /* ColorCatcher */,
+				1C151914221FFF9D00226042 /* Color Catcher */,
 				1CB484B02368499800BC4F55 /* ColorCatcherTests */,
 			);
 		};
@@ -691,7 +691,7 @@
 /* Begin PBXTargetDependency section */
 		1CB484B72368499800BC4F55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1C151914221FFF9D00226042 /* ColorCatcher */;
+			target = 1C151914221FFF9D00226042 /* Color Catcher */;
 			targetProxy = 1CB484B62368499800BC4F55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -831,6 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -842,7 +843,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -856,6 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -867,7 +869,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -930,7 +932,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1C151927221FFF9F00226042 /* Build configuration list for PBXNativeTarget "ColorCatcher" */ = {
+		1C151927221FFF9F00226042 /* Build configuration list for PBXNativeTarget "Color Catcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C151928221FFF9F00226042 /* Debug */,
