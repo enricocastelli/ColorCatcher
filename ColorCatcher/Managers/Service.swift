@@ -53,6 +53,9 @@ class Service: NSObject, URLSessionDelegate {
     
     func getCredits() -> String {
         return remoteConfig().configValue(forKey: "credits").stringValue ?? "enricoappstelli@gmail.com"
-
+    }
+    
+    func getAppStoreLink() -> String {
+        return remoteConfig().configValue(forKey: "appStoreLink").stringValue ?? "https://apps.apple.com/nl/app/color-catcher-collect-colors/id1491683850?l=en"
     }
 }

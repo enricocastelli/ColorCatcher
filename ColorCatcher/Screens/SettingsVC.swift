@@ -59,7 +59,7 @@ class SettingsVC: ColorController, PopupProvider {
     
     @IBAction func shareTapped(_ sender: UIButton) {
         logEvent(.ShareTapped)
-        let vc = UIActivityViewController(activityItems: ["https://testflight.apple.com/join/akIZhZVg"], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [Service.shared.getAppStoreLink()], applicationActivities: [])
         self.present(vc, animated: true, completion: nil)
     }
     
