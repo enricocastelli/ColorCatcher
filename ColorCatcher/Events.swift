@@ -40,6 +40,7 @@ enum Event: String {
     //
     DiscoveryColorCatched,
     DiscoveryFlashOpened,
+    DiscoveryCompleted,
     //
     MultiplayerColorCatched,
     MultiplayerSkippedColor,

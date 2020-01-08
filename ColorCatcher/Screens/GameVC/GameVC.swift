@@ -163,6 +163,7 @@ extension GameVC: ColorRecognitionDelegate {
     }
     
     func didFinishColors() {
+        logEvent(.DiscoveryCompleted)
         showFinishColors()
     }
 }
