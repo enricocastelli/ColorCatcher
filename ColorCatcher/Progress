@@ -9,8 +9,6 @@ BUGS:
     🍎 multi inviting too many times (loader?)
     🍏 4 points -> no alert to loser
     🍏 no direct multiplayer if more people are online (timer?)
-CRASH:
-    🍎 MultiplayerManager.init(delegate:connectionDelegate)
 
 FRAMEWORK:
 
