@@ -6,7 +6,7 @@
 //  Copyright © 2019 Enrico Castelli. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 
 struct ColorModel: Decodable {

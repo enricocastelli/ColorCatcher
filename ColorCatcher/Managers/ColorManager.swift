@@ -8,6 +8,7 @@
 
 
 import UIKit
+import ColorProximityCalculator
 
 
 protocol ColorRecognitionDelegate: class {

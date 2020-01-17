@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ColorProximityCalculator
+
 
 class testVCViewController: UIViewController, ColorCalculator {
 

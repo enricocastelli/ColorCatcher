@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
+		1C12A7BF23D2494E00DE2744 /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
 		1C151920221FFF9F00226042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15191F221FFF9F00226042 /* Assets.xcassets */; };
@@ -59,7 +60,6 @@
 		1CB484BE2368517B00BC4F55 /* DropLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB484BD2368517B00BC4F55 /* DropLayer.swift */; };
 		1CBFB62F2230103600CB46C5 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB62E2230103600CB46C5 /* PopupVC.swift */; };
 		1CBFB6312230607300CB46C5 /* PopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBFB6302230607300CB46C5 /* PopupVC.xib */; };
-		1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */; };
 		1CBFB637223193BF00CB46C5 /* FlashProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBFB636223193BF00CB46C5 /* FlashProvider.swift */; };
 		1CC490442323EB2400759C72 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC490432323EB2400759C72 /* Animator.swift */; };
 		1CC49046232416DD00759C72 /* WelcomeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */; };
@@ -99,6 +99,7 @@
 /* Begin PBXFileReference section */
 		18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Color_Catcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C151915221FFF9D00226042 /* Color Catcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Catcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C15191A221FFF9D00226042 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 		1CB484BD2368517B00BC4F55 /* DropLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropLayer.swift; sourceTree = "<group>"; };
 		1CBFB62E2230103600CB46C5 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		1CBFB6302230607300CB46C5 /* PopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupVC.xib; sourceTree = "<group>"; };
-		1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculator.swift; sourceTree = "<group>"; };
 		1CBFB636223193BF00CB46C5 /* FlashProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashProvider.swift; sourceTree = "<group>"; };
 		1CC490432323EB2400759C72 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		1CC49045232416DD00759C72 /* WelcomeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAnimationView.swift; sourceTree = "<group>"; };
@@ -191,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C12A7BF23D2494E00DE2744 /* ColorProximityCalculator.framework in Frameworks */,
 				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +326,6 @@
 		1C7FDDD92370693E00CC72CE /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				1CBFB63222315D3E00CB46C5 /* ColorCalculator.swift */,
 				1CEE2DAB2370904E00FF4056 /* DropProvider.swift */,
 				1CFE9EFB2226DC6900F62935 /* StoreProvider.swift */,
 				1C8EA7492391528900781B47 /* AnalyticsProvider.swift */,
@@ -429,6 +429,7 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
 				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);
@@ -654,7 +655,6 @@
 				1C8EA74A2391528900781B47 /* AnalyticsProvider.swift in Sources */,
 				1C7FDDD8237068CF00CC72CE /* Utils.swift in Sources */,
 				1C02C6762368CE27008312BC /* LocationManager.swift in Sources */,
-				1CBFB63322315D3E00CB46C5 /* ColorCalculator.swift in Sources */,
 				1CFE9EFC2226DC6900F62935 /* StoreProvider.swift in Sources */,
 				1C61CF8A237C68F000E5E49D /* MultiplayerModel.swift in Sources */,
 				1CFE9EF82226BAF200F62935 /* Service.swift in Sources */,
@@ -858,6 +858,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ColorCatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -867,7 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -884,6 +885,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ColorCatcher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -893,7 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

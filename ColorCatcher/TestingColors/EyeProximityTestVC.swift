@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ColorProximityCalculator
 
 class EyeProximityTestVC: UIViewController, ColorCalculator {
     

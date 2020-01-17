@@ -1,0 +1,11 @@
+framework module ColorProximityCalculator {
+  umbrella header "ColorProximityCalculator.h"
+
+  export *
+  module * { export * }
+}
+
+module ColorProximityCalculator.Swift {
+    header "ColorProximityCalculator-Swift.h"
+    requires objc
+}
