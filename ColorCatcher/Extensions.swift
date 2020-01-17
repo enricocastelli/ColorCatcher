@@ -161,7 +161,9 @@ extension CALayer {
 extension String {
     
     var multiplayerName: String {
-        return self.replacingOccurrences(of: "iPhone", with: "").replacingOccurrences(of: " ", with: "")
+        let nameString = self.replacingOccurrences(of: "iPhone", with: "").replacingOccurrences(of: "'s", with: "").replacingOccurrences(of: "di", with: "").replacingOccurrences(of: " ", with: "")
+        guard nameString != "" && nameString != " " && nameString.count < 60 else { return "iPhone" }
+        return nameString
     }
 }
 
