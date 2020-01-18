@@ -52,7 +52,8 @@ class Service: NSObject, URLSessionDelegate {
     }
     
     func getCredits() -> String {
-        return remoteConfig().configValue(forKey: "credits").stringValue ?? "enricoappstelli@gmail.com"
+        let literalString = remoteConfig().configValue(forKey: "credits").stringValue ?? "enricoappstelli@gmail.com"
+        return literalString.replacingOccurrences(of: "\\\\n", with: "\n")
     }
     
     func getAppStoreLink() -> String {

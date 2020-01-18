@@ -176,3 +176,14 @@ extension UITextField {
         return text
     }
 }
+
+extension Data {
+    
+    func prettyPrint() {
+        print(utf8() ?? "No Data")
+    }
+    
+    func utf8() -> String? {
+        return String(data: self, encoding: String.Encoding.utf8)
+    }
+}

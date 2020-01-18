@@ -21,10 +21,6 @@ func Logger(_ event: Event,_ parameters: [String: String]? = nil) {
     print("🎨🎯 - \((event.rawValue, parameterString))")
 }
 
-func prettyPrint(data: Data?) {
-    print(String(data: data!, encoding: String.Encoding.utf8) ?? "No Data")
-}
-
 func yesOrNo(_ options: UInt32) -> Bool {
     return arc4random_uniform(options) == 0
 }

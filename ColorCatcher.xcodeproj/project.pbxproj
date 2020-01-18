@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
-		1C12A7C023D2740600DE2744 /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */; };
-		1C12A7C123D2740600DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C12A7C523D31FCB00DE2744 /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */; };
+		1C12A7C623D31FCB00DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
 		1C151920221FFF9F00226042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15191F221FFF9F00226042 /* Assets.xcassets */; };
@@ -104,7 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C12A7C123D2740600DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */,
+				1C12A7C623D31FCB00DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,7 +114,7 @@
 /* Begin PBXFileReference section */
 		18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Color_Catcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
+		1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C151915221FFF9D00226042 /* Color Catcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Catcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C15191A221FFF9D00226042 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C12A7C023D2740600DE2744 /* ColorProximityCalculator.framework in Frameworks */,
+				1C12A7C523D31FCB00DE2744 /* ColorProximityCalculator.framework in Frameworks */,
 				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +444,7 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C12A7BE23D2494E00DE2744 /* ColorProximityCalculator.framework */,
+				1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
 				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);

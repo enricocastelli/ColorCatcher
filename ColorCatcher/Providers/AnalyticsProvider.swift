@@ -14,8 +14,10 @@ protocol AnalyticsProvider {}
 extension AnalyticsProvider {
     
     func logEvent(_ event: Event, parameters: [String: String]? = nil) {
+        #if !DEBUG
         Analytics.logEvent(event.rawValue, parameters: parameters)
         Logger(event, parameters)
+        #endif
     }
     
 }
