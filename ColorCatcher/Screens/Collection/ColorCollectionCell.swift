@@ -31,7 +31,7 @@ class ColorCollectionCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        colorView.backgroundColor = UIColor.groupTableViewBackground
+        colorView.backgroundColor = UIColor.CCGray
         colorLabel.text = "??????"
         colorNameLabel.text = ""
     }

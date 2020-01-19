@@ -78,6 +78,7 @@ extension UIColor {
     static var CCViola = UIColor(red: 182/255, green: 62/255, blue: 255/255, alpha: 1)
     static var CCGreenlight = UIColor(red: 214/255, green: 255/255, blue: 186/255, alpha: 1)
     static var CCWater = UIColor(red: 73/255, green: 136/255, blue: 255/255, alpha: 1)
+    static var CCGray = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1)
 
     static func generateCCRandom() -> UIColor {
         let arr = [UIColor.CCpinky,
