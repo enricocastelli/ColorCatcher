@@ -34,9 +34,9 @@ class SettingsVC: ColorController, PopupProvider {
         animationLabel.text = "Welcome animation"
         animationSwitch.isOn = isWelcomeAnimationOn()
         multiplayerLabel.text = "Multiplayer name"
-        multiplayerField.placeholder = getMultiplayerName()
+        multiplayerField.text = getMultiplayerName()
         levelLabel.text = "Level"
-        levelSegment.selectedSegmentIndex = getLevel()
+        setSegmentedControl()
         multiplayerField.delegate = self
         buttonsStackView.spacing = Device.isSE() ? 16 : 32
     }
@@ -44,6 +44,14 @@ class SettingsVC: ColorController, PopupProvider {
     func setButton(_ button: BouncyButton,_ delay: Double) {
         button.backgroundColor = UIColor.generatePopupRandom()
         button.set(delay)
+    }
+    
+    func setSegmentedControl() {
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, for: .normal)
+        levelSegment.selectedSegmentIndex = getLevel()
+        levelSegment.tintColor = .white
     }
     
     @IBAction func animationSwitchTapped(_ sender: UISwitch) {

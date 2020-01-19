@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC" customModule="ColorCatcher" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC" customModule="Color_Catcher" customModuleProvider="target">
             <connections>
                 <outlet property="animationLabel" destination="Krw-m8-Hre" id="gXy-rZ-ryK"/>
                 <outlet property="animationSwitch" destination="lUB-yo-g1k" id="ZDP-Ea-8pt"/>
@@ -38,7 +38,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-nM-63y">
                     <rect key="frame" x="64" y="581" width="286" height="279"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4D-EA-Bob" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4D-EA-Bob" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
                             <rect key="frame" x="84.5" y="0.0" width="117" height="69"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
                             <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
@@ -49,7 +49,7 @@
                                 <action selector="shareTapped:" destination="-1" eventType="touchUpInside" id="eZI-hP-FeT"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-Lh-1L4" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-Lh-1L4" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
                             <rect key="frame" x="40.5" y="105" width="205" height="69"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
                             <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
@@ -60,7 +60,7 @@
                                 <action selector="tourTapped:" destination="-1" eventType="touchUpInside" id="5is-1I-fnY"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-eX-WCx" customClass="BouncyButton" customModule="ColorCatcher" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-eX-WCx" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
                             <rect key="frame" x="78" y="210" width="130" height="69"/>
                             <color key="backgroundColor" red="0.2873419411" green="0.53166163710000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
@@ -121,11 +121,13 @@
                                 </label>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-Tp-igI">
                                     <rect key="frame" x="176" y="30.5" width="206" height="32"/>
+                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <segments>
                                         <segment title="Easy"/>
                                         <segment title="Medium"/>
                                         <segment title="Hard"/>
                                     </segments>
+                                    <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="levelSegmentTapped:" destination="-1" eventType="valueChanged" id="IHd-Vf-Qze"/>
                                     </connections>
@@ -152,9 +154,11 @@
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Multiplayer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVq-Dk-pyg">
                                     <rect key="frame" x="246" y="29" width="136" height="34"/>
+                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960780000005" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="FVq-Dk-pyg" secondAttribute="height" multiplier="4:1" id="fmx-Rv-yak"/>
                                     </constraints>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 </textField>
