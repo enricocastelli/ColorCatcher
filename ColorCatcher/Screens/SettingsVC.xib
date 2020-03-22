@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +25,7 @@
                 <outlet property="multiplayerField" destination="FVq-Dk-pyg" id="u0C-KL-yC9"/>
                 <outlet property="multiplayerLabel" destination="fUd-nZ-sYb" id="aHb-RE-ynU"/>
                 <outlet property="optionsStackView" destination="64n-Mi-woR" id="MHE-WK-em5"/>
+                <outlet property="rankingButton" destination="BBc-Va-KES" id="8aJ-OU-OZa"/>
                 <outlet property="shareButton" destination="s4D-EA-Bob" id="Xea-i9-9Vs"/>
                 <outlet property="tourButton" destination="fgE-Lh-1L4" id="A25-IC-cdr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,10 +37,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-nM-63y">
-                    <rect key="frame" x="64" y="581" width="286" height="279"/>
+                    <rect key="frame" x="64" y="476" width="286" height="384"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBc-Va-KES" userLabel="CatchersButton" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
+                            <rect key="frame" x="51.5" y="0.0" width="183" height="69"/>
+                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
+                            <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
+                            <state key="normal" title="Best Catchers">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="rankingTapped:" destination="-1" eventType="touchUpInside" id="Q0R-66-krx"/>
+                                <action selector="shareTapped:" destination="-1" eventType="touchUpInside" id="U95-n8-6H3"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4D-EA-Bob" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
-                            <rect key="frame" x="84.5" y="0.0" width="117" height="69"/>
+                            <rect key="frame" x="84.5" y="105" width="117" height="69"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
                             <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
                             <state key="normal" title="Share">
@@ -50,7 +63,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-Lh-1L4" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
-                            <rect key="frame" x="40.5" y="105" width="205" height="69"/>
+                            <rect key="frame" x="40.5" y="210" width="205" height="69"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
                             <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>
                             <state key="normal" title="Watch tour again">
@@ -61,7 +74,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-eX-WCx" customClass="BouncyButton" customModule="Color_Catcher" customModuleProvider="target">
-                            <rect key="frame" x="78" y="210" width="130" height="69"/>
+                            <rect key="frame" x="78" y="315" width="130" height="69"/>
                             <color key="backgroundColor" red="0.2873419411" green="0.53166163710000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="20"/>
                             <inset key="contentEdgeInsets" minX="36" minY="20" maxX="36" maxY="20"/>

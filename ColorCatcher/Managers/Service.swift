@@ -56,6 +56,11 @@ class Service: NSObject, URLSessionDelegate {
         return literalString.replacingOccurrences(of: "\\\\n", with: "\n")
     }
     
+    func getRanking() -> String {
+        let literalString = remoteConfig().configValue(forKey: "ranking").stringValue ?? ""
+        return literalString.replacingOccurrences(of: "\\\\n", with: "\n")
+    }
+    
     func getAppStoreLink() -> String {
         return remoteConfig().configValue(forKey: "appStoreLink").stringValue ?? "https://apps.apple.com/nl/app/color-catcher-collect-colors/id1491683850?l=en"
     }

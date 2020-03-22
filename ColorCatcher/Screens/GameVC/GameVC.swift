@@ -163,7 +163,7 @@ extension GameVC: ColorRecognitionDelegate {
     }
     
     func didFinishColors() {
-        logEvent(.DiscoveryCompleted)
+        logEvent(.DiscoveryCompleted, parameters: ["Name": "\(getMultiplayerName())"])
         showFinishColors()
     }
 }

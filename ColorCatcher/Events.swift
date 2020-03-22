@@ -25,6 +25,7 @@ enum Event: String {
     WelcomeAnimationTurnedOn,
     WelcomeAnimationTurnedOff,
     MultiplayerNameChanged,
+    RankingTapped,
     ShareTapped,
     WatchTourAgainTapped,
     CreditsTapped,

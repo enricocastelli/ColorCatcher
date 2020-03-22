@@ -13,6 +13,8 @@ class SettingsVC: ColorController, PopupProvider {
     @IBOutlet weak var shareButton: BouncyButton!
     @IBOutlet weak var tourButton: BouncyButton!
     @IBOutlet weak var creditsButton: BouncyButton!
+    @IBOutlet weak var rankingButton: BouncyButton!
+    
     @IBOutlet var buttonsStackView: UIStackView!
     
     @IBOutlet var optionsStackView: UIStackView!
@@ -28,9 +30,10 @@ class SettingsVC: ColorController, PopupProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton(shareButton, 0)
-        setButton(tourButton, 0.2)
-        setButton(creditsButton, 0.4)
+        setButton(rankingButton,  0)
+        setButton(shareButton,  0.15)
+        setButton(tourButton, 0.3)
+        setButton(creditsButton, 0.45)
         animationLabel.text = "Welcome animation"
         animationSwitch.isOn = isWelcomeAnimationOn()
         multiplayerLabel.text = "Multiplayer name"
@@ -63,6 +66,15 @@ class SettingsVC: ColorController, PopupProvider {
     
     @IBAction func levelSegmentTapped(_ sender: UISegmentedControl) {
         setLevel(sender.selectedSegmentIndex)
+    }
+    
+    @IBAction func rankingTapped(_ sender: BouncyButton) {
+        logEvent(.RankingTapped)
+        var model = PopupModel(titleString: "Best Catchers!", message: Service.shared.getRanking())
+        model.subtitleString = "This are the players that finished the game! 👑"
+        model.color = UIColor.generateCCRandom()
+        model.opacity = 0.5
+        showPopup(model)
     }
     
     @IBAction func shareTapped(_ sender: UIButton) {
