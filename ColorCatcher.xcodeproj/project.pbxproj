@@ -36,8 +36,7 @@
 		1C61CF8A237C68F000E5E49D /* MultiplayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */; };
 		1C61CF8C237C700100E5E49D /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF8B237C700100E5E49D /* ScoreLabel.swift */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
-		1C7828AD2427814500DB2CFC /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */; };
-		1C7828AE2427814500DB2CFC /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1C7828B42427B99200DB2CFC /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7828B32427B99200DB2CFC /* ColorProximityCalculator.framework */; };
 		1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */; };
 		1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */; };
 		1C7FDDCF236F705C00CC72CE /* AppleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */; };
@@ -104,7 +103,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C7828AE2427814500DB2CFC /* ColorProximityCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +142,7 @@
 		1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerModel.swift; sourceTree = "<group>"; };
 		1C61CF8B237C700100E5E49D /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
-		1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
+		1C7828B32427B99200DB2CFC /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTourView.xib; sourceTree = "<group>"; };
 		1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTourView.swift; sourceTree = "<group>"; };
 		1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleImageView.swift; sourceTree = "<group>"; };
@@ -206,7 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7828AD2427814500DB2CFC /* ColorProximityCalculator.framework in Frameworks */,
+				1C7828B42427B99200DB2CFC /* ColorProximityCalculator.framework in Frameworks */,
 				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +442,7 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */,
+				1C7828B32427B99200DB2CFC /* ColorProximityCalculator.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
 				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);
@@ -872,7 +870,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -883,7 +881,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
@@ -903,7 +901,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -914,7 +912,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = "";
