@@ -53,5 +53,7 @@ enum Event: String {
     MultiplayerInviteReceived,
     MultiplayerInviteAccepted,
     MultiplayerInviteRefused,
-    MultiplayerDisconnected
+    MultiplayerDisconnected,
+    //
+    TestEvent
 }

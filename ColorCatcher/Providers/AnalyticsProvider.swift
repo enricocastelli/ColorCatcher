@@ -17,7 +17,9 @@ extension AnalyticsProvider {
         #if !DEBUG
         Analytics.logEvent(event.rawValue, parameters: parameters)
         Logger(event, parameters)
+        #else
+//        Analytics.logEvent(Event.TestEvent.rawValue, parameters: parameters)
+        Logger(event, parameters)
         #endif
     }
-    
 }
