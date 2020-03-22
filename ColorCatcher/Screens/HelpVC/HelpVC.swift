@@ -161,21 +161,25 @@ class HelpVC: UIViewController, DropProvider, AnalyticsProvider, StoreProvider {
     func askCameraPermissions() {
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
             DispatchQueue.main.async {
-                self.timerCallback()
                 self.logEvent(.AllowedCamera, parameters: ["Granted": "\(granted)"])
+                guard self.isViewLoaded else { return }
+                self.timerCallback()
             }
         })
     }
     
     @objc func locationStatusDidChange(_ status: Int) {
         self.logEvent(.AllowedLocation, parameters: ["Status": "\(status)"])
+        guard self.isViewLoaded else { return }
         timerCallback()
     }
     
     func pushFoward() {
         setFirstLaunchDone()
         timer.invalidate()
+        let welcomeVC = WelcomeVC()
         navigationController?.pushViewController(WelcomeVC(), animated: true)
+        navigationController?.viewControllers = [welcomeVC]
     }
     
     @IBAction func continueTapped(_ sender: UIButton) {

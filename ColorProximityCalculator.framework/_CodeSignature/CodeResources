@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8ZQnJ/K/tEbvsenvdM7kAwZzjvo=
+		BocNINDTkMtCBmo16+IY19nEGcY=
 		</data>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		kkZ6RJFTCRE+xUXo5lUNSrp9us8=
+		Nc5PeV/kj4k0oYPoxPielJEBJRk=
 		</data>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Heid8zE3U4/TO1smO69nKaSAVTY=
+		p0RxT/ignD0hLLprLlJGIeoJ7EM=
 		</data>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		kkZ6RJFTCRE+xUXo5lUNSrp9us8=
+		Nc5PeV/kj4k0oYPoxPielJEBJRk=
 		</data>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Heid8zE3U4/TO1smO69nKaSAVTY=
+		p0RxT/ignD0hLLprLlJGIeoJ7EM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -53,32 +53,32 @@
 			1D7byxY1U/DShnUkVF19rhzjN5GbKEFHdSmXa38Ur8A=
 			</data>
 		</dict>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+0pzbDAY0+ppRKLrPUncI0kPvr8HR+JEDZ6/DBKlwxQ=
+			QqtwEBJ2z3sP/ym1zpVx51UFwH9avtXnxo52zNNmQMc=
 			</data>
 		</dict>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9W7kIJjRHNwJN8mnmtx8DcA5TRMiKYc/EMreukH/Vno=
+			BAi3+BKDmai94SKRrUuYUxogzfxtgnX5OuFxZ2wjaiM=
 			</data>
 		</dict>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+0pzbDAY0+ppRKLrPUncI0kPvr8HR+JEDZ6/DBKlwxQ=
+			QqtwEBJ2z3sP/ym1zpVx51UFwH9avtXnxo52zNNmQMc=
 			</data>
 		</dict>
-		<key>Modules/ColorProximityCalculator.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/ColorProximityCalculator.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9W7kIJjRHNwJN8mnmtx8DcA5TRMiKYc/EMreukH/Vno=
+			BAi3+BKDmai94SKRrUuYUxogzfxtgnX5OuFxZ2wjaiM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

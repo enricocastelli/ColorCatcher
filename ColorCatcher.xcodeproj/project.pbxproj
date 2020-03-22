@@ -18,8 +18,6 @@
 		1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99D22258FE60037F8D6 /* ColorTimer.swift */; };
 		1C15D9A02225955E0037F8D6 /* PopupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* PopupProvider.swift */; };
 		1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D9A122269D530037F8D6 /* GameVC.xib */; };
-		1C22FB5223D4FADC003DC4ED /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */; };
-		1C22FB5323D4FADC003DC4ED /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */; };
 		1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */; };
 		1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */; };
@@ -38,6 +36,8 @@
 		1C61CF8A237C68F000E5E49D /* MultiplayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */; };
 		1C61CF8C237C700100E5E49D /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C61CF8B237C700100E5E49D /* ScoreLabel.swift */; };
 		1C67DA332237A454004FC715 /* RoundProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C67DA322237A454004FC715 /* RoundProgress.swift */; };
+		1C7828AD2427814500DB2CFC /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */; };
+		1C7828AE2427814500DB2CFC /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C7FDDC7236F46CD00CC72CE /* PhoneTourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */; };
 		1C7FDDC9236F47C000CC72CE /* PhoneTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */; };
 		1C7FDDCF236F705C00CC72CE /* AppleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */; };
@@ -104,7 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C22FB5323D4FADC003DC4ED /* ColorProximityCalculator.framework in Embed Frameworks */,
+				1C7828AE2427814500DB2CFC /* ColorProximityCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +126,6 @@
 		1C15D99D22258FE60037F8D6 /* ColorTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTimer.swift; sourceTree = "<group>"; };
 		1C15D99F2225955E0037F8D6 /* PopupProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProvider.swift; sourceTree = "<group>"; };
 		1C15D9A122269D530037F8D6 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
-		1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeProximityTestVC.swift; sourceTree = "<group>"; };
 		1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyeProximityTestVC.xib; sourceTree = "<group>"; };
 		1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		1C61CF89237C68F000E5E49D /* MultiplayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerModel.swift; sourceTree = "<group>"; };
 		1C61CF8B237C700100E5E49D /* ScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		1C67DA322237A454004FC715 /* RoundProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgress.swift; sourceTree = "<group>"; };
+		1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C7FDDC6236F46CD00CC72CE /* PhoneTourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTourView.xib; sourceTree = "<group>"; };
 		1C7FDDC8236F47C000CC72CE /* PhoneTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTourView.swift; sourceTree = "<group>"; };
 		1C7FDDCE236F705C00CC72CE /* AppleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleImageView.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C22FB5223D4FADC003DC4ED /* ColorProximityCalculator.framework in Frameworks */,
+				1C7828AD2427814500DB2CFC /* ColorProximityCalculator.framework in Frameworks */,
 				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +444,7 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */,
+				1C7828AA24277D2A00DB2CFC /* ColorProximityCalculator.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
 				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);
@@ -884,6 +884,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
 				PROVISIONING_PROFILE_SPECIFIER = "";
