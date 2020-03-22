@@ -95,7 +95,6 @@ class HelpVC: UIViewController, DropProvider, AnalyticsProvider, StoreProvider {
         case 6: pushFoward()
         default:
             Logger("step not expected during Tour \(step)")
-            pushFoward()
             break
         }
     }

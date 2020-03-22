@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C02C6762368CE27008312BC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C02C6752368CE27008312BC /* LocationManager.swift */; };
-		1C12A7C523D31FCB00DE2744 /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */; };
-		1C12A7C623D31FCB00DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C151919221FFF9D00226042 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C151918221FFF9D00226042 /* AppDelegate.swift */; };
 		1C15191B221FFF9D00226042 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15191A221FFF9D00226042 /* GameVC.swift */; };
 		1C151920221FFF9F00226042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C15191F221FFF9F00226042 /* Assets.xcassets */; };
@@ -20,6 +18,8 @@
 		1C15D99E22258FE60037F8D6 /* ColorTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99D22258FE60037F8D6 /* ColorTimer.swift */; };
 		1C15D9A02225955E0037F8D6 /* PopupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C15D99F2225955E0037F8D6 /* PopupProvider.swift */; };
 		1C15D9A222269D530037F8D6 /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C15D9A122269D530037F8D6 /* GameVC.xib */; };
+		1C22FB5223D4FADC003DC4ED /* ColorProximityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */; };
+		1C22FB5323D4FADC003DC4ED /* ColorProximityCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C3DC4322303F30400E3AF39 /* EyeProximityTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */; };
 		1C3DC4342303F31300E3AF39 /* EyeProximityTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */; };
 		1C4B92CB227B338B004773D4 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C4B92CA227B32E3004773D4 /* Brandon_bld.otf */; };
@@ -104,7 +104,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C12A7C623D31FCB00DE2744 /* ColorProximityCalculator.framework in Embed Frameworks */,
+				1C22FB5323D4FADC003DC4ED /* ColorProximityCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,7 +114,6 @@
 /* Begin PBXFileReference section */
 		18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Color_Catcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C02C6752368CE27008312BC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C151915221FFF9D00226042 /* Color Catcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Catcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C151918221FFF9D00226042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C15191A221FFF9D00226042 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		1C15D99D22258FE60037F8D6 /* ColorTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTimer.swift; sourceTree = "<group>"; };
 		1C15D99F2225955E0037F8D6 /* PopupProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupProvider.swift; sourceTree = "<group>"; };
 		1C15D9A122269D530037F8D6 /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ColorProximityCalculator.framework; sourceTree = "<group>"; };
 		1C3DC4312303F30400E3AF39 /* EyeProximityTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeProximityTestVC.swift; sourceTree = "<group>"; };
 		1C3DC4332303F31300E3AF39 /* EyeProximityTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyeProximityTestVC.xib; sourceTree = "<group>"; };
 		1C4B92C6227B32E3004773D4 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C12A7C523D31FCB00DE2744 /* ColorProximityCalculator.framework in Frameworks */,
+				1C22FB5223D4FADC003DC4ED /* ColorProximityCalculator.framework in Frameworks */,
 				C2973E1AB16A379BD90505CF /* Pods_Color_Catcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +444,7 @@
 		9056437F58A9D5D61E6376FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C12A7C323D31FC400DE2744 /* ColorProximityCalculator.framework */,
+				1C22FB5023D4FACE003DC4ED /* ColorProximityCalculator.framework */,
 				CE70E0628C8A8502659D5D3F /* Pods_ColorCatcherTests.framework */,
 				18901480379D5EB3A636941E /* Pods_Color_Catcher.framework */,
 			);
@@ -867,10 +867,12 @@
 			baseConfigurationReference = 7D936155D1100588C8CB8141 /* Pods-Color Catcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -881,9 +883,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
-				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -894,10 +897,12 @@
 			baseConfigurationReference = 2157D7C094FAB6DB351E6362 /* Pods-Color Catcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				BITCODE_GENERATION_MODE = bitcode;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L4BGB43YX2;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Resources",
@@ -908,9 +913,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = E.ColorCatcher;
 				PRODUCT_NAME = "Color Catcher";
-				PROVISIONING_PROFILE_SPECIFIER = ColorCatcher;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
